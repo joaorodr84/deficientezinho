@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-9`**
+**Next ID to assign: `DEF-14`**
 
 If this file and history ever disagree, history wins:
 
@@ -15,6 +15,11 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 
 | ID | Task | Status | Commit |
 | --- | --- | --- | --- |
+| DEF-9 | Extend `Project`/`project-page.html` with optional richer sections (overview, how-it-works, features) on the shared template | open | — |
+| DEF-10 | Write the full DigiSpin page content from the digispin repo | open | — |
+| DEF-11 | Write the full Sphinx page content from the sphinx repo | open | — |
+| DEF-12 | Write the full Freecell Plus page content from the freecell-plus repo | open | — |
+| DEF-13 | Write the full Watchr page content from the watchr repo | open | — |
 
 ## Done
 
