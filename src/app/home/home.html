@@ -1,0 +1,14 @@
+<section class="intro">
+  <h1>Deficientezinho</h1>
+  <p>One brand, several small projects. Pick one to look around.</p>
+</section>
+
+<section class="projects">
+  @for (project of projects; track project.slug) {
+    <a class="card" [routerLink]="['/projects', project.slug]">
+      <h2>{{ project.name }}</h2>
+      <p class="tagline">{{ project.tagline }}</p>
+      <p class="meta">{{ project.stack }} &middot; {{ project.status }}</p>
+    </a>
+  }
+</section>
