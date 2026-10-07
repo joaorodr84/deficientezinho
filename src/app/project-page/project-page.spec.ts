@@ -54,19 +54,32 @@ describe('ProjectPage', () => {
 
   // DEF-9: the richer sections are optional, so a project with none of them
   // must render the page it had before, with no empty "How it works"/
-  // "Features" headings left behind.
-  it('omits the overview, how-it-works and features sections for a project without them', () => {
-    const text = fixture.nativeElement.textContent;
+  // "Features" headings left behind. Both this test and the one below use
+  // a transient PROJECTS entry rather than a real slug, so neither depends
+  // on which real projects DEF-10..13 happen to have given this content to.
+  it('omits the overview, how-it-works and features sections for a project without them', async () => {
+    const plainProject: Project = {
+      slug: 'plain-test-project',
+      name: 'Plain Test Project',
+      tagline: 'A tagline.',
+      description: 'A description.',
+      stack: 'A stack',
+      status: 'in development',
+    };
+    PROJECTS.push(plainProject);
 
-    expect(text).not.toContain('How it works');
-    expect(text).not.toContain('Features');
+    try {
+      const plainFixture = await createFixture('plain-test-project');
+      const text = plainFixture.nativeElement.textContent;
+
+      expect(text).not.toContain('How it works');
+      expect(text).not.toContain('Features');
+    } finally {
+      PROJECTS.pop();
+    }
   });
 
   it('renders the overview, how-it-works and features sections for a project that has them', async () => {
-    // A transient entry rather than a mutation of a real project: it's
-    // pushed onto PROJECTS for this test only and popped off straight
-    // after, so it can't leak into other tests or depend on DEF-10..13's
-    // real content ever matching this shape.
     const richProject: Project = {
       slug: 'rich-test-project',
       name: 'Rich Test Project',

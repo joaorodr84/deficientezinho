@@ -15,7 +15,6 @@ single paragraph). Replace this with fuller pages: extend the shared
 template with richer optional sections, then write real content per
 project pulled from that project's own repo/README.
 
-- `DEF-10`: Write the full DigiSpin page content from the digispin repo.
 - `DEF-11`: Write the full Sphinx page content from the sphinx repo.
 - `DEF-12`: Write the full Freecell Plus page content from the
   freecell-plus repo.
