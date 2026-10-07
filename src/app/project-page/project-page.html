@@ -4,6 +4,29 @@
     <h1>{{ project.name }}</h1>
     <p class="tagline">{{ project.tagline }}</p>
     <p class="description">{{ project.description }}</p>
+    @if (project.overview) {
+      <p class="overview">{{ project.overview }}</p>
+    }
+    @if (project.howItWorks) {
+      <section class="rich-section">
+        <h2>How it works</h2>
+        <ul>
+          @for (point of project.howItWorks; track point) {
+            <li>{{ point }}</li>
+          }
+        </ul>
+      </section>
+    }
+    @if (project.features) {
+      <section class="rich-section">
+        <h2>Features</h2>
+        <ul>
+          @for (point of project.features; track point) {
+            <li>{{ point }}</li>
+          }
+        </ul>
+      </section>
+    }
     <dl>
       <dt>Stack</dt>
       <dd>{{ project.stack }}</dd>

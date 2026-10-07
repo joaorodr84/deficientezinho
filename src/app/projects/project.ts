@@ -10,4 +10,9 @@ export interface Project {
   repo?: string;
   // Optional: only set for projects with a public site to point visitors at.
   website?: string;
+  // Optional richer sections (DEF-9): omitted projects fall back to the
+  // tagline/description-only page they had before.
+  overview?: string;
+  howItWorks?: string[];
+  features?: string[];
 }
