@@ -21,4 +21,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | ID | Task | Status | Date | Commit |
 | --- | --- | --- | --- | --- |
 | DEF-1 | Scaffold the Angular site: home page, a shared project-page route, and pages for DigiSpin, Sphinx, Freecell Plus and Watchr | done | 2026-10-07 | — |
-| DEF-2 | Save the brand logo (transparent and whitish-bg originals) into `public/` | done | 2026-10-07 | — |
+| DEF-2 | Save the brand logo (`logo.png` transparent, `logo-original.png` whitish-bg) into `public/` | done | 2026-10-07 | — |
