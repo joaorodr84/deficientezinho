@@ -9,8 +9,14 @@
       <dd>{{ project.stack }}</dd>
       <dt>Status</dt>
       <dd>{{ project.status }}</dd>
-      <dt>Repository</dt>
-      <dd><a [href]="project.repo" target="_blank" rel="noopener">{{ project.repo }}</a></dd>
+      @if (project.website) {
+        <dt>Website</dt>
+        <dd><a [href]="project.website" target="_blank" rel="noopener">{{ project.website }}</a></dd>
+      }
+      @if (project.repo) {
+        <dt>Repository</dt>
+        <dd><a [href]="project.repo" target="_blank" rel="noopener">{{ project.repo }}</a></dd>
+      }
     </dl>
   </article>
 } @else {

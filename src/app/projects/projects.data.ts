@@ -39,6 +39,6 @@ export const PROJECTS: Project[] = [
       'A personal TV and film tracking app with multi-user support, advanced watch history management, calendar views, statistics, badges, and import from IMDb, Trakt.tv and Netflix.',
     stack: 'Web app + backend',
     status: 'in development',
-    repo: 'https://github.com/joaorodr84/watchr',
+    website: 'https://watchr.pt',
   },
 ];
