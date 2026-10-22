@@ -25,25 +25,18 @@ at scale).
 ## Project pages
 
 Project pages currently render one short description each (tagline +
-single paragraph), except DigiSpin's (DEF-10/DEF-14), which already uses
-the richer template from DEF-9 — overview, how-it-works, features — to
-read as a small marketing site for the app rather than a repo blurb, and
-Sphinx's (DEF-11), whose home card instead links straight to the
-project's own pre-built static microsite, now under
-`public/projects/Sphinx/` (DEF-18). Bring
-the rest up to a comparable shape: a mini-website per project, not just a
-paragraph pulled from its README.
+single paragraph), except DigiSpin's (DEF-17) and Sphinx's (DEF-11),
+whose home cards instead link straight to each project's own pre-built
+static microsite, under `public/projects/digispin/` and
+`public/projects/Sphinx/` (DEF-18) respectively. Bring the rest up to a
+comparable shape: a mini-website per project, not just a paragraph
+pulled from its README.
 
 - `DEF-12` · [P2] Build out the Freecell Plus page into a DigiSpin-style
   mini site (overview, how it works, features) from the freecell-plus
   repo.
 - `DEF-13` · [P2] Build out the Watchr page into a DigiSpin-style mini
   site (overview, how it works, features) from the watchr repo.
-- `DEF-17` · [P2] Bring in the DigiSpin marketing microsite (its
-  published HTML pages) from the digispin repo under
-  `public/projects/digispin/`, and link the home card straight to it —
-  the same Sphinx-style (DEF-11) treatment, replacing the
-  richer-template content from DEF-10/DEF-14.
 - `DEF-19` · [P3] Use lowercase directory names for every project
   microsite under `public/projects/` (`sphinx`, `digispin`, …),
   renaming the existing `Sphinx` directory to match.

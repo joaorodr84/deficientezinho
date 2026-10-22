@@ -42,10 +42,17 @@ describe('Home', () => {
     expect(card.getAttribute('href')).toBe('/projects/Sphinx/index.html');
   });
 
-  it('links a project without a microsite to its internal project route', () => {
+  // DEF-17: same treatment as Sphinx, straight to the pre-built static page.
+  it('links the DigiSpin card straight to its microsite', () => {
     const card = cardFor('DigiSpin');
 
-    expect(card.getAttribute('href')).toContain('/projects/digispin');
+    expect(card.getAttribute('href')).toBe('/projects/digispin/index.html');
+  });
+
+  it('links a project without a microsite to its internal project route', () => {
+    const card = cardFor('Freecell Plus');
+
+    expect(card.getAttribute('href')).toContain('/projects/freecell-plus');
   });
 
   it('falls back to the internal project route once a microsite field is removed', async () => {
