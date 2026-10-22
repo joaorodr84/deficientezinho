@@ -35,11 +35,11 @@ describe('Home', () => {
   }
 
   // DEF-11: Sphinx's card must bypass the internal /projects/sphinx route
-  // and link straight to its static microsite under public/Sphinx.
+  // and link straight to its static microsite under public/projects/Sphinx.
   it('links a project with a microsite straight to it, not the internal project route', () => {
     const card = cardFor('Sphinx');
 
-    expect(card.getAttribute('href')).toBe('/Sphinx/index.html');
+    expect(card.getAttribute('href')).toBe('/projects/Sphinx/index.html');
   });
 
   it('links a project without a microsite to its internal project route', () => {

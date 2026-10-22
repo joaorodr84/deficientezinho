@@ -29,7 +29,8 @@ single paragraph), except DigiSpin's (DEF-10/DEF-14), which already uses
 the richer template from DEF-9 — overview, how-it-works, features — to
 read as a small marketing site for the app rather than a repo blurb, and
 Sphinx's (DEF-11), whose home card instead links straight to the
-project's own pre-built static microsite under `public/Sphinx/`. Bring
+project's own pre-built static microsite, now under
+`public/projects/Sphinx/` (DEF-18). Bring
 the rest up to a comparable shape: a mini-website per project, not just a
 paragraph pulled from its README.
 
@@ -42,12 +43,7 @@ paragraph pulled from its README.
   published HTML pages) from the digispin repo under
   `public/projects/digispin/`, and link the home card straight to it —
   the same Sphinx-style (DEF-11) treatment, replacing the
-  richer-template content from DEF-10/DEF-14. Target path assumes
-  DEF-18 has already landed.
-- `DEF-18` · [P2] Group all project microsites under a
-  `public/projects/` directory — one subdirectory per project — instead
-  of scattered directly under `public/`; move the existing
-  `public/Sphinx/` there and update its `microsite` path.
+  richer-template content from DEF-10/DEF-14.
 - `DEF-19` · [P3] Use lowercase directory names for every project
   microsite under `public/projects/` (`sphinx`, `digispin`, …),
   renaming the existing `Sphinx` directory to match.
