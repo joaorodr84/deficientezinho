@@ -48,6 +48,9 @@ paragraph pulled from its README.
   `public/projects/` directory — one subdirectory per project — instead
   of scattered directly under `public/`; move the existing
   `public/Sphinx/` there and update its `microsite` path.
+- `DEF-19` · [P3] Use lowercase directory names for every project
+  microsite under `public/projects/` (`sphinx`, `digispin`, …),
+  renaming the existing `Sphinx` directory to match.
 
 The remaining projects under `c:\Code` (crivo, nextup, numi,
 pandora, sphinx-106, sphinx-category-covers, sphinx-crivo,
