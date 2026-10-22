@@ -9,20 +9,48 @@ the linked projects themselves use.
 
 Create the branch before the first edit, not after. When a request will
 change files here (code, tests, `TODO.md`, docs), the first action is
-`git checkout -b <name>` off `main`, so no work lands in the working tree
-while `HEAD` is on `main`.
+`git checkout -b <name>` off `develop` — checking out and pulling `develop`
+first if `HEAD` isn't already there — so no work lands in the working tree
+while `HEAD` is on `develop` or `main`.
 
 - `<name>` is a plain `kebab-case-summary` of the change, prefixed with the
-  task ID: `def-2-add-nextup-page`.
-- Already on a non-`main` branch: stay on it, don't branch off a branch.
+  task ID: `def-2-add-nextup-page`. Never a TODO priority prefix (`p1-`,
+  `p2-`) — priority is a fact about the backlog at one moment, not about
+  the change.
+- Already on a branch other than `develop` or `main`: stay on it, don't
+  branch off a branch.
 - Skip branching for read-only work: answering questions, reading code,
   running tests or `ng serve`, investigating a bug without fixing it.
 - Don't ask permission — this rule *is* the standing authorization.
 
-`main` is the only long-lived branch. The `commit` agent
-([.claude/agents/commit.md](.claude/agents/commit.md)) picks up from a
-feature branch: commit → land on `main` (fast-forward or squash) → delete
-the branch.
+`develop` and `main` are the two long-lived branches. `develop` is where
+everything in progress lands; `main` only moves on a deliberate release
+(see "Releases" below), never as a side effect of closing an ordinary
+task. The `commit` agent ([.claude/agents/commit.md](.claude/agents/commit.md))
+picks up from a feature branch: commit → land on `develop` (fast-forward
+or squash) → delete the branch.
+
+## Releases
+
+`main` tracks what's actually published. Deficientezinho isn't live at a
+real domain yet (see **Versions**), so this section is dormant for now —
+there is nothing on `main` beyond what `develop` already has — but the
+shape, once there's somewhere to publish to, matches the one Sphinx,
+DigiSpin and Watchr already use:
+
+1. Bump `package.json`'s `version` if this release hasn't already been
+   bumped on `develop`.
+2. Fast-forward `main` to `develop`: `git checkout main && git pull --ff-only
+   origin main && git merge --ff-only develop`, then push it. If `main`
+   can't fast-forward, stop and ask — don't force or rebase `main` to make
+   it fit.
+3. Tag the release (`vX.Y.Z`, matching `package.json`'s `version`) and push
+   the tag.
+4. `develop` keeps going unchanged; it's never reset or rebased onto `main`.
+
+This is a deliberate, owner-requested action ("release", "ship", "publish")
+— unlike the rest of this file, it is not standing authorization to merge
+to `main` on your own judgment.
 
 ## Task completion workflow
 

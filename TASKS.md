@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-15`**
+**Next ID to assign: `DEF-17`**
 
 If this file and history ever disagree, history wins:
 
@@ -18,6 +18,7 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-11 | Write the full Sphinx page content from the sphinx repo | open | — |
 | DEF-12 | Write the full Freecell Plus page content from the freecell-plus repo | open | — |
 | DEF-13 | Write the full Watchr page content from the watchr repo | open | — |
+| DEF-16 | Periodically audit CHANGELOG.md, TODO.md and TASKS.md against each other and against history | open | — |
 
 ## Done
 
@@ -34,3 +35,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-9 | Extend `Project`/`project-page.html` with optional richer sections (overview, how-it-works, features) on the shared template | done | 2026-10-07 | — |
 | DEF-10 | Write the full DigiSpin page content from the digispin repo | done | 2026-10-07 | — |
 | DEF-14 | Refresh the DigiSpin page content from the app's current How to Play reference and its one-page marketing site draft | done | 2026-10-20 | — |
+| DEF-15 | Adopt the develop-branch workflow (CLAUDE.md, commit agent) used by Sphinx, DigiSpin and Watchr, and give TODO.md priority levels and grouping | done | 2026-10-22 | — |
