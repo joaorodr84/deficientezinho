@@ -42,12 +42,3 @@ The remaining projects under `c:\Code` (crivo, nextup, numi,
 pandora, sphinx-106, sphinx-category-covers, sphinx-crivo,
 sphinx-words-images, tmdb-react-starter) were left off the launch set in
 DEF-1; adding any of them as a page is its own task.
-
-## Housekeeping
-
-- `DEF-16` · [P3] Periodically audit `CHANGELOG.md`, `TODO.md` and
-  `TASKS.md` against each other and against `git log` — entries that
-  moved on one but not the other, IDs that don't match a real commit,
-  rows stuck open after the work already shipped. No fixed cadence;
-  do it whenever one of those files is touched for an unrelated reason
-  and something looks off, or when asked directly.
