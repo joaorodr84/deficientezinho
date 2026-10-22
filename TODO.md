@@ -27,12 +27,12 @@ at scale).
 Project pages currently render one short description each (tagline +
 single paragraph), except DigiSpin's (DEF-10/DEF-14), which already uses
 the richer template from DEF-9 — overview, how-it-works, features — to
-read as a small marketing site for the app rather than a repo blurb. Bring
-the rest up to that same shape: a mini-website per project, not just a
+read as a small marketing site for the app rather than a repo blurb, and
+Sphinx's (DEF-11), whose home card instead links straight to the
+project's own pre-built static microsite under `public/Sphinx/`. Bring
+the rest up to a comparable shape: a mini-website per project, not just a
 paragraph pulled from its README.
 
-- `DEF-11` · [P2] Build out the Sphinx page into a DigiSpin-style mini
-  site (overview, how it works, features) from the sphinx repo.
 - `DEF-12` · [P2] Build out the Freecell Plus page into a DigiSpin-style
   mini site (overview, how it works, features) from the freecell-plus
   repo.

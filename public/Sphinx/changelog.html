@@ -1,0 +1,140 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Sphinx — What's new</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='18' y='8' width='56' height='74' rx='12' fill='%23A8483D' transform='rotate(-10 46 45)'/%3E%3Crect x='26' y='16' width='56' height='74' rx='12' fill='%233e7856' transform='rotate(6 54 53)'/%3E%3Cpath d='M40 56 L52 68 L72 40' fill='none' stroke='%23fff' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f2efe8;--surface:#ffffff;--surface-2:#e8e3d8;--fg:#14161a;--muted:#5b5f66;--rule:#ddd7c8;--accent:#3e7856;--accent-ink:#ffffff;--pass:#a8483d}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1f2937;--surface:#263142;--surface-2:#2e3a4c;--fg:#ffffff;--muted:#a7b0bd;--rule:#3a4556;--accent:#5f9b78;--accent-ink:#1f2937;--pass:#b9807d;color-scheme:dark}}
+  :root[data-theme="dark"]{--bg:#1f2937;--surface:#263142;--surface-2:#2e3a4c;--fg:#ffffff;--muted:#a7b0bd;--rule:#3a4556;--accent:#5f9b78;--accent-ink:#1f2937;--pass:#b9807d;color-scheme:dark}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16px;line-height:1.6}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 64px}
+  a{color:var(--accent)}
+  h1{font-family:"Sora",system-ui,sans-serif;font-size:1.9rem;margin:0 0 10px}
+  p.lede{color:var(--muted);margin:0 0 32px}
+  .entry{border-left:2px solid var(--rule);padding-left:18px;margin-bottom:28px;position:relative}
+  .entry::before{content:"";position:absolute;left:-5px;top:4px;width:8px;height:8px;border-radius:999px;background:var(--accent)}
+  .entry .ver{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:0.82rem;color:var(--accent);font-weight:600}
+  .entry .date{color:var(--muted);font-size:0.82rem;margin-left:8px}
+  .entry h2{font-family:"Sora",system-ui,sans-serif;font-size:1.05rem;margin:4px 0 8px}
+  .entry ul{margin:0;padding-left:20px;color:var(--fg)}
+  .entry li{margin-bottom:5px}
+  .soon{background:var(--surface);border:1px dashed var(--rule);border-radius:14px;padding:16px 20px;color:var(--muted);font-size:0.92rem}
+
+  nav.site-nav{background:var(--surface);border-bottom:1px solid var(--rule)}
+  .site-nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+  .site-nav-brand{display:flex;align-items:center;gap:8px;font-family:"Sora",system-ui,sans-serif;font-weight:700;color:var(--fg);text-decoration:none;font-size:1rem}
+  .site-nav-icon{width:24px;height:24px;flex-shrink:0}
+  .site-nav-links{display:flex;gap:18px;flex-wrap:wrap}
+  .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
+  .site-nav-links a:hover{color:var(--fg)}
+  .theme-toggle{position:fixed;top:14px;right:14px;z-index:10;display:flex;gap:2px;background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:3px}
+  .theme-toggle button{width:32px;height:32px;border:none;border-radius:999px;background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .theme-toggle button.active{background:var(--surface-2);color:var(--fg)}
+  footer{padding-block:40px 48px;background:var(--surface);border-top:1px solid var(--rule)}
+  footer .wrap{display:flex;align-items:center;gap:16px;color:var(--muted);font-size:0.86rem;flex-wrap:wrap;padding:0 20px;max-width:960px}
+  .footer-icon{width:36px;height:36px;flex-shrink:0}
+  .footer-links{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+  footer .brand{font-family:"Sora",system-ui,sans-serif;color:var(--fg);font-weight:600;margin-right:4px;text-decoration:none}
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--fg)}
+</style>
+</head><body>
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('sphinx-site-theme');
+    if (saved === 'light' || saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', saved);
+    }
+  } catch (e) {}
+})();
+</script>
+
+<div class="theme-toggle" role="group" aria-label="Theme">
+  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+  </button>
+  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" /></svg>
+  </button>
+  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
+  </button>
+</div>
+
+<nav class="site-nav">
+  <div class="wrap site-nav-inner" style="max-width:960px;padding:14px 20px">
+    <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx"><rect x="18" y="8" width="56" height="74" rx="12" fill="var(--pass)" transform="rotate(-10 46 45)"/><rect x="26" y="16" width="56" height="74" rx="12" fill="var(--accent)" transform="rotate(6 54 53)"/><path d="M40 56 L52 68 L72 40" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>Sphinx</a>
+    <div class="site-nav-links">
+      <a href="how-to-play.html">How to play</a>
+      <a href="modes.html">Game modes</a>
+      <a href="features.html">Features</a>
+      <a href="accessibility.html">Accessibility</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <h1>What's new</h1>
+  <p class="lede">Sphinx is still in development — this page will turn into a real version-by-version log once it ships. For now, here's where things stand.</p>
+
+  <div class="entry">
+    <span class="ver">In progress</span><span class="date">building toward a first release</span>
+    <h2>Three modes, a growing word list, and the groundwork for a release</h2>
+    <ul>
+      <li>Guess It, Clear the List (Open Pool &amp; Complete the Set), and Banned Words are all playable.</li>
+      <li>24 categories across five languages, three age bands, and six color themes.</li>
+      <li>Custom categories, image mode, history, round photos, and alternate tilt/forehead controls.</li>
+    </ul>
+  </div>
+
+  <div class="soon">A dated, per-version changelog starts with the first public release. Until then, this page is deliberately short rather than padded with internal build details.</div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx icon"><rect x="18" y="8" width="56" height="74" rx="12" fill="var(--pass)" transform="rotate(-10 46 45)"/><rect x="26" y="16" width="56" height="74" rx="12" fill="var(--accent)" transform="rotate(6 54 53)"/><path d="M40 56 L52 68 L72 40" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="footer-links">
+      <a class="brand" href="index.html">Sphinx</a>
+      <a href="modes.html">Game modes</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:joaorodr84@gmail.com">joaorodr84@gmail.com</a>
+      <a href="https://github.com/joaorodr84">by joaorodr84</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var KEY = 'sphinx-site-theme';
+  var buttons = document.querySelectorAll('[data-theme-choice]');
+  function currentChoice() {
+    var attr = document.documentElement.getAttribute('data-theme');
+    return attr === 'light' || attr === 'dark' ? attr : 'system';
+  }
+  function reflectActive() {
+    var choice = currentChoice();
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-theme-choice') === choice);
+    });
+  }
+  function apply(choice) {
+    if (choice === 'light' || choice === 'dark') {
+      document.documentElement.setAttribute('data-theme', choice);
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+    reflectActive();
+    try { localStorage.setItem(KEY, choice); } catch (e) {}
+  }
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () { apply(btn.getAttribute('data-theme-choice')); });
+  });
+  reflectActive();
+})();
+</script>
+</body></html>

@@ -15,4 +15,8 @@ export interface Project {
   overview?: string;
   howItWorks?: string[];
   features?: string[];
+  // Optional (DEF-11): a self-contained static site under public/, served
+  // as-is rather than through the shared project-page template. When set,
+  // the home card links straight here instead of the internal route.
+  microsite?: string;
 }

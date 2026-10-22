@@ -1,0 +1,275 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f2efe8;color:#14161a}img{max-width:100%}</style></head><body>
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('sphinx-site-theme');
+    if (saved === 'light' || saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', saved);
+    }
+  } catch (e) {}
+})();
+</script>
+
+<div class="theme-toggle" role="group" aria-label="Theme">
+  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+  </button>
+  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" /></svg>
+  </button>
+  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
+  </button>
+</div>
+
+<title>Sphinx — Game modes</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='18' y='8' width='56' height='74' rx='12' fill='%23A8483D' transform='rotate(-10 46 45)'/%3E%3Crect x='26' y='16' width='56' height='74' rx='12' fill='%233e7856' transform='rotate(6 54 53)'/%3E%3Cpath d='M40 56 L52 68 L72 40' fill='none' stroke='%23fff' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f2efe8;--surface:#ffffff;--surface-2:#e8e3d8;--fg:#14161a;--muted:#5b5f66;--rule:#ddd7c8;--accent:#3e7856;--accent-ink:#ffffff;--pass:#a8483d}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1f2937;--surface:#263142;--surface-2:#2e3a4c;--fg:#ffffff;--muted:#a7b0bd;--rule:#3a4556;--accent:#5f9b78;--accent-ink:#1f2937;--pass:#b9807d;color-scheme:dark}}
+  :root[data-theme="dark"]{--bg:#1f2937;--surface:#263142;--surface-2:#2e3a4c;--fg:#ffffff;--muted:#a7b0bd;--rule:#3a4556;--accent:#5f9b78;--accent-ink:#1f2937;--pass:#b9807d;color-scheme:dark}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16px;line-height:1.55}
+  h1,h2,h3{font-family:"Sora",system-ui,sans-serif;text-wrap:balance;margin:0}
+  a{color:var(--accent)}
+  .wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+  section{padding-block:56px}
+  section + section{border-top:1px solid var(--rule)}
+  .eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px;display:block}
+  .mode-eyebrow.guess{color:var(--accent)}
+  .mode-eyebrow.clear{color:#b08430}
+  .mode-eyebrow.banned{color:var(--pass)}
+  .section-head{margin-bottom:24px}
+  .section-head h2{font-size:1.6rem;font-weight:700}
+  p.lede{color:var(--muted);max-width:66ch;margin-top:10px}
+  .mode-badge{display:inline-flex;align-items:center;gap:6px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;text-transform:uppercase;letter-spacing:0.04em;background:var(--surface-2);border:1px solid var(--rule);border-radius:999px;padding:4px 10px;color:var(--muted);margin-bottom:14px}
+  .mock-row{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;align-items:flex-start}
+  .mock-caption{font-size:12.5px;color:var(--muted);max-width:30ch;line-height:1.5}
+  .mini-card{width:200px;height:130px;border-radius:16px;background:var(--surface-2);border:2px solid var(--rule);display:flex;align-items:center;justify-content:center;font-family:"Sora",system-ui,sans-serif;font-weight:700;font-size:1.25rem;flex:none}
+
+  /* Clear the List checklist mock — Reviewer-facing UI from SPHINX-186/190:
+     a fixed, alphabetical list of ticks, border color = difficulty tier. */
+  .checklist-card{width:260px;border-radius:16px;background:var(--surface);border:2px solid var(--rule);padding:16px 18px;flex:none}
+  .checklist-card.easy{border-color:#5f9b78}
+  .checklist-card.medium{border-color:#b08430}
+  .checklist-card.hard{border-color:var(--pass)}
+  .checklist-card .ch-title{font-family:"Sora",system-ui,sans-serif;font-weight:700;font-size:1rem;margin-bottom:2px}
+  .checklist-card .ch-sub{font-size:12px;color:var(--muted);margin-bottom:10px;font-family:"IBM Plex Mono",ui-monospace,monospace}
+  .checklist-card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+  .checklist-card li{display:flex;align-items:center;gap:8px;font-size:14px}
+  .checklist-card .box{width:18px;height:18px;border-radius:5px;border:1.6px solid var(--muted);flex:none;display:flex;align-items:center;justify-content:center;font-size:11px;color:#fff}
+  .checklist-card li.on .box{background:var(--accent);border-color:var(--accent)}
+  .checklist-card li.on span.label{text-decoration:line-through;color:var(--muted)}
+
+  .ban-card{width:210px;border-radius:16px;background:var(--surface-2);border:2px solid var(--rule);padding:16px;flex:none;display:flex;flex-direction:column;gap:10px;align-items:center}
+  .ban-card .word{font-family:"Sora",system-ui,sans-serif;font-weight:700;font-size:1.25rem}
+  .ban-card .ban-list{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+  .ban-chip{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:10.5px;background:var(--pass);color:#fff;border-radius:999px;padding:3px 8px;text-decoration:line-through}
+
+  .diff-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .diff-chip{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11.5px;display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:5px 11px;border:1.6px solid;color:var(--fg)}
+  .diff-chip.easy{border-color:#5f9b78}
+  .diff-chip.medium{border-color:#b08430}
+  .diff-chip.hard{border-color:var(--pass)}
+
+  .detail-list{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:10px}
+  .detail-list li{display:flex;gap:10px;font-size:14.5px}
+  .detail-list b{flex:none;color:var(--fg)}
+  .detail-list span{color:var(--muted)}
+
+  nav.site-nav{background:var(--surface);border-bottom:1px solid var(--rule)}
+  .site-nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+  .site-nav-brand{display:flex;align-items:center;gap:8px;font-family:"Sora",system-ui,sans-serif;font-weight:700;color:var(--fg);text-decoration:none;font-size:1rem}
+  .site-nav-icon{width:24px;height:24px;flex-shrink:0}
+  .site-nav-links{display:flex;gap:18px;flex-wrap:wrap}
+  .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
+  .site-nav-links a:hover{color:var(--fg)}
+  .site-nav-links a.current{color:var(--accent);font-weight:600}
+  .theme-toggle{position:fixed;top:14px;right:14px;z-index:10;display:flex;gap:2px;background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:3px}
+  .theme-toggle button{width:32px;height:32px;border:none;border-radius:999px;background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .theme-toggle button.active{background:var(--surface-2);color:var(--fg)}
+  footer{padding-block:40px 48px;background:var(--surface);border-top:1px solid var(--rule)}
+  footer .wrap{display:flex;align-items:center;gap:16px;color:var(--muted);font-size:0.86rem;flex-wrap:wrap}
+  .footer-icon{width:36px;height:36px;flex-shrink:0}
+  .footer-links{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+  footer .brand{font-family:"Sora",system-ui,sans-serif;color:var(--fg);font-weight:600;margin-right:4px;text-decoration:none}
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--fg)}
+</style>
+
+<nav class="site-nav">
+  <div class="wrap site-nav-inner">
+    <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx"><rect x="18" y="8" width="56" height="74" rx="12" fill="var(--pass)" transform="rotate(-10 46 45)"/><rect x="26" y="16" width="56" height="74" rx="12" fill="var(--accent)" transform="rotate(6 54 53)"/><path d="M40 56 L52 68 L72 40" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>Sphinx</a>
+    <div class="site-nav-links">
+      <a href="how-to-play.html">How to play</a>
+      <a href="modes.html" class="current">Game modes</a>
+      <a href="features.html">Features</a>
+      <a href="accessibility.html">Accessibility</a>
+    </div>
+  </div>
+</nav>
+
+<section id="intro">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" style="color:var(--muted)">Game modes</span>
+      <h2>Three games, one app, the same room full of people</h2>
+      <p class="lede">All three are pass-and-play on a single device — no second phone, no accounts, no internet required. Pick one from the Start dialog before a round; the choice is remembered like any other setting.</p>
+    </div>
+  </div>
+</section>
+
+<section id="guess-it">
+  <div class="wrap">
+    <span class="mode-badge"><span class="mode-eyebrow guess">●</span>Mode 1 of 3</span>
+    <div class="section-head">
+      <h2>Guess It</h2>
+      <p class="lede">The original mode, and the one <a href="how-to-play.html">How to play</a> covers in full. One player describes a Mystery word without saying it; everyone else guesses; swipe Correct or Pass against a running timer.</p>
+    </div>
+    <div class="mock-row">
+      <div class="mini-card">Umbrella</div>
+      <span class="mock-caption">Works with every one of the 24 categories, in any age band, at whatever timer length you set.</span>
+    </div>
+    <ul class="detail-list">
+      <li><b>Players</b><span>A describer and everyone else, swapping roles each round.</span></li>
+      <li><b>Scoring</b><span>One point per Correct swipe. Passed words don't return this round.</span></li>
+      <li><b>Best for</b><span>Classic charades-style party play, any group size.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="clear-the-list">
+  <div class="wrap">
+    <span class="mode-badge"><span class="mode-eyebrow clear">●</span>Mode 2 of 3</span>
+    <div class="section-head">
+      <h2>Clear the List</h2>
+      <p class="lede">No typing, no voice recognition — just a checklist and a timer. One player (the Reviewer) holds the phone, which shows the real list of what to name. Everyone else calls out answers out loud, and the Reviewer taps each one off as it's correctly named.</p>
+    </div>
+
+    <h3 style="font-size:1.05rem;margin-top:28px">Open Pool</h3>
+    <p class="lede" style="margin-top:6px">The list is bigger than the goal — name twenty European countries out of the forty-plus that exist, for example. The Reviewer sees the entire pool and ticks anything named; the round ends at the target count or when time runs out.</p>
+    <div class="mock-row">
+      <div class="checklist-card medium">
+        <div class="ch-title">Europe</div>
+        <div class="ch-sub">OPEN POOL · 7 of 20 ticked</div>
+        <ul>
+          <li class="on"><span class="box">✓</span><span class="label">France</span></li>
+          <li class="on"><span class="box">✓</span><span class="label">Germany</span></li>
+          <li><span class="box"></span><span class="label">Greece</span></li>
+          <li><span class="box"></span><span class="label">Hungary</span></li>
+          <li><span class="box"></span><span class="label">Iceland</span></li>
+        </ul>
+      </div>
+      <span class="mock-caption">The list order is fixed and alphabetical, never shuffled, so the Reviewer can find a name fast under pressure.</span>
+    </div>
+
+    <h3 style="font-size:1.05rem;margin-top:32px">Complete the Set</h3>
+    <p class="lede" style="margin-top:6px">The list is the whole target — name all nine planets, say, with nothing extra in the pool. Every single item has to be ticked to clear it; the same checklist screen, just a tighter goal.</p>
+    <div class="mock-row">
+      <div class="checklist-card hard">
+        <div class="ch-title">The Solar System</div>
+        <div class="ch-sub">COMPLETE THE SET · 5 of 9 ticked</div>
+        <ul>
+          <li class="on"><span class="box">✓</span><span class="label">Earth</span></li>
+          <li class="on"><span class="box">✓</span><span class="label">Jupiter</span></li>
+          <li><span class="box"></span><span class="label">Mars</span></li>
+          <li><span class="box"></span><span class="label">Mercury</span></li>
+          <li><span class="box"></span><span class="label">Neptune</span></li>
+        </ul>
+      </div>
+      <span class="mock-caption">A mis-tap is recoverable — every box toggles, it's not a one-way commit.</span>
+    </div>
+
+    <div class="diff-row">
+      <span class="diff-chip easy">Easy</span>
+      <span class="diff-chip medium">Medium</span>
+      <span class="diff-chip hard">Hard</span>
+    </div>
+    <p class="mock-caption" style="margin-top:10px;max-width:60ch">Every Clear the List category carries a difficulty tier, shown as the card's border color on the category picker — a quick read on how obscure the list gets before you commit to it.</p>
+
+    <ul class="detail-list" style="margin-top:28px">
+      <li><b>Players</b><span>One Reviewer per round (device holder), one or more Players calling out guesses.</span></li>
+      <li><b>Scoring</b><span>Correctness is entirely the Reviewer's own judgment — there's no answer-matching to fool or be fooled by.</span></li>
+      <li><b>Best for</b><span>Groups who'd rather shout names at each other than mime things.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="banned-words">
+  <div class="wrap">
+    <span class="mode-badge"><span class="mode-eyebrow banned">●</span>Mode 3 of 3</span>
+    <div class="section-head">
+      <h2>Banned Words</h2>
+      <p class="lede">The same describe-and-guess loop as Guess It — swipe, timer and all — but the card also shows five or six words closely related to the Mystery word that the describer isn't allowed to say either. Describing "Pizza" without saying pizza is one challenge; doing it without "cheese," "slice," or "Italian" either is a very different one.</p>
+    </div>
+    <div class="mock-row">
+      <div class="ban-card">
+        <div class="word">Pizza</div>
+        <div class="ban-list">
+          <span class="ban-chip">Cheese</span>
+          <span class="ban-chip">Slice</span>
+          <span class="ban-chip">Italian</span>
+          <span class="ban-chip">Oven</span>
+          <span class="ban-chip">Round</span>
+        </div>
+      </div>
+      <span class="mock-caption">Say the word, or any word on the strip, and the round's honor system — just like Correct and Pass already are — says you broke the rule.</span>
+    </div>
+    <ul class="detail-list">
+      <li><b>Players</b><span>Same as Guess It — a describer and everyone else, swapping each round.</span></li>
+      <li><b>Scoring</b><span>Identical to Guess It: swipe Correct or Pass, same timer, same card mechanic.</span></li>
+      <li><b>Best for</b><span>Groups who've mastered Guess It and want the next challenge up.</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx icon"><rect x="18" y="8" width="56" height="74" rx="12" fill="var(--pass)" transform="rotate(-10 46 45)"/><rect x="26" y="16" width="56" height="74" rx="12" fill="var(--accent)" transform="rotate(6 54 53)"/><path d="M40 56 L52 68 L72 40" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="footer-links">
+      <a class="brand" href="index.html">Sphinx</a>
+      <a href="features.html">Features</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a href="changelog.html">What's new</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:joaorodr84@gmail.com">joaorodr84@gmail.com</a>
+      <a href="https://github.com/joaorodr84">by joaorodr84</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var KEY = 'sphinx-site-theme';
+  var buttons = document.querySelectorAll('[data-theme-choice]');
+  function currentChoice() {
+    var attr = document.documentElement.getAttribute('data-theme');
+    return attr === 'light' || attr === 'dark' ? attr : 'system';
+  }
+  function reflectActive() {
+    var choice = currentChoice();
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-theme-choice') === choice);
+    });
+  }
+  function apply(choice) {
+    if (choice === 'light' || choice === 'dark') {
+      document.documentElement.setAttribute('data-theme', choice);
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+    reflectActive();
+    try { localStorage.setItem(KEY, choice); } catch (e) {}
+  }
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () { apply(btn.getAttribute('data-theme-choice')); });
+  });
+  reflectActive();
+})();
+</script>
+
+</body></html>

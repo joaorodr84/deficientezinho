@@ -1,0 +1,367 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f2efe8;color:#14161a}img{max-width:100%}</style></head><body>
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('sphinx-site-theme');
+    if (saved === 'light' || saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', saved);
+    }
+  } catch (e) {}
+})();
+</script>
+
+<div class="theme-toggle" role="group" aria-label="Theme">
+  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+  </button>
+  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" /></svg>
+  </button>
+  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
+  </button>
+</div>
+
+<title>Sphinx — How to play</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='18' y='8' width='56' height='74' rx='12' fill='%23A8483D' transform='rotate(-10 46 45)'/%3E%3Crect x='26' y='16' width='56' height='74' rx='12' fill='%233e7856' transform='rotate(6 54 53)'/%3E%3Cpath d='M40 56 L52 68 L72 40' fill='none' stroke='%23fff' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f2efe8;--surface:#ffffff;--surface-2:#e8e3d8;--fg:#14161a;--muted:#5b5f66;--rule:#ddd7c8;--accent:#3e7856;--accent-ink:#ffffff;--pass:#a8483d}
+  @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1f2937;--surface:#263142;--surface-2:#2e3a4c;--fg:#ffffff;--muted:#a7b0bd;--rule:#3a4556;--accent:#5f9b78;--accent-ink:#1f2937;--pass:#b9807d;color-scheme:dark}}
+  :root[data-theme="dark"]{--bg:#1f2937;--surface:#263142;--surface-2:#2e3a4c;--fg:#ffffff;--muted:#a7b0bd;--rule:#3a4556;--accent:#5f9b78;--accent-ink:#1f2937;--pass:#b9807d;color-scheme:dark}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16px;line-height:1.55}
+  h1,h2,h3{font-family:"Sora",system-ui,sans-serif;text-wrap:balance;margin:0}
+  a{color:var(--accent)}
+  .wrap{max-width:900px;margin:0 auto;padding-inline:20px}
+  section{padding-block:56px}
+  section + section{border-top:1px solid var(--rule)}
+  .eyebrow{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:0.74rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:block}
+  .section-head{margin-bottom:28px}
+  .section-head h2{font-size:1.5rem;font-weight:700}
+  p.lede{color:var(--muted);max-width:62ch;margin-top:10px}
+
+  .htp-card{background:var(--surface);border:1px solid var(--rule);border-radius:16px;padding:22px 24px;display:flex;flex-direction:column;gap:10px;margin-top:18px}
+  .htp-card h3{margin:0;display:flex;align-items:baseline;gap:10px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted)}
+  .htp-card h3 .num{font-size:11px;color:var(--accent);border:1px solid var(--accent);border-radius:999px;width:20px;height:20px;display:inline-flex;align-items:center;justify-content:center;flex:none}
+  .htp-card p{margin:0;font-size:15px;line-height:1.65;color:var(--fg);max-width:68ch}
+  .htp-mockrow{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:4px}
+  .htp-mock-caption{font-size:12.5px;color:var(--muted);line-height:1.5;max-width:40ch}
+
+  /* Mystery card mock: a flat stand-in for MysteryCard.tsx's swipeable word
+     card, big enough to read the rules against, not a pixel-accurate clone. */
+  .card-demo{width:220px;height:140px;border-radius:18px;background:var(--surface-2);border:2px solid var(--rule);display:flex;align-items:center;justify-content:center;font-family:"Sora",system-ui,sans-serif;font-weight:700;font-size:1.4rem;flex:none}
+  .card-demo.ghost{opacity:0.5}
+  .swipe-icons{display:flex;align-items:center;gap:10px}
+  .swipe-icon{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:11.5px;color:var(--muted);font-family:"IBM Plex Mono",ui-monospace,monospace;text-transform:uppercase}
+  .swipe-icon .dot{width:34px;height:34px;border-radius:999px;display:flex;align-items:center;justify-content:center;color:#fff}
+  .swipe-icon.pass .dot{background:var(--pass)}
+  .swipe-icon.correct .dot{background:var(--accent)}
+
+  .ban-card{width:220px;border-radius:18px;background:var(--surface-2);border:2px solid var(--rule);padding:16px;flex:none;display:flex;flex-direction:column;gap:10px;align-items:center}
+  .ban-card .word{font-family:"Sora",system-ui,sans-serif;font-weight:700;font-size:1.3rem}
+  .ban-card .ban-list{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+  .ban-chip{font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:11px;background:var(--pass);color:#fff;border-radius:999px;padding:3px 9px;text-decoration:line-through}
+
+  .results-mock{background:var(--surface-2);border:1px solid var(--rule);border-radius:14px;padding:18px 20px;width:260px;display:flex;flex-direction:column;gap:10px}
+  .results-mock .score{font-family:"Sora",system-ui,sans-serif;font-size:2rem;font-weight:800;color:var(--accent)}
+  .results-mock .line{display:flex;justify-content:space-between;font-size:13px;color:var(--muted)}
+
+  /* ---------- try-it mini round: a scoped recreation of Guess It's
+     swipe/timer loop (drag or tap Correct/Pass, 15s clock, mock results),
+     not the production game — just enough to feel the mechanic on the page. */
+  #tryit-stage{display:flex;flex-direction:column;align-items:center;gap:18px;margin-top:8px}
+  .tryit-hud{display:flex;align-items:center;gap:22px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:13px;color:var(--muted)}
+  .tryit-hud b{color:var(--fg);font-size:16px}
+  #tryit-card{width:240px;height:150px;border-radius:20px;background:var(--surface);border:2px solid var(--rule);display:flex;align-items:center;justify-content:center;font-family:"Sora",system-ui,sans-serif;font-weight:800;font-size:1.6rem;touch-action:none;user-select:none;cursor:grab;position:relative;transition:transform 0.15s ease, opacity 0.15s ease}
+  #tryit-card.dragging{transition:none;cursor:grabbing}
+  #tryit-card .flag{position:absolute;top:10px;font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;font-weight:700;text-transform:uppercase;opacity:0;letter-spacing:0.05em}
+  #tryit-card .flag.pass{left:14px;color:var(--pass)}
+  #tryit-card .flag.correct{right:14px;color:var(--accent)}
+  .tryit-controls{display:flex;gap:16px}
+  .tryit-btn{border:none;border-radius:999px;padding:12px 26px;font-weight:700;font-size:0.95rem;color:#fff;cursor:pointer;font-family:"Sora",system-ui,sans-serif}
+  .tryit-btn.pass{background:var(--pass)}
+  .tryit-btn.correct{background:var(--accent)}
+  .tryit-btn:disabled{opacity:0.4;cursor:default}
+  #tryit-end{display:none;flex-direction:column;align-items:center;gap:10px}
+  #tryit-end .score{font-family:"Sora",system-ui,sans-serif;font-size:2.4rem;font-weight:800;color:var(--accent)}
+  #tryit-again{border:1px solid var(--rule);background:var(--surface);border-radius:999px;padding:10px 20px;font-weight:600;cursor:pointer;color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif}
+  .tryit-hint{font-size:12.5px;color:var(--muted)}
+
+  nav.site-nav{background:var(--surface);border-bottom:1px solid var(--rule)}
+  .site-nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+  .site-nav-brand{display:flex;align-items:center;gap:8px;font-family:"Sora",system-ui,sans-serif;font-weight:700;color:var(--fg);text-decoration:none;font-size:1rem}
+  .site-nav-icon{width:24px;height:24px;flex-shrink:0}
+  .site-nav-links{display:flex;gap:18px;flex-wrap:wrap}
+  .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
+  .site-nav-links a:hover{color:var(--fg)}
+  .site-nav-links a.current{color:var(--accent);font-weight:600}
+  .theme-toggle{position:fixed;top:14px;right:14px;z-index:10;display:flex;gap:2px;background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:3px}
+  .theme-toggle button{width:32px;height:32px;border:none;border-radius:999px;background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer}
+  .theme-toggle button.active{background:var(--surface-2);color:var(--fg)}
+  footer{padding-block:40px 48px;background:var(--surface);border-top:1px solid var(--rule)}
+  footer .wrap{display:flex;align-items:center;gap:16px;color:var(--muted);font-size:0.86rem;flex-wrap:wrap}
+  .footer-icon{width:36px;height:36px;flex-shrink:0}
+  .footer-links{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+  footer .brand{font-family:"Sora",system-ui,sans-serif;color:var(--fg);font-weight:600;margin-right:4px;text-decoration:none}
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--fg)}
+</style>
+
+<nav class="site-nav">
+  <div class="wrap site-nav-inner">
+    <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx"><rect x="18" y="8" width="56" height="74" rx="12" fill="var(--pass)" transform="rotate(-10 46 45)"/><rect x="26" y="16" width="56" height="74" rx="12" fill="var(--accent)" transform="rotate(6 54 53)"/><path d="M40 56 L52 68 L72 40" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>Sphinx</a>
+    <div class="site-nav-links">
+      <a href="how-to-play.html" class="current">How to play</a>
+      <a href="modes.html">Game modes</a>
+      <a href="features.html">Features</a>
+      <a href="accessibility.html">Accessibility</a>
+    </div>
+  </div>
+</nav>
+
+<section id="how-to-play">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">How to play</span>
+      <h2>The rules of Guess It, Sphinx's classic mode</h2>
+      <p class="lede">This is the loop every round of the default game follows. Clear the List and Banned Words (see <a href="modes.html">Game modes</a>) bend a couple of these rules, but this is the one to learn first.</p>
+    </div>
+
+    <div class="htp-card">
+      <h3><span class="num">1</span>Pick a category, an age band, and a timer</h3>
+      <p>Before the round starts, choose what to play (one of the 24 built-in categories, or one you made yourself), who's playing (Kids, Teens, or Adult — each one includes every easier word below it, so nothing gets harder by picking an older band), and how long the clock runs. Then pass the phone to whoever's describing first.</p>
+    </div>
+
+    <div class="htp-card">
+      <h3><span class="num">2</span>One word, one describer</h3>
+      <p>A Mystery word appears on screen, visible only to the describer. Everyone else listens. The describer explains it however they like — synonyms, definitions, acting it out — with one rule: never say the word itself, or any close variant of it.</p>
+      <div class="htp-mockrow">
+        <div class="card-demo">Umbrella</div>
+        <span class="htp-mock-caption">The describer sees the word. Nobody else does — they only hear the description.</span>
+      </div>
+    </div>
+
+    <div class="htp-card">
+      <h3><span class="num">3</span>Swipe Correct or Pass</h3>
+      <p>Someone in the room guesses it right — swipe the card right (or tap Correct) and the next word appears immediately. Nobody's getting it — swipe left (or tap Pass) to skip it and move on. Passing costs no time, but a passed word doesn't come back later in the same round, so it's a real trade-off, not a free skip.</p>
+      <div class="htp-mockrow">
+        <div class="swipe-icons">
+          <div class="swipe-icon pass"><div class="dot">&larr;</div>Pass</div>
+          <div class="card-demo">Umbrella</div>
+          <div class="swipe-icon correct"><div class="dot">&rarr;</div>Correct</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="htp-card">
+      <h3><span class="num">4</span>The clock doesn't wait</h3>
+      <p>A timer runs the whole round, counting down from whatever length was set at the start. Words keep coming until it hits zero — there's no pausing to think, which is the whole point.</p>
+    </div>
+
+    <div class="htp-card">
+      <h3><span class="num">5</span>Results, then go again</h3>
+      <p>When time's up, the results screen shows the score and how many were Correct versus Passed. "Play again" restarts instantly with the same category and age band — pass the phone to the next describer and go. There's also an option to snap a quick photo of the room before moving on.</p>
+      <div class="htp-mockrow">
+        <div class="results-mock">
+          <div class="score">7</div>
+          <div class="line"><span>Correct</span><span>7</span></div>
+          <div class="line"><span>Passed</span><span>2</span></div>
+          <div class="line"><span>Category</span><span>Objects</span></div>
+        </div>
+        <span class="htp-mock-caption">A real round also lets you open History to see every past score, not just the last one.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="try-it">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Try it yourself</span>
+      <h2>A 15-second round, right here</h2>
+      <p class="lede">Drag the card left or right, or use the buttons. This page can't hear you describe anything, so just imagine someone is — the point is to feel the swipe-and-clock rhythm the real app runs on.</p>
+    </div>
+
+    <div id="tryit-stage">
+      <div class="tryit-hud"><span>Time left: <b id="tryit-time">15</b>s</span><span>Score: <b id="tryit-score">0</b></span></div>
+      <div id="tryit-card">
+        <span class="flag pass">Pass</span>
+        <span id="tryit-word">Umbrella</span>
+        <span class="flag correct">Correct</span>
+      </div>
+      <div class="tryit-controls">
+        <button type="button" class="tryit-btn pass" id="tryit-pass">&larr; Pass</button>
+        <button type="button" class="tryit-btn correct" id="tryit-correct">Correct &rarr;</button>
+      </div>
+      <p class="tryit-hint">Words from the Objects category, just for this demo.</p>
+      <div id="tryit-end">
+        <div class="score" id="tryit-final">0</div>
+        <p class="tryit-hint">words guessed in 15 seconds</p>
+        <button type="button" id="tryit-again">Play again</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx icon"><rect x="18" y="8" width="56" height="74" rx="12" fill="var(--pass)" transform="rotate(-10 46 45)"/><rect x="26" y="16" width="56" height="74" rx="12" fill="var(--accent)" transform="rotate(6 54 53)"/><path d="M40 56 L52 68 L72 40" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="footer-links">
+      <a class="brand" href="index.html">Sphinx</a>
+      <a href="modes.html">Game modes</a>
+      <a href="accessibility.html">Accessibility</a>
+      <a href="changelog.html">What's new</a>
+      <a href="privacy-policy.html">Privacy policy</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:joaorodr84@gmail.com">joaorodr84@gmail.com</a>
+      <a href="https://github.com/joaorodr84">by joaorodr84</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var WORDS = ['Umbrella', 'Chair', 'Backpack', 'Lamp', 'Pillow', 'Mirror', 'Key', 'Candle', 'Suitcase', 'Blanket', 'Scissors', 'Wallet'];
+  var deck = [];
+  var timeLeft = 15;
+  var score = 0;
+  var timerId = null;
+  var running = false;
+
+  var cardEl = document.getElementById('tryit-card');
+  var wordEl = document.getElementById('tryit-word');
+  var timeEl = document.getElementById('tryit-time');
+  var scoreEl = document.getElementById('tryit-score');
+  var passBtn = document.getElementById('tryit-pass');
+  var correctBtn = document.getElementById('tryit-correct');
+  var stage = document.getElementById('tryit-stage');
+  var endEl = document.getElementById('tryit-end');
+  var finalEl = document.getElementById('tryit-final');
+  var againBtn = document.getElementById('tryit-again');
+
+  function shuffledDeck() {
+    var copy = WORDS.slice();
+    for (var i = copy.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = copy[i]; copy[i] = copy[j]; copy[j] = tmp;
+    }
+    return copy;
+  }
+
+  function nextWord() {
+    if (!deck.length) deck = shuffledDeck();
+    wordEl.textContent = deck.pop();
+    cardEl.style.transform = '';
+    cardEl.style.opacity = '1';
+    cardEl.classList.remove('dragging');
+  }
+
+  function endRound() {
+    running = false;
+    clearInterval(timerId);
+    passBtn.disabled = true;
+    correctBtn.disabled = true;
+    finalEl.textContent = String(score);
+    endEl.style.display = 'flex';
+  }
+
+  function tick() {
+    timeLeft -= 1;
+    timeEl.textContent = String(Math.max(timeLeft, 0));
+    if (timeLeft <= 0) endRound();
+  }
+
+  function answer(correct) {
+    if (!running) return;
+    if (correct) {
+      score += 1;
+      scoreEl.textContent = String(score);
+    }
+    cardEl.style.transform = 'translateX(' + (correct ? '280px' : '-280px') + ') rotate(' + (correct ? '12deg' : '-12deg') + ')';
+    cardEl.style.opacity = '0';
+    setTimeout(function () { if (running) nextWord(); }, 150);
+  }
+
+  function start() {
+    running = true;
+    timeLeft = 15;
+    score = 0;
+    deck = shuffledDeck();
+    timeEl.textContent = '15';
+    scoreEl.textContent = '0';
+    passBtn.disabled = false;
+    correctBtn.disabled = false;
+    endEl.style.display = 'none';
+    nextWord();
+    clearInterval(timerId);
+    timerId = setInterval(tick, 1000);
+  }
+
+  passBtn.addEventListener('click', function () { answer(false); });
+  correctBtn.addEventListener('click', function () { answer(true); });
+  againBtn.addEventListener('click', start);
+
+  // Drag-to-swipe, pointer events only — mouse and touch both fire these.
+  var dragging = false, startX = 0, dx = 0;
+  cardEl.addEventListener('pointerdown', function (e) {
+    if (!running) return;
+    dragging = true; startX = e.clientX; dx = 0;
+    cardEl.classList.add('dragging');
+    cardEl.setPointerCapture(e.pointerId);
+  });
+  cardEl.addEventListener('pointermove', function (e) {
+    if (!dragging) return;
+    dx = e.clientX - startX;
+    cardEl.style.transform = 'translateX(' + dx + 'px) rotate(' + (dx / 12) + 'deg)';
+  });
+  function release() {
+    if (!dragging) return;
+    dragging = false;
+    cardEl.classList.remove('dragging');
+    if (Math.abs(dx) > 80) {
+      answer(dx > 0);
+    } else {
+      cardEl.style.transform = '';
+    }
+  }
+  cardEl.addEventListener('pointerup', release);
+  cardEl.addEventListener('pointercancel', release);
+
+  start();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'sphinx-site-theme';
+  var buttons = document.querySelectorAll('[data-theme-choice]');
+  function currentChoice() {
+    var attr = document.documentElement.getAttribute('data-theme');
+    return attr === 'light' || attr === 'dark' ? attr : 'system';
+  }
+  function reflectActive() {
+    var choice = currentChoice();
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-theme-choice') === choice);
+    });
+  }
+  function apply(choice) {
+    if (choice === 'light' || choice === 'dark') {
+      document.documentElement.setAttribute('data-theme', choice);
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+    reflectActive();
+    try { localStorage.setItem(KEY, choice); } catch (e) {}
+  }
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () { apply(btn.getAttribute('data-theme-choice')); });
+  });
+  reflectActive();
+})();
+</script>
+
+</body></html>
