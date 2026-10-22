@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-17`**
+**Next ID to assign: `DEF-18`**
 
 If this file and history ever disagree, history wins:
 
@@ -18,6 +18,7 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-12 | Build the Freecell Plus page into a DigiSpin-style mini site from the freecell-plus repo | open | — |
 | DEF-13 | Build the Watchr page into a DigiSpin-style mini site from the watchr repo | open | — |
 | DEF-16 | Periodically audit CHANGELOG.md, TODO.md and TASKS.md against each other and against history | open | — |
+| DEF-17 | Bring in the DigiSpin marketing microsite from the digispin repo under a `digispin` directory, and link the home card straight to it | open | — |
 
 ## Done
 

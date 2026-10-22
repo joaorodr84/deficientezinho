@@ -38,6 +38,11 @@ paragraph pulled from its README.
   repo.
 - `DEF-13` · [P2] Build out the Watchr page into a DigiSpin-style mini
   site (overview, how it works, features) from the watchr repo.
+- `DEF-17` · [P2] Bring in the DigiSpin marketing microsite (its
+  published HTML pages) from the digispin repo under `public/digispin/`,
+  and link the home card straight to it — the same Sphinx-style
+  (DEF-11) treatment, replacing the richer-template content from
+  DEF-10/DEF-14.
 
 The remaining projects under `c:\Code` (crivo, nextup, numi,
 pandora, sphinx-106, sphinx-category-covers, sphinx-crivo,
