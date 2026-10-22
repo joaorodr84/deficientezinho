@@ -15,9 +15,9 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 
 | ID | Task | Status | Commit |
 | --- | --- | --- | --- |
-| DEF-11 | Write the full Sphinx page content from the sphinx repo | open | — |
-| DEF-12 | Write the full Freecell Plus page content from the freecell-plus repo | open | — |
-| DEF-13 | Write the full Watchr page content from the watchr repo | open | — |
+| DEF-11 | Build the Sphinx page into a DigiSpin-style mini site from the sphinx repo | open | — |
+| DEF-12 | Build the Freecell Plus page into a DigiSpin-style mini site from the freecell-plus repo | open | — |
+| DEF-13 | Build the Watchr page into a DigiSpin-style mini site from the watchr repo | open | — |
 | DEF-16 | Periodically audit CHANGELOG.md, TODO.md and TASKS.md against each other and against history | open | — |
 
 ## Done

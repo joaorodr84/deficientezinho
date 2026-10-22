@@ -25,14 +25,19 @@ at scale).
 ## Project pages
 
 Project pages currently render one short description each (tagline +
-single paragraph). Replace this with fuller pages: extend the shared
-template with richer optional sections, then write real content per
-project pulled from that project's own repo/README.
+single paragraph), except DigiSpin's (DEF-10/DEF-14), which already uses
+the richer template from DEF-9 — overview, how-it-works, features — to
+read as a small marketing site for the app rather than a repo blurb. Bring
+the rest up to that same shape: a mini-website per project, not just a
+paragraph pulled from its README.
 
-- `DEF-11` · [P2] Write the full Sphinx page content from the sphinx repo.
-- `DEF-12` · [P2] Write the full Freecell Plus page content from the
-  freecell-plus repo.
-- `DEF-13` · [P2] Write the full Watchr page content from the watchr repo.
+- `DEF-11` · [P2] Build out the Sphinx page into a DigiSpin-style mini
+  site (overview, how it works, features) from the sphinx repo.
+- `DEF-12` · [P2] Build out the Freecell Plus page into a DigiSpin-style
+  mini site (overview, how it works, features) from the freecell-plus
+  repo.
+- `DEF-13` · [P2] Build out the Watchr page into a DigiSpin-style mini
+  site (overview, how it works, features) from the watchr repo.
 
 The remaining projects under `c:\Code` (crivo, nextup, numi,
 pandora, sphinx-106, sphinx-category-covers, sphinx-crivo,
