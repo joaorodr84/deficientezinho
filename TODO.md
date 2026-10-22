@@ -28,18 +28,15 @@ Project pages currently render one short description each (tagline +
 single paragraph), except DigiSpin's (DEF-17) and Sphinx's (DEF-11),
 whose home cards instead link straight to each project's own pre-built
 static microsite, under `public/projects/digispin/` and
-`public/projects/Sphinx/` (DEF-18) respectively. Bring the rest up to a
-comparable shape: a mini-website per project, not just a paragraph
-pulled from its README.
+`public/projects/sphinx/` (DEF-18, DEF-19) respectively. Bring the rest
+up to a comparable shape: a mini-website per project, not just a
+paragraph pulled from its README.
 
 - `DEF-12` · [P2] Build out the Freecell Plus page into a DigiSpin-style
   mini site (overview, how it works, features) from the freecell-plus
   repo.
 - `DEF-13` · [P2] Build out the Watchr page into a DigiSpin-style mini
   site (overview, how it works, features) from the watchr repo.
-- `DEF-19` · [P3] Use lowercase directory names for every project
-  microsite under `public/projects/` (`sphinx`, `digispin`, …),
-  renaming the existing `Sphinx` directory to match.
 
 The remaining projects under `c:\Code` (crivo, nextup, numi,
 pandora, sphinx-106, sphinx-category-covers, sphinx-crivo,

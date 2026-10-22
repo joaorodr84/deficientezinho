@@ -21,7 +21,7 @@ export const PROJECTS: Project[] = [
     stack: 'React Native + Expo',
     status: 'in development',
     repo: 'https://github.com/joaorodr84/sphinx',
-    microsite: '/projects/Sphinx/index.html',
+    microsite: '/projects/sphinx/index.html',
   },
   {
     slug: 'freecell-plus',

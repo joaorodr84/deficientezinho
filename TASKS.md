@@ -18,7 +18,6 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-12 | Build the Freecell Plus page into a DigiSpin-style mini site from the freecell-plus repo | open | — |
 | DEF-13 | Build the Watchr page into a DigiSpin-style mini site from the watchr repo | open | — |
 | DEF-16 | Periodically audit CHANGELOG.md, TODO.md and TASKS.md against each other and against history | open | — |
-| DEF-19 | Use lowercase directory names for every project microsite under `public/projects/`, renaming the existing `Sphinx` directory to match | open | — |
 
 ## Done
 
@@ -39,3 +38,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-11 | Bring in the Sphinx marketing microsite (its published HTML pages) under `public/Sphinx/`, and link the home card straight to it | done | 2026-10-22 | — |
 | DEF-18 | Group all project microsites under a `public/projects/` directory (one subdirectory per project), instead of scattered straight under `public/` | done | 2026-10-22 | — |
 | DEF-17 | Bring in the DigiSpin marketing microsite from the digispin repo under a `digispin` directory, and link the home card straight to it | done | 2026-10-22 | — |
+| DEF-19 | Use lowercase directory names for every project microsite under `public/projects/`, renaming the existing `Sphinx` directory to match | done | 2026-10-22 | — |
