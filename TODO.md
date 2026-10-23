@@ -35,8 +35,6 @@ paragraph pulled from its README.
 - `DEF-12` · [P2] Build out the Freecell Plus page into a DigiSpin-style
   mini site (overview, how it works, features) from the freecell-plus
   repo.
-- `DEF-13` · [P2] Build out the Watchr page into a DigiSpin-style mini
-  site (overview, how it works, features) from the watchr repo.
 
 The remaining projects under `c:\Code` (crivo, nextup, numi,
 pandora, sphinx-106, sphinx-category-covers, sphinx-crivo,

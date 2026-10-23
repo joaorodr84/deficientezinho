@@ -16,7 +16,6 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | ID | Task | Status | Commit |
 | --- | --- | --- | --- |
 | DEF-12 | Build the Freecell Plus page into a DigiSpin-style mini site from the freecell-plus repo | open | — |
-| DEF-13 | Build the Watchr page into a DigiSpin-style mini site from the watchr repo | open | — |
 
 ## Done
 
@@ -40,3 +39,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-19 | Use lowercase directory names for every project microsite under `public/projects/`, renaming the existing `Sphinx` directory to match | done | 2026-10-22 | — |
 | DEF-16 | Periodically audit CHANGELOG.md, TODO.md and TASKS.md against each other and against history | done | 2026-10-22 | — |
 | DEF-20 | Fix the Sphinx microsite logo mark, accent/pass colors and hero logo size to match the current/correct logo | done | 2026-10-23 | — |
+| DEF-13 | Build the Watchr page into a DigiSpin-style mini site from the watchr repo | done | 2026-10-23 | — |
