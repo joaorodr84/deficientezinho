@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-20`**
+**Next ID to assign: `DEF-21`**
 
 If this file and history ever disagree, history wins:
 
@@ -39,3 +39,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-17 | Bring in the DigiSpin marketing microsite from the digispin repo under a `digispin` directory, and link the home card straight to it | done | 2026-10-22 | — |
 | DEF-19 | Use lowercase directory names for every project microsite under `public/projects/`, renaming the existing `Sphinx` directory to match | done | 2026-10-22 | — |
 | DEF-16 | Periodically audit CHANGELOG.md, TODO.md and TASKS.md against each other and against history | done | 2026-10-22 | — |
+| DEF-20 | Fix the Sphinx microsite logo mark, accent/pass colors and hero logo size to match the current/correct logo | done | 2026-10-23 | — |
