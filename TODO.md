@@ -24,17 +24,11 @@ at scale).
 
 ## Project pages
 
-Project pages currently render one short description each (tagline +
-single paragraph), except DigiSpin's (DEF-17) and Sphinx's (DEF-11),
-whose home cards instead link straight to each project's own pre-built
-static microsite, under `public/projects/digispin/` and
-`public/projects/sphinx/` (DEF-18, DEF-19) respectively. Bring the rest
-up to a comparable shape: a mini-website per project, not just a
-paragraph pulled from its README.
-
-- `DEF-12` · [P2] Build out the Freecell Plus page into a DigiSpin-style
-  mini site (overview, how it works, features) from the freecell-plus
-  repo.
+Every launched project now has a mini-site shape: DigiSpin (DEF-17) and
+Sphinx (DEF-11) link straight to their own pre-built static microsite
+(`public/projects/digispin/`, `public/projects/sphinx/`; DEF-18,
+DEF-19), and Freecell Plus (DEF-12) and Watchr (DEF-13) use the shared
+template's richer sections (overview, how it works, features).
 
 The remaining projects under `c:\Code` (crivo, nextup, numi,
 pandora, sphinx-106, sphinx-category-covers, sphinx-crivo,
