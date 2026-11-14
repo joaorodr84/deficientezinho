@@ -39,6 +39,9 @@ See [TODO.md](TODO.md) for what's planned next.
 - Cangupa, a tile-hopping puzzle game with a kangaroo, joins the home
   page as a fifth project, with its own mini site: how to play, features
   and the ten level packs.
+- Crivo, a command-line tool that finds one picture for each word in a
+  list, joins the home page with its own mini site: how it works, its
+  options, and what to know about Pixabay and image licences.
 
 ### Fixed
 

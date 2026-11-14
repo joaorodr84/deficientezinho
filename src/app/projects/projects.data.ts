@@ -108,4 +108,19 @@ export const PROJECTS: Project[] = [
     // already wears amber.
     accent: { light: '#0e7c88', dark: '#29c5d6' },
   },
+  {
+    slug: 'crivo',
+    name: 'Crivo',
+    tagline: 'A hundred words in. One picture for each, out.',
+    description:
+      'Give it a list of keywords. It searches Pixabay for each one, shows you the candidates in your browser so you can pick, then hands your picks back resized to one size in a zip.',
+    stack: 'Python + Pillow',
+    // On PyPI (pipx install crivo), so anyone can get it today.
+    status: 'live',
+    repo: 'https://github.com/joaorodr84/crivo',
+    microsite: '/projects/crivo/index.html',
+    // No brand of its own. Violet is the mini site's --accent pair, chosen
+    // because Crivo's own selection page is blue and Watchr already has blue.
+    accent: { light: '#6a3fc0', dark: '#a78bfa' },
+  },
 ];
