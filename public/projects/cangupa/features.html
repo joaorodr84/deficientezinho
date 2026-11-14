@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. "light"/"dark"
@@ -14,24 +14,96 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howToPlay": "How to play",
+    "nav.features": "Features",
+    "nav.levels": "Levels",
+    "eyebrow": "Features",
+    "heading": "What the app does today",
+    "item1.title": "500 levels in ten packs",
+    "item1.body": "Boards grow from 3×3 to 8×7, and each pack brings in a new kind of tile or mixes the earlier ones.",
+    "item2.title": "Every level can be solved",
+    "item2.body": "Levels are generated as the trail of a walk of legal moves, so a solution always exists. Many candidates are tried for each level and the one with the fewest solutions is kept.",
+    "item3.title": "Hints from a real solver",
+    "item3.body": "A hint is the solver's next move from where you stand, so it always still leads to a win.",
+    "item4.title": "Undo and restart",
+    "item4.body": "Step back one move at a time, or reset the level, as often as you like.",
+    "item5.title": "Stats",
+    "item5.body": "Levels cleared, total moves, hints and undos used, time played and your longest streak, with a breakdown per pack.",
+    "item6.title": "Twelve achievements",
+    "item6.body": "For clearing levels and packs, for clean clears without a hint or an undo, for streaks of them, and for moves made.",
+    "item7.title": "English and Portuguese",
+    "item7.body": "Pick a language, or follow the device's own.",
+    "item8.title": "Light and dark themes",
+    "item8.body": "Choose in Settings. Try it with the switch in the top right of this page.",
+    "item9.title": "Your way to move",
+    "item9.body": "Tap a tile, or turn on a directional pad under the board. Possible moves can be highlighted, and animations and sound can be switched off.",
+    "item10.title": "Screen reader support",
+    "item10.body": "Every tile on the board is described: its kind, its position and how many visits it has left.",
+    "footer.howToPlay": "How to play",
+    "footer.features": "Features",
+    "footer.levels": "Levels"
+  },
+  "pt-PT": {
+    "nav.howToPlay": "Como jogar",
+    "nav.features": "Funcionalidades",
+    "nav.levels": "Níveis",
+    "eyebrow": "Funcionalidades",
+    "heading": "O que a aplicação já faz",
+    "item1.title": "500 níveis em dez conjuntos",
+    "item1.body": "Os tabuleiros crescem de 3×3 até 8×7, e cada conjunto introduz um novo tipo de peça ou combina os anteriores.",
+    "item2.title": "Todos os níveis têm solução",
+    "item2.body": "Os níveis são gerados como o rasto de um percurso de jogadas válidas, por isso existe sempre uma solução. Vários candidatos são testados para cada nível, e fica o que tem menos soluções.",
+    "item3.title": "Dicas de um solucionador real",
+    "item3.body": "Uma dica é a próxima jogada do solucionador a partir de onde estás, por isso continua sempre a levar a uma vitória.",
+    "item4.title": "Anular e reiniciar",
+    "item4.body": "Recua uma jogada de cada vez, ou reinicia o nível, tantas vezes quantas quiseres.",
+    "item5.title": "Estatísticas",
+    "item5.body": "Níveis completados, total de jogadas, dicas e anulações usadas, tempo jogado e a tua sequência mais longa, com uma repartição por conjunto.",
+    "item6.title": "Doze conquistas",
+    "item6.body": "Por completar níveis e conjuntos, por conclusões limpas sem dica nem anulação, por sequências delas, e por jogadas feitas.",
+    "item7.title": "Inglês e português",
+    "item7.body": "Escolhe um idioma, ou segue o do dispositivo.",
+    "item8.title": "Temas claro e escuro",
+    "item8.body": "Escolhe em Definições. Experimenta com o botão no canto superior direito desta página.",
+    "item9.title": "A tua forma de jogar",
+    "item9.body": "Toca numa peça, ou ativa um teclado direcional sob o tabuleiro. As jogadas possíveis podem ser destacadas, e as animações e o som podem ser desligados.",
+    "item10.title": "Suporte para leitor de ecrã",
+    "item10.body": "Cada peça do tabuleiro é descrita: o seu tipo, a sua posição e quantas visitas ainda lhe faltam.",
+    "footer.howToPlay": "Como jogar",
+    "footer.features": "Funcionalidades",
+    "footer.levels": "Níveis"
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
 <title>Cangupa — Features</title>
@@ -161,10 +233,11 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the
+     top-right corner. Below this width the centred .wrap reaches under
+     it, so the nav keeps clear of it; without this the toolbar covers
+     the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
 
   .explore-grid{display:grid;gap:14px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -217,13 +290,18 @@
   .card-grid p{margin:0;color:var(--muted);font-size:0.92rem}
 
   /* A working light/dark/system toggle, driving the html[data-theme]
-     attribute the tokens above key off. Fixed so it's reachable at any
-     scroll position, since its effect is page-wide. */
-  .theme-toggle{
+     attribute the tokens above key off. The language switcher sits
+     beside it in a shared fixed .site-toolbar, so it's reachable at any
+     scroll position, since both toggles' effects are page-wide. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -242,7 +320,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -252,29 +345,29 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cangupa"><defs><mask id="roo-nav" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240"><rect x="5" y="5" width="110" height="110" rx="20" fill="#fff"/><g transform="translate(10,10)" fill="#000"><path d="M34 78 C26 60 34 40 50 36 C62 34 68 46 66 60 C64 72 56 82 44 84 Z"/><path d="M50 38 C48 26 56 18 66 20 C75 21 84.5 29 84.5 36 C84.5 42 76 44 70 42 C62 46 54 46 50 38 Z"/><ellipse cx="59" cy="13" rx="5.5" ry="12" transform="rotate(-2 59 13)"/><path d="M32 66 C26 78 34 90 44 88 C56 86 60 78 54 72 C48 66 38 62 32 66 Z"/><path d="M40 88 L74 90 C80 90 80 96 74 96 L36 96 C32 96 32 90 40 88 Z"/></g></mask></defs><rect x="5" y="5" width="110" height="110" rx="20" fill="#29C5D6" mask="url(#roo-nav)"/><rect x="125" y="5" width="110" height="110" rx="20" fill="#F2B544"/><rect x="5" y="125" width="110" height="110" rx="20" fill="#29C5D6"/><rect x="125" y="125" width="110" height="110" rx="20" fill="#29C5D6"/></svg>Cangupa</a>
     <div class="site-nav-links">
-      <a href="how-to-play.html">How to play</a>
-      <a href="features.html" class="current">Features</a>
-      <a href="levels.html">Levels</a>
+      <a href="how-to-play.html" data-i18n="nav.howToPlay">How to play</a>
+      <a href="features.html" class="current" data-i18n="nav.features">Features</a>
+      <a href="levels.html" data-i18n="nav.levels">Levels</a>
     </div>
   </div>
 </nav>
 <section id="features">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Features</span>
-      <h2>What the app does today</h2>
+      <span class="eyebrow" data-i18n="eyebrow">Features</span>
+      <h2 data-i18n="heading">What the app does today</h2>
     </div>
     <ul class="feature-list">
-      <li><b>500 levels in ten packs</b><span>Boards grow from 3×3 to 8×7, and each pack brings in a new kind of tile or mixes the earlier ones.</span></li>
-      <li><b>Every level can be solved</b><span>Levels are generated as the trail of a walk of legal moves, so a solution always exists. Many candidates are tried for each level and the one with the fewest solutions is kept.</span></li>
-      <li><b>Hints from a real solver</b><span>A hint is the solver's next move from where you stand, so it always still leads to a win.</span></li>
-      <li><b>Undo and restart</b><span>Step back one move at a time, or reset the level, as often as you like.</span></li>
-      <li><b>Stats</b><span>Levels cleared, total moves, hints and undos used, time played and your longest streak, with a breakdown per pack.</span></li>
-      <li><b>Twelve achievements</b><span>For clearing levels and packs, for clean clears without a hint or an undo, for streaks of them, and for moves made.</span></li>
-      <li><b>English and Portuguese</b><span>Pick a language, or follow the device's own.</span></li>
-      <li><b>Light and dark themes</b><span>Choose in Settings. Try it with the switch in the top right of this page.</span></li>
-      <li><b>Your way to move</b><span>Tap a tile, or turn on a directional pad under the board. Possible moves can be highlighted, and animations and sound can be switched off.</span></li>
-      <li><b>Screen reader support</b><span>Every tile on the board is described: its kind, its position and how many visits it has left.</span></li>
+      <li><b data-i18n="item1.title">500 levels in ten packs</b><span data-i18n="item1.body">Boards grow from 3×3 to 8×7, and each pack brings in a new kind of tile or mixes the earlier ones.</span></li>
+      <li><b data-i18n="item2.title">Every level can be solved</b><span data-i18n="item2.body">Levels are generated as the trail of a walk of legal moves, so a solution always exists. Many candidates are tried for each level and the one with the fewest solutions is kept.</span></li>
+      <li><b data-i18n="item3.title">Hints from a real solver</b><span data-i18n="item3.body">A hint is the solver's next move from where you stand, so it always still leads to a win.</span></li>
+      <li><b data-i18n="item4.title">Undo and restart</b><span data-i18n="item4.body">Step back one move at a time, or reset the level, as often as you like.</span></li>
+      <li><b data-i18n="item5.title">Stats</b><span data-i18n="item5.body">Levels cleared, total moves, hints and undos used, time played and your longest streak, with a breakdown per pack.</span></li>
+      <li><b data-i18n="item6.title">Twelve achievements</b><span data-i18n="item6.body">For clearing levels and packs, for clean clears without a hint or an undo, for streaks of them, and for moves made.</span></li>
+      <li><b data-i18n="item7.title">English and Portuguese</b><span data-i18n="item7.body">Pick a language, or follow the device's own.</span></li>
+      <li><b data-i18n="item8.title">Light and dark themes</b><span data-i18n="item8.body">Choose in Settings. Try it with the switch in the top right of this page.</span></li>
+      <li><b data-i18n="item9.title">Your way to move</b><span data-i18n="item9.body">Tap a tile, or turn on a directional pad under the board. Possible moves can be highlighted, and animations and sound can be switched off.</span></li>
+      <li><b data-i18n="item10.title">Screen reader support</b><span data-i18n="item10.body">Every tile on the board is described: its kind, its position and how many visits it has left.</span></li>
     </ul>
   </div>
 </section>
@@ -284,9 +377,9 @@
     <svg class="footer-icon" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cangupa"><defs><mask id="roo-footer" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240"><rect x="5" y="5" width="110" height="110" rx="20" fill="#fff"/><g transform="translate(10,10)" fill="#000"><path d="M34 78 C26 60 34 40 50 36 C62 34 68 46 66 60 C64 72 56 82 44 84 Z"/><path d="M50 38 C48 26 56 18 66 20 C75 21 84.5 29 84.5 36 C84.5 42 76 44 70 42 C62 46 54 46 50 38 Z"/><ellipse cx="59" cy="13" rx="5.5" ry="12" transform="rotate(-2 59 13)"/><path d="M32 66 C26 78 34 90 44 88 C56 86 60 78 54 72 C48 66 38 62 32 66 Z"/><path d="M40 88 L74 90 C80 90 80 96 74 96 L36 96 C32 96 32 90 40 88 Z"/></g></mask></defs><rect x="5" y="5" width="110" height="110" rx="20" fill="#29C5D6" mask="url(#roo-footer)"/><rect x="125" y="5" width="110" height="110" rx="20" fill="#F2B544"/><rect x="5" y="125" width="110" height="110" rx="20" fill="#29C5D6"/><rect x="125" y="125" width="110" height="110" rx="20" fill="#29C5D6"/></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Cangupa</a>
-      <a href="how-to-play.html">How to play</a>
-      <a href="features.html">Features</a>
-      <a href="levels.html">Levels</a>
+      <a href="how-to-play.html" data-i18n="footer.howToPlay">How to play</a>
+      <a href="features.html" data-i18n="footer.features">Features</a>
+      <a href="levels.html" data-i18n="footer.levels">Levels</a>
 
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
@@ -330,5 +423,49 @@
 })();
 </script>
 
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    document.querySelectorAll('[data-i18n-attr-aria-label], [data-i18n-attr-title]').forEach(function (el) {
+      ['aria-label', 'title', 'alt', 'placeholder'].forEach(function (attr) {
+        var key = el.getAttribute('data-i18n-attr-' + attr);
+        if (key && strings[key] != null) el.setAttribute(attr, strings[key]);
+      });
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
+})();
+</script>
 
 </body></html>

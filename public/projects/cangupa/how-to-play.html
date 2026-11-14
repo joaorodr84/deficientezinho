@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. "light"/"dark"
@@ -14,24 +14,126 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howToPlay": "How to play",
+    "nav.features": "Features",
+    "nav.levels": "Levels",
+    "rules.eyebrow": "How to play",
+    "rules.heading": "Step on every tile to clear the level",
+    "rules.lede": "You start on the tile marked with the kangaroo. Tap a highlighted tile to move there.",
+    "rule1.title": "Step",
+    "rule1.body": "Move one tile up, down, left or right.",
+    "rule2.title": "Jump",
+    "rule2.body": "Move two tiles in a straight line, over a gap or over another tile. The tile you jump over is left untouched.",
+    "rule3.title": "Tiles drop away",
+    "rule3.body": "You can only land on a tile that still has visits left. A tile disappears as soon as you leave it for the last time.",
+    "rule4.title": "Dead end?",
+    "rule4.body": "If no move is left, undo a few moves or restart the level.",
+    "tiles.eyebrow": "Tiles",
+    "tiles.heading": "Five kinds of tile",
+    "tiles.lede": "Each pack of levels introduces a kind of tile or combines the ones you already know.",
+    "tile1.title": "Common tiles",
+    "tile1.body": "One visit, then gone.",
+    "tile2.title": "Gold tiles",
+    "tile2.body": "Need two visits. The strokes on a tile show how many visits it has left.",
+    "tile3.title": "Steel tiles",
+    "tile3.body": "Need three visits.",
+    "tile4.title": "Departure tiles",
+    "tile4.body": "Can only be left through the edge the bracket opens on.",
+    "tile5.title": "Arrival tiles",
+    "tile5.body": "Can only be entered through the edge the bracket opens on.",
+    "buttons.eyebrow": "Buttons",
+    "buttons.heading": "Under the board",
+    "btn1.title": "Hint",
+    "btn1.body": "Highlights the solver's suggested next move. Each save starts with three hints.",
+    "btn2.title": "Undo",
+    "btn2.body": "Takes back your last move.",
+    "btn3.title": "Restart",
+    "btn3.body": "Resets the level to its starting position.",
+    "btn4.title": "Help",
+    "btn4.body": "Opens the rules in a popup without leaving the level.",
+    "origin.eyebrow": "Where it comes from",
+    "origin.heading": "Inspired by WESP",
+    "origin.lede": "WESP (<i>Weltraumspringen</i>, \"space jumping\") is a DOS game with the same idea at its heart: hop across a field of tiles and use every one. Cangupa began as a plain HTML and JavaScript take on it and grew its own tiles, level packs and kangaroo from there.",
+    "footer.howToPlay": "How to play",
+    "footer.features": "Features",
+    "footer.levels": "Levels"
+  },
+  "pt-PT": {
+    "nav.howToPlay": "Como jogar",
+    "nav.features": "Funcionalidades",
+    "nav.levels": "Níveis",
+    "rules.eyebrow": "Como jogar",
+    "rules.heading": "Pisa todas as peças para completar o nível",
+    "rules.lede": "Começas na peça marcada com o canguru. Toca numa peça destacada para te mover até lá.",
+    "rule1.title": "Avançar",
+    "rule1.body": "Move-te uma peça para cima, baixo, esquerda ou direita.",
+    "rule2.title": "Saltar",
+    "rule2.body": "Move-te duas peças em linha reta, sobre um espaço vazio ou sobre outra peça. A peça sobre a qual saltas fica intacta.",
+    "rule3.title": "As peças desaparecem",
+    "rule3.body": "Só podes pousar numa peça que ainda tenha visitas disponíveis. Uma peça desaparece assim que a deixas pela última vez.",
+    "rule4.title": "Beco sem saída?",
+    "rule4.body": "Se não houver jogadas possíveis, anula algumas jogadas ou reinicia o nível.",
+    "tiles.eyebrow": "Peças",
+    "tiles.heading": "Cinco tipos de peça",
+    "tiles.lede": "Cada conjunto de níveis introduz um tipo de peça ou combina os que já conheces.",
+    "tile1.title": "Peças comuns",
+    "tile1.body": "Uma visita, e desaparecem.",
+    "tile2.title": "Peças de ouro",
+    "tile2.body": "Precisam de duas visitas. Os traços na peça mostram quantas visitas lhe faltam.",
+    "tile3.title": "Peças de aço",
+    "tile3.body": "Precisam de três visitas.",
+    "tile4.title": "Peças de partida",
+    "tile4.body": "Só podem ser deixadas pelo lado onde o parêntesis abre.",
+    "tile5.title": "Peças de chegada",
+    "tile5.body": "Só podem ser alcançadas pelo lado onde o parêntesis abre.",
+    "buttons.eyebrow": "Botões",
+    "buttons.heading": "Sob o tabuleiro",
+    "btn1.title": "Dica",
+    "btn1.body": "Destaca a jogada seguinte sugerida pelo solucionador. Cada jogo guardado começa com três dicas.",
+    "btn2.title": "Anular",
+    "btn2.body": "Desfaz a tua última jogada.",
+    "btn3.title": "Reiniciar",
+    "btn3.body": "Repõe o nível na sua posição inicial.",
+    "btn4.title": "Ajuda",
+    "btn4.body": "Abre as regras numa janela sem saíres do nível.",
+    "origin.eyebrow": "De onde vem",
+    "origin.heading": "Inspirado em WESP",
+    "origin.lede": "O WESP (<i>Weltraumspringen</i>, \"saltar no espaço\") é um jogo de DOS com a mesma ideia no centro: salta por um campo de peças e usa-as todas. O Cangupa começou como uma versão em HTML e JavaScript simples dessa ideia, e a partir daí ganhou as suas próprias peças, conjuntos de níveis e canguru.",
+    "footer.howToPlay": "Como jogar",
+    "footer.features": "Funcionalidades",
+    "footer.levels": "Níveis"
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
 <title>Cangupa — How to play</title>
@@ -161,10 +263,11 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the
+     top-right corner. Below this width the centred .wrap reaches under
+     it, so the nav keeps clear of it; without this the toolbar covers
+     the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
 
   .explore-grid{display:grid;gap:14px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -217,13 +320,18 @@
   .card-grid p{margin:0;color:var(--muted);font-size:0.92rem}
 
   /* A working light/dark/system toggle, driving the html[data-theme]
-     attribute the tokens above key off. Fixed so it's reachable at any
-     scroll position, since its effect is page-wide. */
-  .theme-toggle{
+     attribute the tokens above key off. The language switcher sits
+     beside it in a shared fixed .site-toolbar, so it's reachable at any
+     scroll position, since both toggles' effects are page-wide. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -242,7 +350,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -252,24 +375,24 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cangupa"><defs><mask id="roo-nav" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240"><rect x="5" y="5" width="110" height="110" rx="20" fill="#fff"/><g transform="translate(10,10)" fill="#000"><path d="M34 78 C26 60 34 40 50 36 C62 34 68 46 66 60 C64 72 56 82 44 84 Z"/><path d="M50 38 C48 26 56 18 66 20 C75 21 84.5 29 84.5 36 C84.5 42 76 44 70 42 C62 46 54 46 50 38 Z"/><ellipse cx="59" cy="13" rx="5.5" ry="12" transform="rotate(-2 59 13)"/><path d="M32 66 C26 78 34 90 44 88 C56 86 60 78 54 72 C48 66 38 62 32 66 Z"/><path d="M40 88 L74 90 C80 90 80 96 74 96 L36 96 C32 96 32 90 40 88 Z"/></g></mask></defs><rect x="5" y="5" width="110" height="110" rx="20" fill="#29C5D6" mask="url(#roo-nav)"/><rect x="125" y="5" width="110" height="110" rx="20" fill="#F2B544"/><rect x="5" y="125" width="110" height="110" rx="20" fill="#29C5D6"/><rect x="125" y="125" width="110" height="110" rx="20" fill="#29C5D6"/></svg>Cangupa</a>
     <div class="site-nav-links">
-      <a href="how-to-play.html" class="current">How to play</a>
-      <a href="features.html">Features</a>
-      <a href="levels.html">Levels</a>
+      <a href="how-to-play.html" class="current" data-i18n="nav.howToPlay">How to play</a>
+      <a href="features.html" data-i18n="nav.features">Features</a>
+      <a href="levels.html" data-i18n="nav.levels">Levels</a>
     </div>
   </div>
 </nav>
 <section id="rules">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">How to play</span>
-      <h2>Step on every tile to clear the level</h2>
-      <p class="lede">You start on the tile marked with the kangaroo. Tap a highlighted tile to move there.</p>
+      <span class="eyebrow" data-i18n="rules.eyebrow">How to play</span>
+      <h2 data-i18n="rules.heading">Step on every tile to clear the level</h2>
+      <p class="lede" data-i18n="rules.lede">You start on the tile marked with the kangaroo. Tap a highlighted tile to move there.</p>
     </div>
     <ul class="feature-list">
-      <li class="with-art"><span class="num">1</span><b>Step</b><span>Move one tile up, down, left or right.</span></li>
-      <li class="with-art"><span class="num">2</span><b>Jump</b><span>Move two tiles in a straight line, over a gap or over another tile. The tile you jump over is left untouched.</span></li>
-      <li class="with-art"><span class="num">3</span><b>Tiles drop away</b><span>You can only land on a tile that still has visits left. A tile disappears as soon as you leave it for the last time.</span></li>
-      <li class="with-art"><span class="num">4</span><b>Dead end?</b><span>If no move is left, undo a few moves or restart the level.</span></li>
+      <li class="with-art"><span class="num">1</span><b data-i18n="rule1.title">Step</b><span data-i18n="rule1.body">Move one tile up, down, left or right.</span></li>
+      <li class="with-art"><span class="num">2</span><b data-i18n="rule2.title">Jump</b><span data-i18n="rule2.body">Move two tiles in a straight line, over a gap or over another tile. The tile you jump over is left untouched.</span></li>
+      <li class="with-art"><span class="num">3</span><b data-i18n="rule3.title">Tiles drop away</b><span data-i18n="rule3.body">You can only land on a tile that still has visits left. A tile disappears as soon as you leave it for the last time.</span></li>
+      <li class="with-art"><span class="num">4</span><b data-i18n="rule4.title">Dead end?</b><span data-i18n="rule4.body">If no move is left, undo a few moves or restart the level.</span></li>
     </ul>
   </div>
 </section>
@@ -277,16 +400,16 @@
 <section id="tiles">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Tiles</span>
-      <h2>Five kinds of tile</h2>
-      <p class="lede">Each pack of levels introduces a kind of tile or combines the ones you already know.</p>
+      <span class="eyebrow" data-i18n="tiles.eyebrow">Tiles</span>
+      <h2 data-i18n="tiles.heading">Five kinds of tile</h2>
+      <p class="lede" data-i18n="tiles.lede">Each pack of levels introduces a kind of tile or combines the ones you already know.</p>
     </div>
     <ul class="feature-list">
-      <li class="with-art"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="7" width="38" height="34" rx="8" fill="#1f7a99"/><rect x="3" y="3" width="38" height="34" rx="8" fill="#4cc9f0"/></svg><b>Common tiles</b><span>One visit, then gone.</span></li>
-      <li class="with-art"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="7" width="38" height="34" rx="8" fill="#a8741a"/><rect x="3" y="3" width="38" height="34" rx="8" fill="#ffc857"/><path d="M18 13v14" stroke="#3b2a06" stroke-width="3" stroke-linecap="round"/><path d="M26 13v14" stroke="#3b2a06" stroke-width="3" stroke-linecap="round"/></svg><b>Gold tiles</b><span>Need two visits. The strokes on a tile show how many visits it has left.</span></li>
-      <li class="with-art"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="7" width="38" height="34" rx="8" fill="#3c5162"/><rect x="3" y="3" width="38" height="34" rx="8" fill="#587790"/><path d="M14 13v14" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/><path d="M22 13v14" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/><path d="M30 13v14" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/></svg><b>Steel tiles</b><span>Need three visits.</span></li>
-      <li class="with-art"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="7" width="38" height="34" rx="8" fill="#7cd48f"/><rect x="3" y="3" width="38" height="34" rx="8" fill="#2f9e44"/><path d="M30 11H14v18h16" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Departure tiles</b><span>Can only be left through the edge the bracket opens on.</span></li>
-      <li class="with-art"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="7" width="38" height="34" rx="8" fill="#ba5889"/><rect x="3" y="3" width="38" height="34" rx="8" fill="#9d1057"/><path d="M14 11h16v18H14" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Arrival tiles</b><span>Can only be entered through the edge the bracket opens on.</span></li>
+      <li class="with-art"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="7" width="38" height="34" rx="8" fill="#1f7a99"/><rect x="3" y="3" width="38" height="34" rx="8" fill="#4cc9f0"/></svg><b data-i18n="tile1.title">Common tiles</b><span data-i18n="tile1.body">One visit, then gone.</span></li>
+      <li class="with-art"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="7" width="38" height="34" rx="8" fill="#a8741a"/><rect x="3" y="3" width="38" height="34" rx="8" fill="#ffc857"/><path d="M18 13v14" stroke="#3b2a06" stroke-width="3" stroke-linecap="round"/><path d="M26 13v14" stroke="#3b2a06" stroke-width="3" stroke-linecap="round"/></svg><b data-i18n="tile2.title">Gold tiles</b><span data-i18n="tile2.body">Need two visits. The strokes on a tile show how many visits it has left.</span></li>
+      <li class="with-art"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="7" width="38" height="34" rx="8" fill="#3c5162"/><rect x="3" y="3" width="38" height="34" rx="8" fill="#587790"/><path d="M14 13v14" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/><path d="M22 13v14" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/><path d="M30 13v14" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/></svg><b data-i18n="tile3.title">Steel tiles</b><span data-i18n="tile3.body">Need three visits.</span></li>
+      <li class="with-art"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="7" width="38" height="34" rx="8" fill="#7cd48f"/><rect x="3" y="3" width="38" height="34" rx="8" fill="#2f9e44"/><path d="M30 11H14v18h16" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><b data-i18n="tile4.title">Departure tiles</b><span data-i18n="tile4.body">Can only be left through the edge the bracket opens on.</span></li>
+      <li class="with-art"><svg viewBox="0 0 44 44" aria-hidden="true"><rect x="3" y="7" width="38" height="34" rx="8" fill="#ba5889"/><rect x="3" y="3" width="38" height="34" rx="8" fill="#9d1057"/><path d="M14 11h16v18H14" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><b data-i18n="tile5.title">Arrival tiles</b><span data-i18n="tile5.body">Can only be entered through the edge the bracket opens on.</span></li>
     </ul>
   </div>
 </section>
@@ -294,14 +417,14 @@
 <section id="buttons">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Buttons</span>
-      <h2>Under the board</h2>
+      <span class="eyebrow" data-i18n="buttons.eyebrow">Buttons</span>
+      <h2 data-i18n="buttons.heading">Under the board</h2>
     </div>
     <ul class="feature-list">
-      <li><b>Hint</b><span>Highlights the solver's suggested next move. Each save starts with three hints.</span></li>
-      <li><b>Undo</b><span>Takes back your last move.</span></li>
-      <li><b>Restart</b><span>Resets the level to its starting position.</span></li>
-      <li><b>Help</b><span>Opens the rules in a popup without leaving the level.</span></li>
+      <li><b data-i18n="btn1.title">Hint</b><span data-i18n="btn1.body">Highlights the solver's suggested next move. Each save starts with three hints.</span></li>
+      <li><b data-i18n="btn2.title">Undo</b><span data-i18n="btn2.body">Takes back your last move.</span></li>
+      <li><b data-i18n="btn3.title">Restart</b><span data-i18n="btn3.body">Resets the level to its starting position.</span></li>
+      <li><b data-i18n="btn4.title">Help</b><span data-i18n="btn4.body">Opens the rules in a popup without leaving the level.</span></li>
     </ul>
   </div>
 </section>
@@ -309,9 +432,9 @@
 <section id="origin">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Where it comes from</span>
-      <h2>Inspired by WESP</h2>
-      <p class="lede">WESP (<i>Weltraumspringen</i>, "space jumping") is a DOS game with the same idea at its heart: hop across a field of tiles and use every one. Cangupa began as a plain HTML and JavaScript take on it and grew its own tiles, level packs and kangaroo from there.</p>
+      <span class="eyebrow" data-i18n="origin.eyebrow">Where it comes from</span>
+      <h2 data-i18n="origin.heading">Inspired by WESP</h2>
+      <p class="lede" data-i18n="origin.lede">WESP (<i>Weltraumspringen</i>, "space jumping") is a DOS game with the same idea at its heart: hop across a field of tiles and use every one. Cangupa began as a plain HTML and JavaScript take on it and grew its own tiles, level packs and kangaroo from there.</p>
     </div>
   </div>
 </section>
@@ -321,9 +444,9 @@
     <svg class="footer-icon" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cangupa"><defs><mask id="roo-footer" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240"><rect x="5" y="5" width="110" height="110" rx="20" fill="#fff"/><g transform="translate(10,10)" fill="#000"><path d="M34 78 C26 60 34 40 50 36 C62 34 68 46 66 60 C64 72 56 82 44 84 Z"/><path d="M50 38 C48 26 56 18 66 20 C75 21 84.5 29 84.5 36 C84.5 42 76 44 70 42 C62 46 54 46 50 38 Z"/><ellipse cx="59" cy="13" rx="5.5" ry="12" transform="rotate(-2 59 13)"/><path d="M32 66 C26 78 34 90 44 88 C56 86 60 78 54 72 C48 66 38 62 32 66 Z"/><path d="M40 88 L74 90 C80 90 80 96 74 96 L36 96 C32 96 32 90 40 88 Z"/></g></mask></defs><rect x="5" y="5" width="110" height="110" rx="20" fill="#29C5D6" mask="url(#roo-footer)"/><rect x="125" y="5" width="110" height="110" rx="20" fill="#F2B544"/><rect x="5" y="125" width="110" height="110" rx="20" fill="#29C5D6"/><rect x="125" y="125" width="110" height="110" rx="20" fill="#29C5D6"/></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Cangupa</a>
-      <a href="how-to-play.html">How to play</a>
-      <a href="features.html">Features</a>
-      <a href="levels.html">Levels</a>
+      <a href="how-to-play.html" data-i18n="footer.howToPlay">How to play</a>
+      <a href="features.html" data-i18n="footer.features">Features</a>
+      <a href="levels.html" data-i18n="footer.levels">Levels</a>
 
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
@@ -367,5 +490,49 @@
 })();
 </script>
 
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    document.querySelectorAll('[data-i18n-attr-aria-label], [data-i18n-attr-title]').forEach(function (el) {
+      ['aria-label', 'title', 'alt', 'placeholder'].forEach(function (attr) {
+        var key = el.getAttribute('data-i18n-attr-' + attr);
+        if (key && strings[key] != null) el.setAttribute(attr, strings[key]);
+      });
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
+})();
+</script>
 
 </body></html>

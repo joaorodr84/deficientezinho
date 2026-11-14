@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. "light"/"dark"
@@ -14,24 +14,118 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howToPlay": "How to play",
+    "nav.features": "Features",
+    "nav.levels": "Levels",
+    "levels.eyebrow": "Levels",
+    "levels.heading": "Ten packs, 50 levels each",
+    "levels.lede": "The packs form one collection, <b>Lay of the Land</b>. Each is named after a piece of country and played on a slightly bigger board than the one before.",
+    "pack1.meta": "Pack 1 &middot; 3&times;3 &middot; Common tiles",
+    "pack1.name": "Meadow",
+    "pack1.body": "Open grass everywhere underfoot. Walk the whole meadow without leaving a blade untouched.",
+    "pack2.meta": "Pack 2 &middot; 4&times;3 &middot; Adds gold tiles",
+    "pack2.name": "Creek",
+    "pack2.body": "A streambed of golden stones, slick till you've stood on them twice, and one washed clean through.",
+    "pack3.meta": "Pack 3 &middot; 4&times;4 &middot; Adds steel tiles",
+    "pack3.name": "Gully",
+    "pack3.body": "Steel grey scree that only lets go after three footfalls.",
+    "pack4.meta": "Pack 4 &middot; 5&times;4 &middot; Gold and steel",
+    "pack4.name": "Outcrop",
+    "pack4.body": "Weathered rock, part gold veined, part steel grey, exposed side by side.",
+    "pack5.meta": "Pack 5 &middot; 5&times;5 &middot; Adds departure tiles",
+    "pack5.name": "Billabong",
+    "pack5.body": "Still water that only drains one way, however it pooled in.",
+    "pack6.meta": "Pack 6 &middot; 6&times;5 &middot; Gold, steel and departure",
+    "pack6.name": "Ridge",
+    "pack6.body": "A spine of rock that turns from gold to steel grey as you walk it, always leading on in a single direction.",
+    "pack7.meta": "Pack 7 &middot; 6&times;6 &middot; Adds arrival tiles",
+    "pack7.name": "Mesa",
+    "pack7.body": "Sheer on every side but one; the only way up is the one true face.",
+    "pack8.meta": "Pack 8 &middot; 7&times;6 &middot; Gold, steel and arrival",
+    "pack8.name": "Gorge",
+    "pack8.body": "Narrow walls shifting from gold to steel grey as you descend, with just one way through at each turn.",
+    "pack9.meta": "Pack 9 &middot; 7&times;7 &middot; Gold, steel and arrival",
+    "pack9.name": "Plateau",
+    "pack9.body": "Tableland where gold ground, steel ground and narrow one way crossings all meet.",
+    "pack10.meta": "Pack 10 &middot; 8&times;7 &middot; Every tile kind",
+    "pack10.name": "Outback",
+    "pack10.body": "Wild country holding a bit of everything the game has crossed, together at last, on its widest stretch.",
+    "footer.howToPlay": "How to play",
+    "footer.features": "Features",
+    "footer.levels": "Levels"
+  },
+  "pt-PT": {
+    "nav.howToPlay": "Como jogar",
+    "nav.features": "Funcionalidades",
+    "nav.levels": "Níveis",
+    "levels.eyebrow": "Níveis",
+    "levels.heading": "Dez conjuntos, 50 níveis cada",
+    "levels.lede": "Os conjuntos formam uma coleção, <b>Lay of the Land</b>. Cada um tem o nome de uma paisagem e joga-se num tabuleiro ligeiramente maior do que o anterior.",
+    "pack1.meta": "Conjunto 1 &middot; 3&times;3 &middot; Peças comuns",
+    "pack1.name": "Meadow",
+    "pack1.body": "Relva aberta debaixo dos pés, para todo o lado. Percorre o prado todo sem deixar uma única folha intocada.",
+    "pack2.meta": "Conjunto 2 &middot; 4&times;3 &middot; Adiciona peças de ouro",
+    "pack2.name": "Creek",
+    "pack2.body": "Um leito de pedras doiradas, escorregadias até serem pisadas duas vezes, com a água a corrê-las por completo.",
+    "pack3.meta": "Conjunto 3 &middot; 4&times;4 &middot; Adiciona peças de aço",
+    "pack3.name": "Gully",
+    "pack3.body": "Cascalho cinzento-aço que só cede depois de três pisadas.",
+    "pack4.meta": "Conjunto 4 &middot; 5&times;4 &middot; Ouro e aço",
+    "pack4.name": "Outcrop",
+    "pack4.body": "Rocha desgastada pelo tempo, em parte veios de ouro, em parte cinzento-aço, expostos lado a lado.",
+    "pack5.meta": "Conjunto 5 &middot; 5&times;5 &middot; Adiciona peças de partida",
+    "pack5.name": "Billabong",
+    "pack5.body": "Água estagnada que só escoa de um lado, mesmo que se tenha acumulado de outro.",
+    "pack6.meta": "Conjunto 6 &middot; 6&times;5 &middot; Ouro, aço e partida",
+    "pack6.name": "Ridge",
+    "pack6.body": "Uma crista de rocha que passa de ouro a cinzento-aço à medida que a percorres, sempre a seguir numa única direção.",
+    "pack7.meta": "Conjunto 7 &middot; 6&times;6 &middot; Adiciona peças de chegada",
+    "pack7.name": "Mesa",
+    "pack7.body": "Abrupta de todos os lados menos um; o único caminho para cima é essa única face.",
+    "pack8.meta": "Conjunto 8 &middot; 7&times;6 &middot; Ouro, aço e chegada",
+    "pack8.name": "Gorge",
+    "pack8.body": "Paredes estreitas que mudam de ouro a cinzento-aço à medida que desces, com apenas uma passagem possível em cada curva.",
+    "pack9.meta": "Conjunto 9 &middot; 7&times;7 &middot; Ouro, aço e chegada",
+    "pack9.name": "Plateau",
+    "pack9.body": "Planície elevada onde o solo de ouro, o solo de aço e as passagens estreitas de sentido único se encontram.",
+    "pack10.meta": "Conjunto 10 &middot; 8&times;7 &middot; Todos os tipos de peça",
+    "pack10.name": "Outback",
+    "pack10.body": "Terra selvagem com um pouco de tudo o que o jogo já atravessou, finalmente junto, no seu troço mais largo.",
+    "footer.howToPlay": "Como jogar",
+    "footer.features": "Funcionalidades",
+    "footer.levels": "Níveis"
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
 <title>Cangupa — Levels</title>
@@ -161,10 +255,11 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the
+     top-right corner. Below this width the centred .wrap reaches under
+     it, so the nav keeps clear of it; without this the toolbar covers
+     the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
 
   .explore-grid{display:grid;gap:14px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -217,13 +312,18 @@
   .card-grid p{margin:0;color:var(--muted);font-size:0.92rem}
 
   /* A working light/dark/system toggle, driving the html[data-theme]
-     attribute the tokens above key off. Fixed so it's reachable at any
-     scroll position, since its effect is page-wide. */
-  .theme-toggle{
+     attribute the tokens above key off. The language switcher sits
+     beside it in a shared fixed .site-toolbar, so it's reachable at any
+     scroll position, since both toggles' effects are page-wide. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -242,7 +342,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -252,30 +367,30 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cangupa"><defs><mask id="roo-nav" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240"><rect x="5" y="5" width="110" height="110" rx="20" fill="#fff"/><g transform="translate(10,10)" fill="#000"><path d="M34 78 C26 60 34 40 50 36 C62 34 68 46 66 60 C64 72 56 82 44 84 Z"/><path d="M50 38 C48 26 56 18 66 20 C75 21 84.5 29 84.5 36 C84.5 42 76 44 70 42 C62 46 54 46 50 38 Z"/><ellipse cx="59" cy="13" rx="5.5" ry="12" transform="rotate(-2 59 13)"/><path d="M32 66 C26 78 34 90 44 88 C56 86 60 78 54 72 C48 66 38 62 32 66 Z"/><path d="M40 88 L74 90 C80 90 80 96 74 96 L36 96 C32 96 32 90 40 88 Z"/></g></mask></defs><rect x="5" y="5" width="110" height="110" rx="20" fill="#29C5D6" mask="url(#roo-nav)"/><rect x="125" y="5" width="110" height="110" rx="20" fill="#F2B544"/><rect x="5" y="125" width="110" height="110" rx="20" fill="#29C5D6"/><rect x="125" y="125" width="110" height="110" rx="20" fill="#29C5D6"/></svg>Cangupa</a>
     <div class="site-nav-links">
-      <a href="how-to-play.html">How to play</a>
-      <a href="features.html">Features</a>
-      <a href="levels.html" class="current">Levels</a>
+      <a href="how-to-play.html" data-i18n="nav.howToPlay">How to play</a>
+      <a href="features.html" data-i18n="nav.features">Features</a>
+      <a href="levels.html" class="current" data-i18n="nav.levels">Levels</a>
     </div>
   </div>
 </nav>
 <section id="levels">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Levels</span>
-      <h2>Ten packs, 50 levels each</h2>
-      <p class="lede">The packs form one collection, <b>Lay of the Land</b>. Each is named after a piece of country and played on a slightly bigger board than the one before.</p>
+      <span class="eyebrow" data-i18n="levels.eyebrow">Levels</span>
+      <h2 data-i18n="levels.heading">Ten packs, 50 levels each</h2>
+      <p class="lede" data-i18n="levels.lede">The packs form one collection, <b>Lay of the Land</b>. Each is named after a piece of country and played on a slightly bigger board than the one before.</p>
     </div>
     <ul class="card-grid">
-      <li><span class="meta">Pack 1 · 3×3 · Common tiles</span><h3>Meadow</h3><p>Open grass everywhere underfoot. Walk the whole meadow without leaving a blade untouched.</p></li>
-      <li><span class="meta">Pack 2 · 4×3 · Adds gold tiles</span><h3>Creek</h3><p>A streambed of golden stones, slick till you've stood on them twice, and one washed clean through.</p></li>
-      <li><span class="meta">Pack 3 · 4×4 · Adds steel tiles</span><h3>Gully</h3><p>Steel grey scree that only lets go after three footfalls.</p></li>
-      <li><span class="meta">Pack 4 · 5×4 · Gold and steel</span><h3>Outcrop</h3><p>Weathered rock, part gold veined, part steel grey, exposed side by side.</p></li>
-      <li><span class="meta">Pack 5 · 5×5 · Adds departure tiles</span><h3>Billabong</h3><p>Still water that only drains one way, however it pooled in.</p></li>
-      <li><span class="meta">Pack 6 · 6×5 · Gold, steel and departure</span><h3>Ridge</h3><p>A spine of rock that turns from gold to steel grey as you walk it, always leading on in a single direction.</p></li>
-      <li><span class="meta">Pack 7 · 6×6 · Adds arrival tiles</span><h3>Mesa</h3><p>Sheer on every side but one; the only way up is the one true face.</p></li>
-      <li><span class="meta">Pack 8 · 7×6 · Gold, steel and arrival</span><h3>Gorge</h3><p>Narrow walls shifting from gold to steel grey as you descend, with just one way through at each turn.</p></li>
-      <li><span class="meta">Pack 9 · 7×7 · Gold, steel and arrival</span><h3>Plateau</h3><p>Tableland where gold ground, steel ground and narrow one way crossings all meet.</p></li>
-      <li><span class="meta">Pack 10 · 8×7 · Every tile kind</span><h3>Outback</h3><p>Wild country holding a bit of everything the game has crossed, together at last, on its widest stretch.</p></li>
+      <li><span class="meta" data-i18n="pack1.meta">Pack 1 &middot; 3&times;3 &middot; Common tiles</span><h3 data-i18n="pack1.name">Meadow</h3><p data-i18n="pack1.body">Open grass everywhere underfoot. Walk the whole meadow without leaving a blade untouched.</p></li>
+      <li><span class="meta" data-i18n="pack2.meta">Pack 2 &middot; 4&times;3 &middot; Adds gold tiles</span><h3 data-i18n="pack2.name">Creek</h3><p data-i18n="pack2.body">A streambed of golden stones, slick till you've stood on them twice, and one washed clean through.</p></li>
+      <li><span class="meta" data-i18n="pack3.meta">Pack 3 &middot; 4&times;4 &middot; Adds steel tiles</span><h3 data-i18n="pack3.name">Gully</h3><p data-i18n="pack3.body">Steel grey scree that only lets go after three footfalls.</p></li>
+      <li><span class="meta" data-i18n="pack4.meta">Pack 4 &middot; 5&times;4 &middot; Gold and steel</span><h3 data-i18n="pack4.name">Outcrop</h3><p data-i18n="pack4.body">Weathered rock, part gold veined, part steel grey, exposed side by side.</p></li>
+      <li><span class="meta" data-i18n="pack5.meta">Pack 5 &middot; 5&times;5 &middot; Adds departure tiles</span><h3 data-i18n="pack5.name">Billabong</h3><p data-i18n="pack5.body">Still water that only drains one way, however it pooled in.</p></li>
+      <li><span class="meta" data-i18n="pack6.meta">Pack 6 &middot; 6&times;5 &middot; Gold, steel and departure</span><h3 data-i18n="pack6.name">Ridge</h3><p data-i18n="pack6.body">A spine of rock that turns from gold to steel grey as you walk it, always leading on in a single direction.</p></li>
+      <li><span class="meta" data-i18n="pack7.meta">Pack 7 &middot; 6&times;6 &middot; Adds arrival tiles</span><h3 data-i18n="pack7.name">Mesa</h3><p data-i18n="pack7.body">Sheer on every side but one; the only way up is the one true face.</p></li>
+      <li><span class="meta" data-i18n="pack8.meta">Pack 8 &middot; 7&times;6 &middot; Gold, steel and arrival</span><h3 data-i18n="pack8.name">Gorge</h3><p data-i18n="pack8.body">Narrow walls shifting from gold to steel grey as you descend, with just one way through at each turn.</p></li>
+      <li><span class="meta" data-i18n="pack9.meta">Pack 9 &middot; 7&times;7 &middot; Gold, steel and arrival</span><h3 data-i18n="pack9.name">Plateau</h3><p data-i18n="pack9.body">Tableland where gold ground, steel ground and narrow one way crossings all meet.</p></li>
+      <li><span class="meta" data-i18n="pack10.meta">Pack 10 &middot; 8&times;7 &middot; Every tile kind</span><h3 data-i18n="pack10.name">Outback</h3><p data-i18n="pack10.body">Wild country holding a bit of everything the game has crossed, together at last, on its widest stretch.</p></li>
     </ul>
   </div>
 </section>
@@ -285,9 +400,9 @@
     <svg class="footer-icon" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cangupa"><defs><mask id="roo-footer" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240"><rect x="5" y="5" width="110" height="110" rx="20" fill="#fff"/><g transform="translate(10,10)" fill="#000"><path d="M34 78 C26 60 34 40 50 36 C62 34 68 46 66 60 C64 72 56 82 44 84 Z"/><path d="M50 38 C48 26 56 18 66 20 C75 21 84.5 29 84.5 36 C84.5 42 76 44 70 42 C62 46 54 46 50 38 Z"/><ellipse cx="59" cy="13" rx="5.5" ry="12" transform="rotate(-2 59 13)"/><path d="M32 66 C26 78 34 90 44 88 C56 86 60 78 54 72 C48 66 38 62 32 66 Z"/><path d="M40 88 L74 90 C80 90 80 96 74 96 L36 96 C32 96 32 90 40 88 Z"/></g></mask></defs><rect x="5" y="5" width="110" height="110" rx="20" fill="#29C5D6" mask="url(#roo-footer)"/><rect x="125" y="5" width="110" height="110" rx="20" fill="#F2B544"/><rect x="5" y="125" width="110" height="110" rx="20" fill="#29C5D6"/><rect x="125" y="125" width="110" height="110" rx="20" fill="#29C5D6"/></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Cangupa</a>
-      <a href="how-to-play.html">How to play</a>
-      <a href="features.html">Features</a>
-      <a href="levels.html">Levels</a>
+      <a href="how-to-play.html" data-i18n="footer.howToPlay">How to play</a>
+      <a href="features.html" data-i18n="footer.features">Features</a>
+      <a href="levels.html" data-i18n="footer.levels">Levels</a>
 
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
@@ -331,5 +446,49 @@
 })();
 </script>
 
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    document.querySelectorAll('[data-i18n-attr-aria-label], [data-i18n-attr-title]').forEach(function (el) {
+      ['aria-label', 'title', 'alt', 'placeholder'].forEach(function (attr) {
+        var key = el.getAttribute('data-i18n-attr-' + attr);
+        if (key && strings[key] != null) el.setAttribute(attr, strings[key]);
+      });
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
+})();
+</script>
 
 </body></html>
