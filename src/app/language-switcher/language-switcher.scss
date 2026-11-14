@@ -1,0 +1,42 @@
+// Same button-group shape as the theme toggle it sits beside (DEF-36): the
+// fixed positioning for both now lives on their shared wrapper in app.scss
+// (.site-toolbar), not here.
+.language-switcher {
+  display: flex;
+  gap: 2px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+button {
+  min-width: 32px;
+  height: 32px;
+  padding-inline: 8px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--fg);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  &.active {
+    background: var(--surface-2);
+    color: var(--fg);
+  }
+}

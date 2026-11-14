@@ -3,12 +3,12 @@
     <span class="hero-logo"><img src="logo.png" alt="" /></span>
     <h1>Deficientezinho</h1>
     <p class="tagline">
-      <b>Just a crip.</b>
-      <span>Writing code with his mouth.</span>
-      <span>Or telling AI to do it.</span>
+      <b>{{ 'home.tagline1' | transloco }}</b>
+      <span>{{ 'home.tagline2' | transloco }}</span>
+      <span>{{ 'home.tagline3' | transloco }}</span>
     </p>
     <p class="pitch">
-      Games, apps and small tools, all made by one person. Pick one to look around.
+      {{ 'home.pitch' | transloco }}
     </p>
   </div>
 </div>
@@ -16,8 +16,8 @@
 <section>
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Projects</span>
-      <h2>{{ projects.length }} to explore</h2>
+      <span class="eyebrow">{{ 'home.projectsEyebrow' | transloco }}</span>
+      <h2>{{ 'home.toExplore' | transloco: { count: projects.length } }}</h2>
     </div>
 
     <div class="projects">
@@ -134,7 +134,7 @@
       }
     </ul>
     <span class="cta">
-      {{ project.microsite ? 'Open the mini site' : 'Read more' }}
+      {{ project.microsite ? ('home.openMicrosite' | transloco) : ('home.readMore' | transloco) }}
       <span class="arrow" aria-hidden="true">&rarr;</span>
     </span>
   </div>

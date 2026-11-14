@@ -1,11 +1,12 @@
 import { NgTemplateOutlet } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { Project } from '../projects/project';
 import { PROJECTS } from '../projects/projects.data';
 
 @Component({
-  imports: [NgTemplateOutlet, RouterLink],
+  imports: [NgTemplateOutlet, RouterLink, TranslocoPipe],
   selector: 'app-home',
   styleUrl: './home.scss',
   templateUrl: './home.html',

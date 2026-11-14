@@ -31,6 +31,18 @@ main {
   }
 }
 
+// The language switcher and theme toggle (DEF-36), fixed in the top-right
+// corner together so a visitor can reach either at any scroll position.
+// Each keeps its own look; only the positioning is shared.
+.site-toolbar {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  display: flex;
+  gap: 8px;
+}
+
 .site-nav {
   background: var(--surface);
   border-bottom: 1px solid var(--rule);
@@ -44,11 +56,11 @@ main {
   padding-block: 14px;
   flex-wrap: wrap;
 
-  // The theme toggle is fixed in the top-right corner. Below this width
-  // the centred .wrap reaches under it, so the nav keeps clear of it;
-  // without this the toggle covers the last link.
+  // The toolbar is fixed in the top-right corner. Below this width the
+  // centred .wrap reaches under it, so the nav keeps clear of it; without
+  // this the toolbar covers the last link.
   @media (max-width: 1180px) {
-    padding-right: 132px;
+    padding-right: 210px;
   }
 }
 

@@ -128,7 +128,7 @@ the Angular pages; each static mini site under `public/projects/<slug>/`
 carries its own copy inline, with its own palette.
 
 A new mini site starts from DigiSpin's pages and changes the palette and
-content. Three things must stay as they are for it to fit in:
+content. Four things must stay as they are for it to fit in:
 
 - **The theme key.** Every page reads and writes `localStorage`'s
   `deficientezinho-theme` (`light`, `dark` or `system`), so one choice
@@ -136,10 +136,50 @@ content. Three things must stay as they are for it to fit in:
 - **The nav's clearance for the toggle** (`.site-nav-inner`'s
   `padding-right` under 1180px), or the toggle covers the last link.
 - **The footer link back** to `/`.
-- **The language mechanism** (once a mini site is translated — see
-  "Translating a static mini site" below): the `deficientezinho-lang`
-  key, the `data-i18n`/`data-i18n-attr-*` markup convention, and the
-  switcher sitting next to the theme toggle.
+- **The language key.** `deficientezinho-lang`, holding `en-GB` or
+  `pt-PT`. The Angular pages read and write it through Transloco (see
+  below); a static mini site will too, once one is translated (DEF-40
+  onward) — none is yet.
+
+### Translating an Angular page (DEF-36)
+
+[@jsverse/transloco](https://github.com/jsverse/transloco) runs the
+Angular pages (home, Watchr, Freecell Plus). The pieces:
+
+- **Dictionaries**: `public/i18n/en-GB.json` and `public/i18n/pt-PT.json`,
+  fetched at runtime (not bundled) via
+  [src/app/transloco-http-loader.ts](src/app/transloco-http-loader.ts) —
+  same reasoning as the favicons and project logos already living in
+  `public/`. Keys are nested one level per component (`home.tagline1`,
+  `home.toExplore`), both locales carrying the same keys.
+- **Wiring**: [src/app/app.config.ts](src/app/app.config.ts) calls
+  `provideTransloco`, with `defaultLang` resolved once at bootstrap by
+  [`initialLocale()`](src/app/language-switcher/language-switcher.ts)
+  (the `deficientezinho-lang` key, falling back to the browser's own
+  language, same shape as the theme toggle's `currentChoice()`).
+- **Usage in a template**: `{{ 'home.tagline1' | transloco }}`, or with
+  params, `{{ 'home.toExplore' | transloco: { count: n } }}`. A
+  component using the pipe adds `TranslocoPipe` to its own `imports`.
+- **The switcher**: [`LanguageSwitcher`](src/app/language-switcher/)
+  (`<app-language-switcher />`), same button-group shape as
+  [`ThemeToggle`](src/app/theme-toggle/), sharing its fixed top-right
+  position via `.site-toolbar` in `app.html`/`app.scss` rather than each
+  component positioning itself — the two buttons' own labels (`EN`/`PT`,
+  `English`/`Português`) are autonyms, not translated.
+- **Tests**: a component under test that pulls in `TranslocoPipe` or a
+  child that injects `TranslocoService` (transitively, `App` does, via
+  `LanguageSwitcher`) needs `TranslocoTestingModule.forRoot({ langs,
+  translocoConfig })` in its `TestBed` imports — see `home.spec.ts` and
+  `app.spec.ts`. Dictionary content used in assertions is duplicated
+  into the spec file rather than imported, the same convention
+  `theme-toggle.spec.ts` already uses for its own hardcoded labels; keep
+  it in sync with the real JSON by hand.
+
+Project data (`PROJECTS` in
+[src/app/projects/projects.data.ts](src/app/projects/projects.data.ts) —
+name, tagline, description, stack, status) is a separate concern from a
+page's own template copy, and isn't translated by this mechanism; Watchr
+and Freecell Plus's content is DEF-37 and DEF-38.
 
 ### Translating a static mini site (DEF-39)
 

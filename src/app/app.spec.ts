@@ -1,12 +1,23 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter, Router } from '@angular/router';
+import { TranslocoTestingModule } from '@jsverse/transloco';
 import { App } from './app';
 import { routes } from './app.routes';
+
+// The language switcher (DEF-36) needs a TranslocoService, so every test
+// here provides one; the labels it tests are its own hardcoded autonyms,
+// not translated strings, so an empty dictionary per locale is enough.
+function translocoTesting() {
+  return TranslocoTestingModule.forRoot({
+    langs: { 'en-GB': {}, 'pt-PT': {} },
+    translocoConfig: { availableLangs: ['en-GB', 'pt-PT'], defaultLang: 'en-GB' },
+  });
+}
 
 describe('App', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [App],
+      imports: [App, translocoTesting()],
       providers: [provideRouter([])],
     })
       .compileComponents();
@@ -56,6 +67,14 @@ describe('App', () => {
     expect(compiled.querySelectorAll('app-theme-toggle button').length).toBe(3);
   });
 
+  it('renders the language switcher on every page', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.querySelectorAll('app-language-switcher button').length).toBe(2);
+  });
+
   // DEF-34, DEF-35: Watchr and Freecell Plus render through the shared
   // ProjectPage, inside this shell's nav, so the shell must swap the
   // all-projects list for that project's own section links there instead.
@@ -63,7 +82,7 @@ describe('App', () => {
     async function navigateTo(slug: string): Promise<HTMLElement> {
       await TestBed.resetTestingModule()
         .configureTestingModule({
-          imports: [App],
+          imports: [App, translocoTesting()],
           providers: [provideRouter(routes)],
         })
         .compileComponents();

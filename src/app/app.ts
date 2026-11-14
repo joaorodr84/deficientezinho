@@ -2,12 +2,13 @@ import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { filter, map } from 'rxjs';
+import { LanguageSwitcher } from './language-switcher/language-switcher';
 import { Project } from './projects/project';
 import { PROJECTS } from './projects/projects.data';
 import { ThemeToggle } from './theme-toggle/theme-toggle';
 
 @Component({
-  imports: [RouterLink, RouterLinkActive, RouterOutlet, ThemeToggle],
+  imports: [LanguageSwitcher, RouterLink, RouterLinkActive, RouterOutlet, ThemeToggle],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',

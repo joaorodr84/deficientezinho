@@ -41,10 +41,12 @@ No project under `c:\Code` has any i18n setup yet — this is a first, not
 a pattern to match. The site splits into two layers that need two
 different mechanisms:
 
-- The Angular-rendered pages (home, Watchr, Freecell Plus) get
-  **Transloco**: runtime JSON dictionaries per locale, plus a language
-  switcher in the nav alongside the theme toggle (same persisted-choice,
-  browser-default pattern as `deficientezinho-theme`).
+- The Angular-rendered pages (home, Watchr, Freecell Plus) use
+  **Transloco** (`DEF-36`): runtime JSON dictionaries per locale, plus a
+  language switcher in the nav alongside the theme toggle (same
+  persisted-choice, browser-default pattern as `deficientezinho-theme`).
+  Only the home page's own copy is translated so far; Watchr's and
+  Freecell Plus's are `DEF-37`/`DEF-38` below.
 - The static microsites (`public/projects/<slug>/`, one per project:
   digispin, sphinx, cangupa, crivo, def-platform, arrumador, damas) are
   plain HTML/CSS/JS mirrored in from each project's own repo — no Angular
@@ -62,11 +64,8 @@ first-person/tone-sensitive text (e.g. Watchr's "why it exists") gets
 extra care. No URL change for language — a toggle only, like the theme
 toggle, not `/en/`-style routes.
 
-- `DEF-36` [P2]: Add Transloco to the Angular app (en-GB, pt-PT), a
-  language switcher in the nav, and translate the home page.
-- `DEF-37` [P2]: Translate Watchr's page content (depends on `DEF-36`).
-- `DEF-38` [P2]: Translate Freecell Plus's page content (depends on
-  `DEF-36`).
+- `DEF-37` [P2]: Translate Watchr's page content.
+- `DEF-38` [P2]: Translate Freecell Plus's page content.
 - `DEF-40` [P3]: Translate the DigiSpin microsite.
 - `DEF-41` [P3]: Translate the Sphinx microsite.
 - `DEF-42` [P3]: Translate the Cangupa microsite.

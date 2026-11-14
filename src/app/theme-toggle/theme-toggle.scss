@@ -1,12 +1,7 @@
-// Fixed, as on the mini sites, so the switch is reachable at any scroll
-// position: its effect is page-wide. The nav bar leaves room for it (see
-// app.scss) rather than the toggle sitting in the nav's flow, which would
-// scroll it away.
+// Fixed positioning lives on the shared .site-toolbar wrapper in app.scss
+// now that the language switcher (DEF-36) sits beside this one; this class
+// only shapes the button group itself.
 .theme-toggle {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  z-index: 10;
   display: flex;
   gap: 2px;
   background: var(--surface);

@@ -1,8 +1,24 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
+import { TranslocoTestingModule } from '@jsverse/transloco';
 import { Home } from './home';
 import { Project } from '../projects/project';
 import { PROJECTS } from '../projects/projects.data';
+
+// Mirrors public/i18n/en-GB.json's home.* keys (same convention
+// theme-toggle.spec.ts uses for its own hardcoded labels) -- keep in sync.
+const EN_GB = {
+  home: {
+    tagline1: 'Just a crip.',
+    tagline2: 'Writing code with his mouth.',
+    tagline3: 'Or telling AI to do it.',
+    pitch: 'Games, apps and small tools, all made by one person. Pick one to look around.',
+    projectsEyebrow: 'Projects',
+    toExplore: '{{count}} to explore',
+    openMicrosite: 'Open the mini site',
+    readMore: 'Read more',
+  },
+};
 
 describe('Home', () => {
   let component: Home;
@@ -10,7 +26,13 @@ describe('Home', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Home],
+      imports: [
+        Home,
+        TranslocoTestingModule.forRoot({
+          langs: { 'en-GB': EN_GB, 'pt-PT': {} },
+          translocoConfig: { availableLangs: ['en-GB', 'pt-PT'], defaultLang: 'en-GB' },
+        }),
+      ],
       providers: [provideRouter([])],
     }).compileComponents();
 
