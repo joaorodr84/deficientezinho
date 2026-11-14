@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-33`**
+**Next ID to assign: `DEF-34`**
 
 If this file and history ever disagree, history wins:
 
@@ -52,3 +52,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-30 | Add Arrumador, the crate-pushing warehouse puzzle, as a project: a home card and a DigiSpin-style mini site under `public/projects/arrumador/` (home, how to play, levels) | done | 2026-11-14 | — |
 | DEF-31 | Add Damas, the Portuguese-rules checkers game, as a project: a home card and a DigiSpin-style mini site under `public/projects/damas/` (home, rules, online play, settings) | done | 2026-11-14 | — |
 | DEF-32 | Move Watchr's home card to the first position, and give it its own mark (the double-checkmark from its logo) instead of a monogram | done | 2026-11-14 | — |
+| DEF-33 | Give Watchr's project page its own hero mark (the same double-checkmark logo as its home card), instead of the plain text-only hero every project shares | done | 2026-11-14 | — |

@@ -8,6 +8,17 @@
       <div class="wrap">
         <a class="back" routerLink="/">&larr; All projects</a>
         <span class="eyebrow status">{{ project.status }}</span>
+        @if (project.slug === 'watchr') {
+          <!-- Watchr's own mark, same icon as its home card
+               (c:\Code\watchr\frontend\src\assets\watchr-logo-square.svg). -->
+          <span class="hero-mark" aria-hidden="true">
+            <svg viewBox="30 0 320 320" fill="none" stroke="#22b7fe" stroke-width="30" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M75 185 L115 225 L220 95" />
+              <path d="M195 195 L205 205 L310 75" />
+              <path d="M180 180 L205 200" stroke-width="36" stroke-linecap="butt" />
+            </svg>
+          </span>
+        }
         <h1>{{ project.name }}</h1>
         <p class="tagline">{{ project.tagline }}</p>
         <p class="pitch">{{ project.description }}</p>
