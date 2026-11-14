@@ -2,21 +2,40 @@
 
 <nav class="site-nav" aria-label="Projects">
   <div class="wrap site-nav-inner">
-    <a class="site-nav-brand" routerLink="/">
-      <span class="logo-tile"><img src="logo.png" alt="" /></span>
-      Deficientezinho
-    </a>
-    <div class="site-nav-links">
-      @for (project of projects; track project.slug) {
-        @if (project.microsite) {
-          <a [href]="project.microsite">{{ project.name }}</a>
-        } @else {
-          <a [routerLink]="['/projects', project.slug]" routerLinkActive="current">{{
-            project.name
-          }}</a>
+    @if (activeProject(); as project) {
+      <a class="site-nav-brand" [routerLink]="['/projects', project.slug]">
+        <span class="logo-tile"><img src="logo.png" alt="" /></span>
+        {{ project.name }}
+      </a>
+      <div class="site-nav-links">
+        @if (project.overview) {
+          <a href="#why">Why it exists</a>
         }
-      }
-    </div>
+        @if (project.howItWorks) {
+          <a href="#how-it-works">How it works</a>
+        }
+        @if (project.features) {
+          <a href="#features">Features</a>
+        }
+        <a href="#details">Details</a>
+      </div>
+    } @else {
+      <a class="site-nav-brand" routerLink="/">
+        <span class="logo-tile"><img src="logo.png" alt="" /></span>
+        Deficientezinho
+      </a>
+      <div class="site-nav-links">
+        @for (project of projects; track project.slug) {
+          @if (project.microsite) {
+            <a [href]="project.microsite">{{ project.name }}</a>
+          } @else {
+            <a [routerLink]="['/projects', project.slug]" routerLinkActive="current">{{
+              project.name
+            }}</a>
+          }
+        }
+      </div>
+    }
   </div>
 </nav>
 

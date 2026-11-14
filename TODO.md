@@ -35,20 +35,6 @@ sphinx-category-covers, sphinx-crivo, sphinx-words-images,
 tmdb-react-starter) were left off the launch set in DEF-1; adding any of
 them as a page is its own task.
 
-Watchr and Freecell Plus never got a header of their own: they render
-through the shared Angular template, inside the site shell's global nav
-(`app.html`'s `site-nav`, which lists every project). Every other project
-is a standalone static microsite under `public/projects/<slug>/` with its
-own project-specific header/nav to its own sections, per the site-wide
-template in `CLAUDE.md`. Watchr's and Freecell Plus's headers should match
-that shape — specific to the project, linking to its own sections — not
-the cross-project nav.
-
-- `DEF-34` [P2]: Give Watchr its own project-specific header/nav (its
-  sections: Why it exists, How it works, Features, Details), instead of
-  the shared app shell's all-projects nav.
-- `DEF-35` [P2]: Same fix for Freecell Plus.
-
 ## Translation (i18n)
 
 No project under `c:\Code` has any i18n setup yet — this is a first, not
