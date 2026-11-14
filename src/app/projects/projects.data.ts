@@ -67,8 +67,11 @@ export const PROJECTS: Project[] = [
     website: 'https://watchr.pt',
     // Watchr's own --accent, light and dark themes.
     accent: { light: '#0369a1', dark: '#38bdf8' },
+    // Leads with the origin story: the section is headed "Why it exists",
+    // and before this it only described what Watchr does, not why it was
+    // built. First person because the reason is Joao's own.
     overview:
-      'Each invited user gets their own library, watch history and privacy settings, so one shared Watchr instance still feels personal. Shows and films are tracked with metadata pulled live from TMDb, and a show’s status — Plan to Watch, Watching, On Hold, Up to Date, Completed — updates itself overnight and the moment you mark an episode watched, so My Shows never falls out of sync with what actually aired.',
+      'I tracked everything I watched in TV Time for almost ten years. Then it shut down, and my brain couldn’t keep what I still had to watch organised on its own — so I built Watchr to do it for me. Each invited user gets their own library, watch history and privacy settings, so one shared Watchr instance still feels personal. Shows and films are tracked with metadata pulled live from TMDb, and a show’s status — Plan to Watch, Watching, On Hold, Up to Date, Completed — updates itself overnight and the moment you mark an episode watched, so My Shows never falls out of sync with what actually aired.',
     howItWorks: [
       'Find something to watch on Discover, then press its "+ Track" button to add it to your library.',
       'Everything you track shows up on My Shows, grouped by status, recomputed automatically as episodes air and get watched.',

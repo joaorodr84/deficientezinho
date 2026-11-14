@@ -24,6 +24,8 @@ See [TODO.md](TODO.md) for what's planned next.
   stay still for visitors who ask their device for reduced motion.
 - The home page has a new slogan: "Just a crip. Writing code with his
   mouth. Or telling AI to do it."
+- The Watchr page's "Why it exists" now says why: it replaces TV Time,
+  which shut down after Joao had used it for almost ten years.
 
 ### Added
 
