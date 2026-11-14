@@ -6,7 +6,7 @@ export const PROJECTS: Project[] = [
     name: 'DigiSpin',
     tagline: 'Spin the digits, find the fits.',
     description:
-      'Drag, rotate and reason your way through 250+ boards — some solved in a minute, some worth sitting with.',
+      'Drag, rotate and reason your way through 250 boards — some solved in a minute, some worth sitting with.',
     stack: 'React Native + Expo',
     status: 'in development',
     repo: 'https://github.com/joaorodr84/digispin',

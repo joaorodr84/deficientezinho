@@ -6,6 +6,15 @@ All notable changes to Deficientezinho are recorded here, newest first.
 
 See [TODO.md](TODO.md) for what's planned next.
 
+## 2026-11-14
+
+### Changed
+
+- DigiSpin's mini site is now the full multi-page site (how to play with
+  a playable puzzle, features, levels, accessibility, what's new, privacy
+  policy and support) with a light/dark/system theme switch, replacing
+  the single page it had before. It is hosted here from now on.
+
 ## 2026-10-22
 
 ### Added
