@@ -48,6 +48,24 @@
         "Suporte para vários utilizadores, só por convite: bibliotecas, históricos e definições de privacidade separados por utilizador.",
         "Autenticação de dois fatores, além de exportação completa de dados e eliminação de conta em Profile → Account."
       ]
+    },
+    "freecell-plus": {
+      "overview": "O FreeCell do Solitaire Bliss numera cada jogo (`?number=`), mas deixa a cargo do jogador encontrar o próximo que ainda não jogou. O Freecell Plus adiciona um botão NEXT integrado na própria barra superior do site — com o estilo e o tamanho dos controlos nativos — que salta diretamente para o primeiro número ainda não jogado da sequência, em vez de ir apenas para o número seguinte.",
+      "howItWorks": [
+        "Um botão NEXT fica na barra superior do próprio jogo, inativo até ganhares, e depois salta para o primeiro jogo que ainda não ganhaste — não apenas o número seguinte, para que repetições não bloqueiem a sequência.",
+        "Cada vitória é registada com o número do jogo, tempo, pontuação e movimentos, detetados a partir da própria janela de fim de jogo do site, em vez de uma estimativa por temporizador.",
+        "Um indicador junto ao NEXT mostra o último jogo ganho; uma segunda linha na barra de estado mostra o número de vitórias, a melhor pontuação e o tempo mais rápido de todo o teu histórico.",
+        "Os botões Export e Import fazem cópia de segurança ou restauram esse histórico como um ficheiro JSON, já que o localStorage não te acompanha para outro navegador ou computador."
+      ],
+      "features": [
+        "Botão NEXT com o estilo e o tamanho dos botões da própria barra superior do Solitaire Bliss, com suporte de teclado (Enter/Espaço) e ícone.",
+        "Salta para o próximo jogo ainda não jogado da sequência, não apenas o atual+1 — ignora jogos que já ganhaste.",
+        "O histórico de vitórias regista o número do jogo, data/hora, tempo, pontuação e movimentos; repetir um jogo acrescenta uma nova entrada em vez de substituir a última.",
+        "Estatísticas de conclusão — jogos ganhos, melhor pontuação, tempo mais rápido — cada uma indicando de que jogo veio.",
+        "Exportação/Importação para um ficheiro JSON, combinando os dados na importação em vez de os substituir.",
+        "Avisa na consola se o markup do próprio Solitaire Bliss mudar o suficiente para impedir a montagem de um botão ou indicador.",
+        "Funciona inteiramente no navegador através do Tampermonkey — sem contas, sem servidor, sem análises."
+      ]
     }
   }
 }
