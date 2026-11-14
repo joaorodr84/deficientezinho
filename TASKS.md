@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-36`**
+**Next ID to assign: `DEF-47`**
 
 If this file and history ever disagree, history wins:
 
@@ -17,6 +17,17 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | --- | --- | --- | --- |
 | DEF-34 | Give Watchr its own project-specific header/nav instead of the shared app shell's all-projects nav | open | — |
 | DEF-35 | Same fix for Freecell Plus | open | — |
+| DEF-36 | Add Transloco to the Angular app (en-GB, pt-PT), a nav language switcher, and translate the home page | open | — |
+| DEF-37 | Translate Watchr's page content | open | — |
+| DEF-38 | Translate Freecell Plus's page content | open | — |
+| DEF-39 | Design and build the shared lightweight translation mechanism for static microsites, and document it in CLAUDE.md | open | — |
+| DEF-40 | Translate the DigiSpin microsite | open | — |
+| DEF-41 | Translate the Sphinx microsite | open | — |
+| DEF-42 | Translate the Cangupa microsite | open | — |
+| DEF-43 | Translate the Crivo microsite | open | — |
+| DEF-44 | Translate the def-platform microsite/game UI text | open | — |
+| DEF-45 | Translate the Arrumador microsite/game UI text | open | — |
+| DEF-46 | Translate the Damas microsite/game UI text | open | — |
 
 ## Done
 
