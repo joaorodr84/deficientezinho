@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. The three
@@ -15,27 +15,147 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howToPlay": "How to play",
+    "nav.features": "Features",
+    "nav.levels": "Levels",
+    "nav.accessibility": "Accessibility",
+    "meta.title": "DigiSpin — How to play",
+    "intro.eyebrow": "How to play",
+    "intro.heading": "The in-app rules page, reused here so the two never drift apart",
+    "intro.lede": "Every board below is drawn at load time by a small script that reimplements the app's own digit shapes, rotation, slot math and bar geometry — so a clash, a legal pairing, a dimmed given piece and a full solution all render the same way the real app draws them.",
+    "card1.heading": "The goal, the board and the pieces",
+    "card1.p1": "Place all ten digit pieces, 0 to 9, on the board so that no two of their bars occupy the same spot. Every piece can be rotated to help it fit.",
+    "card1.p2": "The pieces sit on the lines between the board's cells. Each digit is a shape made of short bars, the same shape as a seven-segment display: 0 is the four edges of one cell, 1 is a straight line with no width, and 2 to 9 each span two cells.",
+    "card1.figcaption": "A 1, a 4 and a 7, already placed — none of their bars share a spot.",
+    "card2.heading": "Clashes",
+    "card2.p1": "A clash is two pieces trying to use the same bar position on the board. DigiSpin won't allow it: the move is refused, the shared bar turns solid red, and a message names the other piece already using it.",
+    "card2.figcaption1": "<b>Refused:</b> the 8 and the 4 both want the bar between them — it turns solid red.",
+    "card2.figcaption2": "<b>Allowed:</b> the 6 doesn't light that bar, so the 4 can use it with no clash.",
+    "card2.legend.digit8": "digit 8",
+    "card2.legend.digit4": "digit 4",
+    "card2.legend.digit6": "digit 6",
+    "card2.legend.clash": "clash",
+    "card2.note": "The app's own first-time tutorial teaches this with a 7 and a 1: an upright 7 and a 1 dropped flat across it share two bars and get refused the same way.",
+    "card3.heading": "Controls",
+    "card3.p1": "Drag a piece from the tray to place it on the board, or drag a piece already on the board to move it. Tap a piece in the tray to turn it a quarter turn before you place it.",
+    "card3.gesture.inTray": "in the tray",
+    "card3.gesture.tapToRotate": "① Tap to rotate",
+    "card3.gesture.stillInTray": "still in the tray",
+    "card3.gesture.dragToBoard": "② Drag to the board",
+    "card3.gesture.placedLegally": "placed, legally",
+    "card3.mockCaption": "Restart — sends every piece you've placed back to the tray. Undo and Redo step one move at a time. Given pieces stay where they are.",
+    "card4.heading": "Clues",
+    "card4.p1": "Some pieces may already be placed and locked for you, giving you a head start — the rest is up to you to work out.",
+    "card4.mockCaption": "The dimmed 5 is a given — already placed and locked. The full-colour 8 is a piece you placed yourself.",
+    "card5.heading": "Hint",
+    "card5.p1": "Stuck? Hint places one remaining piece exactly where the solution has it, and locks it there. It costs one of a limited number of hints, shown next to the button.",
+    "card5.mockCaption": "The Hint button, with hints left shown as a small number on it.",
+    "card6.heading": "Solutions",
+    "card6.p1": "Some levels have more than one valid layout — finding a different one than before still counts. To see every solution you've found for a level, go to the Levels screen and hold down on it.",
+    "card6.miniTab": "Levels",
+    "card6.levelSquareLabel": "played — hold<br />to see solutions",
+    "card6.smTitle": "Level 2 — Solutions",
+    "card6.smSubtitle": "1 of 2 found",
+    "tryit.eyebrow": "Try it yourself",
+    "tryit.heading": "Finish this layout",
+    "tryit.lede": "The 8, 9, 1 and 3 are locked in place from the same solved board shown above. Tap a tray piece to pick it up, tap it again to rotate it, then tap a board cell to drop it there — place all six to solve it.",
+    "tryit.hintLabel": "Hint",
+    "tryit.clearLabel": "Clear",
+    "tryit.statusPlaced": "{{placed}} of {{total}} placed",
+    "tryit.statusSolved": "Solved!",
+    "footer.accessibility": "Accessibility",
+    "footer.whatsNew": "What's new",
+    "footer.privacyPolicy": "Privacy policy",
+    "footer.support": "Support"
+  },
+  "pt-PT": {
+    "nav.howToPlay": "Como jogar",
+    "nav.features": "Funcionalidades",
+    "nav.levels": "Níveis",
+    "nav.accessibility": "Acessibilidade",
+    "meta.title": "DigiSpin — Como jogar",
+    "intro.eyebrow": "Como jogar",
+    "intro.heading": "A página de regras da aplicação, reutilizada aqui para as duas nunca se desalinharem",
+    "intro.lede": "Todos os tabuleiros abaixo são desenhados no carregamento da página por um pequeno script que reimplementa as formas dos dígitos, a rotação, o cálculo das posições e a geometria das barras da própria aplicação — para que um conflito, um encaixe legal, uma peça dada esbatida e uma solução completa sejam todos desenhados tal como a aplicação real os desenha.",
+    "card1.heading": "O objetivo, o tabuleiro e as peças",
+    "card1.p1": "Coloca as dez peças de dígitos, de 0 a 9, no tabuleiro, de forma a que nenhuma das suas barras ocupe a mesma posição. Qualquer peça pode ser rodada para ajudar a encaixar.",
+    "card1.p2": "As peças assentam nas linhas entre as células do tabuleiro. Cada dígito é uma forma feita de barras curtas, a mesma forma de um mostrador de sete segmentos: o 0 são os quatro lados de uma célula, o 1 é uma linha reta sem largura, e os dígitos de 2 a 9 ocupam cada um duas células.",
+    "card1.figcaption": "Um 1, um 4 e um 7, já colocados — nenhuma das suas barras partilha uma posição.",
+    "card2.heading": "Conflitos",
+    "card2.p1": "Um conflito é quando duas peças tentam usar a mesma posição de barra no tabuleiro. O DigiSpin não permite isso: o movimento é recusado, a barra partilhada fica vermelha sólida, e uma mensagem indica a outra peça que já a está a usar.",
+    "card2.figcaption1": "<b>Recusado:</b> o 8 e o 4 querem ambos a barra entre eles — ela fica vermelha sólida.",
+    "card2.figcaption2": "<b>Permitido:</b> o 6 não ocupa essa barra, por isso o 4 pode usá-la sem conflito.",
+    "card2.legend.digit8": "dígito 8",
+    "card2.legend.digit4": "dígito 4",
+    "card2.legend.digit6": "dígito 6",
+    "card2.legend.clash": "conflito",
+    "card2.note": "O tutorial inicial da própria aplicação ensina isto com um 7 e um 1: um 7 na vertical e um 1 colocado na horizontal sobre ele partilham duas barras e são recusados da mesma forma.",
+    "card3.heading": "Controlos",
+    "card3.p1": "Arrasta uma peça da bandeja para a colocar no tabuleiro, ou arrasta uma peça já no tabuleiro para a mover. Toca numa peça na bandeja para a girar um quarto de volta antes de a colocares.",
+    "card3.gesture.inTray": "na bandeja",
+    "card3.gesture.tapToRotate": "① Toca para girar",
+    "card3.gesture.stillInTray": "ainda na bandeja",
+    "card3.gesture.dragToBoard": "② Arrasta para o tabuleiro",
+    "card3.gesture.placedLegally": "colocada, legalmente",
+    "card3.mockCaption": "Reiniciar — devolve todas as peças que colocaste à bandeja. Anular e Refazer avançam ou recuam um movimento de cada vez. As peças dadas ficam onde estão.",
+    "card4.heading": "Pistas",
+    "card4.p1": "Algumas peças podem já estar colocadas e bloqueadas para ti, dando-te um avanço inicial — o resto é contigo descobrir.",
+    "card4.mockCaption": "O 5 esbatido é uma peça dada — já colocada e bloqueada. O 8 a cores vivas é uma peça que colocaste tu próprio.",
+    "card5.heading": "Dica",
+    "card5.p1": "Encurralado? A Dica coloca uma peça em falta exatamente onde está na solução, e bloqueia-a aí. Custa uma das dicas disponíveis, um número limitado mostrado junto ao botão.",
+    "card5.mockCaption": "O botão Dica, com as dicas restantes mostradas como um pequeno número nele.",
+    "card6.heading": "Soluções",
+    "card6.p1": "Alguns níveis têm mais do que uma disposição válida — encontrar uma diferente da anterior também conta. Para ver todas as soluções que já encontraste para um nível, vai ao ecrã Níveis e mantém premido sobre ele.",
+    "card6.miniTab": "Níveis",
+    "card6.levelSquareLabel": "jogado — mantém premido<br />para ver soluções",
+    "card6.smTitle": "Nível 2 — Soluções",
+    "card6.smSubtitle": "1 de 2 encontradas",
+    "tryit.eyebrow": "Experimenta tu mesmo",
+    "tryit.heading": "Termina esta disposição",
+    "tryit.lede": "O 8, o 9, o 1 e o 3 estão bloqueados no mesmo tabuleiro resolvido mostrado acima. Toca numa peça da bandeja para a pegares, toca novamente para a girares, depois toca numa célula do tabuleiro para a soltares aí — coloca as seis para resolver.",
+    "tryit.hintLabel": "Dica",
+    "tryit.clearLabel": "Limpar",
+    "tryit.statusPlaced": "{{placed}} de {{total}} colocadas",
+    "tryit.statusSolved": "Resolvido!",
+    "footer.accessibility": "Acessibilidade",
+    "footer.whatsNew": "Novidades",
+    "footer.privacyPolicy": "Política de privacidade",
+    "footer.support": "Suporte"
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
-<title>DigiSpin — How to play</title>
+<title data-i18n="meta.title">DigiSpin — How to play</title>
 <link rel="icon" href="favicon.ico?v=2">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -229,21 +349,27 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the
+     top-right corner. Below this width the centred .wrap reaches under
+     it, so the nav keeps clear of it; without this the toolbar covers
+     the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
   /* A real, working light/dark/system toggle (not just a description of
      one) — the CSS it drives, via the html[data-theme] attribute, already
      existed above for the try-it puzzle's theme-aware colours; this just
      gives a visitor a way to set it directly instead of only inheriting
-     the device's own setting. Fixed so it's reachable at any scroll
-     position, since its effect is page-wide. */
-  .theme-toggle{
+     the device's own setting. The language switcher sits beside it in a
+     shared fixed .site-toolbar, so it's reachable at any scroll position,
+     since both toggles' effects are page-wide. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -262,7 +388,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -272,10 +413,10 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DigiSpin"><polygon points="54.95,38.30 58.55,34.70 58.55,16.70 54.95,13.10 51.35,16.70 51.35,34.70" fill="#b82c36"/><polygon points="60.88,43.44 65.91,42.65 76.49,28.09 75.69,23.06 70.67,23.85 60.09,38.42" fill="#cc8a31"/><polygon points="62.66,51.09 67.19,53.40 84.31,47.84 86.62,43.31 82.09,40.99 64.97,46.56" fill="#e1cb26"/><polygon points="59.60,58.32 61.91,62.86 79.03,68.42 83.56,66.11 81.25,61.57 64.13,56.01" fill="#93b440"/><polygon points="52.87,62.38 52.08,67.40 62.66,81.97 67.68,82.76 68.48,77.73 57.90,63.17" fill="#288c60"/><polygon points="45.05,61.70 41.45,65.30 41.45,83.30 45.05,86.90 48.65,83.30 48.65,65.30" fill="#a0d0ed"/><polygon points="39.12,56.56 34.09,57.35 23.51,71.91 24.31,76.94 29.33,76.15 39.91,61.58" fill="#2c92c8"/><polygon points="37.34,48.91 32.81,46.60 15.69,52.16 13.38,56.69 17.91,59.01 35.03,53.44" fill="#225b99"/><polygon points="40.40,41.68 38.09,37.14 20.97,31.58 16.44,33.89 18.75,38.43 35.87,43.99" fill="#7b277a"/><polygon points="47.13,37.62 47.92,32.60 37.34,18.03 32.32,17.24 31.52,22.27 42.10,36.83" fill="#cc6fa1"/></svg>DigiSpin</a>
     <div class="site-nav-links">
-      <a href="how-to-play.html" class="current">How to play</a>
-      <a href="features.html">Features</a>
-      <a href="levels.html">Levels</a>
-      <a href="accessibility.html">Accessibility</a>
+      <a href="how-to-play.html" class="current" data-i18n="nav.howToPlay">How to play</a>
+      <a href="features.html" data-i18n="nav.features">Features</a>
+      <a href="levels.html" data-i18n="nav.levels">Levels</a>
+      <a href="accessibility.html" data-i18n="nav.accessibility">Accessibility</a>
     </div>
   </div>
 </nav>
@@ -283,52 +424,52 @@
 <section id="how-to-play">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">How to play</span>
-      <h2>The in-app rules page, reused here so the two never drift apart</h2>
-      <p class="lede">Every board below is drawn at load time by a small script that reimplements the app's own digit shapes, rotation, slot math and bar geometry — so a clash, a legal pairing, a dimmed given piece and a full solution all render the same way the real app draws them.</p>
+      <span class="eyebrow" data-i18n="intro.eyebrow">How to play</span>
+      <h2 data-i18n="intro.heading">The in-app rules page, reused here so the two never drift apart</h2>
+      <p class="lede" data-i18n="intro.lede">Every board below is drawn at load time by a small script that reimplements the app's own digit shapes, rotation, slot math and bar geometry — so a clash, a legal pairing, a dimmed given piece and a full solution all render the same way the real app draws them.</p>
     </div>
 
     <section class="htp-card">
-      <h3><span class="num">1</span>The goal, the board and the pieces</h3>
-      <p>Place all ten digit pieces, 0 to 9, on the board so that no two of their bars occupy the same spot. Every piece can be rotated to help it fit.</p>
-      <p>The pieces sit on the lines between the board's cells. Each digit is a shape made of short bars, the same shape as a seven-segment display: 0 is the four edges of one cell, 1 is a straight line with no width, and 2 to 9 each span two cells.</p>
+      <h3><span class="num">1</span><span data-i18n="card1.heading">The goal, the board and the pieces</span></h3>
+      <p data-i18n="card1.p1">Place all ten digit pieces, 0 to 9, on the board so that no two of their bars occupy the same spot. Every piece can be rotated to help it fit.</p>
+      <p data-i18n="card1.p2">The pieces sit on the lines between the board's cells. Each digit is a shape made of short bars, the same shape as a seven-segment display: 0 is the four edges of one cell, 1 is a straight line with no width, and 2 to 9 each span two cells.</p>
       <div class="htp-diagrams">
         <figure class="htp-diagram">
           <div class="htp-board-card"><div class="svgboard" data-board='{"cols":2,"rows":2,"cell":40,"placements":[{"digit":7,"row":0,"col":0,"rot":270},{"digit":4,"row":0,"col":1,"rot":0},{"digit":1,"row":2,"col":0,"rot":90}]}'></div></div>
-          <figcaption>A 1, a 4 and a 7, already placed — none of their bars share a spot.</figcaption>
+          <figcaption data-i18n="card1.figcaption">A 1, a 4 and a 7, already placed — none of their bars share a spot.</figcaption>
         </figure>
       </div>
     </section>
 
     <section class="htp-card">
-      <h3><span class="num">2</span>Clashes</h3>
-      <p>A clash is two pieces trying to use the same bar position on the board. DigiSpin won't allow it: the move is refused, the shared bar turns solid red, and a message names the other piece already using it.</p>
+      <h3><span class="num">2</span><span data-i18n="card2.heading">Clashes</span></h3>
+      <p data-i18n="card2.p1">A clash is two pieces trying to use the same bar position on the board. DigiSpin won't allow it: the move is refused, the shared bar turns solid red, and a message names the other piece already using it.</p>
       <div class="htp-diagrams">
         <figure class="htp-diagram">
           <div class="htp-board-card"><div class="svgboard" data-board='{"cols":2,"rows":2,"cell":40,"placements":[{"digit":8,"row":0,"col":0,"rot":0},{"digit":4,"row":0,"col":1,"rot":0}]}'></div></div>
-          <figcaption><b>Refused:</b> the 8 and the 4 both want the bar between them — it turns solid red.</figcaption>
+          <figcaption data-i18n="card2.figcaption1"><b>Refused:</b> the 8 and the 4 both want the bar between them — it turns solid red.</figcaption>
         </figure>
         <figure class="htp-diagram">
           <div class="htp-board-card"><div class="svgboard" data-board='{"cols":2,"rows":2,"cell":40,"placements":[{"digit":6,"row":0,"col":0,"rot":0},{"digit":4,"row":0,"col":1,"rot":0}]}'></div></div>
-          <figcaption><b>Allowed:</b> the 6 doesn't light that bar, so the 4 can use it with no clash.</figcaption>
+          <figcaption data-i18n="card2.figcaption2"><b>Allowed:</b> the 6 doesn't light that bar, so the 4 can use it with no clash.</figcaption>
         </figure>
       </div>
       <div class="htp-legend">
-        <span><span class="htp-swatch" style="background:#7b277a"></span>digit 8</span>
-        <span><span class="htp-swatch" style="background:#288c60"></span>digit 4</span>
-        <span><span class="htp-swatch" style="background:#2c92c8"></span>digit 6</span>
-        <span><span class="htp-swatch" style="background:var(--accent)"></span>clash</span>
+        <span><span class="htp-swatch" style="background:#7b277a"></span><span data-i18n="card2.legend.digit8">digit 8</span></span>
+        <span><span class="htp-swatch" style="background:#288c60"></span><span data-i18n="card2.legend.digit4">digit 4</span></span>
+        <span><span class="htp-swatch" style="background:#2c92c8"></span><span data-i18n="card2.legend.digit6">digit 6</span></span>
+        <span><span class="htp-swatch" style="background:var(--accent)"></span><span data-i18n="card2.legend.clash">clash</span></span>
       </div>
-      <p style="font-size:13.5px;color:var(--muted)">The app's own first-time tutorial teaches this with a 7 and a 1: an upright 7 and a 1 dropped flat across it share two bars and get refused the same way.</p>
+      <p style="font-size:13.5px;color:var(--muted)" data-i18n="card2.note">The app's own first-time tutorial teaches this with a 7 and a 1: an upright 7 and a 1 dropped flat across it share two bars and get refused the same way.</p>
     </section>
 
     <section class="htp-card">
-      <h3><span class="num">3</span>Controls</h3>
-      <p>Drag a piece from the tray to place it on the board, or drag a piece already on the board to move it. Tap a piece in the tray to turn it a quarter turn before you place it.</p>
+      <h3><span class="num">3</span><span data-i18n="card3.heading">Controls</span></h3>
+      <p data-i18n="card3.p1">Drag a piece from the tray to place it on the board, or drag a piece already on the board to move it. Tap a piece in the tray to turn it a quarter turn before you place it.</p>
       <div class="htp-gesture-row">
         <div class="htp-gesture-col">
           <div class="htp-tray-slot"><div class="svgboard" data-tray='{"digit":5,"rotation":0,"cell":22,"box":{"width":60,"height":78}}'></div></div>
-          <div class="htp-gesture-label">in the tray</div>
+          <div class="htp-gesture-label" data-i18n="card3.gesture.inTray">in the tray</div>
         </div>
         <div class="htp-gesture-connector">
           <svg width="40" height="40" viewBox="0 0 40 40" aria-hidden="true">
@@ -336,11 +477,11 @@
             <circle cx="20" cy="20" r="8.5" fill="none" stroke="var(--muted)" stroke-width="1.2" opacity="0.7" />
             <circle cx="20" cy="20" r="3.2" fill="var(--fg)" />
           </svg>
-          <span>① Tap to rotate</span>
+          <span data-i18n="card3.gesture.tapToRotate">① Tap to rotate</span>
         </div>
         <div class="htp-gesture-col">
           <div class="htp-tray-slot"><div class="svgboard" data-tray='{"digit":5,"rotation":90,"cell":22,"box":{"width":60,"height":78}}'></div></div>
-          <div class="htp-gesture-label">still in the tray</div>
+          <div class="htp-gesture-label" data-i18n="card3.gesture.stillInTray">still in the tray</div>
         </div>
         <div class="htp-gesture-connector">
           <svg width="46" height="40" viewBox="0 0 46 40" aria-hidden="true">
@@ -348,11 +489,11 @@
             <circle cx="5" cy="8" r="3" fill="var(--fg)" />
             <polygon points="40,32 33,29.5 34.5,36" fill="var(--muted)" />
           </svg>
-          <span>② Drag to the board</span>
+          <span data-i18n="card3.gesture.dragToBoard">② Drag to the board</span>
         </div>
         <div class="htp-gesture-col">
           <div class="htp-board-card small"><div class="svgboard" data-board='{"cols":2,"rows":2,"cell":32,"placements":[{"digit":6,"row":1,"col":0,"rot":270},{"digit":5,"row":0,"col":0,"rot":90}]}'></div></div>
-          <div class="htp-gesture-label">placed, legally</div>
+          <div class="htp-gesture-label" data-i18n="card3.gesture.placedLegally">placed, legally</div>
         </div>
       </div>
       <div class="htp-mockrow">
@@ -361,22 +502,22 @@
             <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M20.49 15a9 9 0 0 1-14.85 3.36L1 14" />
           </svg>
         </div>
-        <span class="htp-mock-caption">Restart — sends every piece you've placed back to the tray. Undo and Redo step one move at a time. Given pieces stay where they are.</span>
+        <span class="htp-mock-caption" data-i18n="card3.mockCaption">Restart — sends every piece you've placed back to the tray. Undo and Redo step one move at a time. Given pieces stay where they are.</span>
       </div>
     </section>
 
     <section class="htp-card">
-      <h3><span class="num">4</span>Clues</h3>
-      <p>Some pieces may already be placed and locked for you, giving you a head start — the rest is up to you to work out.</p>
+      <h3><span class="num">4</span><span data-i18n="card4.heading">Clues</span></h3>
+      <p data-i18n="card4.p1">Some pieces may already be placed and locked for you, giving you a head start — the rest is up to you to work out.</p>
       <div class="htp-mockrow">
         <div class="htp-board-card"><div class="svgboard" data-board='{"cols":3,"rows":2,"cell":30,"placements":[{"digit":5,"row":0,"col":0,"rot":0,"locked":true},{"digit":8,"row":0,"col":2,"rot":0}]}'></div></div>
-        <span class="htp-mock-caption">The dimmed 5 is a given — already placed and locked. The full-colour 8 is a piece you placed yourself.</span>
+        <span class="htp-mock-caption" data-i18n="card4.mockCaption">The dimmed 5 is a given — already placed and locked. The full-colour 8 is a piece you placed yourself.</span>
       </div>
     </section>
 
     <section class="htp-card">
-      <h3><span class="num">5</span>Hint</h3>
-      <p>Stuck? Hint places one remaining piece exactly where the solution has it, and locks it there. It costs one of a limited number of hints, shown next to the button.</p>
+      <h3><span class="num">5</span><span data-i18n="card5.heading">Hint</span></h3>
+      <p data-i18n="card5.p1">Stuck? Hint places one remaining piece exactly where the solution has it, and locks it there. It costs one of a limited number of hints, shown next to the button.</p>
       <div class="htp-mockrow">
         <div class="htp-icon-btn" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -384,25 +525,25 @@
           </svg>
           <span class="htp-badge">3</span>
         </div>
-        <span class="htp-mock-caption">The Hint button, with hints left shown as a small number on it.</span>
+        <span class="htp-mock-caption" data-i18n="card5.mockCaption">The Hint button, with hints left shown as a small number on it.</span>
       </div>
     </section>
 
     <section class="htp-card">
-      <h3><span class="num">6</span>Solutions</h3>
-      <p>Some levels have more than one valid layout — finding a different one than before still counts. To see every solution you've found for a level, go to the Levels screen and hold down on it.</p>
+      <h3><span class="num">6</span><span data-i18n="card6.heading">Solutions</span></h3>
+      <p data-i18n="card6.p1">Some levels have more than one valid layout — finding a different one than before still counts. To see every solution you've found for a level, go to the Levels screen and hold down on it.</p>
       <div class="htp-mockrow">
         <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
           <div class="htp-mini-tab">
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="var(--fg)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 6 H20 M4 12 H20 M4 18 H20" />
             </svg>
-            Levels
+            <span data-i18n="card6.miniTab">Levels</span>
           </div>
         </div>
         <div style="display:flex;flex-direction:column;align-items:center;gap:4px">
           <div class="htp-level-row"><div class="htp-level-square">2</div></div>
-          <div class="htp-level-square-label">played — hold<br />to see solutions</div>
+          <div class="htp-level-square-label" data-i18n="card6.levelSquareLabel">played — hold<br />to see solutions</div>
         </div>
         <div class="htp-solutions-mock">
           <div class="htp-sm-header">
@@ -412,8 +553,8 @@
               </svg>
             </div>
             <div>
-              <div class="htp-sm-title">Level 2 — Solutions</div>
-              <div class="htp-sm-subtitle">1 of 2 found</div>
+              <div class="htp-sm-title" data-i18n="card6.smTitle">Level 2 — Solutions</div>
+              <div class="htp-sm-subtitle" data-i18n="card6.smSubtitle">1 of 2 found</div>
             </div>
           </div>
           <div class="htp-sm-board"><div class="svgboard" data-board='{"cols":5,"rows":4,"cell":20,"placements":[
@@ -444,9 +585,9 @@
 <section id="try-it">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Try it yourself</span>
-      <h2>Finish this layout</h2>
-      <p class="lede">The 8, 9, 1 and 3 are locked in place from the same solved board shown above. Tap a tray piece to pick it up, tap it again to rotate it, then tap a board cell to drop it there — place all six to solve it.</p>
+      <span class="eyebrow" data-i18n="tryit.eyebrow">Try it yourself</span>
+      <h2 data-i18n="tryit.heading">Finish this layout</h2>
+      <p class="lede" data-i18n="tryit.lede">The 8, 9, 1 and 3 are locked in place from the same solved board shown above. Tap a tray piece to pick it up, tap it again to rotate it, then tap a board cell to drop it there — place all six to solve it.</p>
     </div>
 
     <div class="tryit-board-wrap">
@@ -454,13 +595,13 @@
     </div>
     <div class="tryit-tray" id="tryit-tray"></div>
     <div class="tryit-controls">
-      <button type="button" class="htp-icon-btn" id="tryit-hint" aria-label="Hint">
+      <button type="button" class="htp-icon-btn" id="tryit-hint" aria-label="Hint" data-i18n-attr-aria-label="tryit.hintLabel">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M12 3 A6 6 0 0 0 7 12.5 C7 14.5 8.5 15.5 9 17 H15 C15.5 15.5 17 14.5 17 12.5 A6 6 0 0 0 12 3 Z M9.5 21 H14.5" />
         </svg>
         <span class="htp-badge" id="tryit-hint-count">3</span>
       </button>
-      <button type="button" class="htp-icon-btn" id="tryit-clear" aria-label="Clear">
+      <button type="button" class="htp-icon-btn" id="tryit-clear" aria-label="Clear" data-i18n-attr-aria-label="tryit.clearLabel">
         <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0 1 14.85-3.36L23 10M20.49 15a9 9 0 0 1-14.85 3.36L1 14" />
         </svg>
@@ -476,10 +617,10 @@
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DigiSpin icon"><polygon points="54.95,38.30 58.55,34.70 58.55,16.70 54.95,13.10 51.35,16.70 51.35,34.70" fill="#b82c36"/><polygon points="60.88,43.44 65.91,42.65 76.49,28.09 75.69,23.06 70.67,23.85 60.09,38.42" fill="#cc8a31"/><polygon points="62.66,51.09 67.19,53.40 84.31,47.84 86.62,43.31 82.09,40.99 64.97,46.56" fill="#e1cb26"/><polygon points="59.60,58.32 61.91,62.86 79.03,68.42 83.56,66.11 81.25,61.57 64.13,56.01" fill="#93b440"/><polygon points="52.87,62.38 52.08,67.40 62.66,81.97 67.68,82.76 68.48,77.73 57.90,63.17" fill="#288c60"/><polygon points="45.05,61.70 41.45,65.30 41.45,83.30 45.05,86.90 48.65,83.30 48.65,65.30" fill="#a0d0ed"/><polygon points="39.12,56.56 34.09,57.35 23.51,71.91 24.31,76.94 29.33,76.15 39.91,61.58" fill="#2c92c8"/><polygon points="37.34,48.91 32.81,46.60 15.69,52.16 13.38,56.69 17.91,59.01 35.03,53.44" fill="#225b99"/><polygon points="40.40,41.68 38.09,37.14 20.97,31.58 16.44,33.89 18.75,38.43 35.87,43.99" fill="#7b277a"/><polygon points="47.13,37.62 47.92,32.60 37.34,18.03 32.32,17.24 31.52,22.27 42.10,36.83" fill="#cc6fa1"/></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">DigiSpin</a>
-      <a href="accessibility.html">Accessibility</a>
-      <a href="changelog.html">What's new</a>
-      <a href="privacy-policy.html">Privacy policy</a>
-      <a href="support.html">Support</a>
+      <a href="accessibility.html" data-i18n="footer.accessibility">Accessibility</a>
+      <a href="changelog.html" data-i18n="footer.whatsNew">What's new</a>
+      <a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy policy</a>
+      <a href="support.html" data-i18n="footer.support">Support</a>
       <a href="mailto:info@digispin.me">info@digispin.me</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
@@ -490,6 +631,30 @@
 
 <script>
 (function () {
+  // Resolved independently of the language script near the end of this
+  // file (same dictionary, same localStorage key): this script runs
+  // first and renders the try-it widget's status text itself, which the
+  // generic data-i18n sweep can't reach since it's generated, not markup.
+  var i18nDict = (function () {
+    try {
+      return JSON.parse(document.getElementById('i18n-strings').textContent);
+    } catch (e) {
+      return {};
+    }
+  })();
+  function i18nLocale() {
+    try {
+      var saved = localStorage.getItem('deficientezinho-lang');
+      if (saved && i18nDict[saved]) return saved;
+    } catch (e) {}
+    var nav = (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+    return i18nDict[nav] ? nav : 'en-GB';
+  }
+  function t(key) {
+    var strings = i18nDict[i18nLocale()] || i18nDict['en-GB'] || {};
+    return strings[key];
+  }
+
   // Reimplements digits.ts + geometry.ts just enough to draw a board from a
   // list of placements, for the How to play diagrams above. Kept in lock-step
   // with those files: same segment table, same rotation transform, same
@@ -823,11 +988,14 @@
 
     function renderTryitStatus() {
       if (tryitSolved) {
-        tryitStatusEl.textContent = 'Solved!';
+        tryitStatusEl.textContent = t('tryit.statusSolved') || 'Solved!';
         tryitStatusEl.classList.add('solved');
       } else {
         tryitStatusEl.classList.remove('solved');
-        tryitStatusEl.textContent = Object.keys(tryitPlaced).length + ' of ' + TRYIT_MOVABLE_DIGITS.length + ' placed';
+        var tpl = t('tryit.statusPlaced') || '{{placed}} of {{total}} placed';
+        tryitStatusEl.textContent = tpl
+          .replace('{{placed}}', String(Object.keys(tryitPlaced).length))
+          .replace('{{total}}', String(TRYIT_MOVABLE_DIGITS.length));
       }
     }
 
@@ -907,6 +1075,10 @@
     tryitHintBtn.addEventListener('click', tryitHint);
     tryitClearBtn.addEventListener('click', tryitClear);
     renderTryitAll();
+
+    // The language script (below) calls this after switching locale, so a
+    // mid-puzzle switch updates the status text without needing a move.
+    window.__tryitRerenderStatus = renderTryitStatus;
   }
 })();
 </script>
@@ -947,5 +1119,53 @@
 })();
 </script>
 
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    document.querySelectorAll('[data-i18n-attr-aria-label], [data-i18n-attr-title]').forEach(function (el) {
+      ['aria-label', 'title', 'alt', 'placeholder'].forEach(function (attr) {
+        var key = el.getAttribute('data-i18n-attr-' + attr);
+        if (key && strings[key] != null) el.setAttribute(attr, strings[key]);
+      });
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+    // The try-it widget's status text is generated, not markup, so the
+    // sweep above can't reach it; its own script resolves the locale
+    // independently on first render, but a mid-puzzle switch needs this.
+    if (window.__tryitRerenderStatus) window.__tryitRerenderStatus();
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
+})();
+</script>
 
 </body></html>

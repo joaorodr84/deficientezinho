@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. The three
@@ -15,24 +15,86 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howToPlay": "How to play",
+    "nav.features": "Features",
+    "nav.levels": "Levels",
+    "nav.accessibility": "Accessibility",
+    "hero.tagline": "Spin the digits, <b>find the fits.</b>",
+    "hero.pitch": "Drag, rotate and reason your way through 250 boards — some solved in a minute, some worth sitting with.",
+    "howItWorks.eyebrow": "How it works",
+    "howItWorks.heading": "Every digit is a shape made of bars",
+    "howItWorks.lede": "DigiSpin's ten pieces are shaped like the digits 0 to 9, built from bars that sit on the lines between cells, the way a seven-segment display works. Place all ten on the board, rotating each one to fit, so that <b style=\"color:var(--fg)\">no two pieces ever overlap.</b>",
+    "explore.howToPlay.title": "How to play",
+    "explore.howToPlay.body": "The full rules, with live diagrams drawn by the same code the app uses — and a puzzle you can actually solve right on the page.",
+    "explore.features.title": "Features",
+    "explore.features.body": "Languages, themes, digit palettes, hints, achievements, the daily puzzle and more.",
+    "explore.levels.title": "Levels",
+    "explore.levels.body": "250 boards in ten colour-named packs of 25, playable in any order.",
+    "explore.accessibility.title": "Accessibility",
+    "explore.accessibility.body": "Our approach to independent living, what's built today, and how to tell us what to fix.",
+    "about.eyebrow": "About this build",
+    "about.lede": "DigiSpin is built for iPhone and iPad. Submitted to the App Store for review; not live there yet. <a href=\"changelog.html\">See what's new</a>.",
+    "footer.accessibility": "Accessibility",
+    "footer.whatsNew": "What's new",
+    "footer.privacyPolicy": "Privacy policy",
+    "footer.support": "Support"
+  },
+  "pt-PT": {
+    "nav.howToPlay": "Como jogar",
+    "nav.features": "Funcionalidades",
+    "nav.levels": "Níveis",
+    "nav.accessibility": "Acessibilidade",
+    "hero.tagline": "Gira os dígitos, <b>encontra os encaixes.</b>",
+    "hero.pitch": "Arrasta, gira e raciocina por 250 tabuleiros — alguns resolvem-se num minuto, outros valem bem o tempo que levares.",
+    "howItWorks.eyebrow": "Como funciona",
+    "howItWorks.heading": "Cada dígito é uma forma feita de barras",
+    "howItWorks.lede": "As dez peças do DigiSpin têm a forma dos dígitos de 0 a 9, feitas de barras que assentam nas linhas entre células, como num mostrador de sete segmentos. Coloca as dez no tabuleiro, girando cada uma até encaixar, de forma a que <b style=\"color:var(--fg)\">nenhuma peça fique sobreposta a outra.</b>",
+    "explore.howToPlay.title": "Como jogar",
+    "explore.howToPlay.body": "As regras completas, com diagramas ao vivo desenhados pelo mesmo código da aplicação — e um puzzle que podes mesmo resolver nesta página.",
+    "explore.features.title": "Funcionalidades",
+    "explore.features.body": "Idiomas, temas, paletas de dígitos, dicas, conquistas, o puzzle diário e muito mais.",
+    "explore.levels.title": "Níveis",
+    "explore.levels.body": "250 tabuleiros em dez conjuntos de 25 com nomes de cores, jogáveis por qualquer ordem.",
+    "explore.accessibility.title": "Acessibilidade",
+    "explore.accessibility.body": "A nossa abordagem à vida independente, o que já está feito e como nos dizer o que falta corrigir.",
+    "about.eyebrow": "Sobre esta versão",
+    "about.lede": "O DigiSpin é feito para iPhone e iPad. Já foi submetido para revisão na App Store; ainda não está publicado lá. <a href=\"changelog.html\">Vê o que há de novo</a>.",
+    "footer.accessibility": "Acessibilidade",
+    "footer.whatsNew": "Novidades",
+    "footer.privacyPolicy": "Política de privacidade",
+    "footer.support": "Suporte"
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
 <title>DigiSpin</title>
@@ -158,10 +220,11 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the
+     top-right corner. Below this width the centred .wrap reaches under
+     it, so the nav keeps clear of it; without this the toolbar covers
+     the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
 
   .explore-grid{display:grid;gap:14px;margin-top:28px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -172,13 +235,18 @@
      one) — the CSS it drives, via the html[data-theme] attribute, already
      existed above for the try-it puzzle's theme-aware colours; this just
      gives a visitor a way to set it directly instead of only inheriting
-     the device's own setting. Fixed so it's reachable at any scroll
-     position, since its effect is page-wide. */
-  .theme-toggle{
+     the device's own setting. The language switcher sits beside it in a
+     shared fixed .site-toolbar, so it's reachable at any scroll position,
+     since both toggles' effects are page-wide. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -197,7 +265,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -207,18 +290,18 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DigiSpin"><polygon points="54.95,38.30 58.55,34.70 58.55,16.70 54.95,13.10 51.35,16.70 51.35,34.70" fill="#b82c36"/><polygon points="60.88,43.44 65.91,42.65 76.49,28.09 75.69,23.06 70.67,23.85 60.09,38.42" fill="#cc8a31"/><polygon points="62.66,51.09 67.19,53.40 84.31,47.84 86.62,43.31 82.09,40.99 64.97,46.56" fill="#e1cb26"/><polygon points="59.60,58.32 61.91,62.86 79.03,68.42 83.56,66.11 81.25,61.57 64.13,56.01" fill="#93b440"/><polygon points="52.87,62.38 52.08,67.40 62.66,81.97 67.68,82.76 68.48,77.73 57.90,63.17" fill="#288c60"/><polygon points="45.05,61.70 41.45,65.30 41.45,83.30 45.05,86.90 48.65,83.30 48.65,65.30" fill="#a0d0ed"/><polygon points="39.12,56.56 34.09,57.35 23.51,71.91 24.31,76.94 29.33,76.15 39.91,61.58" fill="#2c92c8"/><polygon points="37.34,48.91 32.81,46.60 15.69,52.16 13.38,56.69 17.91,59.01 35.03,53.44" fill="#225b99"/><polygon points="40.40,41.68 38.09,37.14 20.97,31.58 16.44,33.89 18.75,38.43 35.87,43.99" fill="#7b277a"/><polygon points="47.13,37.62 47.92,32.60 37.34,18.03 32.32,17.24 31.52,22.27 42.10,36.83" fill="#cc6fa1"/></svg>DigiSpin</a>
     <div class="site-nav-links">
-      <a href="how-to-play.html">How to play</a>
-      <a href="features.html">Features</a>
-      <a href="levels.html">Levels</a>
-      <a href="accessibility.html">Accessibility</a>
+      <a href="how-to-play.html" data-i18n="nav.howToPlay">How to play</a>
+      <a href="features.html" data-i18n="nav.features">Features</a>
+      <a href="levels.html" data-i18n="nav.levels">Levels</a>
+      <a href="accessibility.html" data-i18n="nav.accessibility">Accessibility</a>
     </div>
   </div>
 </nav>
 <div class="hero">
   <div class="wrap">
     <svg class="wordmark" viewBox="0 0 253 72" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DigiSpin"><polygon points="36.00,7.60 32.25,11.35 32.25,30.65 36.00,34.40 39.75,30.65 39.75,11.35" fill="currentColor"/><polygon points="36.00,37.60 32.25,41.35 32.25,60.65 36.00,64.40 39.75,60.65 39.75,41.35" fill="currentColor"/><polygon points="7.60,66.00 11.35,69.75 30.65,69.75 34.40,66.00 30.65,62.25 11.35,62.25" fill="currentColor"/><polygon points="6.00,37.60 2.25,41.35 2.25,60.65 6.00,64.40 9.75,60.65 9.75,41.35" fill="currentColor"/><polygon points="7.60,36.00 11.35,39.75 30.65,39.75 34.40,36.00 30.65,32.25 11.35,32.25" fill="currentColor"/><polygon points="49.00,7.60 45.25,11.35 45.25,30.65 49.00,34.40 52.75,30.65 52.75,11.35" fill="currentColor"/><polygon points="49.00,37.60 45.25,41.35 45.25,60.65 49.00,64.40 52.75,60.65 52.75,41.35" fill="currentColor"/><polygon points="63.60,6.00 67.35,9.75 86.65,9.75 90.40,6.00 86.65,2.25 67.35,2.25" fill="currentColor"/><polygon points="62.00,7.60 58.25,11.35 58.25,30.65 62.00,34.40 65.75,30.65 65.75,11.35" fill="currentColor"/><polygon points="62.00,37.60 58.25,41.35 58.25,60.65 62.00,64.40 65.75,60.65 65.75,41.35" fill="currentColor"/><polygon points="63.60,66.00 67.35,69.75 86.65,69.75 90.40,66.00 86.65,62.25 67.35,62.25" fill="currentColor"/><polygon points="92.00,37.60 88.25,41.35 88.25,60.65 92.00,64.40 95.75,60.65 95.75,41.35" fill="currentColor"/><polygon points="105.00,7.60 101.25,11.35 101.25,30.65 105.00,34.40 108.75,30.65 108.75,11.35" fill="currentColor"/><polygon points="105.00,37.60 101.25,41.35 101.25,60.65 105.00,64.40 108.75,60.65 108.75,41.35" fill="currentColor"/><polygon points="119.60,6.00 123.35,9.75 142.65,9.75 146.40,6.00 142.65,2.25 123.35,2.25" fill="#b82c36"/><polygon points="118.00,7.60 114.25,11.35 114.25,30.65 118.00,34.40 121.75,30.65 121.75,11.35" fill="#b82c36"/><polygon points="119.60,36.00 123.35,39.75 142.65,39.75 146.40,36.00 142.65,32.25 123.35,32.25" fill="#b82c36"/><polygon points="148.00,37.60 144.25,41.35 144.25,60.65 148.00,64.40 151.75,60.65 151.75,41.35" fill="#b82c36"/><polygon points="119.60,66.00 123.35,69.75 142.65,69.75 146.40,66.00 142.65,62.25 123.35,62.25" fill="#b82c36"/><polygon points="162.60,6.00 166.35,9.75 185.65,9.75 189.40,6.00 185.65,2.25 166.35,2.25" fill="#b82c36"/><polygon points="191.00,7.60 187.25,11.35 187.25,30.65 191.00,34.40 194.75,30.65 194.75,11.35" fill="#b82c36"/><polygon points="161.00,7.60 157.25,11.35 157.25,30.65 161.00,34.40 164.75,30.65 164.75,11.35" fill="#b82c36"/><polygon points="162.60,36.00 166.35,39.75 185.65,39.75 189.40,36.00 185.65,32.25 166.35,32.25" fill="#b82c36"/><polygon points="161.00,37.60 157.25,41.35 157.25,60.65 161.00,64.40 164.75,60.65 164.75,41.35" fill="#b82c36"/><polygon points="204.00,7.60 200.25,11.35 200.25,30.65 204.00,34.40 207.75,30.65 207.75,11.35" fill="#b82c36"/><polygon points="204.00,37.60 200.25,41.35 200.25,60.65 204.00,64.40 207.75,60.65 207.75,41.35" fill="#b82c36"/><polygon points="247.00,37.60 243.25,41.35 243.25,60.65 247.00,64.40 250.75,60.65 250.75,41.35" fill="#b82c36"/><polygon points="217.00,37.60 213.25,41.35 213.25,60.65 217.00,64.40 220.75,60.65 220.75,41.35" fill="#b82c36"/><polygon points="218.60,36.00 222.35,39.75 241.65,39.75 245.40,36.00 241.65,32.25 222.35,32.25" fill="#b82c36"/></svg>
-    <p class="tagline">Spin the digits, <b>find the fits.</b></p>
-    <p class="pitch">Drag, rotate and reason your way through 250 boards — some solved in a minute, some worth sitting with.</p>
+    <p class="tagline" data-i18n="hero.tagline">Spin the digits, <b>find the fits.</b></p>
+    <p class="pitch" data-i18n="hero.pitch">Drag, rotate and reason your way through 250 boards — some solved in a minute, some worth sitting with.</p>
   </div>
 </div>
 
@@ -226,9 +309,9 @@
 <section id="how-it-works">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">How it works</span>
-      <h2>Every digit is a shape made of bars</h2>
-      <p class="lede">DigiSpin's ten pieces are shaped like the digits 0 to 9, built from bars that sit on the lines between cells, the way a seven-segment display works. Place all ten on the board, rotating each one to fit, so that <b style="color:var(--fg)">no two pieces ever overlap.</b></p>
+      <span class="eyebrow" data-i18n="howItWorks.eyebrow">How it works</span>
+      <h2 data-i18n="howItWorks.heading">Every digit is a shape made of bars</h2>
+      <p class="lede" data-i18n="howItWorks.lede">DigiSpin's ten pieces are shaped like the digits 0 to 9, built from bars that sit on the lines between cells, the way a seven-segment display works. Place all ten on the board, rotating each one to fit, so that <b style="color:var(--fg)">no two pieces ever overlap.</b></p>
     </div>
   </div>
 </section>
@@ -237,20 +320,20 @@
   <div class="wrap">
     <div class="explore-grid">
       <a class="explore-card" href="how-to-play.html">
-        <h3>How to play &rarr;</h3>
-        <p>The full rules, with live diagrams drawn by the same code the app uses &mdash; and a puzzle you can actually solve right on the page.</p>
+        <h3><span data-i18n="explore.howToPlay.title">How to play</span> &rarr;</h3>
+        <p data-i18n="explore.howToPlay.body">The full rules, with live diagrams drawn by the same code the app uses &mdash; and a puzzle you can actually solve right on the page.</p>
       </a>
       <a class="explore-card" href="features.html">
-        <h3>Features &rarr;</h3>
-        <p>Languages, themes, digit palettes, hints, achievements, the daily puzzle and more.</p>
+        <h3><span data-i18n="explore.features.title">Features</span> &rarr;</h3>
+        <p data-i18n="explore.features.body">Languages, themes, digit palettes, hints, achievements, the daily puzzle and more.</p>
       </a>
       <a class="explore-card" href="levels.html">
-        <h3>Levels &rarr;</h3>
-        <p>250 boards in ten colour-named packs of 25, playable in any order.</p>
+        <h3><span data-i18n="explore.levels.title">Levels</span> &rarr;</h3>
+        <p data-i18n="explore.levels.body">250 boards in ten colour-named packs of 25, playable in any order.</p>
       </a>
       <a class="explore-card" href="accessibility.html">
-        <h3>Accessibility &rarr;</h3>
-        <p>Our approach to independent living, what's built today, and how to tell us what to fix.</p>
+        <h3><span data-i18n="explore.accessibility.title">Accessibility</span> &rarr;</h3>
+        <p data-i18n="explore.accessibility.body">Our approach to independent living, what's built today, and how to tell us what to fix.</p>
       </a>
     </div>
   </div>
@@ -259,9 +342,9 @@
 <section id="about">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">About this build</span>
+      <span class="eyebrow" data-i18n="about.eyebrow">About this build</span>
       <h2>Version 1.0.0</h2>
-      <p class="lede">DigiSpin is built for iPhone and iPad. Submitted to the App Store for review; not live there yet. <a href="changelog.html">See what's new</a>.</p>
+      <p class="lede" data-i18n="about.lede">DigiSpin is built for iPhone and iPad. Submitted to the App Store for review; not live there yet. <a href="changelog.html">See what's new</a>.</p>
     </div>
   </div>
 </section>
@@ -271,10 +354,10 @@
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DigiSpin icon"><polygon points="54.95,38.30 58.55,34.70 58.55,16.70 54.95,13.10 51.35,16.70 51.35,34.70" fill="#b82c36"/><polygon points="60.88,43.44 65.91,42.65 76.49,28.09 75.69,23.06 70.67,23.85 60.09,38.42" fill="#cc8a31"/><polygon points="62.66,51.09 67.19,53.40 84.31,47.84 86.62,43.31 82.09,40.99 64.97,46.56" fill="#e1cb26"/><polygon points="59.60,58.32 61.91,62.86 79.03,68.42 83.56,66.11 81.25,61.57 64.13,56.01" fill="#93b440"/><polygon points="52.87,62.38 52.08,67.40 62.66,81.97 67.68,82.76 68.48,77.73 57.90,63.17" fill="#288c60"/><polygon points="45.05,61.70 41.45,65.30 41.45,83.30 45.05,86.90 48.65,83.30 48.65,65.30" fill="#a0d0ed"/><polygon points="39.12,56.56 34.09,57.35 23.51,71.91 24.31,76.94 29.33,76.15 39.91,61.58" fill="#2c92c8"/><polygon points="37.34,48.91 32.81,46.60 15.69,52.16 13.38,56.69 17.91,59.01 35.03,53.44" fill="#225b99"/><polygon points="40.40,41.68 38.09,37.14 20.97,31.58 16.44,33.89 18.75,38.43 35.87,43.99" fill="#7b277a"/><polygon points="47.13,37.62 47.92,32.60 37.34,18.03 32.32,17.24 31.52,22.27 42.10,36.83" fill="#cc6fa1"/></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">DigiSpin</a>
-      <a href="accessibility.html">Accessibility</a>
-      <a href="changelog.html">What's new</a>
-      <a href="privacy-policy.html">Privacy policy</a>
-      <a href="support.html">Support</a>
+      <a href="accessibility.html" data-i18n="footer.accessibility">Accessibility</a>
+      <a href="changelog.html" data-i18n="footer.whatsNew">What's new</a>
+      <a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy policy</a>
+      <a href="support.html" data-i18n="footer.support">Support</a>
       <a href="mailto:info@digispin.me">info@digispin.me</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
@@ -318,5 +401,49 @@
 })();
 </script>
 
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    document.querySelectorAll('[data-i18n-attr-aria-label], [data-i18n-attr-title]').forEach(function (el) {
+      ['aria-label', 'title', 'alt', 'placeholder'].forEach(function (attr) {
+        var key = el.getAttribute('data-i18n-attr-' + attr);
+        if (key && strings[key] != null) el.setAttribute(attr, strings[key]);
+      });
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
+})();
+</script>
 
 </body></html>

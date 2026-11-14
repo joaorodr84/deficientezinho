@@ -57,8 +57,9 @@ different mechanisms:
   the theme toggle is already duplicated inline across every static
   page. `CLAUDE.md`'s "site-wide template" section documents it
   (`DEF-39`) as the fourth thing, alongside the theme key, nav clearance
-  and footer link, every mini site must carry to fit in — no mini site
-  has been wired up to it yet.
+  and footer link, every mini site must carry to fit in. DigiSpin
+  (`DEF-40`) is the first mini site wired up to it; the rest still
+  aren't.
 
 Locales to start with: English (UK) and Portuguese (Portugal), chosen so
 more locales are just another JSON file. Joao reviews all drafted copy;
@@ -66,7 +67,6 @@ first-person/tone-sensitive text (e.g. Watchr's "why it exists") gets
 extra care. No URL change for language — a toggle only, like the theme
 toggle, not `/en/`-style routes.
 
-- `DEF-40` [P3]: Translate the DigiSpin microsite.
 - `DEF-41` [P3]: Translate the Sphinx microsite.
 - `DEF-42` [P3]: Translate the Cangupa microsite.
 - `DEF-43` [P3]: Translate the Crivo microsite.

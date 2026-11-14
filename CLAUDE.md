@@ -214,8 +214,8 @@ The Angular pages get Transloco; a static mini site under
 its own translation the same way it already carries its own theme
 toggle: duplicated inline, per page, no build step, no shared file. This
 is the mechanism every mini-site translation task (DEF-40 onward) wires
-in; DEF-39 itself only establishes and documents it; no mini site is
-translated yet.
+in; DEF-39 itself only established and documented it. DigiSpin (`DEF-40`)
+is the first to actually carry it.
 
 Locales are the same two the Angular side starts with: `en-GB` and
 `pt-PT`. Each page carries both, keyed exactly like that (not `en`/`pt`)
@@ -253,15 +253,29 @@ possible.
    - CLI snippets (`<pre><code>`) and other non-prose stay untranslated
      unless the task says otherwise.
 
-3. **One switcher, next to the theme toggle** — same fixed-position
-   cluster, same button-group shape, two choices instead of three:
+3. **One switcher, sharing the theme toggle's fixed position** — same
+   as the Angular side's `.site-toolbar` (DEF-36): a `.site-toolbar`
+   wrapper, fixed top-right, holding both `.lang-toggle` and
+   `.theme-toggle` as flex children with an 8px gap, rather than each
+   positioning itself independently:
 
    ```html
-   <div class="lang-toggle" role="group" aria-label="Language">
-     <button type="button" data-lang-choice="en-GB">EN</button>
-     <button type="button" data-lang-choice="pt-PT">PT</button>
+   <div class="site-toolbar">
+     <div class="lang-toggle" role="group" aria-label="Language">
+       <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+       <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+     </div>
+     <div class="theme-toggle" role="group" aria-label="Theme">…</div>
    </div>
    ```
+
+   `.theme-toggle`'s own CSS drops `position: fixed` (now on
+   `.site-toolbar`); `.lang-toggle` mirrors its remaining shape (flex,
+   2px gap, `var(--surface)` background, 999px radius, 3px padding,
+   32px buttons). The nav's clearance for it
+   (`.site-nav-inner`'s `padding-right` under 1180px) widens from
+   `132px` to `210px` to fit both widgets, same value the Angular side
+   uses.
 
 4. **One inline script**, appended alongside the theme-toggle's own two
    scripts, applying the same shape (an IIFE, a `KEY` constant, a
