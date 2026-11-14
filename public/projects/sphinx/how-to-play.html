@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f2efe8;color:#14161a}img{max-width:100%}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f2efe8;color:#14161a}img{max-width:100%}</style></head><body>
 <script>
 (function () {
   try {
@@ -10,16 +10,122 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" /></svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.modes": "Game modes",
+    "nav.features": "Features",
+    "nav.accessibility": "Accessibility",
+    "intro.eyebrow": "How to play",
+    "intro.heading": "The rules of Guess It, Sphinx's classic mode",
+    "intro.lede": "This is the loop every round of the default game follows. Clear the List and Banned Words (see <a href=\"modes.html\">Game modes</a>) bend a couple of these rules, but this is the one to learn first.",
+    "card1.heading": "Pick a category, an age band, and a timer",
+    "card1.body": "Before the round starts, choose what to play (one of the 24 built-in categories, or one you made yourself), who's playing (Kids, Teens, or Adult — each one includes every easier word below it, so nothing gets harder by picking an older band), and how long the clock runs. Then pass the phone to whoever's describing first.",
+    "card2.heading": "One word, one describer",
+    "card2.body": "A Mystery word appears on screen, visible only to the describer. Everyone else listens. The describer explains it however they like — synonyms, definitions, acting it out — with one rule: never say the word itself, or any close variant of it.",
+    "card2.demoWord": "Umbrella",
+    "card2.caption": "The describer sees the word. Nobody else does — they only hear the description.",
+    "card3.heading": "Swipe Correct or Pass",
+    "card3.body": "Someone in the room guesses it right — swipe the card right (or tap Correct) and the next word appears immediately. Nobody's getting it — swipe left (or tap Pass) to skip it and move on. Passing costs no time, but a passed word doesn't come back later in the same round, so it's a real trade-off, not a free skip.",
+    "card3.pass": "Pass",
+    "card3.correct": "Correct",
+    "card4.heading": "The clock doesn't wait",
+    "card4.body": "A timer runs the whole round, counting down from whatever length was set at the start. Words keep coming until it hits zero — there's no pausing to think, which is the whole point.",
+    "card5.heading": "Results, then go again",
+    "card5.body": "When time's up, the results screen shows the score and how many were Correct versus Passed. \"Play again\" restarts instantly with the same category and age band — pass the phone to the next describer and go. There's also an option to snap a quick photo of the room before moving on.",
+    "card5.resultCorrect": "Correct",
+    "card5.resultPassed": "Passed",
+    "card5.resultCategory": "Category",
+    "card5.resultCategoryValue": "Objects",
+    "card5.caption": "A real round also lets you open History to see every past score, not just the last one.",
+    "tryit.eyebrow": "Try it yourself",
+    "tryit.heading": "A 15-second round, right here",
+    "tryit.lede": "Drag the card left or right, or use the buttons. This page can't hear you describe anything, so just imagine someone is — the point is to feel the swipe-and-clock rhythm the real app runs on.",
+    "tryit.timeLabel": "Time left:",
+    "tryit.scoreLabel": "Score:",
+    "tryit.passBtn": "Pass",
+    "tryit.correctBtn": "Correct",
+    "tryit.hint": "Words from the Objects category, just for this demo.",
+    "tryit.resultHint": "words guessed in 15 seconds",
+    "tryit.playAgainBtn": "Play again",
+    "tryit.words": {
+      "umbrella": "Umbrella", "chair": "Chair", "backpack": "Backpack", "lamp": "Lamp",
+      "pillow": "Pillow", "mirror": "Mirror", "key": "Key", "candle": "Candle",
+      "suitcase": "Suitcase", "blanket": "Blanket", "scissors": "Scissors", "wallet": "Wallet"
+    },
+    "footer.modes": "Game modes",
+    "footer.accessibility": "Accessibility",
+    "footer.whatsNew": "What's new",
+    "footer.privacyPolicy": "Privacy policy",
+    "footer.support": "Support"
+  },
+  "pt-PT": {
+    "nav.modes": "Modos de jogo",
+    "nav.features": "Funcionalidades",
+    "nav.accessibility": "Acessibilidade",
+    "intro.eyebrow": "Como jogar",
+    "intro.heading": "As regras do Guess It, o modo clássico do Sphinx",
+    "intro.lede": "Este é o ciclo que cada ronda do jogo predefinido segue. Clear the List e Banned Words (ver <a href=\"modes.html\">Modos de jogo</a>) dobram algumas destas regras, mas este é o que deves aprender primeiro.",
+    "card1.heading": "Escolhe uma categoria, uma faixa de idade e um cronómetro",
+    "card1.body": "Antes de a ronda começar, escolhe o que jogar (uma das 24 categorias incluídas, ou uma que tu próprio criaste), quem está a jogar (Crianças, Adolescentes ou Adultos — cada uma inclui todas as palavras mais fáceis abaixo dela, por isso nada fica mais difícil ao escolher uma faixa mais velha) e durante quanto tempo corre o relógio. Depois passa o telefone a quem vai descrever primeiro.",
+    "card2.heading": "Uma palavra, um descritor",
+    "card2.body": "Uma palavra-mistério aparece no ecrã, visível só para o descritor. Todos os outros escutam. O descritor explica-a como quiser — sinónimos, definições, representá-la — com uma regra: nunca dizer a própria palavra, nem nenhuma variante próxima dela.",
+    "card2.demoWord": "Guarda-chuva",
+    "card2.caption": "O descritor vê a palavra. Mais ninguém a vê — só ouvem a descrição.",
+    "card3.heading": "Desliza Correto ou Passar",
+    "card3.body": "Alguém na sala adivinha corretamente — desliza a carta para a direita (ou toca em Correto) e a próxima palavra aparece imediatamente. Ninguém consegue acertar — desliza para a esquerda (ou toca em Passar) para a saltar e avançar. Passar não custa tempo, mas uma palavra passada não volta mais tarde na mesma ronda, por isso é uma verdadeira troca, não um salto gratuito.",
+    "card3.pass": "Passar",
+    "card3.correct": "Correto",
+    "card4.heading": "O relógio não espera",
+    "card4.body": "Um cronómetro corre toda a ronda, a contar a partir da duração definida no início. As palavras continuam a aparecer até chegar a zero — não há pausa para pensar, e esse é o objetivo.",
+    "card5.heading": "Resultados, e joga outra vez",
+    "card5.body": "Quando o tempo acaba, o ecrã de resultados mostra a pontuação e quantas foram Corretas versus Passadas. \"Jogar outra vez\" reinicia instantaneamente com a mesma categoria e faixa de idade — passa o telefone ao próximo descritor e continua. Há também a opção de tirar uma fotografia rápida da sala antes de avançar.",
+    "card5.resultCorrect": "Corretas",
+    "card5.resultPassed": "Passadas",
+    "card5.resultCategory": "Categoria",
+    "card5.resultCategoryValue": "Objetos",
+    "card5.caption": "Uma ronda real também te permite abrir o Histórico para ver todas as pontuações passadas, não só a última.",
+    "tryit.eyebrow": "Experimenta tu mesmo",
+    "tryit.heading": "Uma ronda de 15 segundos, aqui mesmo",
+    "tryit.lede": "Arrasta a carta para a esquerda ou para a direita, ou usa os botões. Esta página não te consegue ouvir a descrever nada, por isso imagina que alguém está — o objetivo é sentir o ritmo de deslizar e cronómetro em que a aplicação real se baseia.",
+    "tryit.timeLabel": "Tempo restante:",
+    "tryit.scoreLabel": "Pontuação:",
+    "tryit.passBtn": "Passar",
+    "tryit.correctBtn": "Correto",
+    "tryit.hint": "Palavras da categoria Objetos, só para esta demonstração.",
+    "tryit.resultHint": "palavras adivinhadas em 15 segundos",
+    "tryit.playAgainBtn": "Jogar outra vez",
+    "tryit.words": {
+      "umbrella": "Guarda-chuva", "chair": "Cadeira", "backpack": "Mochila", "lamp": "Lâmpada",
+      "pillow": "Almofada", "mirror": "Espelho", "key": "Chave", "candle": "Vela",
+      "suitcase": "Mala", "blanket": "Cobertor", "scissors": "Tesoura", "wallet": "Carteira"
+    },
+    "footer.modes": "Modos de jogo",
+    "footer.accessibility": "Acessibilidade",
+    "footer.whatsNew": "Novidades",
+    "footer.privacyPolicy": "Política de privacidade",
+    "footer.support": "Suporte"
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" /></svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
+    </button>
+  </div>
 </div>
 
 <title>Sphinx — How to play</title>
@@ -98,13 +204,44 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
-  .theme-toggle{position:fixed;top:14px;right:14px;z-index:10;display:flex;gap:2px;background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:3px}
+  /* The toolbar (language switcher + theme toggle) is fixed in the
+     top-right corner. Below this width the centred .wrap reaches under
+     it, so the nav keeps clear of it; without this the toolbar covers
+     the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
+  .site-toolbar{
+    position:fixed;
+    top:14px;
+    right:14px;
+    z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
+    display:flex;
+    gap:2px;
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:999px;
+    padding:3px;
+  }
   .theme-toggle button{width:32px;height:32px;border:none;border-radius:999px;background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer}
-  .theme-toggle button.active{background:var(--surface-2);color:var(--fg)}
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{background:var(--surface-2);color:var(--fg)}
   footer{padding-block:40px 48px;background:var(--surface);border-top:1px solid var(--rule)}
   footer .wrap{display:flex;align-items:center;gap:16px;color:var(--muted);font-size:0.86rem;flex-wrap:wrap}
   .footer-icon{width:36px;height:36px;flex-shrink:0}
@@ -119,9 +256,9 @@
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx"><path d="M37.9 29 A14 14 0 1 1 50 50" fill="none" stroke="var(--accent)" stroke-width="8.5" stroke-linecap="round"/><path d="M50 50 A14 14 0 1 0 62.1 71" fill="none" stroke="var(--pass)" stroke-width="8.5" stroke-linecap="round"/><circle cx="50" cy="36" r="5" fill="var(--pass)"/><circle cx="50" cy="64" r="5" fill="var(--accent)"/></svg>Sphinx</a>
     <div class="site-nav-links">
       <a href="how-to-play.html" class="current">How to play</a>
-      <a href="modes.html">Game modes</a>
-      <a href="features.html">Features</a>
-      <a href="accessibility.html">Accessibility</a>
+      <a href="modes.html" data-i18n="nav.modes">Game modes</a>
+      <a href="features.html" data-i18n="nav.features">Features</a>
+      <a href="accessibility.html" data-i18n="nav.accessibility">Accessibility</a>
     </div>
   </div>
 </nav>
@@ -129,53 +266,53 @@
 <section id="how-to-play">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">How to play</span>
-      <h2>The rules of Guess It, Sphinx's classic mode</h2>
-      <p class="lede">This is the loop every round of the default game follows. Clear the List and Banned Words (see <a href="modes.html">Game modes</a>) bend a couple of these rules, but this is the one to learn first.</p>
+      <span class="eyebrow" data-i18n="intro.eyebrow">How to play</span>
+      <h2 data-i18n="intro.heading">The rules of Guess It, Sphinx's classic mode</h2>
+      <p class="lede" data-i18n="intro.lede">This is the loop every round of the default game follows. Clear the List and Banned Words (see <a href="modes.html">Game modes</a>) bend a couple of these rules, but this is the one to learn first.</p>
     </div>
 
     <div class="htp-card">
-      <h3><span class="num">1</span>Pick a category, an age band, and a timer</h3>
-      <p>Before the round starts, choose what to play (one of the 24 built-in categories, or one you made yourself), who's playing (Kids, Teens, or Adult — each one includes every easier word below it, so nothing gets harder by picking an older band), and how long the clock runs. Then pass the phone to whoever's describing first.</p>
+      <h3><span class="num">1</span><span data-i18n="card1.heading">Pick a category, an age band, and a timer</span></h3>
+      <p data-i18n="card1.body">Before the round starts, choose what to play (one of the 24 built-in categories, or one you made yourself), who's playing (Kids, Teens, or Adult — each one includes every easier word below it, so nothing gets harder by picking an older band), and how long the clock runs. Then pass the phone to whoever's describing first.</p>
     </div>
 
     <div class="htp-card">
-      <h3><span class="num">2</span>One word, one describer</h3>
-      <p>A Mystery word appears on screen, visible only to the describer. Everyone else listens. The describer explains it however they like — synonyms, definitions, acting it out — with one rule: never say the word itself, or any close variant of it.</p>
+      <h3><span class="num">2</span><span data-i18n="card2.heading">One word, one describer</span></h3>
+      <p data-i18n="card2.body">A Mystery word appears on screen, visible only to the describer. Everyone else listens. The describer explains it however they like — synonyms, definitions, acting it out — with one rule: never say the word itself, or any close variant of it.</p>
       <div class="htp-mockrow">
-        <div class="card-demo">Umbrella</div>
-        <span class="htp-mock-caption">The describer sees the word. Nobody else does — they only hear the description.</span>
+        <div class="card-demo" data-i18n="card2.demoWord">Umbrella</div>
+        <span class="htp-mock-caption" data-i18n="card2.caption">The describer sees the word. Nobody else does — they only hear the description.</span>
       </div>
     </div>
 
     <div class="htp-card">
-      <h3><span class="num">3</span>Swipe Correct or Pass</h3>
-      <p>Someone in the room guesses it right — swipe the card right (or tap Correct) and the next word appears immediately. Nobody's getting it — swipe left (or tap Pass) to skip it and move on. Passing costs no time, but a passed word doesn't come back later in the same round, so it's a real trade-off, not a free skip.</p>
+      <h3><span class="num">3</span><span data-i18n="card3.heading">Swipe Correct or Pass</span></h3>
+      <p data-i18n="card3.body">Someone in the room guesses it right — swipe the card right (or tap Correct) and the next word appears immediately. Nobody's getting it — swipe left (or tap Pass) to skip it and move on. Passing costs no time, but a passed word doesn't come back later in the same round, so it's a real trade-off, not a free skip.</p>
       <div class="htp-mockrow">
         <div class="swipe-icons">
-          <div class="swipe-icon pass"><div class="dot">&larr;</div>Pass</div>
-          <div class="card-demo">Umbrella</div>
-          <div class="swipe-icon correct"><div class="dot">&rarr;</div>Correct</div>
+          <div class="swipe-icon pass"><div class="dot">&larr;</div><span data-i18n="card3.pass">Pass</span></div>
+          <div class="card-demo" data-i18n="card2.demoWord">Umbrella</div>
+          <div class="swipe-icon correct"><div class="dot">&rarr;</div><span data-i18n="card3.correct">Correct</span></div>
         </div>
       </div>
     </div>
 
     <div class="htp-card">
-      <h3><span class="num">4</span>The clock doesn't wait</h3>
-      <p>A timer runs the whole round, counting down from whatever length was set at the start. Words keep coming until it hits zero — there's no pausing to think, which is the whole point.</p>
+      <h3><span class="num">4</span><span data-i18n="card4.heading">The clock doesn't wait</span></h3>
+      <p data-i18n="card4.body">A timer runs the whole round, counting down from whatever length was set at the start. Words keep coming until it hits zero — there's no pausing to think, which is the whole point.</p>
     </div>
 
     <div class="htp-card">
-      <h3><span class="num">5</span>Results, then go again</h3>
-      <p>When time's up, the results screen shows the score and how many were Correct versus Passed. "Play again" restarts instantly with the same category and age band — pass the phone to the next describer and go. There's also an option to snap a quick photo of the room before moving on.</p>
+      <h3><span class="num">5</span><span data-i18n="card5.heading">Results, then go again</span></h3>
+      <p data-i18n="card5.body">When time's up, the results screen shows the score and how many were Correct versus Passed. "Play again" restarts instantly with the same category and age band — pass the phone to the next describer and go. There's also an option to snap a quick photo of the room before moving on.</p>
       <div class="htp-mockrow">
         <div class="results-mock">
           <div class="score">7</div>
-          <div class="line"><span>Correct</span><span>7</span></div>
-          <div class="line"><span>Passed</span><span>2</span></div>
-          <div class="line"><span>Category</span><span>Objects</span></div>
+          <div class="line"><span data-i18n="card5.resultCorrect">Correct</span><span>7</span></div>
+          <div class="line"><span data-i18n="card5.resultPassed">Passed</span><span>2</span></div>
+          <div class="line"><span data-i18n="card5.resultCategory">Category</span><span data-i18n="card5.resultCategoryValue">Objects</span></div>
         </div>
-        <span class="htp-mock-caption">A real round also lets you open History to see every past score, not just the last one.</span>
+        <span class="htp-mock-caption" data-i18n="card5.caption">A real round also lets you open History to see every past score, not just the last one.</span>
       </div>
     </div>
   </div>
@@ -184,27 +321,27 @@
 <section id="try-it">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Try it yourself</span>
-      <h2>A 15-second round, right here</h2>
-      <p class="lede">Drag the card left or right, or use the buttons. This page can't hear you describe anything, so just imagine someone is — the point is to feel the swipe-and-clock rhythm the real app runs on.</p>
+      <span class="eyebrow" data-i18n="tryit.eyebrow">Try it yourself</span>
+      <h2 data-i18n="tryit.heading">A 15-second round, right here</h2>
+      <p class="lede" data-i18n="tryit.lede">Drag the card left or right, or use the buttons. This page can't hear you describe anything, so just imagine someone is — the point is to feel the swipe-and-clock rhythm the real app runs on.</p>
     </div>
 
     <div id="tryit-stage">
-      <div class="tryit-hud"><span>Time left: <b id="tryit-time">15</b>s</span><span>Score: <b id="tryit-score">0</b></span></div>
+      <div class="tryit-hud"><span><span data-i18n="tryit.timeLabel">Time left:</span> <b id="tryit-time">15</b>s</span><span><span data-i18n="tryit.scoreLabel">Score:</span> <b id="tryit-score">0</b></span></div>
       <div id="tryit-card">
-        <span class="flag pass">Pass</span>
+        <span class="flag pass" data-i18n="tryit.passBtn">Pass</span>
         <span id="tryit-word">Umbrella</span>
-        <span class="flag correct">Correct</span>
+        <span class="flag correct" data-i18n="tryit.correctBtn">Correct</span>
       </div>
       <div class="tryit-controls">
-        <button type="button" class="tryit-btn pass" id="tryit-pass">&larr; Pass</button>
-        <button type="button" class="tryit-btn correct" id="tryit-correct">Correct &rarr;</button>
+        <button type="button" class="tryit-btn pass" id="tryit-pass">&larr; <span data-i18n="tryit.passBtn">Pass</span></button>
+        <button type="button" class="tryit-btn correct" id="tryit-correct"><span data-i18n="tryit.correctBtn">Correct</span> &rarr;</button>
       </div>
-      <p class="tryit-hint">Words from the Objects category, just for this demo.</p>
+      <p class="tryit-hint" data-i18n="tryit.hint">Words from the Objects category, just for this demo.</p>
       <div id="tryit-end">
         <div class="score" id="tryit-final">0</div>
-        <p class="tryit-hint">words guessed in 15 seconds</p>
-        <button type="button" id="tryit-again">Play again</button>
+        <p class="tryit-hint" data-i18n="tryit.resultHint">words guessed in 15 seconds</p>
+        <button type="button" id="tryit-again" data-i18n="tryit.playAgainBtn">Play again</button>
       </div>
     </div>
   </div>
@@ -215,11 +352,11 @@
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx icon"><path d="M37.9 29 A14 14 0 1 1 50 50" fill="none" stroke="var(--accent)" stroke-width="8.5" stroke-linecap="round"/><path d="M50 50 A14 14 0 1 0 62.1 71" fill="none" stroke="var(--pass)" stroke-width="8.5" stroke-linecap="round"/><circle cx="50" cy="36" r="5" fill="var(--pass)"/><circle cx="50" cy="64" r="5" fill="var(--accent)"/></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Sphinx</a>
-      <a href="modes.html">Game modes</a>
-      <a href="accessibility.html">Accessibility</a>
-      <a href="changelog.html">What's new</a>
-      <a href="privacy-policy.html">Privacy policy</a>
-      <a href="support.html">Support</a>
+      <a href="modes.html" data-i18n="footer.modes">Game modes</a>
+      <a href="accessibility.html" data-i18n="footer.accessibility">Accessibility</a>
+      <a href="changelog.html" data-i18n="footer.whatsNew">What's new</a>
+      <a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy policy</a>
+      <a href="support.html" data-i18n="footer.support">Support</a>
       <a href="mailto:joaorodr84@gmail.com">joaorodr84@gmail.com</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
@@ -229,8 +366,38 @@
 
 <script>
 (function () {
-  var WORDS = ['Umbrella', 'Chair', 'Backpack', 'Lamp', 'Pillow', 'Mirror', 'Key', 'Candle', 'Suitcase', 'Blanket', 'Scissors', 'Wallet'];
+  // This widget's status text is script-generated, not markup, so the
+  // generic data-i18n sweep (last script on the page) can't reach it:
+  // it keeps its own locale lookup here (same dictionary, same
+  // localStorage key), and exposes window.__tryitRerenderWord so a live
+  // language switch can refresh the current word immediately.
+  var i18nDict = (function () {
+    try {
+      return JSON.parse(document.getElementById('i18n-strings').textContent);
+    } catch (e) {
+      return {};
+    }
+  })();
+  function i18nLocale() {
+    try {
+      var saved = localStorage.getItem('deficientezinho-lang');
+      if (saved && i18nDict[saved]) return saved;
+    } catch (e) {}
+    var nav = (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+    return i18nDict[nav] ? nav : 'en-GB';
+  }
+  function t(key) {
+    var strings = i18nDict[i18nLocale()] || i18nDict['en-GB'] || {};
+    return strings[key];
+  }
+  function wordFor(wordKey) {
+    var words = t('tryit.words') || {};
+    return words[wordKey] || wordKey;
+  }
+
+  var WORD_KEYS = ['umbrella', 'chair', 'backpack', 'lamp', 'pillow', 'mirror', 'key', 'candle', 'suitcase', 'blanket', 'scissors', 'wallet'];
   var deck = [];
+  var currentWordKey = null;
   var timeLeft = 15;
   var score = 0;
   var timerId = null;
@@ -248,7 +415,7 @@
   var againBtn = document.getElementById('tryit-again');
 
   function shuffledDeck() {
-    var copy = WORDS.slice();
+    var copy = WORD_KEYS.slice();
     for (var i = copy.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var tmp = copy[i]; copy[i] = copy[j]; copy[j] = tmp;
@@ -258,7 +425,8 @@
 
   function nextWord() {
     if (!deck.length) deck = shuffledDeck();
-    wordEl.textContent = deck.pop();
+    currentWordKey = deck.pop();
+    wordEl.textContent = wordFor(currentWordKey);
     cardEl.style.transform = '';
     cardEl.style.opacity = '1';
     cardEl.classList.remove('dragging');
@@ -335,6 +503,10 @@
   cardEl.addEventListener('pointerup', release);
   cardEl.addEventListener('pointercancel', release);
 
+  window.__tryitRerenderWord = function () {
+    if (currentWordKey) wordEl.textContent = wordFor(currentWordKey);
+  };
+
   start();
 })();
 </script>
@@ -366,6 +538,52 @@
     btn.addEventListener('click', function () { apply(btn.getAttribute('data-theme-choice')); });
   });
   reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    document.querySelectorAll('[data-i18n-attr-aria-label], [data-i18n-attr-title]').forEach(function (el) {
+      ['aria-label', 'title', 'alt', 'placeholder'].forEach(function (attr) {
+        var key = el.getAttribute('data-i18n-attr-' + attr);
+        if (key && strings[key] != null) el.setAttribute(attr, strings[key]);
+      });
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+    if (window.__tryitRerenderWord) window.__tryitRerenderWord();
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
 })();
 </script>
 

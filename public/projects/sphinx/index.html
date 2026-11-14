@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 (function () {
   try {
@@ -10,22 +10,128 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howToPlay": "How to play",
+    "nav.modes": "Game modes",
+    "nav.features": "Features",
+    "nav.accessibility": "Accessibility",
+    "hero.tagline": "Describe it. Guess it. <span style=\"color:var(--accent)\">Never say it.</span>",
+    "hero.pitch": "A party word game for one phone and a room full of people. Three ways to play, 24 categories, five languages, and a timer that's always running out.",
+    "hero.ctaHowToPlay": "How to play &rarr;",
+    "hero.ctaModes": "See the game modes",
+    "howItWorks.eyebrow": "How it works",
+    "howItWorks.heading": "One Mystery word at a time, against the clock",
+    "howItWorks.lede": "Sphinx's classic mode &mdash; \"Guess It\" &mdash; hands one player a secret word and a running timer. Everyone else has to guess it before time runs out, from nothing but a description that can't use the word itself.",
+    "loop.step1.heading": "Mystery appears",
+    "loop.step1.body": "A word shows up on screen, picked from the category and age band you chose.",
+    "loop.step2.heading": "Describe it",
+    "loop.step2.body": "One player explains it to the room without ever saying the word itself.",
+    "loop.step3.heading": "Swipe Correct or Pass",
+    "loop.step3.body": "Got it? Swipe right. Stuck? Swipe left and move on &mdash; the clock doesn't stop.",
+    "loop.step4.heading": "Results",
+    "loop.step4.body": "When the timer hits zero, see the score, swap describers, and go again.",
+    "explore.eyebrow": "Explore",
+    "explore.heading": "Everything on this site",
+    "explore.howToPlay.title": "How to play &rarr;",
+    "explore.howToPlay.body": "The full rules of Guess It, with live mock-ups of the card, the swipe, and a round you can actually try right on the page.",
+    "explore.modes.title": "Game modes &rarr;",
+    "explore.modes.body": "Guess It, Clear the List, and Banned Words &mdash; three different ways to play with the same room full of people.",
+    "explore.features.title": "Features &rarr;",
+    "explore.features.body": "24 categories, custom categories, age bands, languages, color themes, image mode, tilt &amp; forehead controls, and more.",
+    "explore.accessibility.title": "Accessibility &rarr;",
+    "explore.accessibility.body": "Honor-system scoring, alternate controls, and contrast-checked themes &mdash; our approach, and how to tell us what to fix.",
+    "stats.eyebrow": "By the numbers",
+    "stats.heading": "What's in the box",
+    "stats.modes": "game modes",
+    "stats.categories": "built-in categories",
+    "stats.languages": "languages",
+    "stats.ageBands": "age bands",
+    "stats.themes": "color themes",
+    "stats.accounts": "accounts needed",
+    "about.eyebrow": "About this build",
+    "about.heading": "Still in development",
+    "about.lede": "Sphinx is being built by one developer and isn't on the App Store or Play Store yet. This site is a preview of what's shipping. <a href=\"changelog.html\">See what's new</a>.",
+    "footer.modes": "Game modes",
+    "footer.accessibility": "Accessibility",
+    "footer.whatsNew": "What's new",
+    "footer.privacyPolicy": "Privacy policy",
+    "footer.support": "Support"
+  },
+  "pt-PT": {
+    "nav.howToPlay": "Como jogar",
+    "nav.modes": "Modos de jogo",
+    "nav.features": "Funcionalidades",
+    "nav.accessibility": "Acessibilidade",
+    "hero.tagline": "Descreve-a. Adivinha-a. <span style=\"color:var(--accent)\">Nunca a digas.</span>",
+    "hero.pitch": "Um jogo de palavras para um telefone e uma sala cheia de gente. Três formas de jogar, 24 categorias, cinco idiomas e um cronómetro que está sempre a esgotar-se.",
+    "hero.ctaHowToPlay": "Como jogar &rarr;",
+    "hero.ctaModes": "Ver os modos de jogo",
+    "howItWorks.eyebrow": "Como funciona",
+    "howItWorks.heading": "Uma palavra-mistério de cada vez, contra o tempo",
+    "howItWorks.lede": "O modo clássico do Sphinx &mdash; \"Guess It\" &mdash; dá a um jogador uma palavra secreta e um cronómetro a contar. Todos os outros têm de a adivinhar antes de o tempo acabar, só a partir de uma descrição que não pode usar a própria palavra.",
+    "loop.step1.heading": "A palavra aparece",
+    "loop.step1.body": "Uma palavra aparece no ecrã, escolhida da categoria e da faixa de idade que escolheste.",
+    "loop.step2.heading": "Descreve-a",
+    "loop.step2.body": "Um jogador explica-a à sala sem nunca dizer a própria palavra.",
+    "loop.step3.heading": "Desliza Correto ou Passar",
+    "loop.step3.body": "Acertaram? Desliza para a direita. Ninguém acerta? Desliza para a esquerda e avança &mdash; o relógio não para.",
+    "loop.step4.heading": "Resultados",
+    "loop.step4.body": "Quando o cronómetro chega a zero, vê a pontuação, troca de descritor e joga outra vez.",
+    "explore.eyebrow": "Explorar",
+    "explore.heading": "Tudo o que há neste site",
+    "explore.howToPlay.title": "Como jogar &rarr;",
+    "explore.howToPlay.body": "As regras completas do Guess It, com simulações ao vivo da carta, do deslizar e uma ronda que podes mesmo experimentar nesta página.",
+    "explore.modes.title": "Modos de jogo &rarr;",
+    "explore.modes.body": "Guess It, Clear the List e Banned Words &mdash; três formas diferentes de jogar com a mesma sala cheia de gente.",
+    "explore.features.title": "Funcionalidades &rarr;",
+    "explore.features.body": "24 categorias, categorias personalizadas, faixas de idade, idiomas, temas de cor, modo imagem, controlos por inclinação e testa, e muito mais.",
+    "explore.accessibility.title": "Acessibilidade &rarr;",
+    "explore.accessibility.body": "Pontuação por sistema de honra, controlos alternativos e temas verificados por contraste &mdash; a nossa abordagem, e como nos dizer o que falta corrigir.",
+    "stats.eyebrow": "Em números",
+    "stats.heading": "O que vem incluído",
+    "stats.modes": "modos de jogo",
+    "stats.categories": "categorias incluídas",
+    "stats.languages": "idiomas",
+    "stats.ageBands": "faixas de idade",
+    "stats.themes": "temas de cor",
+    "stats.accounts": "contas necessárias",
+    "about.eyebrow": "Sobre esta versão",
+    "about.heading": "Ainda em desenvolvimento",
+    "about.lede": "O Sphinx está a ser feito por um só programador e ainda não está na App Store nem na Play Store. Este site é uma pré-visualização do que vai ser lançado. <a href=\"changelog.html\">Vê as novidades</a>.",
+    "footer.modes": "Modos de jogo",
+    "footer.accessibility": "Acessibilidade",
+    "footer.whatsNew": "Novidades",
+    "footer.privacyPolicy": "Política de privacidade",
+    "footer.support": "Suporte"
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
 <title>Sphinx — A party word game</title>
@@ -109,23 +215,54 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
-  .theme-toggle{position:fixed;top:14px;right:14px;z-index:10;display:flex;gap:2px;background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:3px}
+  /* The toolbar (language switcher + theme toggle) is fixed in the
+     top-right corner. Below this width the centred .wrap reaches under
+     it, so the nav keeps clear of it; without this the toolbar covers
+     the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
+  .site-toolbar{
+    position:fixed;
+    top:14px;
+    right:14px;
+    z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
+    display:flex;
+    gap:2px;
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:999px;
+    padding:3px;
+  }
   .theme-toggle button{width:32px;height:32px;border:none;border-radius:999px;background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer}
-  .theme-toggle button.active{background:var(--surface-2);color:var(--fg)}
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{background:var(--surface-2);color:var(--fg)}
 </style>
 
 <nav class="site-nav">
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx"><path d="M37.9 29 A14 14 0 1 1 50 50" fill="none" stroke="var(--accent)" stroke-width="8.5" stroke-linecap="round"/><path d="M50 50 A14 14 0 1 0 62.1 71" fill="none" stroke="var(--pass)" stroke-width="8.5" stroke-linecap="round"/><circle cx="50" cy="36" r="5" fill="var(--pass)"/><circle cx="50" cy="64" r="5" fill="var(--accent)"/></svg>Sphinx</a>
     <div class="site-nav-links">
-      <a href="how-to-play.html">How to play</a>
-      <a href="modes.html">Game modes</a>
-      <a href="features.html">Features</a>
-      <a href="accessibility.html">Accessibility</a>
+      <a href="how-to-play.html" data-i18n="nav.howToPlay">How to play</a>
+      <a href="modes.html" data-i18n="nav.modes">Game modes</a>
+      <a href="features.html" data-i18n="nav.features">Features</a>
+      <a href="accessibility.html" data-i18n="nav.accessibility">Accessibility</a>
     </div>
   </div>
 </nav>
@@ -134,11 +271,11 @@
   <div class="wrap">
     <svg class="hero-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx"><path d="M37.9 29 A14 14 0 1 1 50 50" fill="none" stroke="var(--accent)" stroke-width="8.5" stroke-linecap="round"/><path d="M50 50 A14 14 0 1 0 62.1 71" fill="none" stroke="var(--pass)" stroke-width="8.5" stroke-linecap="round"/><circle cx="50" cy="36" r="5" fill="var(--pass)"/><circle cx="50" cy="64" r="5" fill="var(--accent)"/></svg>
     <div class="wordmark">Sphinx</div>
-    <p class="tagline">Describe it. Guess it. <span style="color:var(--accent)">Never say it.</span></p>
-    <p class="pitch">A party word game for one phone and a room full of people. Three ways to play, 24 categories, five languages, and a timer that's always running out.</p>
+    <p class="tagline" data-i18n="hero.tagline">Describe it. Guess it. <span style="color:var(--accent)">Never say it.</span></p>
+    <p class="pitch" data-i18n="hero.pitch">A party word game for one phone and a room full of people. Three ways to play, 24 categories, five languages, and a timer that's always running out.</p>
     <div class="cta-row">
-      <a class="btn btn-primary" href="how-to-play.html">How to play &rarr;</a>
-      <a class="btn btn-ghost" href="modes.html">See the game modes</a>
+      <a class="btn btn-primary" href="how-to-play.html" data-i18n="hero.ctaHowToPlay">How to play &rarr;</a>
+      <a class="btn btn-ghost" href="modes.html" data-i18n="hero.ctaModes">See the game modes</a>
     </div>
   </div>
 </div>
@@ -146,18 +283,18 @@
 <section id="how-it-works">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">How it works</span>
-      <h2>One Mystery word at a time, against the clock</h2>
-      <p class="lede">Sphinx's classic mode — "Guess It" — hands one player a secret word and a running timer. Everyone else has to guess it before time runs out, from nothing but a description that can't use the word itself.</p>
+      <span class="eyebrow" data-i18n="howItWorks.eyebrow">How it works</span>
+      <h2 data-i18n="howItWorks.heading">One Mystery word at a time, against the clock</h2>
+      <p class="lede" data-i18n="howItWorks.lede">Sphinx's classic mode — "Guess It" — hands one player a secret word and a running timer. Everyone else has to guess it before time runs out, from nothing but a description that can't use the word itself.</p>
     </div>
     <div class="loop-row">
-      <div class="loop-step"><span class="n">01</span><h3>Mystery appears</h3><p>A word shows up on screen, picked from the category and age band you chose.</p></div>
+      <div class="loop-step"><span class="n">01</span><h3 data-i18n="loop.step1.heading">Mystery appears</h3><p data-i18n="loop.step1.body">A word shows up on screen, picked from the category and age band you chose.</p></div>
       <div class="loop-arrow">&rarr;</div>
-      <div class="loop-step"><span class="n">02</span><h3>Describe it</h3><p>One player explains it to the room without ever saying the word itself.</p></div>
+      <div class="loop-step"><span class="n">02</span><h3 data-i18n="loop.step2.heading">Describe it</h3><p data-i18n="loop.step2.body">One player explains it to the room without ever saying the word itself.</p></div>
       <div class="loop-arrow">&rarr;</div>
-      <div class="loop-step"><span class="n">03</span><h3>Swipe Correct or Pass</h3><p>Got it? Swipe right. Stuck? Swipe left and move on — the clock doesn't stop.</p></div>
+      <div class="loop-step"><span class="n">03</span><h3 data-i18n="loop.step3.heading">Swipe Correct or Pass</h3><p data-i18n="loop.step3.body">Got it? Swipe right. Stuck? Swipe left and move on — the clock doesn't stop.</p></div>
       <div class="loop-arrow">&rarr;</div>
-      <div class="loop-step"><span class="n">04</span><h3>Results</h3><p>When the timer hits zero, see the score, swap describers, and go again.</p></div>
+      <div class="loop-step"><span class="n">04</span><h3 data-i18n="loop.step4.heading">Results</h3><p data-i18n="loop.step4.body">When the timer hits zero, see the score, swap describers, and go again.</p></div>
     </div>
   </div>
 </section>
@@ -165,25 +302,25 @@
 <section id="explore">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Explore</span>
-      <h2>Everything on this site</h2>
+      <span class="eyebrow" data-i18n="explore.eyebrow">Explore</span>
+      <h2 data-i18n="explore.heading">Everything on this site</h2>
     </div>
     <div class="explore-grid">
       <a class="explore-card" href="how-to-play.html">
-        <h3>How to play &rarr;</h3>
-        <p>The full rules of Guess It, with live mock-ups of the card, the swipe, and a round you can actually try right on the page.</p>
+        <h3 data-i18n="explore.howToPlay.title">How to play &rarr;</h3>
+        <p data-i18n="explore.howToPlay.body">The full rules of Guess It, with live mock-ups of the card, the swipe, and a round you can actually try right on the page.</p>
       </a>
       <a class="explore-card" href="modes.html">
-        <h3>Game modes &rarr;</h3>
-        <p>Guess It, Clear the List, and Banned Words — three different ways to play with the same room full of people.</p>
+        <h3 data-i18n="explore.modes.title">Game modes &rarr;</h3>
+        <p data-i18n="explore.modes.body">Guess It, Clear the List, and Banned Words — three different ways to play with the same room full of people.</p>
       </a>
       <a class="explore-card" href="features.html">
-        <h3>Features &rarr;</h3>
-        <p>24 categories, custom categories, age bands, languages, color themes, image mode, tilt &amp; forehead controls, and more.</p>
+        <h3 data-i18n="explore.features.title">Features &rarr;</h3>
+        <p data-i18n="explore.features.body">24 categories, custom categories, age bands, languages, color themes, image mode, tilt &amp; forehead controls, and more.</p>
       </a>
       <a class="explore-card" href="accessibility.html">
-        <h3>Accessibility &rarr;</h3>
-        <p>Honor-system scoring, alternate controls, and contrast-checked themes — our approach, and how to tell us what to fix.</p>
+        <h3 data-i18n="explore.accessibility.title">Accessibility &rarr;</h3>
+        <p data-i18n="explore.accessibility.body">Honor-system scoring, alternate controls, and contrast-checked themes — our approach, and how to tell us what to fix.</p>
       </a>
     </div>
   </div>
@@ -192,16 +329,16 @@
 <section id="by-the-numbers">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">By the numbers</span>
-      <h2>What's in the box</h2>
+      <span class="eyebrow" data-i18n="stats.eyebrow">By the numbers</span>
+      <h2 data-i18n="stats.heading">What's in the box</h2>
     </div>
     <div class="stat-row">
-      <div class="stat"><b>3</b><span>game modes</span></div>
-      <div class="stat"><b>24</b><span>built-in categories</span></div>
-      <div class="stat"><b>5</b><span>languages</span></div>
-      <div class="stat"><b>3</b><span>age bands</span></div>
-      <div class="stat"><b>6</b><span>color themes</span></div>
-      <div class="stat"><b>0</b><span>accounts needed</span></div>
+      <div class="stat"><b>3</b><span data-i18n="stats.modes">game modes</span></div>
+      <div class="stat"><b>24</b><span data-i18n="stats.categories">built-in categories</span></div>
+      <div class="stat"><b>5</b><span data-i18n="stats.languages">languages</span></div>
+      <div class="stat"><b>3</b><span data-i18n="stats.ageBands">age bands</span></div>
+      <div class="stat"><b>6</b><span data-i18n="stats.themes">color themes</span></div>
+      <div class="stat"><b>0</b><span data-i18n="stats.accounts">accounts needed</span></div>
     </div>
   </div>
 </section>
@@ -209,9 +346,9 @@
 <section id="about">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">About this build</span>
-      <h2>Still in development</h2>
-      <p class="lede">Sphinx is being built by one developer and isn't on the App Store or Play Store yet. This site is a preview of what's shipping. <a href="changelog.html">See what's new</a>.</p>
+      <span class="eyebrow" data-i18n="about.eyebrow">About this build</span>
+      <h2 data-i18n="about.heading">Still in development</h2>
+      <p class="lede" data-i18n="about.lede">Sphinx is being built by one developer and isn't on the App Store or Play Store yet. This site is a preview of what's shipping. <a href="changelog.html">See what's new</a>.</p>
     </div>
   </div>
 </section>
@@ -221,11 +358,11 @@
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx icon"><path d="M37.9 29 A14 14 0 1 1 50 50" fill="none" stroke="var(--accent)" stroke-width="8.5" stroke-linecap="round"/><path d="M50 50 A14 14 0 1 0 62.1 71" fill="none" stroke="var(--pass)" stroke-width="8.5" stroke-linecap="round"/><circle cx="50" cy="36" r="5" fill="var(--pass)"/><circle cx="50" cy="64" r="5" fill="var(--accent)"/></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Sphinx</a>
-      <a href="modes.html">Game modes</a>
-      <a href="accessibility.html">Accessibility</a>
-      <a href="changelog.html">What's new</a>
-      <a href="privacy-policy.html">Privacy policy</a>
-      <a href="support.html">Support</a>
+      <a href="modes.html" data-i18n="footer.modes">Game modes</a>
+      <a href="accessibility.html" data-i18n="footer.accessibility">Accessibility</a>
+      <a href="changelog.html" data-i18n="footer.whatsNew">What's new</a>
+      <a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy policy</a>
+      <a href="support.html" data-i18n="footer.support">Support</a>
       <a href="mailto:joaorodr84@gmail.com">joaorodr84@gmail.com</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
@@ -260,6 +397,51 @@
     btn.addEventListener('click', function () { apply(btn.getAttribute('data-theme-choice')); });
   });
   reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    document.querySelectorAll('[data-i18n-attr-aria-label], [data-i18n-attr-title]').forEach(function (el) {
+      ['aria-label', 'title', 'alt', 'placeholder'].forEach(function (attr) {
+        var key = el.getAttribute('data-i18n-attr-' + attr);
+        if (key && strings[key] != null) el.setAttribute(attr, strings[key]);
+      });
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
 })();
 </script>
 

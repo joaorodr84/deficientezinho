@@ -1,8 +1,8 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Sphinx — Privacy policy</title>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Sphinx — Privacy policy</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M37.9 29 A14 14 0 1 1 50 50' fill='none' stroke='%231f9d55' stroke-width='8.5' stroke-linecap='round'/%3E%3Cpath d='M50 50 A14 14 0 1 0 62.1 71' fill='none' stroke='%23d64530' stroke-width='8.5' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='36' r='5' fill='%23d64530'/%3E%3Ccircle cx='50' cy='64' r='5' fill='%231f9d55'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
   :root{--bg:#f2efe8;--surface:#ffffff;--surface-2:#e8e3d8;--fg:#14161a;--muted:#5b5f66;--rule:#ddd7c8;--accent:#1f9d55;--accent-ink:#ffffff;--pass:#d64530}
   @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#1f2937;--surface:#263142;--surface-2:#2e3a4c;--fg:#ffffff;--muted:#a7b0bd;--rule:#3a4556;--accent:#34d399;--accent-ink:#1f2937;--pass:#f87171;color-scheme:dark}}
@@ -26,13 +26,44 @@
   .site-nav-links{display:flex;gap:18px;flex-wrap:wrap}
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
-  .theme-toggle{position:fixed;top:14px;right:14px;z-index:10;display:flex;gap:2px;background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:3px}
+  /* The toolbar (language switcher + theme toggle) is fixed in the
+     top-right corner. Below this width the centred .wrap reaches under
+     it, so the nav keeps clear of it; without this the toolbar covers
+     the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
+  .site-toolbar{
+    position:fixed;
+    top:14px;
+    right:14px;
+    z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
+    display:flex;
+    gap:2px;
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:999px;
+    padding:3px;
+  }
   .theme-toggle button{width:32px;height:32px;border:none;border-radius:999px;background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer}
-  .theme-toggle button.active{background:var(--surface-2);color:var(--fg)}
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{background:var(--surface-2);color:var(--fg)}
   footer{padding-block:40px 48px;background:var(--surface);border-top:1px solid var(--rule)}
   footer .wrap{display:flex;align-items:center;gap:16px;color:var(--muted);font-size:0.86rem;flex-wrap:wrap;padding:0 20px;max-width:960px}
   .footer-icon{width:36px;height:36px;flex-shrink:0}
@@ -53,75 +84,165 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" /></svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howToPlay": "How to play",
+    "nav.modes": "Game modes",
+    "nav.features": "Features",
+    "nav.accessibility": "Accessibility",
+    "h1": "Sphinx Privacy Policy",
+    "updated": "Last updated: September 26, 2026",
+    "intro": "Sphinx is a party word-guessing game made by a single independent developer (not a company). This policy explains what information the app handles and why. If anything here is unclear, contact <a href=\"mailto:joaorodr84@gmail.com\">joaorodr84@gmail.com</a>.",
+    "summary.heading": "Summary",
+    "summary.body": "Sphinx works entirely offline. There's no account to create, no login, and no ads. Nothing you do in the game — the words you see, your score, photos you take, how you hold your phone — is uploaded anywhere by Sphinx, with one exception: if the app crashes or hits an error, a technical error report may be sent to a crash-reporting service so the bug can be fixed. That's covered in detail below.",
+    "handles.heading": "Information Sphinx handles",
+    "scoreHistory.heading": "Score history",
+    "scoreHistory.body": "Sphinx keeps a local history of rounds you've played (category, score, date) so you can look back at past games. This is stored only on your device, using standard on-device app storage. It is never sent anywhere. You can erase it at any time from the History screen's \"Clear history\" button (which asks you to confirm before deleting), and it's removed automatically if you uninstall the app.",
+    "camera.heading": "Camera (optional)",
+    "camera.body": "After a round, Sphinx can offer to let you take a photo of your group using your device's own camera app. This is entirely optional — you can always tap \"Not now.\" Sphinx shows the photo back to you in a frame with a caption (the app name, the category, your score and the date). If you tap Save, that framed picture is added to your device's photo library, and only then does Sphinx ask for permission to add photos to it — the narrowest kind of permission your device offers, which lets Sphinx add a picture but never look at the ones you already have. Sphinx does not upload the photo, share it, or keep a copy of its own: the temporary files it works from are deleted when you're done with the preview. Once saved, the picture is in your photo library like any other and is yours to keep, share or delete from there. Sphinx only asks for camera access, never microphone access, and only requests each permission the first time you try to use the feature that needs it.",
+    "motion.heading": "Motion sensors (optional)",
+    "motion.body": "Sphinx has two optional settings — Forehead mode and Tilt gestures — that use your device's built-in motion sensors (the same kind used for screen rotation) as an alternative way to play, instead of tapping buttons. Both are off by default and only turn on if you enable them in Settings. Motion readings are processed in the moment, on your device, purely to detect a tilt gesture — they are never recorded, stored, or sent anywhere.",
+    "settings.heading": "Settings and preferences",
+    "settings.body": "Choices you make in Settings (theme, language, timer length, and so on) are saved locally on your device so the app remembers them between sessions. They are never transmitted anywhere.",
+    "crash.heading": "Crash and error reports",
+    "crash.body": "If Sphinx crashes or hits an unexpected error, a technical error report (what went wrong, which part of the app, and basic device/app information such as OS version and app version) may be sent to Sentry, a third-party crash-reporting service, to help identify and fix the bug. This is the only network transmission Sphinx performs. These reports are diagnostic — they are not used for advertising, profiling, or tracking you across apps, and Sphinx does not intentionally include your score history, photos, or any text you've typed in an error report. As with most crash-reporting tools, these reports may include your device's IP address as an incidental part of the network request; Sentry's own privacy policy (<a href=\"https://sentry.io/privacy/\">sentry.io/privacy</a>) governs how it's handled once received. You can read more about Sentry at <a href=\"https://sentry.io\">sentry.io</a>.",
+    "notDo.heading": "What Sphinx does not do",
+    "notDo.item1": "No account or login — Sphinx doesn't ask for your name, email, or any other identifying information.",
+    "notDo.item2": "No advertising and no ad-tracking SDKs.",
+    "notDo.item3": "No analytics or usage-tracking SDKs beyond the crash reporting described above.",
+    "notDo.item4": "No selling or sharing of your information with third parties, beyond the crash-reporting service necessary to operate that one feature.",
+    "children.heading": "Children's privacy",
+    "children.body": "Sphinx includes an age-band setting (kids / teens / adult) that only changes which words appear in a round — it does not collect anyone's age, identity, or any other personal information, from children or adults. Sphinx does not knowingly collect personal information from children.",
+    "retention.heading": "Data retention and deletion",
+    "retention.body": "Score history, settings, and any locally cached data live entirely on your device. You can clear score history at any time from the History screen, or remove everything Sphinx has stored by uninstalling the app. Sphinx has no server-side copy of anything to separately delete, because nothing but crash/error reports (see above) is ever sent off your device.",
+    "changes.heading": "Changes to this policy",
+    "changes.body": "If what Sphinx collects or how it's handled changes, this document will be updated and the \"Last updated\" date above will change accordingly.",
+    "contact.heading": "Contact",
+    "contact.body": "Questions about this policy or Sphinx's data handling: <a href=\"mailto:joaorodr84@gmail.com\">joaorodr84@gmail.com</a>.",
+    "footer.modes": "Game modes",
+    "footer.accessibility": "Accessibility",
+    "footer.whatsNew": "What's new",
+    "footer.support": "Support"
+  },
+  "pt-PT": {
+    "nav.howToPlay": "Como jogar",
+    "nav.modes": "Modos de jogo",
+    "nav.features": "Funcionalidades",
+    "nav.accessibility": "Acessibilidade",
+    "h1": "Política de Privacidade do Sphinx",
+    "updated": "Última atualização: 26 de setembro de 2026",
+    "intro": "O Sphinx é um jogo de festa de adivinhar palavras, feito por um único programador independente (não uma empresa). Esta política explica que informação a aplicação trata e porquê. Se algo aqui não estiver claro, contacta <a href=\"mailto:joaorodr84@gmail.com\">joaorodr84@gmail.com</a>.",
+    "summary.heading": "Resumo",
+    "summary.body": "O Sphinx funciona totalmente offline. Não há conta para criar, não há login e não há anúncios. Nada do que fazes no jogo — as palavras que vês, a tua pontuação, fotos que tires, como seguras o telefone — é enviado para qualquer lado pelo Sphinx, com uma exceção: se a aplicação falhar ou encontrar um erro, um relatório técnico de erro pode ser enviado para um serviço de relato de falhas para que o problema possa ser corrigido. Isso está detalhado abaixo.",
+    "handles.heading": "Informação que o Sphinx trata",
+    "scoreHistory.heading": "Histórico de pontuações",
+    "scoreHistory.body": "O Sphinx guarda um histórico local das rondas que já jogaste (categoria, pontuação, data) para que possas rever jogos anteriores. Isto é guardado só no teu dispositivo, usando o armazenamento padrão da aplicação no dispositivo. Nunca é enviado para lado nenhum. Podes apagá-lo em qualquer altura no botão \"Limpar histórico\" do ecrã Histórico (que te pede confirmação antes de apagar), e é removido automaticamente se desinstalares a aplicação.",
+    "camera.heading": "Câmara (opcional)",
+    "camera.body": "Depois de uma ronda, o Sphinx pode propor-te tirar uma fotografia do teu grupo usando a própria aplicação de câmara do teu dispositivo. Isto é totalmente opcional — podes sempre tocar em \"Agora não\". O Sphinx mostra-te a fotografia de volta numa moldura com uma legenda (o nome da aplicação, a categoria, a tua pontuação e a data). Se tocares em Guardar, essa imagem com moldura é adicionada à biblioteca de fotos do teu dispositivo, e só então é que o Sphinx pede permissão para lhe adicionar fotos — o tipo de permissão mais restrito que o teu dispositivo oferece, que permite ao Sphinx adicionar uma imagem mas nunca ver as que já tens. O Sphinx não envia a fotografia, não a partilha, nem guarda uma cópia própria: os ficheiros temporários com que trabalha são apagados quando terminas a pré-visualização. Depois de guardada, a imagem fica na tua biblioteca de fotos como qualquer outra, e é tua para guardar, partilhar ou apagar a partir daí. O Sphinx só pede acesso à câmara, nunca ao microfone, e só pede cada permissão a primeira vez que tentas usar a funcionalidade que precisa dela.",
+    "motion.heading": "Sensores de movimento (opcional)",
+    "motion.body": "O Sphinx tem duas definições opcionais — modo Testa e gestos de Inclinação — que usam os sensores de movimento incorporados do teu dispositivo (o mesmo tipo usado para rodar o ecrã) como uma forma alternativa de jogar, em vez de tocar em botões. Ambas estão desativadas por omissão e só se ativam se as ligares em Definições. As leituras de movimento são processadas no momento, no teu dispositivo, apenas para detetar um gesto de inclinação — nunca são registadas, guardadas ou enviadas para lado nenhum.",
+    "settings.heading": "Definições e preferências",
+    "settings.body": "As escolhas que fazes em Definições (tema, idioma, duração do cronómetro, entre outras) são guardadas localmente no teu dispositivo para que a aplicação as recorde entre sessões. Nunca são transmitidas para lado nenhum.",
+    "crash.heading": "Relatórios de falhas e erros",
+    "crash.body": "Se o Sphinx falhar ou encontrar um erro inesperado, um relatório técnico de erro (o que correu mal, que parte da aplicação, e informação básica do dispositivo/aplicação como a versão do sistema operativo e da aplicação) pode ser enviado para o Sentry, um serviço de terceiros de relato de falhas, para ajudar a identificar e corrigir o problema. Esta é a única transmissão em rede que o Sphinx realiza. Estes relatórios são de diagnóstico — não são usados para publicidade, perfilagem ou para te seguir entre aplicações, e o Sphinx não inclui intencionalmente o teu histórico de pontuações, fotografias ou qualquer texto que tenhas escrito num relatório de erro. Como na maioria das ferramentas de relato de falhas, estes relatórios podem incluir o endereço IP do teu dispositivo como parte incidental do pedido de rede; a própria política de privacidade do Sentry (<a href=\"https://sentry.io/privacy/\">sentry.io/privacy</a>) rege como é tratado depois de recebido. Podes saber mais sobre o Sentry em <a href=\"https://sentry.io\">sentry.io</a>.",
+    "notDo.heading": "O que o Sphinx não faz",
+    "notDo.item1": "Sem conta nem login — o Sphinx não pede o teu nome, email ou qualquer outra informação identificativa.",
+    "notDo.item2": "Sem publicidade e sem SDKs de monitorização publicitária.",
+    "notDo.item3": "Sem SDKs de análise ou monitorização de utilização, além do relato de falhas descrito acima.",
+    "notDo.item4": "Sem venda ou partilha da tua informação com terceiros, além do serviço de relato de falhas necessário para essa única funcionalidade.",
+    "children.heading": "Privacidade de crianças",
+    "children.body": "O Sphinx inclui uma definição de faixa de idade (crianças / adolescentes / adultos) que só altera que palavras aparecem numa ronda — não recolhe a idade, identidade ou qualquer outra informação pessoal de ninguém, criança ou adulto. O Sphinx não recolhe conscientemente informação pessoal de crianças.",
+    "retention.heading": "Retenção e eliminação de dados",
+    "retention.body": "O histórico de pontuações, as definições e quaisquer dados guardados em cache vivem inteiramente no teu dispositivo. Podes limpar o histórico de pontuações em qualquer altura a partir do ecrã Histórico, ou remover tudo o que o Sphinx guardou desinstalando a aplicação. O Sphinx não tem nenhuma cópia do lado do servidor para eliminar separadamente, porque nada além dos relatórios de falhas/erros (ver acima) é alguma vez enviado para fora do teu dispositivo.",
+    "changes.heading": "Alterações a esta política",
+    "changes.body": "Se o que o Sphinx recolhe ou como é tratado mudar, este documento será atualizado e a data de \"Última atualização\" acima mudará em conformidade.",
+    "contact.heading": "Contacto",
+    "contact.body": "Perguntas sobre esta política ou sobre como o Sphinx trata dados: <a href=\"mailto:joaorodr84@gmail.com\">joaorodr84@gmail.com</a>.",
+    "footer.modes": "Modos de jogo",
+    "footer.accessibility": "Acessibilidade",
+    "footer.whatsNew": "Novidades",
+    "footer.support": "Suporte"
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" /></svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
+    </button>
+  </div>
 </div>
 
 <nav class="site-nav">
   <div class="wrap site-nav-inner" style="max-width:960px;padding:14px 20px">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx"><path d="M37.9 29 A14 14 0 1 1 50 50" fill="none" stroke="var(--accent)" stroke-width="8.5" stroke-linecap="round"/><path d="M50 50 A14 14 0 1 0 62.1 71" fill="none" stroke="var(--pass)" stroke-width="8.5" stroke-linecap="round"/><circle cx="50" cy="36" r="5" fill="var(--pass)"/><circle cx="50" cy="64" r="5" fill="var(--accent)"/></svg>Sphinx</a>
     <div class="site-nav-links">
-      <a href="how-to-play.html">How to play</a>
-      <a href="modes.html">Game modes</a>
-      <a href="features.html">Features</a>
-      <a href="accessibility.html">Accessibility</a>
+      <a href="how-to-play.html" data-i18n="nav.howToPlay">How to play</a>
+      <a href="modes.html" data-i18n="nav.modes">Game modes</a>
+      <a href="features.html" data-i18n="nav.features">Features</a>
+      <a href="accessibility.html" data-i18n="nav.accessibility">Accessibility</a>
     </div>
   </div>
 </nav>
 
 <div class="wrap">
-  <h1>Sphinx Privacy Policy</h1>
-  <div class="updated">Last updated: September 26, 2026</div>
+  <h1 data-i18n="h1">Sphinx Privacy Policy</h1>
+  <div class="updated" data-i18n="updated">Last updated: September 26, 2026</div>
 
-  <p>Sphinx is a party word-guessing game made by a single independent developer (not a company). This policy explains what information the app handles and why. If anything here is unclear, contact <a href="mailto:joaorodr84@gmail.com">joaorodr84@gmail.com</a>.</p>
+  <p data-i18n="intro">Sphinx is a party word-guessing game made by a single independent developer (not a company). This policy explains what information the app handles and why. If anything here is unclear, contact <a href="mailto:joaorodr84@gmail.com">joaorodr84@gmail.com</a>.</p>
 
-  <h2>Summary</h2>
-  <p>Sphinx works entirely offline. There's no account to create, no login, and no ads. Nothing you do in the game — the words you see, your score, photos you take, how you hold your phone — is uploaded anywhere by Sphinx, with one exception: if the app crashes or hits an error, a technical error report may be sent to a crash-reporting service so the bug can be fixed. That's covered in detail below.</p>
+  <h2 data-i18n="summary.heading">Summary</h2>
+  <p data-i18n="summary.body">Sphinx works entirely offline. There's no account to create, no login, and no ads. Nothing you do in the game — the words you see, your score, photos you take, how you hold your phone — is uploaded anywhere by Sphinx, with one exception: if the app crashes or hits an error, a technical error report may be sent to a crash-reporting service so the bug can be fixed. That's covered in detail below.</p>
 
-  <h2>Information Sphinx handles</h2>
+  <h2 data-i18n="handles.heading">Information Sphinx handles</h2>
 
-  <h3>Score history</h3>
-  <p>Sphinx keeps a local history of rounds you've played (category, score, date) so you can look back at past games. This is stored only on your device, using standard on-device app storage. It is never sent anywhere. You can erase it at any time from the History screen's "Clear history" button (which asks you to confirm before deleting), and it's removed automatically if you uninstall the app.</p>
+  <h3 data-i18n="scoreHistory.heading">Score history</h3>
+  <p data-i18n="scoreHistory.body">Sphinx keeps a local history of rounds you've played (category, score, date) so you can look back at past games. This is stored only on your device, using standard on-device app storage. It is never sent anywhere. You can erase it at any time from the History screen's "Clear history" button (which asks you to confirm before deleting), and it's removed automatically if you uninstall the app.</p>
 
-  <h3>Camera (optional)</h3>
-  <p>After a round, Sphinx can offer to let you take a photo of your group using your device's own camera app. This is entirely optional — you can always tap "Not now." Sphinx shows the photo back to you in a frame with a caption (the app name, the category, your score and the date). If you tap Save, that framed picture is added to your device's photo library, and only then does Sphinx ask for permission to add photos to it — the narrowest kind of permission your device offers, which lets Sphinx add a picture but never look at the ones you already have. Sphinx does not upload the photo, share it, or keep a copy of its own: the temporary files it works from are deleted when you're done with the preview. Once saved, the picture is in your photo library like any other and is yours to keep, share or delete from there. Sphinx only asks for camera access, never microphone access, and only requests each permission the first time you try to use the feature that needs it.</p>
+  <h3 data-i18n="camera.heading">Camera (optional)</h3>
+  <p data-i18n="camera.body">After a round, Sphinx can offer to let you take a photo of your group using your device's own camera app. This is entirely optional — you can always tap "Not now." Sphinx shows the photo back to you in a frame with a caption (the app name, the category, your score and the date). If you tap Save, that framed picture is added to your device's photo library, and only then does Sphinx ask for permission to add photos to it — the narrowest kind of permission your device offers, which lets Sphinx add a picture but never look at the ones you already have. Sphinx does not upload the photo, share it, or keep a copy of its own: the temporary files it works from are deleted when you're done with the preview. Once saved, the picture is in your photo library like any other and is yours to keep, share or delete from there. Sphinx only asks for camera access, never microphone access, and only requests each permission the first time you try to use the feature that needs it.</p>
 
-  <h3>Motion sensors (optional)</h3>
-  <p>Sphinx has two optional settings — Forehead mode and Tilt gestures — that use your device's built-in motion sensors (the same kind used for screen rotation) as an alternative way to play, instead of tapping buttons. Both are off by default and only turn on if you enable them in Settings. Motion readings are processed in the moment, on your device, purely to detect a tilt gesture — they are never recorded, stored, or sent anywhere.</p>
+  <h3 data-i18n="motion.heading">Motion sensors (optional)</h3>
+  <p data-i18n="motion.body">Sphinx has two optional settings — Forehead mode and Tilt gestures — that use your device's built-in motion sensors (the same kind used for screen rotation) as an alternative way to play, instead of tapping buttons. Both are off by default and only turn on if you enable them in Settings. Motion readings are processed in the moment, on your device, purely to detect a tilt gesture — they are never recorded, stored, or sent anywhere.</p>
 
-  <h3>Settings and preferences</h3>
-  <p>Choices you make in Settings (theme, language, timer length, and so on) are saved locally on your device so the app remembers them between sessions. They are never transmitted anywhere.</p>
+  <h3 data-i18n="settings.heading">Settings and preferences</h3>
+  <p data-i18n="settings.body">Choices you make in Settings (theme, language, timer length, and so on) are saved locally on your device so the app remembers them between sessions. They are never transmitted anywhere.</p>
 
-  <h3>Crash and error reports</h3>
-  <p>If Sphinx crashes or hits an unexpected error, a technical error report (what went wrong, which part of the app, and basic device/app information such as OS version and app version) may be sent to Sentry, a third-party crash-reporting service, to help identify and fix the bug. This is the only network transmission Sphinx performs. These reports are diagnostic — they are not used for advertising, profiling, or tracking you across apps, and Sphinx does not intentionally include your score history, photos, or any text you've typed in an error report. As with most crash-reporting tools, these reports may include your device's IP address as an incidental part of the network request; Sentry's own privacy policy (<a href="https://sentry.io/privacy/">sentry.io/privacy</a>) governs how it's handled once received. You can read more about Sentry at <a href="https://sentry.io">sentry.io</a>.</p>
+  <h3 data-i18n="crash.heading">Crash and error reports</h3>
+  <p data-i18n="crash.body">If Sphinx crashes or hits an unexpected error, a technical error report (what went wrong, which part of the app, and basic device/app information such as OS version and app version) may be sent to Sentry, a third-party crash-reporting service, to help identify and fix the bug. This is the only network transmission Sphinx performs. These reports are diagnostic — they are not used for advertising, profiling, or tracking you across apps, and Sphinx does not intentionally include your score history, photos, or any text you've typed in an error report. As with most crash-reporting tools, these reports may include your device's IP address as an incidental part of the network request; Sentry's own privacy policy (<a href="https://sentry.io/privacy/">sentry.io/privacy</a>) governs how it's handled once received. You can read more about Sentry at <a href="https://sentry.io">sentry.io</a>.</p>
 
-  <h2>What Sphinx does not do</h2>
+  <h2 data-i18n="notDo.heading">What Sphinx does not do</h2>
   <ul>
-    <li>No account or login — Sphinx doesn't ask for your name, email, or any other identifying information.</li>
-    <li>No advertising and no ad-tracking SDKs.</li>
-    <li>No analytics or usage-tracking SDKs beyond the crash reporting described above.</li>
-    <li>No selling or sharing of your information with third parties, beyond the crash-reporting service necessary to operate that one feature.</li>
+    <li data-i18n="notDo.item1">No account or login — Sphinx doesn't ask for your name, email, or any other identifying information.</li>
+    <li data-i18n="notDo.item2">No advertising and no ad-tracking SDKs.</li>
+    <li data-i18n="notDo.item3">No analytics or usage-tracking SDKs beyond the crash reporting described above.</li>
+    <li data-i18n="notDo.item4">No selling or sharing of your information with third parties, beyond the crash-reporting service necessary to operate that one feature.</li>
   </ul>
 
-  <h2>Children's privacy</h2>
-  <p>Sphinx includes an age-band setting (kids / teens / adult) that only changes which words appear in a round — it does not collect anyone's age, identity, or any other personal information, from children or adults. Sphinx does not knowingly collect personal information from children.</p>
+  <h2 data-i18n="children.heading">Children's privacy</h2>
+  <p data-i18n="children.body">Sphinx includes an age-band setting (kids / teens / adult) that only changes which words appear in a round — it does not collect anyone's age, identity, or any other personal information, from children or adults. Sphinx does not knowingly collect personal information from children.</p>
 
-  <h2>Data retention and deletion</h2>
-  <p>Score history, settings, and any locally cached data live entirely on your device. You can clear score history at any time from the History screen, or remove everything Sphinx has stored by uninstalling the app. Sphinx has no server-side copy of anything to separately delete, because nothing but crash/error reports (see above) is ever sent off your device.</p>
+  <h2 data-i18n="retention.heading">Data retention and deletion</h2>
+  <p data-i18n="retention.body">Score history, settings, and any locally cached data live entirely on your device. You can clear score history at any time from the History screen, or remove everything Sphinx has stored by uninstalling the app. Sphinx has no server-side copy of anything to separately delete, because nothing but crash/error reports (see above) is ever sent off your device.</p>
 
-  <h2>Changes to this policy</h2>
-  <p>If what Sphinx collects or how it's handled changes, this document will be updated and the "Last updated" date above will change accordingly.</p>
+  <h2 data-i18n="changes.heading">Changes to this policy</h2>
+  <p data-i18n="changes.body">If what Sphinx collects or how it's handled changes, this document will be updated and the "Last updated" date above will change accordingly.</p>
 
-  <h2>Contact</h2>
-  <p>Questions about this policy or Sphinx's data handling: <a href="mailto:joaorodr84@gmail.com">joaorodr84@gmail.com</a>.</p>
+  <h2 data-i18n="contact.heading">Contact</h2>
+  <p data-i18n="contact.body">Questions about this policy or Sphinx's data handling: <a href="mailto:joaorodr84@gmail.com">joaorodr84@gmail.com</a>.</p>
 </div>
 
 <footer>
@@ -129,10 +250,10 @@
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx icon"><path d="M37.9 29 A14 14 0 1 1 50 50" fill="none" stroke="var(--accent)" stroke-width="8.5" stroke-linecap="round"/><path d="M50 50 A14 14 0 1 0 62.1 71" fill="none" stroke="var(--pass)" stroke-width="8.5" stroke-linecap="round"/><circle cx="50" cy="36" r="5" fill="var(--pass)"/><circle cx="50" cy="64" r="5" fill="var(--accent)"/></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Sphinx</a>
-      <a href="modes.html">Game modes</a>
-      <a href="accessibility.html">Accessibility</a>
-      <a href="changelog.html">What's new</a>
-      <a href="support.html">Support</a>
+      <a href="modes.html" data-i18n="footer.modes">Game modes</a>
+      <a href="accessibility.html" data-i18n="footer.accessibility">Accessibility</a>
+      <a href="changelog.html" data-i18n="footer.whatsNew">What's new</a>
+      <a href="support.html" data-i18n="footer.support">Support</a>
       <a href="mailto:joaorodr84@gmail.com">joaorodr84@gmail.com</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
@@ -169,4 +290,50 @@
   reflectActive();
 })();
 </script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    document.querySelectorAll('[data-i18n-attr-aria-label], [data-i18n-attr-title]').forEach(function (el) {
+      ['aria-label', 'title', 'alt', 'placeholder'].forEach(function (attr) {
+        var key = el.getAttribute('data-i18n-attr-' + attr);
+        if (key && strings[key] != null) el.setAttribute(attr, strings[key]);
+      });
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
+})();
+</script>
+
 </body></html>

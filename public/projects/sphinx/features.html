@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f2efe8;color:#14161a}img{max-width:100%}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f2efe8;color:#14161a}img{max-width:100%}</style></head><body>
 <script>
 (function () {
   try {
@@ -10,16 +10,138 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" /></svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howToPlay": "How to play",
+    "nav.modes": "Game modes",
+    "nav.accessibility": "Accessibility",
+    "categories.eyebrow": "24 built-in categories",
+    "categories.heading": "Something for every table",
+    "categories.lede": "Every category works with every mode it supports and every age band — pick one, pick an age band, and go. Can't find the right fit? Build your own below.",
+    "cat.objects": "Objects", "cat.animals": "Animals", "cat.cities": "Cities",
+    "cat.foodDrink": "Food &amp; Drink", "cat.fashion": "Fashion", "cat.games": "Games",
+    "cat.school": "School", "cat.countries": "Countries", "cat.monuments": "Monuments",
+    "cat.jobs": "Jobs", "cat.sports": "Sports", "cat.nature": "Nature",
+    "cat.household": "Household", "cat.vehicles": "Vehicles", "cat.body": "Body",
+    "cat.actions": "Actions", "cat.fantasy": "Fantasy", "cat.films": "Films",
+    "cat.tvShows": "TV Shows", "cat.music": "Music", "cat.icons": "Icons",
+    "cat.science": "Science", "cat.space": "Space", "cat.tech": "Tech",
+    "custom.eyebrow": "Make it yours",
+    "custom.heading": "Custom categories",
+    "custom.lede": "Build your own category from scratch, with your own words — inside jokes, a birthday theme, a classroom unit. Created categories can be edited any time: rename them, add words, or retire the ones that didn't land.",
+    "ageBands.eyebrow": "Who's playing",
+    "ageBands.heading": "Three age bands, one deck",
+    "ageBands.lede": "Age bands are cumulative, not separate decks — picking an older band adds harder words on top of the easier ones, it never takes words away.",
+    "ageBands.band1.n": "Band 1", "ageBands.band1.title": "Kids", "ageBands.band1.body": "The easiest tier in every category — every category guarantees at least 20 kid-friendly words.",
+    "ageBands.band2.n": "Band 2", "ageBands.band2.title": "Teens", "ageBands.band2.body": "Kids' words plus a trickier middle tier.",
+    "ageBands.band3.n": "Band 3", "ageBands.band3.title": "Adult", "ageBands.band3.body": "The full pool — kids' and teens' words plus the hardest tier.",
+    "languages.eyebrow": "Languages",
+    "languages.heading": "Five languages, or follow your device",
+    "languages.lede": "Every category and word is translated across all five — switch anytime in Settings, or let Sphinx pick based on your device's own language.",
+    "themes.eyebrow": "Color themes",
+    "themes.heading": "Six palettes, light and dark",
+    "themes.lede": "Pick a background and word color that suits the room — every theme's text and swipe colors are contrast-checked against WCAG AA so they stay readable across the board, not just the default.",
+    "more.eyebrow": "And the rest",
+    "more.heading": "Everything else the app does today",
+    "more.imageMode.title": "Image mode",
+    "more.imageMode.body": "Supported categories can show a picture instead of a word — handy for pre-readers or for Kids-band rounds.",
+    "more.tilt.title": "Tilt gestures",
+    "more.tilt.experimental": "(experimental)",
+    "more.tilt.body": "Tilt the phone forward for Correct, backward for Pass — an alternative to tapping or swiping, no hands-free setup required.",
+    "more.forehead.title": "Forehead mode",
+    "more.forehead.body": "Hold the phone to your forehead instead of a table — motion sensors detect the pose and rotate the word so your team can read it.",
+    "more.timer.title": "Configurable round timer",
+    "more.timer.body": "Set the clock to whatever length suits your group, per round.",
+    "more.history.title": "History",
+    "more.history.body": "Every past round's category, score, and date, kept on-device until you clear it.",
+    "more.photo.title": "Round photo",
+    "more.photo.body": "Snap a quick photo of the room after a round and save a framed copy — category, score and date included — to your photo library.",
+    "more.playAgain.title": "Play again, instantly",
+    "more.playAgain.body": "Restarts with the same category and age band — no re-navigating menus between rounds.",
+    "more.onDevice.title": "Everything stays on your device",
+    "more.onDevice.body": "No accounts, no ads, no analytics. The only thing ever sent off your phone is a crash report if something breaks. <a href=\"privacy-policy.html\">Read the privacy policy</a>.",
+    "footer.modes": "Game modes",
+    "footer.accessibility": "Accessibility",
+    "footer.whatsNew": "What's new",
+    "footer.privacyPolicy": "Privacy policy",
+    "footer.support": "Support"
+  },
+  "pt-PT": {
+    "nav.howToPlay": "Como jogar",
+    "nav.modes": "Modos de jogo",
+    "nav.accessibility": "Acessibilidade",
+    "categories.eyebrow": "24 categorias incluídas",
+    "categories.heading": "Algo para cada mesa",
+    "categories.lede": "Cada categoria funciona com todos os modos que suporta e com todas as faixas de idade — escolhe uma, escolhe uma faixa de idade, e começa a jogar. Não encontras a categoria certa? Cria a tua própria abaixo.",
+    "cat.objects": "Objetos", "cat.animals": "Animais", "cat.cities": "Cidades",
+    "cat.foodDrink": "Comida e Bebida", "cat.fashion": "Moda", "cat.games": "Jogos",
+    "cat.school": "Escola", "cat.countries": "Países", "cat.monuments": "Monumentos",
+    "cat.jobs": "Profissões", "cat.sports": "Desportos", "cat.nature": "Natureza",
+    "cat.household": "Casa", "cat.vehicles": "Veículos", "cat.body": "Corpo",
+    "cat.actions": "Ações", "cat.fantasy": "Fantasia", "cat.films": "Filmes",
+    "cat.tvShows": "Séries", "cat.music": "Música", "cat.icons": "Ícones",
+    "cat.science": "Ciência", "cat.space": "Espaço", "cat.tech": "Tecnologia",
+    "custom.eyebrow": "Torna-a tua",
+    "custom.heading": "Categorias personalizadas",
+    "custom.lede": "Cria a tua própria categoria do zero, com as tuas próprias palavras — piadas internas, um tema de aniversário, uma unidade escolar. As categorias criadas podem ser editadas em qualquer altura: renomeá-las, adicionar palavras, ou retirar as que não resultaram.",
+    "ageBands.eyebrow": "Quem está a jogar",
+    "ageBands.heading": "Três faixas de idade, um só baralho",
+    "ageBands.lede": "As faixas de idade são cumulativas, não baralhos separados — escolher uma faixa mais velha acrescenta palavras mais difíceis às mais fáceis, nunca tira palavras.",
+    "ageBands.band1.n": "Faixa 1", "ageBands.band1.title": "Crianças", "ageBands.band1.body": "O nível mais fácil em cada categoria — cada categoria garante pelo menos 20 palavras adequadas a crianças.",
+    "ageBands.band2.n": "Faixa 2", "ageBands.band2.title": "Adolescentes", "ageBands.band2.body": "As palavras das Crianças mais um nível intermédio mais difícil.",
+    "ageBands.band3.n": "Faixa 3", "ageBands.band3.title": "Adultos", "ageBands.band3.body": "O conjunto completo — as palavras das Crianças e dos Adolescentes mais o nível mais difícil.",
+    "languages.eyebrow": "Idiomas",
+    "languages.heading": "Cinco idiomas, ou segue o teu dispositivo",
+    "languages.lede": "Cada categoria e palavra está traduzida nos cinco — muda a qualquer momento em Definições, ou deixa o Sphinx escolher com base no idioma do teu dispositivo.",
+    "themes.eyebrow": "Temas de cor",
+    "themes.heading": "Seis paletas, claras e escuras",
+    "themes.lede": "Escolhe uma cor de fundo e de palavra que se adeque à sala — as cores de texto e de deslizar de cada tema são verificadas por contraste segundo o WCAG AA, para se manterem legíveis em todos, não só no tema predefinido.",
+    "more.eyebrow": "E o resto",
+    "more.heading": "Tudo o resto que a aplicação já faz",
+    "more.imageMode.title": "Modo imagem",
+    "more.imageMode.body": "As categorias suportadas podem mostrar uma imagem em vez de uma palavra — útil para quem ainda não lê ou para rondas da faixa Crianças.",
+    "more.tilt.title": "Gestos de inclinação",
+    "more.tilt.experimental": "(experimental)",
+    "more.tilt.body": "Inclina o telefone para a frente para Correto, para trás para Passar — uma alternativa a tocar ou deslizar, sem necessitar de configuração extra.",
+    "more.forehead.title": "Modo testa",
+    "more.forehead.body": "Encosta o telefone à testa em vez de o pousar na mesa — os sensores de movimento detetam a posição e giram a palavra para que a tua equipa a consiga ler.",
+    "more.timer.title": "Cronómetro de ronda configurável",
+    "more.timer.body": "Define a duração do relógio que se adequa ao teu grupo, por ronda.",
+    "more.history.title": "Histórico",
+    "more.history.body": "A categoria, pontuação e data de cada ronda passada, guardadas no dispositivo até as limpares.",
+    "more.photo.title": "Foto da ronda",
+    "more.photo.body": "Tira uma fotografia rápida da sala depois de uma ronda e guarda uma cópia emoldurada — com categoria, pontuação e data incluídas — na tua biblioteca de fotos.",
+    "more.playAgain.title": "Jogar outra vez, instantaneamente",
+    "more.playAgain.body": "Reinicia com a mesma categoria e faixa de idade — sem teres de navegar menus entre rondas.",
+    "more.onDevice.title": "Tudo fica no teu dispositivo",
+    "more.onDevice.body": "Sem contas, sem anúncios, sem análises. A única coisa que é enviada do teu telefone é um relatório de erro, caso algo falhe. <a href=\"privacy-policy.html\">Lê a política de privacidade</a>.",
+    "footer.modes": "Modos de jogo",
+    "footer.accessibility": "Acessibilidade",
+    "footer.whatsNew": "Novidades",
+    "footer.privacyPolicy": "Política de privacidade",
+    "footer.support": "Suporte"
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" /></svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
+    </button>
+  </div>
 </div>
 
 <title>Sphinx — Features</title>
@@ -74,13 +196,44 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
-  .theme-toggle{position:fixed;top:14px;right:14px;z-index:10;display:flex;gap:2px;background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:3px}
+  /* The toolbar (language switcher + theme toggle) is fixed in the
+     top-right corner. Below this width the centred .wrap reaches under
+     it, so the nav keeps clear of it; without this the toolbar covers
+     the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
+  .site-toolbar{
+    position:fixed;
+    top:14px;
+    right:14px;
+    z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
+    display:flex;
+    gap:2px;
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:999px;
+    padding:3px;
+  }
   .theme-toggle button{width:32px;height:32px;border:none;border-radius:999px;background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer}
-  .theme-toggle button.active{background:var(--surface-2);color:var(--fg)}
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{background:var(--surface-2);color:var(--fg)}
   footer{padding-block:40px 48px;background:var(--surface);border-top:1px solid var(--rule)}
   footer .wrap{display:flex;align-items:center;gap:16px;color:var(--muted);font-size:0.86rem;flex-wrap:wrap}
   .footer-icon{width:36px;height:36px;flex-shrink:0}
@@ -94,10 +247,10 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx"><path d="M37.9 29 A14 14 0 1 1 50 50" fill="none" stroke="var(--accent)" stroke-width="8.5" stroke-linecap="round"/><path d="M50 50 A14 14 0 1 0 62.1 71" fill="none" stroke="var(--pass)" stroke-width="8.5" stroke-linecap="round"/><circle cx="50" cy="36" r="5" fill="var(--pass)"/><circle cx="50" cy="64" r="5" fill="var(--accent)"/></svg>Sphinx</a>
     <div class="site-nav-links">
-      <a href="how-to-play.html">How to play</a>
-      <a href="modes.html">Game modes</a>
+      <a href="how-to-play.html" data-i18n="nav.howToPlay">How to play</a>
+      <a href="modes.html" data-i18n="nav.modes">Game modes</a>
       <a href="features.html" class="current">Features</a>
-      <a href="accessibility.html">Accessibility</a>
+      <a href="accessibility.html" data-i18n="nav.accessibility">Accessibility</a>
     </div>
   </div>
 </nav>
@@ -105,19 +258,19 @@
 <section id="categories">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">24 built-in categories</span>
-      <h2>Something for every table</h2>
-      <p class="lede">Every category works with every mode it supports and every age band — pick one, pick an age band, and go. Can't find the right fit? Build your own below.</p>
+      <span class="eyebrow" data-i18n="categories.eyebrow">24 built-in categories</span>
+      <h2 data-i18n="categories.heading">Something for every table</h2>
+      <p class="lede" data-i18n="categories.lede">Every category works with every mode it supports and every age band — pick one, pick an age band, and go. Can't find the right fit? Build your own below.</p>
     </div>
     <div class="cat-grid">
-      <div class="cat-chip">Objects</div><div class="cat-chip">Animals</div><div class="cat-chip">Cities</div>
-      <div class="cat-chip">Food &amp; Drink</div><div class="cat-chip">Fashion</div><div class="cat-chip">Games</div>
-      <div class="cat-chip">School</div><div class="cat-chip">Countries</div><div class="cat-chip">Monuments</div>
-      <div class="cat-chip">Jobs</div><div class="cat-chip">Sports</div><div class="cat-chip">Nature</div>
-      <div class="cat-chip">Household</div><div class="cat-chip">Vehicles</div><div class="cat-chip">Body</div>
-      <div class="cat-chip">Actions</div><div class="cat-chip">Fantasy</div><div class="cat-chip">Films</div>
-      <div class="cat-chip">TV Shows</div><div class="cat-chip">Music</div><div class="cat-chip">Icons</div>
-      <div class="cat-chip">Science</div><div class="cat-chip">Space</div><div class="cat-chip">Tech</div>
+      <div class="cat-chip" data-i18n="cat.objects">Objects</div><div class="cat-chip" data-i18n="cat.animals">Animals</div><div class="cat-chip" data-i18n="cat.cities">Cities</div>
+      <div class="cat-chip" data-i18n="cat.foodDrink">Food &amp; Drink</div><div class="cat-chip" data-i18n="cat.fashion">Fashion</div><div class="cat-chip" data-i18n="cat.games">Games</div>
+      <div class="cat-chip" data-i18n="cat.school">School</div><div class="cat-chip" data-i18n="cat.countries">Countries</div><div class="cat-chip" data-i18n="cat.monuments">Monuments</div>
+      <div class="cat-chip" data-i18n="cat.jobs">Jobs</div><div class="cat-chip" data-i18n="cat.sports">Sports</div><div class="cat-chip" data-i18n="cat.nature">Nature</div>
+      <div class="cat-chip" data-i18n="cat.household">Household</div><div class="cat-chip" data-i18n="cat.vehicles">Vehicles</div><div class="cat-chip" data-i18n="cat.body">Body</div>
+      <div class="cat-chip" data-i18n="cat.actions">Actions</div><div class="cat-chip" data-i18n="cat.fantasy">Fantasy</div><div class="cat-chip" data-i18n="cat.films">Films</div>
+      <div class="cat-chip" data-i18n="cat.tvShows">TV Shows</div><div class="cat-chip" data-i18n="cat.music">Music</div><div class="cat-chip" data-i18n="cat.icons">Icons</div>
+      <div class="cat-chip" data-i18n="cat.science">Science</div><div class="cat-chip" data-i18n="cat.space">Space</div><div class="cat-chip" data-i18n="cat.tech">Tech</div>
     </div>
   </div>
 </section>
@@ -125,9 +278,9 @@
 <section id="custom">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Make it yours</span>
-      <h2>Custom categories</h2>
-      <p class="lede">Build your own category from scratch, with your own words — inside jokes, a birthday theme, a classroom unit. Created categories can be edited any time: rename them, add words, or retire the ones that didn't land.</p>
+      <span class="eyebrow" data-i18n="custom.eyebrow">Make it yours</span>
+      <h2 data-i18n="custom.heading">Custom categories</h2>
+      <p class="lede" data-i18n="custom.lede">Build your own category from scratch, with your own words — inside jokes, a birthday theme, a classroom unit. Created categories can be edited any time: rename them, add words, or retire the ones that didn't land.</p>
     </div>
   </div>
 </section>
@@ -135,14 +288,14 @@
 <section id="age-bands">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Who's playing</span>
-      <h2>Three age bands, one deck</h2>
-      <p class="lede">Age bands are cumulative, not separate decks — picking an older band adds harder words on top of the easier ones, it never takes words away.</p>
+      <span class="eyebrow" data-i18n="ageBands.eyebrow">Who's playing</span>
+      <h2 data-i18n="ageBands.heading">Three age bands, one deck</h2>
+      <p class="lede" data-i18n="ageBands.lede">Age bands are cumulative, not separate decks — picking an older band adds harder words on top of the easier ones, it never takes words away.</p>
     </div>
     <div class="age-row">
-      <div class="age-card"><span class="n">Band 1</span><h3>Kids</h3><p>The easiest tier in every category — every category guarantees at least 20 kid-friendly words.</p></div>
-      <div class="age-card"><span class="n">Band 2</span><h3>Teens</h3><p>Kids' words plus a trickier middle tier.</p></div>
-      <div class="age-card"><span class="n">Band 3</span><h3>Adult</h3><p>The full pool — kids' and teens' words plus the hardest tier.</p></div>
+      <div class="age-card"><span class="n" data-i18n="ageBands.band1.n">Band 1</span><h3 data-i18n="ageBands.band1.title">Kids</h3><p data-i18n="ageBands.band1.body">The easiest tier in every category — every category guarantees at least 20 kid-friendly words.</p></div>
+      <div class="age-card"><span class="n" data-i18n="ageBands.band2.n">Band 2</span><h3 data-i18n="ageBands.band2.title">Teens</h3><p data-i18n="ageBands.band2.body">Kids' words plus a trickier middle tier.</p></div>
+      <div class="age-card"><span class="n" data-i18n="ageBands.band3.n">Band 3</span><h3 data-i18n="ageBands.band3.title">Adult</h3><p data-i18n="ageBands.band3.body">The full pool — kids' and teens' words plus the hardest tier.</p></div>
     </div>
   </div>
 </section>
@@ -150,9 +303,9 @@
 <section id="languages">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Languages</span>
-      <h2>Five languages, or follow your device</h2>
-      <p class="lede">Every category and word is translated across all five — switch anytime in Settings, or let Sphinx pick based on your device's own language.</p>
+      <span class="eyebrow" data-i18n="languages.eyebrow">Languages</span>
+      <h2 data-i18n="languages.heading">Five languages, or follow your device</h2>
+      <p class="lede" data-i18n="languages.lede">Every category and word is translated across all five — switch anytime in Settings, or let Sphinx pick based on your device's own language.</p>
     </div>
     <div class="lang-row">
       <span class="lang-chip">English</span>
@@ -167,9 +320,9 @@
 <section id="themes">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Color themes</span>
-      <h2>Six palettes, light and dark</h2>
-      <p class="lede">Pick a background and word color that suits the room — every theme's text and swipe colors are contrast-checked against WCAG AA so they stay readable across the board, not just the default.</p>
+      <span class="eyebrow" data-i18n="themes.eyebrow">Color themes</span>
+      <h2 data-i18n="themes.heading">Six palettes, light and dark</h2>
+      <p class="lede" data-i18n="themes.lede">Pick a background and word color that suits the room — every theme's text and swipe colors are contrast-checked against WCAG AA so they stay readable across the board, not just the default.</p>
     </div>
     <div class="theme-grid">
       <div class="theme-swatch" style="background:#1f2937;color:#ffffff;border-color:#1f2937">
@@ -203,18 +356,18 @@
 <section id="more-features">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">And the rest</span>
-      <h2>Everything else the app does today</h2>
+      <span class="eyebrow" data-i18n="more.eyebrow">And the rest</span>
+      <h2 data-i18n="more.heading">Everything else the app does today</h2>
     </div>
     <ul class="feature-list">
-      <li><b>Image mode</b><span>Supported categories can show a picture instead of a word — handy for pre-readers or for Kids-band rounds.</span></li>
-      <li><b>Tilt gestures <span style="opacity:0.7">(experimental)</span></b><span>Tilt the phone forward for Correct, backward for Pass — an alternative to tapping or swiping, no hands-free setup required.</span></li>
-      <li><b>Forehead mode</b><span>Hold the phone to your forehead instead of a table — motion sensors detect the pose and rotate the word so your team can read it.</span></li>
-      <li><b>Configurable round timer</b><span>Set the clock to whatever length suits your group, per round.</span></li>
-      <li><b>History</b><span>Every past round's category, score, and date, kept on-device until you clear it.</span></li>
-      <li><b>Round photo</b><span>Snap a quick photo of the room after a round and save a framed copy — category, score and date included — to your photo library.</span></li>
-      <li><b>Play again, instantly</b><span>Restarts with the same category and age band — no re-navigating menus between rounds.</span></li>
-      <li><b>Everything stays on your device</b><span>No accounts, no ads, no analytics. The only thing ever sent off your phone is a crash report if something breaks. <a href="privacy-policy.html">Read the privacy policy</a>.</span></li>
+      <li><b data-i18n="more.imageMode.title">Image mode</b><span data-i18n="more.imageMode.body">Supported categories can show a picture instead of a word — handy for pre-readers or for Kids-band rounds.</span></li>
+      <li><b><span data-i18n="more.tilt.title">Tilt gestures</span> <span style="opacity:0.7" data-i18n="more.tilt.experimental">(experimental)</span></b><span data-i18n="more.tilt.body">Tilt the phone forward for Correct, backward for Pass — an alternative to tapping or swiping, no hands-free setup required.</span></li>
+      <li><b data-i18n="more.forehead.title">Forehead mode</b><span data-i18n="more.forehead.body">Hold the phone to your forehead instead of a table — motion sensors detect the pose and rotate the word so your team can read it.</span></li>
+      <li><b data-i18n="more.timer.title">Configurable round timer</b><span data-i18n="more.timer.body">Set the clock to whatever length suits your group, per round.</span></li>
+      <li><b data-i18n="more.history.title">History</b><span data-i18n="more.history.body">Every past round's category, score, and date, kept on-device until you clear it.</span></li>
+      <li><b data-i18n="more.photo.title">Round photo</b><span data-i18n="more.photo.body">Snap a quick photo of the room after a round and save a framed copy — category, score and date included — to your photo library.</span></li>
+      <li><b data-i18n="more.playAgain.title">Play again, instantly</b><span data-i18n="more.playAgain.body">Restarts with the same category and age band — no re-navigating menus between rounds.</span></li>
+      <li><b data-i18n="more.onDevice.title">Everything stays on your device</b><span data-i18n="more.onDevice.body">No accounts, no ads, no analytics. The only thing ever sent off your phone is a crash report if something breaks. <a href="privacy-policy.html">Read the privacy policy</a>.</span></li>
     </ul>
   </div>
 </section>
@@ -224,11 +377,11 @@
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx icon"><path d="M37.9 29 A14 14 0 1 1 50 50" fill="none" stroke="var(--accent)" stroke-width="8.5" stroke-linecap="round"/><path d="M50 50 A14 14 0 1 0 62.1 71" fill="none" stroke="var(--pass)" stroke-width="8.5" stroke-linecap="round"/><circle cx="50" cy="36" r="5" fill="var(--pass)"/><circle cx="50" cy="64" r="5" fill="var(--accent)"/></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Sphinx</a>
-      <a href="modes.html">Game modes</a>
-      <a href="accessibility.html">Accessibility</a>
-      <a href="changelog.html">What's new</a>
-      <a href="privacy-policy.html">Privacy policy</a>
-      <a href="support.html">Support</a>
+      <a href="modes.html" data-i18n="footer.modes">Game modes</a>
+      <a href="accessibility.html" data-i18n="footer.accessibility">Accessibility</a>
+      <a href="changelog.html" data-i18n="footer.whatsNew">What's new</a>
+      <a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy policy</a>
+      <a href="support.html" data-i18n="footer.support">Support</a>
       <a href="mailto:joaorodr84@gmail.com">joaorodr84@gmail.com</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
@@ -263,6 +416,51 @@
     btn.addEventListener('click', function () { apply(btn.getAttribute('data-theme-choice')); });
   });
   reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    document.querySelectorAll('[data-i18n-attr-aria-label], [data-i18n-attr-title]').forEach(function (el) {
+      ['aria-label', 'title', 'alt', 'placeholder'].forEach(function (attr) {
+        var key = el.getAttribute('data-i18n-attr-' + attr);
+        if (key && strings[key] != null) el.setAttribute(attr, strings[key]);
+      });
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
 })();
 </script>
 

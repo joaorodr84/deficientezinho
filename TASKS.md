@@ -15,7 +15,6 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 
 | ID | Task | Status | Commit |
 | --- | --- | --- | --- |
-| DEF-41 | Translate the Sphinx microsite | open | — |
 | DEF-42 | Translate the Cangupa microsite | open | — |
 | DEF-43 | Translate the Crivo microsite | open | — |
 | DEF-44 | Translate the def-platform microsite/game UI text | open | — |
@@ -66,3 +65,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-37 | Translate Watchr's page content | done | 2026-11-14 | — |
 | DEF-38 | Translate Freecell Plus's page content | done | 2026-11-14 | — |
 | DEF-40 | Translate the DigiSpin microsite | done | 2026-11-14 | — |
+| DEF-41 | Translate the Sphinx microsite | done | 2026-11-14 | — |

@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f2efe8;color:#14161a}img{max-width:100%}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#f2efe8;color:#14161a}img{max-width:100%}</style></head><body>
 <script>
 (function () {
   try {
@@ -10,16 +10,168 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" /></svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howToPlay": "How to play",
+    "nav.features": "Features",
+    "nav.accessibility": "Accessibility",
+    "intro.eyebrow": "Game modes",
+    "intro.heading": "Three games, one app, the same room full of people",
+    "intro.lede": "All three are pass-and-play on a single device &mdash; no second phone, no accounts, no internet required. Pick one from the Start dialog before a round; the choice is remembered like any other setting.",
+    "guessIt.badge": "Mode 1 of 3",
+    "guessIt.lede": "The original mode, and the one <a href=\"how-to-play.html\">How to play</a> covers in full. One player describes a Mystery word without saying it; everyone else guesses; swipe Correct or Pass against a running timer.",
+    "guessIt.word": "Umbrella",
+    "guessIt.caption": "Works with every one of the 24 categories, in any age band, at whatever timer length you set.",
+    "guessIt.players.label": "Players",
+    "guessIt.players.body": "A describer and everyone else, swapping roles each round.",
+    "guessIt.scoring.label": "Scoring",
+    "guessIt.scoring.body": "One point per Correct swipe. Passed words don't return this round.",
+    "guessIt.bestFor.label": "Best for",
+    "guessIt.bestFor.body": "Classic charades-style party play, any group size.",
+    "clearList.badge": "Mode 2 of 3",
+    "clearList.lede": "No typing, no voice recognition &mdash; just a checklist and a timer. One player (the Reviewer) holds the phone, which shows the real list of what to name. Everyone else calls out answers out loud, and the Reviewer taps each one off as it's correctly named.",
+    "clearList.openPool.heading": "Open Pool",
+    "clearList.openPool.lede": "The list is bigger than the goal &mdash; name twenty European countries out of the forty-plus that exist, for example. The Reviewer sees the entire pool and ticks anything named; the round ends at the target count or when time runs out.",
+    "clearList.openPool.cardTitle": "Europe",
+    "clearList.openPool.cardSub": "OPEN POOL · 7 of 20 ticked",
+    "clearList.openPool.item1": "France",
+    "clearList.openPool.item2": "Germany",
+    "clearList.openPool.item3": "Greece",
+    "clearList.openPool.item4": "Hungary",
+    "clearList.openPool.item5": "Iceland",
+    "clearList.openPool.caption": "The list order is fixed and alphabetical, never shuffled, so the Reviewer can find a name fast under pressure.",
+    "clearList.completeSet.heading": "Complete the Set",
+    "clearList.completeSet.lede": "The list is the whole target &mdash; name all nine planets, say, with nothing extra in the pool. Every single item has to be ticked to clear it; the same checklist screen, just a tighter goal.",
+    "clearList.completeSet.cardTitle": "The Solar System",
+    "clearList.completeSet.cardSub": "COMPLETE THE SET · 5 of 9 ticked",
+    "clearList.completeSet.item1": "Earth",
+    "clearList.completeSet.item2": "Jupiter",
+    "clearList.completeSet.item3": "Mars",
+    "clearList.completeSet.item4": "Mercury",
+    "clearList.completeSet.item5": "Neptune",
+    "clearList.completeSet.caption": "A mis-tap is recoverable — every box toggles, it's not a one-way commit.",
+    "clearList.difficulty.easy": "Easy",
+    "clearList.difficulty.medium": "Medium",
+    "clearList.difficulty.hard": "Hard",
+    "clearList.difficulty.caption": "Every Clear the List category carries a difficulty tier, shown as the card's border color on the category picker — a quick read on how obscure the list gets before you commit to it.",
+    "clearList.players.label": "Players",
+    "clearList.players.body": "One Reviewer per round (device holder), one or more Players calling out guesses.",
+    "clearList.scoring.label": "Scoring",
+    "clearList.scoring.body": "Correctness is entirely the Reviewer's own judgment — there's no answer-matching to fool or be fooled by.",
+    "clearList.bestFor.label": "Best for",
+    "clearList.bestFor.body": "Groups who'd rather shout names at each other than mime things.",
+    "bannedWords.badge": "Mode 3 of 3",
+    "bannedWords.lede": "The same describe-and-guess loop as Guess It — swipe, timer and all — but the card also shows five or six words closely related to the Mystery word that the describer isn't allowed to say either. Describing \"Pizza\" without saying pizza is one challenge; doing it without \"cheese,\" \"slice,\" or \"Italian\" either is a very different one.",
+    "bannedWords.word": "Pizza",
+    "bannedWords.chip1": "Cheese",
+    "bannedWords.chip2": "Slice",
+    "bannedWords.chip3": "Italian",
+    "bannedWords.chip4": "Oven",
+    "bannedWords.chip5": "Round",
+    "bannedWords.caption": "Say the word, or any word on the strip, and the round's honor system — just like Correct and Pass already are — says you broke the rule.",
+    "bannedWords.players.label": "Players",
+    "bannedWords.players.body": "Same as Guess It — a describer and everyone else, swapping each round.",
+    "bannedWords.scoring.label": "Scoring",
+    "bannedWords.scoring.body": "Identical to Guess It: swipe Correct or Pass, same timer, same card mechanic.",
+    "bannedWords.bestFor.label": "Best for",
+    "bannedWords.bestFor.body": "Groups who've mastered Guess It and want the next challenge up.",
+    "footer.features": "Features",
+    "footer.accessibility": "Accessibility",
+    "footer.whatsNew": "What's new",
+    "footer.privacyPolicy": "Privacy policy",
+    "footer.support": "Support"
+  },
+  "pt-PT": {
+    "nav.howToPlay": "Como jogar",
+    "nav.features": "Funcionalidades",
+    "nav.accessibility": "Acessibilidade",
+    "intro.eyebrow": "Modos de jogo",
+    "intro.heading": "Três jogos, uma aplicação, a mesma sala cheia de gente",
+    "intro.lede": "Os três jogam-se por turnos num único dispositivo &mdash; sem segundo telefone, sem contas, sem internet necessária. Escolhe um na janela de Início antes de uma ronda; a escolha é guardada como qualquer outra definição.",
+    "guessIt.badge": "Modo 1 de 3",
+    "guessIt.lede": "O modo original, e o que <a href=\"how-to-play.html\">Como jogar</a> cobre em detalhe. Um jogador descreve uma palavra-mistério sem a dizer; todos os outros adivinham; deslizam Correto ou Passar contra um cronómetro a contar.",
+    "guessIt.word": "Guarda-chuva",
+    "guessIt.caption": "Funciona com qualquer uma das 24 categorias, em qualquer faixa de idade, com a duração de cronómetro que definires.",
+    "guessIt.players.label": "Jogadores",
+    "guessIt.players.body": "Um descritor e todos os outros, trocando de papel a cada ronda.",
+    "guessIt.scoring.label": "Pontuação",
+    "guessIt.scoring.body": "Um ponto por cada Correto deslizado. Palavras Passadas não voltam nesta ronda.",
+    "guessIt.bestFor.label": "Melhor para",
+    "guessIt.bestFor.body": "Jogo de festa clássico ao estilo mímica, para qualquer tamanho de grupo.",
+    "clearList.badge": "Modo 2 de 3",
+    "clearList.lede": "Sem escrever, sem reconhecimento de voz &mdash; só uma lista e um cronómetro. Um jogador (o Revisor) tem o telefone, que mostra a lista real do que é preciso nomear. Todos os outros gritam respostas em voz alta, e o Revisor marca cada uma à medida que é nomeada corretamente.",
+    "clearList.openPool.heading": "Open Pool",
+    "clearList.openPool.lede": "A lista é maior do que o objetivo &mdash; por exemplo, nomeia vinte países europeus dos mais de quarenta que existem. O Revisor vê o conjunto completo e marca tudo o que for nomeado; a ronda termina quando se atinge o número alvo ou quando o tempo acaba.",
+    "clearList.openPool.cardTitle": "Europa",
+    "clearList.openPool.cardSub": "OPEN POOL · 7 de 20 marcados",
+    "clearList.openPool.item1": "França",
+    "clearList.openPool.item2": "Alemanha",
+    "clearList.openPool.item3": "Grécia",
+    "clearList.openPool.item4": "Hungria",
+    "clearList.openPool.item5": "Islândia",
+    "clearList.openPool.caption": "A ordem da lista é fixa e alfabética, nunca é baralhada, para que o Revisor consiga encontrar um nome rapidamente sob pressão.",
+    "clearList.completeSet.heading": "Complete the Set",
+    "clearList.completeSet.lede": "A lista é o objetivo completo &mdash; nomeia, por exemplo, os nove planetas, sem nada a mais no conjunto. Cada item tem de ser marcado para a concluir; o mesmo ecrã de lista, só com um objetivo mais apertado.",
+    "clearList.completeSet.cardTitle": "O Sistema Solar",
+    "clearList.completeSet.cardSub": "COMPLETE THE SET · 5 de 9 marcados",
+    "clearList.completeSet.item1": "Terra",
+    "clearList.completeSet.item2": "Júpiter",
+    "clearList.completeSet.item3": "Marte",
+    "clearList.completeSet.item4": "Mercúrio",
+    "clearList.completeSet.item5": "Neptuno",
+    "clearList.completeSet.caption": "Um toque errado é reversível — cada caixa alterna, não é um compromisso definitivo.",
+    "clearList.difficulty.easy": "Fácil",
+    "clearList.difficulty.medium": "Médio",
+    "clearList.difficulty.hard": "Difícil",
+    "clearList.difficulty.caption": "Cada categoria de Clear the List tem um nível de dificuldade, mostrado na cor da borda do cartão no seletor de categorias — uma forma rápida de saber quão obscura a lista se torna antes de te comprometeres.",
+    "clearList.players.label": "Jogadores",
+    "clearList.players.body": "Um Revisor por ronda (quem tem o telefone), um ou mais Jogadores a gritar respostas.",
+    "clearList.scoring.label": "Pontuação",
+    "clearList.scoring.body": "A correção é inteiramente um julgamento do Revisor — não há correspondência automática de respostas para enganar ou ser enganado.",
+    "clearList.bestFor.label": "Melhor para",
+    "clearList.bestFor.body": "Grupos que preferem gritar nomes uns aos outros do que mimar coisas.",
+    "bannedWords.badge": "Modo 3 de 3",
+    "bannedWords.lede": "O mesmo ciclo de descrever e adivinhar do Guess It — com deslizar, cronómetro e tudo — mas a carta também mostra cinco ou seis palavras muito relacionadas com a palavra-mistério que o descritor também não pode dizer. Descrever \"Pizza\" sem dizer pizza é um desafio; fazê-lo sem dizer \"queijo\", \"fatia\" ou \"italiana\" é um desafio completamente diferente.",
+    "bannedWords.word": "Pizza",
+    "bannedWords.chip1": "Queijo",
+    "bannedWords.chip2": "Fatia",
+    "bannedWords.chip3": "Italiana",
+    "bannedWords.chip4": "Forno",
+    "bannedWords.chip5": "Redonda",
+    "bannedWords.caption": "Dizer a palavra, ou qualquer palavra da lista, e o sistema de honra da ronda — tal como Correto e Passar já são — diz que quebraste a regra.",
+    "bannedWords.players.label": "Jogadores",
+    "bannedWords.players.body": "O mesmo que no Guess It — um descritor e todos os outros, trocando a cada ronda.",
+    "bannedWords.scoring.label": "Pontuação",
+    "bannedWords.scoring.body": "Igual ao Guess It: deslizar Correto ou Passar, o mesmo cronómetro, a mesma mecânica de carta.",
+    "bannedWords.bestFor.label": "Melhor para",
+    "bannedWords.bestFor.body": "Grupos que já dominam o Guess It e querem o próximo desafio.",
+    "footer.features": "Funcionalidades",
+    "footer.accessibility": "Acessibilidade",
+    "footer.whatsNew": "Novidades",
+    "footer.privacyPolicy": "Política de privacidade",
+    "footer.support": "Suporte"
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" /></svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" /></svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2" /><path d="M8 20h8M12 16v4" /></svg>
+    </button>
+  </div>
 </div>
 
 <title>Sphinx — Game modes</title>
@@ -88,13 +240,44 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
-  .theme-toggle{position:fixed;top:14px;right:14px;z-index:10;display:flex;gap:2px;background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:3px}
+  /* The toolbar (language switcher + theme toggle) is fixed in the
+     top-right corner. Below this width the centred .wrap reaches under
+     it, so the nav keeps clear of it; without this the toolbar covers
+     the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
+  .site-toolbar{
+    position:fixed;
+    top:14px;
+    right:14px;
+    z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
+    display:flex;
+    gap:2px;
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:999px;
+    padding:3px;
+  }
   .theme-toggle button{width:32px;height:32px;border:none;border-radius:999px;background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer}
-  .theme-toggle button.active{background:var(--surface-2);color:var(--fg)}
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{background:var(--surface-2);color:var(--fg)}
   footer{padding-block:40px 48px;background:var(--surface);border-top:1px solid var(--rule)}
   footer .wrap{display:flex;align-items:center;gap:16px;color:var(--muted);font-size:0.86rem;flex-wrap:wrap}
   .footer-icon{width:36px;height:36px;flex-shrink:0}
@@ -108,10 +291,10 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx"><path d="M37.9 29 A14 14 0 1 1 50 50" fill="none" stroke="var(--accent)" stroke-width="8.5" stroke-linecap="round"/><path d="M50 50 A14 14 0 1 0 62.1 71" fill="none" stroke="var(--pass)" stroke-width="8.5" stroke-linecap="round"/><circle cx="50" cy="36" r="5" fill="var(--pass)"/><circle cx="50" cy="64" r="5" fill="var(--accent)"/></svg>Sphinx</a>
     <div class="site-nav-links">
-      <a href="how-to-play.html">How to play</a>
+      <a href="how-to-play.html" data-i18n="nav.howToPlay">How to play</a>
       <a href="modes.html" class="current">Game modes</a>
-      <a href="features.html">Features</a>
-      <a href="accessibility.html">Accessibility</a>
+      <a href="features.html" data-i18n="nav.features">Features</a>
+      <a href="accessibility.html" data-i18n="nav.accessibility">Accessibility</a>
     </div>
   </div>
 </nav>
@@ -119,113 +302,113 @@
 <section id="intro">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow" style="color:var(--muted)">Game modes</span>
-      <h2>Three games, one app, the same room full of people</h2>
-      <p class="lede">All three are pass-and-play on a single device — no second phone, no accounts, no internet required. Pick one from the Start dialog before a round; the choice is remembered like any other setting.</p>
+      <span class="eyebrow" style="color:var(--muted)" data-i18n="intro.eyebrow">Game modes</span>
+      <h2 data-i18n="intro.heading">Three games, one app, the same room full of people</h2>
+      <p class="lede" data-i18n="intro.lede">All three are pass-and-play on a single device — no second phone, no accounts, no internet required. Pick one from the Start dialog before a round; the choice is remembered like any other setting.</p>
     </div>
   </div>
 </section>
 
 <section id="guess-it">
   <div class="wrap">
-    <span class="mode-badge"><span class="mode-eyebrow guess">●</span>Mode 1 of 3</span>
+    <span class="mode-badge"><span class="mode-eyebrow guess">●</span><span data-i18n="guessIt.badge">Mode 1 of 3</span></span>
     <div class="section-head">
       <h2>Guess It</h2>
-      <p class="lede">The original mode, and the one <a href="how-to-play.html">How to play</a> covers in full. One player describes a Mystery word without saying it; everyone else guesses; swipe Correct or Pass against a running timer.</p>
+      <p class="lede" data-i18n="guessIt.lede">The original mode, and the one <a href="how-to-play.html">How to play</a> covers in full. One player describes a Mystery word without saying it; everyone else guesses; swipe Correct or Pass against a running timer.</p>
     </div>
     <div class="mock-row">
-      <div class="mini-card">Umbrella</div>
-      <span class="mock-caption">Works with every one of the 24 categories, in any age band, at whatever timer length you set.</span>
+      <div class="mini-card" data-i18n="guessIt.word">Umbrella</div>
+      <span class="mock-caption" data-i18n="guessIt.caption">Works with every one of the 24 categories, in any age band, at whatever timer length you set.</span>
     </div>
     <ul class="detail-list">
-      <li><b>Players</b><span>A describer and everyone else, swapping roles each round.</span></li>
-      <li><b>Scoring</b><span>One point per Correct swipe. Passed words don't return this round.</span></li>
-      <li><b>Best for</b><span>Classic charades-style party play, any group size.</span></li>
+      <li><b data-i18n="guessIt.players.label">Players</b><span data-i18n="guessIt.players.body">A describer and everyone else, swapping roles each round.</span></li>
+      <li><b data-i18n="guessIt.scoring.label">Scoring</b><span data-i18n="guessIt.scoring.body">One point per Correct swipe. Passed words don't return this round.</span></li>
+      <li><b data-i18n="guessIt.bestFor.label">Best for</b><span data-i18n="guessIt.bestFor.body">Classic charades-style party play, any group size.</span></li>
     </ul>
   </div>
 </section>
 
 <section id="clear-the-list">
   <div class="wrap">
-    <span class="mode-badge"><span class="mode-eyebrow clear">●</span>Mode 2 of 3</span>
+    <span class="mode-badge"><span class="mode-eyebrow clear">●</span><span data-i18n="clearList.badge">Mode 2 of 3</span></span>
     <div class="section-head">
       <h2>Clear the List</h2>
-      <p class="lede">No typing, no voice recognition — just a checklist and a timer. One player (the Reviewer) holds the phone, which shows the real list of what to name. Everyone else calls out answers out loud, and the Reviewer taps each one off as it's correctly named.</p>
+      <p class="lede" data-i18n="clearList.lede">No typing, no voice recognition — just a checklist and a timer. One player (the Reviewer) holds the phone, which shows the real list of what to name. Everyone else calls out answers out loud, and the Reviewer taps each one off as it's correctly named.</p>
     </div>
 
-    <h3 style="font-size:1.05rem;margin-top:28px">Open Pool</h3>
-    <p class="lede" style="margin-top:6px">The list is bigger than the goal — name twenty European countries out of the forty-plus that exist, for example. The Reviewer sees the entire pool and ticks anything named; the round ends at the target count or when time runs out.</p>
+    <h3 style="font-size:1.05rem;margin-top:28px" data-i18n="clearList.openPool.heading">Open Pool</h3>
+    <p class="lede" style="margin-top:6px" data-i18n="clearList.openPool.lede">The list is bigger than the goal — name twenty European countries out of the forty-plus that exist, for example. The Reviewer sees the entire pool and ticks anything named; the round ends at the target count or when time runs out.</p>
     <div class="mock-row">
       <div class="checklist-card medium">
-        <div class="ch-title">Europe</div>
-        <div class="ch-sub">OPEN POOL · 7 of 20 ticked</div>
+        <div class="ch-title" data-i18n="clearList.openPool.cardTitle">Europe</div>
+        <div class="ch-sub" data-i18n="clearList.openPool.cardSub">OPEN POOL · 7 of 20 ticked</div>
         <ul>
-          <li class="on"><span class="box">✓</span><span class="label">France</span></li>
-          <li class="on"><span class="box">✓</span><span class="label">Germany</span></li>
-          <li><span class="box"></span><span class="label">Greece</span></li>
-          <li><span class="box"></span><span class="label">Hungary</span></li>
-          <li><span class="box"></span><span class="label">Iceland</span></li>
+          <li class="on"><span class="box">✓</span><span class="label" data-i18n="clearList.openPool.item1">France</span></li>
+          <li class="on"><span class="box">✓</span><span class="label" data-i18n="clearList.openPool.item2">Germany</span></li>
+          <li><span class="box"></span><span class="label" data-i18n="clearList.openPool.item3">Greece</span></li>
+          <li><span class="box"></span><span class="label" data-i18n="clearList.openPool.item4">Hungary</span></li>
+          <li><span class="box"></span><span class="label" data-i18n="clearList.openPool.item5">Iceland</span></li>
         </ul>
       </div>
-      <span class="mock-caption">The list order is fixed and alphabetical, never shuffled, so the Reviewer can find a name fast under pressure.</span>
+      <span class="mock-caption" data-i18n="clearList.openPool.caption">The list order is fixed and alphabetical, never shuffled, so the Reviewer can find a name fast under pressure.</span>
     </div>
 
-    <h3 style="font-size:1.05rem;margin-top:32px">Complete the Set</h3>
-    <p class="lede" style="margin-top:6px">The list is the whole target — name all nine planets, say, with nothing extra in the pool. Every single item has to be ticked to clear it; the same checklist screen, just a tighter goal.</p>
+    <h3 style="font-size:1.05rem;margin-top:32px" data-i18n="clearList.completeSet.heading">Complete the Set</h3>
+    <p class="lede" style="margin-top:6px" data-i18n="clearList.completeSet.lede">The list is the whole target — name all nine planets, say, with nothing extra in the pool. Every single item has to be ticked to clear it; the same checklist screen, just a tighter goal.</p>
     <div class="mock-row">
       <div class="checklist-card hard">
-        <div class="ch-title">The Solar System</div>
-        <div class="ch-sub">COMPLETE THE SET · 5 of 9 ticked</div>
+        <div class="ch-title" data-i18n="clearList.completeSet.cardTitle">The Solar System</div>
+        <div class="ch-sub" data-i18n="clearList.completeSet.cardSub">COMPLETE THE SET · 5 of 9 ticked</div>
         <ul>
-          <li class="on"><span class="box">✓</span><span class="label">Earth</span></li>
-          <li class="on"><span class="box">✓</span><span class="label">Jupiter</span></li>
-          <li><span class="box"></span><span class="label">Mars</span></li>
-          <li><span class="box"></span><span class="label">Mercury</span></li>
-          <li><span class="box"></span><span class="label">Neptune</span></li>
+          <li class="on"><span class="box">✓</span><span class="label" data-i18n="clearList.completeSet.item1">Earth</span></li>
+          <li class="on"><span class="box">✓</span><span class="label" data-i18n="clearList.completeSet.item2">Jupiter</span></li>
+          <li><span class="box"></span><span class="label" data-i18n="clearList.completeSet.item3">Mars</span></li>
+          <li><span class="box"></span><span class="label" data-i18n="clearList.completeSet.item4">Mercury</span></li>
+          <li><span class="box"></span><span class="label" data-i18n="clearList.completeSet.item5">Neptune</span></li>
         </ul>
       </div>
-      <span class="mock-caption">A mis-tap is recoverable — every box toggles, it's not a one-way commit.</span>
+      <span class="mock-caption" data-i18n="clearList.completeSet.caption">A mis-tap is recoverable — every box toggles, it's not a one-way commit.</span>
     </div>
 
     <div class="diff-row">
-      <span class="diff-chip easy">Easy</span>
-      <span class="diff-chip medium">Medium</span>
-      <span class="diff-chip hard">Hard</span>
+      <span class="diff-chip easy" data-i18n="clearList.difficulty.easy">Easy</span>
+      <span class="diff-chip medium" data-i18n="clearList.difficulty.medium">Medium</span>
+      <span class="diff-chip hard" data-i18n="clearList.difficulty.hard">Hard</span>
     </div>
-    <p class="mock-caption" style="margin-top:10px;max-width:60ch">Every Clear the List category carries a difficulty tier, shown as the card's border color on the category picker — a quick read on how obscure the list gets before you commit to it.</p>
+    <p class="mock-caption" style="margin-top:10px;max-width:60ch" data-i18n="clearList.difficulty.caption">Every Clear the List category carries a difficulty tier, shown as the card's border color on the category picker — a quick read on how obscure the list gets before you commit to it.</p>
 
     <ul class="detail-list" style="margin-top:28px">
-      <li><b>Players</b><span>One Reviewer per round (device holder), one or more Players calling out guesses.</span></li>
-      <li><b>Scoring</b><span>Correctness is entirely the Reviewer's own judgment — there's no answer-matching to fool or be fooled by.</span></li>
-      <li><b>Best for</b><span>Groups who'd rather shout names at each other than mime things.</span></li>
+      <li><b data-i18n="clearList.players.label">Players</b><span data-i18n="clearList.players.body">One Reviewer per round (device holder), one or more Players calling out guesses.</span></li>
+      <li><b data-i18n="clearList.scoring.label">Scoring</b><span data-i18n="clearList.scoring.body">Correctness is entirely the Reviewer's own judgment — there's no answer-matching to fool or be fooled by.</span></li>
+      <li><b data-i18n="clearList.bestFor.label">Best for</b><span data-i18n="clearList.bestFor.body">Groups who'd rather shout names at each other than mime things.</span></li>
     </ul>
   </div>
 </section>
 
 <section id="banned-words">
   <div class="wrap">
-    <span class="mode-badge"><span class="mode-eyebrow banned">●</span>Mode 3 of 3</span>
+    <span class="mode-badge"><span class="mode-eyebrow banned">●</span><span data-i18n="bannedWords.badge">Mode 3 of 3</span></span>
     <div class="section-head">
       <h2>Banned Words</h2>
-      <p class="lede">The same describe-and-guess loop as Guess It — swipe, timer and all — but the card also shows five or six words closely related to the Mystery word that the describer isn't allowed to say either. Describing "Pizza" without saying pizza is one challenge; doing it without "cheese," "slice," or "Italian" either is a very different one.</p>
+      <p class="lede" data-i18n="bannedWords.lede">The same describe-and-guess loop as Guess It — swipe, timer and all — but the card also shows five or six words closely related to the Mystery word that the describer isn't allowed to say either. Describing "Pizza" without saying pizza is one challenge; doing it without "cheese," "slice," or "Italian" either is a very different one.</p>
     </div>
     <div class="mock-row">
       <div class="ban-card">
-        <div class="word">Pizza</div>
+        <div class="word" data-i18n="bannedWords.word">Pizza</div>
         <div class="ban-list">
-          <span class="ban-chip">Cheese</span>
-          <span class="ban-chip">Slice</span>
-          <span class="ban-chip">Italian</span>
-          <span class="ban-chip">Oven</span>
-          <span class="ban-chip">Round</span>
+          <span class="ban-chip" data-i18n="bannedWords.chip1">Cheese</span>
+          <span class="ban-chip" data-i18n="bannedWords.chip2">Slice</span>
+          <span class="ban-chip" data-i18n="bannedWords.chip3">Italian</span>
+          <span class="ban-chip" data-i18n="bannedWords.chip4">Oven</span>
+          <span class="ban-chip" data-i18n="bannedWords.chip5">Round</span>
         </div>
       </div>
-      <span class="mock-caption">Say the word, or any word on the strip, and the round's honor system — just like Correct and Pass already are — says you broke the rule.</span>
+      <span class="mock-caption" data-i18n="bannedWords.caption">Say the word, or any word on the strip, and the round's honor system — just like Correct and Pass already are — says you broke the rule.</span>
     </div>
     <ul class="detail-list">
-      <li><b>Players</b><span>Same as Guess It — a describer and everyone else, swapping each round.</span></li>
-      <li><b>Scoring</b><span>Identical to Guess It: swipe Correct or Pass, same timer, same card mechanic.</span></li>
-      <li><b>Best for</b><span>Groups who've mastered Guess It and want the next challenge up.</span></li>
+      <li><b data-i18n="bannedWords.players.label">Players</b><span data-i18n="bannedWords.players.body">Same as Guess It — a describer and everyone else, swapping each round.</span></li>
+      <li><b data-i18n="bannedWords.scoring.label">Scoring</b><span data-i18n="bannedWords.scoring.body">Identical to Guess It: swipe Correct or Pass, same timer, same card mechanic.</span></li>
+      <li><b data-i18n="bannedWords.bestFor.label">Best for</b><span data-i18n="bannedWords.bestFor.body">Groups who've mastered Guess It and want the next challenge up.</span></li>
     </ul>
   </div>
 </section>
@@ -235,11 +418,11 @@
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sphinx icon"><path d="M37.9 29 A14 14 0 1 1 50 50" fill="none" stroke="var(--accent)" stroke-width="8.5" stroke-linecap="round"/><path d="M50 50 A14 14 0 1 0 62.1 71" fill="none" stroke="var(--pass)" stroke-width="8.5" stroke-linecap="round"/><circle cx="50" cy="36" r="5" fill="var(--pass)"/><circle cx="50" cy="64" r="5" fill="var(--accent)"/></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Sphinx</a>
-      <a href="features.html">Features</a>
-      <a href="accessibility.html">Accessibility</a>
-      <a href="changelog.html">What's new</a>
-      <a href="privacy-policy.html">Privacy policy</a>
-      <a href="support.html">Support</a>
+      <a href="features.html" data-i18n="footer.features">Features</a>
+      <a href="accessibility.html" data-i18n="footer.accessibility">Accessibility</a>
+      <a href="changelog.html" data-i18n="footer.whatsNew">What's new</a>
+      <a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy policy</a>
+      <a href="support.html" data-i18n="footer.support">Support</a>
       <a href="mailto:joaorodr84@gmail.com">joaorodr84@gmail.com</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
@@ -274,6 +457,51 @@
     btn.addEventListener('click', function () { apply(btn.getAttribute('data-theme-choice')); });
   });
   reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    document.querySelectorAll('[data-i18n-attr-aria-label], [data-i18n-attr-title]').forEach(function (el) {
+      ['aria-label', 'title', 'alt', 'placeholder'].forEach(function (attr) {
+        var key = el.getAttribute('data-i18n-attr-' + attr);
+        if (key && strings[key] != null) el.setAttribute(attr, strings[key]);
+      });
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
 })();
 </script>
 
