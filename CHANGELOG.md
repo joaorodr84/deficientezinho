@@ -36,6 +36,9 @@ See [TODO.md](TODO.md) for what's planned next.
   remembered and carries across the home page and every project's mini
   site.
 - Each mini site's footer links back to Deficientezinho.
+- Cangupa, a tile-hopping puzzle game with a kangaroo, joins the home
+  page as a fifth project, with its own mini site: how to play, features
+  and the ten level packs.
 
 ### Fixed
 

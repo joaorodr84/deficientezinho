@@ -36,7 +36,7 @@ export const PROJECTS: Project[] = [
     stack: 'Tampermonkey userscript',
     status: 'live',
     repo: 'https://github.com/joaorodr84/freecell-plus',
-    // No brand of its own yet; amber keeps it apart from the other three.
+    // No brand of its own yet; amber keeps it apart from the others.
     accent: { light: '#a35f00', dark: '#f0a93b' },
     overview:
       'Solitaire Bliss’s FreeCell numbers each game (`?number=`), but leaves finding the next one you haven’t played up to you. Freecell Plus adds a NEXT button built into the site’s own topbar — styled and sized to match the native controls — that jumps straight to the first unplayed number in the sequence instead of just the next one.',
@@ -88,5 +88,24 @@ export const PROJECTS: Project[] = [
       'Multi-user support, invite-only: separate libraries, watch history and privacy settings per user.',
       'Two-factor authentication, plus a full data export and account deletion under Profile → Account.',
     ],
+  },
+  {
+    slug: 'cangupa',
+    name: 'Cangupa',
+    tagline: 'Hop on every tile. Leave none behind.',
+    description:
+      'A kangaroo, a board of tiles and one rule: land on every tile before you run out of moves. Step one tile or jump two, and each tile drops away behind you.',
+    // The Expo app is the one being built on; the plain HTML/JS original
+    // (apps/web-classic) is where the rules were first worked out.
+    stack: 'React Native + Expo',
+    // No repo link: the repo is private. Not in the App Store or on Google
+    // Play yet, which is why this one is not 'live'.
+    status: 'in development',
+    microsite: '/projects/cangupa/index.html',
+    // The teal of the three matching tiles in Cangupa's icon, and the mini
+    // site's own --accent pair. The light value is that teal darkened until
+    // it reads on white; the icon's gold was rejected because Freecell Plus
+    // already wears amber.
+    accent: { light: '#0e7c88', dark: '#29c5d6' },
   },
 ];
