@@ -48,6 +48,9 @@ See [TODO.md](TODO.md) for what's planned next.
 - Arrumador, a warehouse puzzle about pushing crates onto targets, joins
   the home page with its own mini site: how to play and all 50 levels
   by name. It links to the playable game.
+- Damas, a checkers game with Portuguese rules and online play, joins the
+  home page with its own mini site: the rules, how online play works and
+  the settings. It links to the playable game.
 
 ### Fixed
 

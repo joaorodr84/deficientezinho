@@ -158,4 +158,20 @@ export const PROJECTS: Project[] = [
     // so this is that amber pushed towards orange, like crate wood.
     accent: { light: '#a8501a', dark: '#f0935a' },
   },
+  {
+    slug: 'damas',
+    name: 'Damas',
+    tagline: 'Checkers, the Portuguese way.',
+    description:
+      'A checkers game that plays by Portuguese rules: flying kings, mandatory captures and the law of majority. Play on one screen, or against a friend over the internet with a six-character code.',
+    stack: 'JavaScript + WebRTC',
+    // Playable in the browser on GitHub Pages.
+    status: 'live',
+    repo: 'https://github.com/joaorodr84/damas',
+    website: 'https://joaorodr84.github.io/damas/',
+    microsite: '/projects/damas/index.html',
+    // No brand of its own: the game's boards are wood and marble. Magenta
+    // is the one hue no other card here uses.
+    accent: { light: '#a02c78', dark: '#f27fc4' },
+  },
 ];
