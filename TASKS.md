@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-34`**
+**Next ID to assign: `DEF-36`**
 
 If this file and history ever disagree, history wins:
 
@@ -15,6 +15,8 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 
 | ID | Task | Status | Commit |
 | --- | --- | --- | --- |
+| DEF-34 | Give Watchr its own project-specific header/nav instead of the shared app shell's all-projects nav | open | — |
+| DEF-35 | Same fix for Freecell Plus | open | — |
 
 ## Done
 
