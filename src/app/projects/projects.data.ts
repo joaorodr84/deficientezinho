@@ -123,4 +123,23 @@ export const PROJECTS: Project[] = [
     // because Crivo's own selection page is blue and Watchr already has blue.
     accent: { light: '#6a3fc0', dark: '#a78bfa' },
   },
+  {
+    slug: 'def-platform',
+    // The game's full title is "Deficientezinho: um passeio do cara***". The
+    // card drops the prefix, which on this site would only repeat the name
+    // over the door; the asterisks are the title as its author wrote it.
+    name: 'Um passeio do cara***',
+    tagline: 'Roll through a city built by people who never tried it.',
+    description:
+      'A 2D platformer where you roll a wheelchair through curbs, ramps, a staircase-only "main entrance", a broken elevator and shopping carts with strong opinions. Everything works one key at a time.',
+    stack: 'JavaScript + Canvas',
+    // Playable in the browser on GitHub Pages.
+    status: 'live',
+    repo: 'https://github.com/joaorodr84/def-platform',
+    website: 'https://joaorodr84.github.io/def-platform/',
+    microsite: '/projects/def-platform/index.html',
+    // The green of the game's grass. Its own brand teal and coin amber were
+    // rejected because Cangupa and Freecell Plus already wear those here.
+    accent: { light: '#3d7a22', dark: '#8fd16f' },
+  },
 ];

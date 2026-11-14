@@ -146,6 +146,16 @@ h1 {
   animation: spin 2.4s linear infinite;
 }
 
+// The logo is a dark drawing on a clear background, so it gets the same
+// cream the hero puts behind it; on the mark's dark surface it would vanish.
+.mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: inherit;
+  background: #f6f3ec;
+}
+
 .monogram {
   margin: auto;
   font-family: 'Sora', system-ui, sans-serif;

@@ -42,6 +42,9 @@ See [TODO.md](TODO.md) for what's planned next.
 - Crivo, a command-line tool that finds one picture for each word in a
   list, joins the home page with its own mini site: how it works, its
   options, and what to know about Pixabay and image licences.
+- "Um passeio do cara***", the Deficientezinho wheelchair platformer,
+  joins the home page with its own mini site: how to play, and how the
+  whole game works one key at a time. It links to the playable game.
 
 ### Fixed
 

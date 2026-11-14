@@ -101,6 +101,11 @@
             <rect x="125" y="125" width="110" height="110" rx="20" fill="#29C5D6" />
           </svg>
         }
+        @case ('def-platform') {
+          <!-- The game's hero is the Deficientezinho from the site's logo,
+               so its mark is that logo, unaltered. -->
+          <img src="logo.png" alt="" />
+        }
         @default {
           <span class="monogram">{{ project.name.charAt(0) }}</span>
         }
