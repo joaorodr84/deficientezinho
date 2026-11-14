@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-26`**
+**Next ID to assign: `DEF-27`**
 
 If this file and history ever disagree, history wins:
 
@@ -45,3 +45,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-23 | Rewrite the home page with livelier project cards: each tinted in its project's colour, with its logo mark or monogram, status pill, stack chips, call to action and hover/entry motion | done | 2026-11-14 | — |
 | DEF-24 | Make "Just a crip. Writing code with his mouth. Or telling AI to do it." the home page slogan | done | 2026-11-14 | — |
 | DEF-25 | Open the Watchr page's "Why it exists" with why it was built: almost ten years on TV Time, which then shut down | done | 2026-11-14 | — |
+| DEF-26 | Label DigiSpin, Freecell Plus and Watchr as live now that they are published; Sphinx stays in development | done | 2026-11-14 | — |

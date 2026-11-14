@@ -4,6 +4,8 @@ export interface Project {
   tagline: string;
   description: string;
   stack: string;
+  // 'live' means published and usable today, not finished: a live project
+  // keeps being developed. 'in development' is for one nobody can get yet.
   status: 'live' | 'in development';
   // Optional: omitted for projects whose repo is private, so the page has
   // nothing to link to.

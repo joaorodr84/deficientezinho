@@ -8,7 +8,7 @@ export const PROJECTS: Project[] = [
     description:
       'Drag, rotate and reason your way through 250 boards — some solved in a minute, some worth sitting with.',
     stack: 'React Native + Expo',
-    status: 'in development',
+    status: 'live',
     repo: 'https://github.com/joaorodr84/digispin',
     microsite: '/projects/digispin/index.html',
     // The mini site's own --accent pair.
@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
     description:
       'Adds a one-click way to jump to the next unplayed numbered game, tracks every win’s time, score and moves, and surfaces completion stats and personal bests — all saved locally and exportable as a backup.',
     stack: 'Tampermonkey userscript',
-    status: 'in development',
+    status: 'live',
     repo: 'https://github.com/joaorodr84/freecell-plus',
     // No brand of its own yet; amber keeps it apart from the other three.
     accent: { light: '#a35f00', dark: '#f0a93b' },
@@ -63,7 +63,7 @@ export const PROJECTS: Project[] = [
     description:
       'A personal TV and film tracking app with multi-user support, advanced watch history management, calendar views, statistics, badges, and import from IMDb, Trakt.tv, Netflix and TV Time.',
     stack: 'Angular + NestJS + PostgreSQL',
-    status: 'in development',
+    status: 'live',
     website: 'https://watchr.pt',
     // Watchr's own --accent, light and dark themes.
     accent: { light: '#0369a1', dark: '#38bdf8' },

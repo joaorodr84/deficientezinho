@@ -26,6 +26,9 @@ See [TODO.md](TODO.md) for what's planned next.
   mouth. Or telling AI to do it."
 - The Watchr page's "Why it exists" now says why: it replaces TV Time,
   which shut down after Joao had used it for almost ten years.
+- DigiSpin, Freecell Plus and Watchr are now labelled "live" instead of
+  "in development", since all three are published. Sphinx keeps its
+  "in development" label until it ships.
 
 ### Added
 
