@@ -2,6 +2,39 @@ import { Project } from './project';
 
 export const PROJECTS: Project[] = [
   {
+    slug: 'watchr',
+    name: 'Watchr',
+    tagline: 'Track every show and film you watch, with the people you watch them with.',
+    description:
+      'A personal TV and film tracking app with multi-user support, advanced watch history management, calendar views, statistics, badges, and import from IMDb, Trakt.tv, Netflix and TV Time.',
+    stack: 'Angular + NestJS + PostgreSQL',
+    status: 'live',
+    website: 'https://watchr.pt',
+    // Watchr's own --accent, light and dark themes.
+    accent: { light: '#0369a1', dark: '#38bdf8' },
+    // Leads with the origin story: the section is headed "Why it exists",
+    // and before this it only described what Watchr does, not why it was
+    // built. First person because the reason is Joao's own.
+    overview:
+      'I tracked everything I watched in TV Time for almost ten years. Then it shut down, and my brain couldn’t keep what I still had to watch organised on its own — so I built Watchr to do it for me. Each invited user gets their own library, watch history and privacy settings, so one shared Watchr instance still feels personal. Shows and films are tracked with metadata pulled live from TMDb, and a show’s status — Plan to Watch, Watching, On Hold, Up to Date, Completed — updates itself overnight and the moment you mark an episode watched, so My Shows never falls out of sync with what actually aired.',
+    howItWorks: [
+      'Find something to watch on Discover, then press its "+ Track" button to add it to your library.',
+      'Everything you track shows up on My Shows, grouped by status, recomputed automatically as episodes air and get watched.',
+      'Already have history elsewhere? Import it from IMDb, Trakt.tv, Netflix or TV Time — every import previews what it would change before anything is written.',
+      'Calendar, Stats and Badges turn that history into week/month views, watch-time and genre breakdowns, and milestones as you log episodes.',
+    ],
+    features: [
+      'Real-time metadata from TMDb, with show text auto-translated across 40+ languages.',
+      'Watch history with precise date assignment and bulk editing.',
+      'Calendar view with weekly and monthly zoom levels.',
+      'Stats: time watched, episodes by month and weekday, top genres, most-watched shows, longest streak.',
+      'Badges to celebrate milestones and streaks.',
+      'Import previews from IMDb, Trakt.tv, Netflix and TV Time — nothing is written until you confirm it.',
+      'Multi-user support, invite-only: separate libraries, watch history and privacy settings per user.',
+      'Two-factor authentication, plus a full data export and account deletion under Profile → Account.',
+    ],
+  },
+  {
     slug: 'digispin',
     name: 'DigiSpin',
     tagline: 'Spin the digits, find the fits.',
@@ -54,39 +87,6 @@ export const PROJECTS: Project[] = [
       'Export/Import to a JSON file, merging on import rather than overwriting.',
       'Warns in the console if Solitaire Bliss’s own markup changes enough to break how a button or tracker mounts.',
       'Runs entirely in the browser via Tampermonkey — no accounts, no server, no analytics.',
-    ],
-  },
-  {
-    slug: 'watchr',
-    name: 'Watchr',
-    tagline: 'Track every show and film you watch, with the people you watch them with.',
-    description:
-      'A personal TV and film tracking app with multi-user support, advanced watch history management, calendar views, statistics, badges, and import from IMDb, Trakt.tv, Netflix and TV Time.',
-    stack: 'Angular + NestJS + PostgreSQL',
-    status: 'live',
-    website: 'https://watchr.pt',
-    // Watchr's own --accent, light and dark themes.
-    accent: { light: '#0369a1', dark: '#38bdf8' },
-    // Leads with the origin story: the section is headed "Why it exists",
-    // and before this it only described what Watchr does, not why it was
-    // built. First person because the reason is Joao's own.
-    overview:
-      'I tracked everything I watched in TV Time for almost ten years. Then it shut down, and my brain couldn’t keep what I still had to watch organised on its own — so I built Watchr to do it for me. Each invited user gets their own library, watch history and privacy settings, so one shared Watchr instance still feels personal. Shows and films are tracked with metadata pulled live from TMDb, and a show’s status — Plan to Watch, Watching, On Hold, Up to Date, Completed — updates itself overnight and the moment you mark an episode watched, so My Shows never falls out of sync with what actually aired.',
-    howItWorks: [
-      'Find something to watch on Discover, then press its "+ Track" button to add it to your library.',
-      'Everything you track shows up on My Shows, grouped by status, recomputed automatically as episodes air and get watched.',
-      'Already have history elsewhere? Import it from IMDb, Trakt.tv, Netflix or TV Time — every import previews what it would change before anything is written.',
-      'Calendar, Stats and Badges turn that history into week/month views, watch-time and genre breakdowns, and milestones as you log episodes.',
-    ],
-    features: [
-      'Real-time metadata from TMDb, with show text auto-translated across 40+ languages.',
-      'Watch history with precise date assignment and bulk editing.',
-      'Calendar view with weekly and monthly zoom levels.',
-      'Stats: time watched, episodes by month and weekday, top genres, most-watched shows, longest streak.',
-      'Badges to celebrate milestones and streaks.',
-      'Import previews from IMDb, Trakt.tv, Netflix and TV Time — nothing is written until you confirm it.',
-      'Multi-user support, invite-only: separate libraries, watch history and privacy settings per user.',
-      'Two-factor authentication, plus a full data export and account deletion under Profile → Account.',
     ],
   },
   {
