@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-30`**
+**Next ID to assign: `DEF-31`**
 
 If this file and history ever disagree, history wins:
 
@@ -49,3 +49,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-27 | Add Cangupa as a fifth project: a home card with its own icon and teal accent, linking to a DigiSpin-style mini site under `public/projects/cangupa/` (home, how to play, features, levels) | done | 2026-11-14 | — |
 | DEF-28 | Add Crivo as a project: a home card and a DigiSpin-style mini site under `public/projects/crivo/` (home, how it works, options, Pixabay and licences) | done | 2026-11-14 | — |
 | DEF-29 | Add the wheelchair platformer "Um passeio do cara***" (def-platform) as a project: a home card wearing the site logo and a DigiSpin-style mini site under `public/projects/def-platform/` (home, how to play, one key at a time) | done | 2026-11-14 | — |
+| DEF-30 | Add Arrumador, the crate-pushing warehouse puzzle, as a project: a home card and a DigiSpin-style mini site under `public/projects/arrumador/` (home, how to play, levels) | done | 2026-11-14 | — |

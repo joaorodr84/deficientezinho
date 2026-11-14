@@ -45,6 +45,9 @@ See [TODO.md](TODO.md) for what's planned next.
 - "Um passeio do cara***", the Deficientezinho wheelchair platformer,
   joins the home page with its own mini site: how to play, and how the
   whole game works one key at a time. It links to the playable game.
+- Arrumador, a warehouse puzzle about pushing crates onto targets, joins
+  the home page with its own mini site: how to play and all 50 levels
+  by name. It links to the playable game.
 
 ### Fixed
 

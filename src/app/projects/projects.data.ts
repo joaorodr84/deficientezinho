@@ -142,4 +142,20 @@ export const PROJECTS: Project[] = [
     // rejected because Cangupa and Freecell Plus already wear those here.
     accent: { light: '#3d7a22', dark: '#8fd16f' },
   },
+  {
+    slug: 'arrumador',
+    name: 'Arrumador',
+    tagline: 'Every crate has a place. Push it there.',
+    description:
+      'A warehouse puzzle: push every crate onto a target in as few moves as you can. Crates can be pushed but never pulled, across 50 levels that are each checked to be solvable.',
+    stack: 'JavaScript + Canvas',
+    // Playable in the browser on GitHub Pages.
+    status: 'live',
+    repo: 'https://github.com/joaorodr84/arrumador',
+    website: 'https://joaorodr84.github.io/arrumador/',
+    microsite: '/projects/arrumador/index.html',
+    // The game's crates are amber, which Freecell Plus already wears here,
+    // so this is that amber pushed towards orange, like crate wood.
+    accent: { light: '#a8501a', dark: '#f0935a' },
+  },
 ];
