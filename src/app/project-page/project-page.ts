@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink, ActivatedRoute } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { PROJECTS } from '../projects/projects.data';
 
 @Component({
-  imports: [RouterLink],
+  imports: [RouterLink, TranslocoPipe],
   selector: 'app-project-page',
   styleUrl: './project-page.scss',
   templateUrl: './project-page.html',

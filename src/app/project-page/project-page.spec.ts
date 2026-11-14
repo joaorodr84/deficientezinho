@@ -1,13 +1,58 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute, convertToParamMap, provideRouter } from '@angular/router';
+import { TranslocoService, TranslocoTestingModule } from '@jsverse/transloco';
 import { ProjectPage } from './project-page';
 import { Project } from '../projects/project';
 import { PROJECTS } from '../projects/projects.data';
 
-async function createFixture(slug: string): Promise<ComponentFixture<ProjectPage>> {
+// Mirrors public/i18n/en-GB.json's projectPage.* keys (same convention
+// theme-toggle.spec.ts uses for its own hardcoded labels) -- keep in sync.
+const PROJECT_PAGE_CHROME = {
+  backLink: 'All projects',
+  overviewEyebrow: 'Overview',
+  whyItExists: 'Why it exists',
+  stepByStepEyebrow: 'Step by step',
+  howItWorksHeading: 'How it works',
+  whatsInItEyebrow: "What's in it",
+  featuresHeading: 'Features',
+  aboutThisBuildEyebrow: 'About this build',
+  detailsHeading: 'Details',
+  stackLabel: 'Stack',
+  statusLabel: 'Status',
+  websiteLabel: 'Website',
+  repositoryLabel: 'Repository',
+  visitSite: 'Visit the site',
+  sourceOnGithub: 'Source on GitHub',
+  notFoundEyebrow: 'Not found',
+  notFoundHeading: 'Project not found',
+  backHome: 'Back home',
+};
+
+// Optional per-test overrides for `projects.<slug>.*` -- only a project
+// with an overview/howItWorks/features section touches those keys at all.
+async function createFixture(
+  slug: string,
+  enProjectsDict: Record<string, unknown> = {},
+  ptProjectsDict: Record<string, unknown> = {},
+): Promise<ComponentFixture<ProjectPage>> {
   TestBed.resetTestingModule();
   await TestBed.configureTestingModule({
-    imports: [ProjectPage],
+    imports: [
+      ProjectPage,
+      TranslocoTestingModule.forRoot({
+        langs: {
+          'en-GB': { projectPage: PROJECT_PAGE_CHROME, projects: enProjectsDict },
+          'pt-PT': { projects: ptProjectsDict },
+        },
+        translocoConfig: {
+          availableLangs: ['en-GB', 'pt-PT'],
+          defaultLang: 'en-GB',
+          // Needed to actually re-render after setActiveLang() below --
+          // without it, a pipe only ever shows the first lang it resolved.
+          reRenderOnLangChange: true,
+        },
+      }),
+    ],
     providers: [
       provideRouter([]),
       {
@@ -52,6 +97,18 @@ describe('ProjectPage', () => {
     expect(text).toContain('Repository');
   });
 
+  // The hero shows the project's own tagline/description as-is, same as
+  // the home card -- DEF-36 left per-project data out of the translation
+  // mechanism, so the two must never disagree on the same project's copy.
+  it("shows a project's tagline and description untranslated", async () => {
+    const digispinFixture = await createFixture('digispin');
+    const text = digispinFixture.nativeElement.textContent;
+
+    const digispin = PROJECTS.find((project) => project.slug === 'digispin')!;
+    expect(text).toContain(digispin.tagline);
+    expect(text).toContain(digispin.description);
+  });
+
   // DEF-9: the richer sections are optional, so a project with none of them
   // must render the page it had before, with no empty "How it works"/
   // "Features" headings left behind. Both this test and the one below use
@@ -94,7 +151,13 @@ describe('ProjectPage', () => {
     PROJECTS.push(richProject);
 
     try {
-      const richFixture = await createFixture('rich-test-project');
+      const richFixture = await createFixture('rich-test-project', {
+        'rich-test-project': {
+          overview: 'A longer overview paragraph.',
+          howItWorks: ['Place pieces on the board.'],
+          features: ['Drag, rotate and place.'],
+        },
+      });
       const text = richFixture.nativeElement.textContent;
 
       expect(text).toContain('A longer overview paragraph.');
@@ -105,5 +168,41 @@ describe('ProjectPage', () => {
     } finally {
       PROJECTS.pop();
     }
+  });
+
+  // DEF-37: this is the thing that actually broke during development --
+  // Transloco flattens dictionaries, so a per-array-index key
+  // ("projects.<slug>.howItWorks.0") never resolves; the overview and
+  // array-shaped sections have to be looked up and switched as a whole.
+  it("updates the overview, how-it-works and features sections when the language switches", async () => {
+    const fixture = await createFixture(
+      'watchr',
+      {
+        watchr: {
+          overview: 'English overview.',
+          howItWorks: ['Step one.'],
+          features: ['Feature one.'],
+        },
+      },
+      {
+        watchr: {
+          overview: 'Visão em português.',
+          howItWorks: ['Passo um.'],
+          features: ['Funcionalidade um.'],
+        },
+      },
+    );
+
+    expect(fixture.nativeElement.textContent).toContain('English overview.');
+    expect(fixture.nativeElement.textContent).toContain('Step one.');
+    expect(fixture.nativeElement.textContent).toContain('Feature one.');
+
+    TestBed.inject(TranslocoService).setActiveLang('pt-PT');
+    fixture.detectChanges();
+    await fixture.whenStable();
+
+    expect(fixture.nativeElement.textContent).toContain('Visão em português.');
+    expect(fixture.nativeElement.textContent).toContain('Passo um.');
+    expect(fixture.nativeElement.textContent).toContain('Funcionalidade um.');
   });
 });

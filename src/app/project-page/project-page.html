@@ -6,7 +6,7 @@
   >
     <div class="hero">
       <div class="wrap">
-        <a class="back" routerLink="/">&larr; All projects</a>
+        <a class="back" routerLink="/">&larr; {{ 'projectPage.backLink' | transloco }}</a>
         <span class="eyebrow status">{{ project.status }}</span>
         @if (project.slug === 'watchr') {
           <!-- Watchr's own mark, same icon as its home card
@@ -20,15 +20,18 @@
           </span>
         }
         <h1>{{ project.name }}</h1>
+        <!-- Shown as-is: the same untranslated field the home card shows
+             (DEF-36 left per-project data out of this mechanism), so the
+             two don't disagree on the same project's own copy. -->
         <p class="tagline">{{ project.tagline }}</p>
         <p class="pitch">{{ project.description }}</p>
         @if (project.website || project.repo) {
           <div class="actions">
             @if (project.website) {
-              <a class="button primary" [href]="project.website" target="_blank" rel="noopener">Visit the site &rarr;</a>
+              <a class="button primary" [href]="project.website" target="_blank" rel="noopener">{{ 'projectPage.visitSite' | transloco }} &rarr;</a>
             }
             @if (project.repo) {
-              <a class="button" [href]="project.repo" target="_blank" rel="noopener">Source on GitHub &rarr;</a>
+              <a class="button" [href]="project.repo" target="_blank" rel="noopener">{{ 'projectPage.sourceOnGithub' | transloco }} &rarr;</a>
             }
           </div>
         }
@@ -38,9 +41,9 @@
     @if (project.overview) {
       <section id="why">
         <div class="wrap section-head">
-          <span class="eyebrow">Overview</span>
-          <h2>Why it exists</h2>
-          <p class="lede overview">{{ project.overview }}</p>
+          <span class="eyebrow">{{ 'projectPage.overviewEyebrow' | transloco }}</span>
+          <h2>{{ 'projectPage.whyItExists' | transloco }}</h2>
+          <p class="lede overview">{{ ('projects.' + project.slug + '.overview') | transloco }}</p>
         </div>
       </section>
     }
@@ -49,11 +52,15 @@
       <section id="how-it-works">
         <div class="wrap">
           <div class="section-head">
-            <span class="eyebrow">Step by step</span>
-            <h2>How it works</h2>
+            <span class="eyebrow">{{ 'projectPage.stepByStepEyebrow' | transloco }}</span>
+            <h2>{{ 'projectPage.howItWorksHeading' | transloco }}</h2>
           </div>
           <ol class="steps">
-            @for (point of project.howItWorks; track point; let i = $index) {
+            @for (
+              point of (('projects.' + project.slug + '.howItWorks') | transloco);
+              track $index;
+              let i = $index
+            ) {
               <li>
                 <span class="step-number mono" aria-hidden="true">{{ i + 1 }}</span>
                 <p>{{ point }}</p>
@@ -68,11 +75,11 @@
       <section id="features">
         <div class="wrap">
           <div class="section-head">
-            <span class="eyebrow">What's in it</span>
-            <h2>Features</h2>
+            <span class="eyebrow">{{ 'projectPage.whatsInItEyebrow' | transloco }}</span>
+            <h2>{{ 'projectPage.featuresHeading' | transloco }}</h2>
           </div>
           <ul class="feature-grid">
-            @for (point of project.features; track point) {
+            @for (point of (('projects.' + project.slug + '.features') | transloco); track $index) {
               <li>{{ point }}</li>
             }
           </ul>
@@ -83,20 +90,20 @@
     <section id="details">
       <div class="wrap">
         <div class="section-head">
-          <span class="eyebrow">About this build</span>
-          <h2>Details</h2>
+          <span class="eyebrow">{{ 'projectPage.aboutThisBuildEyebrow' | transloco }}</span>
+          <h2>{{ 'projectPage.detailsHeading' | transloco }}</h2>
         </div>
         <dl>
-          <dt>Stack</dt>
+          <dt>{{ 'projectPage.stackLabel' | transloco }}</dt>
           <dd>{{ project.stack }}</dd>
-          <dt>Status</dt>
+          <dt>{{ 'projectPage.statusLabel' | transloco }}</dt>
           <dd>{{ project.status }}</dd>
           @if (project.website) {
-            <dt>Website</dt>
+            <dt>{{ 'projectPage.websiteLabel' | transloco }}</dt>
             <dd><a [href]="project.website" target="_blank" rel="noopener">{{ project.website }}</a></dd>
           }
           @if (project.repo) {
-            <dt>Repository</dt>
+            <dt>{{ 'projectPage.repositoryLabel' | transloco }}</dt>
             <dd><a [href]="project.repo" target="_blank" rel="noopener">{{ project.repo }}</a></dd>
           }
         </dl>
@@ -106,9 +113,9 @@
 } @else {
   <section>
     <div class="wrap section-head">
-      <span class="eyebrow">Not found</span>
-      <h2>Project not found</h2>
-      <p class="lede"><a routerLink="/">Back home</a>.</p>
+      <span class="eyebrow">{{ 'projectPage.notFoundEyebrow' | transloco }}</span>
+      <h2>{{ 'projectPage.notFoundHeading' | transloco }}</h2>
+      <p class="lede"><a routerLink="/">{{ 'projectPage.backHome' | transloco }}</a>.</p>
     </div>
   </section>
 }

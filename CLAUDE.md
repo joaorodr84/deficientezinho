@@ -116,6 +116,13 @@ layout the shared template can't express.
 An entry's optional `accent` (`{ light, dark }`) is the project's own
 colour; its page and home card are tinted with it.
 
+A project with `overview`/`howItWorks`/`features` set also needs a
+matching `projects.<slug>.{overview,howItWorks,features}` entry in
+`public/i18n/en-GB.json` (see "Translating an Angular page" below) —
+without it, that section shows the raw translation key instead of
+text. `tagline`/`description` need no dictionary entry; the hero shows
+those two fields as-is, untranslated, same as the home card.
+
 ## The site-wide template
 
 The DigiSpin mini site set the design every page follows: the token names
@@ -175,11 +182,30 @@ Angular pages (home, Watchr, Freecell Plus). The pieces:
   `theme-toggle.spec.ts` already uses for its own hardcoded labels; keep
   it in sync with the real JSON by hand.
 
-Project data (`PROJECTS` in
-[src/app/projects/projects.data.ts](src/app/projects/projects.data.ts) —
-name, tagline, description, stack, status) is a separate concern from a
-page's own template copy, and isn't translated by this mechanism; Watchr
-and Freecell Plus's content is DEF-37 and DEF-38.
+`tagline`/`description`/`stack`/`status` in `PROJECTS`
+([src/app/projects/projects.data.ts](src/app/projects/projects.data.ts))
+stay untranslated everywhere they're shown (the home card, the project
+page's hero) — translating them only on the project page would leave
+the same project disagreeing with itself depending on which page a
+visitor is on. `overview`/`howItWorks`/`features` (DEF-9's optional
+richer sections, which only exist on the project page) are translated,
+under `projects.<slug>.*` in the dictionary (DEF-37, DEF-38) — e.g.
+`projects.watchr.overview`, `projects.watchr.howItWorks`.
+
+Transloco flattens a nested dictionary into dotted keys at load time,
+but **arrays are a leaf, not expanded per index** — `howItWorks` becomes
+one flat key holding the whole array, never `howItWorks.0`,
+`howItWorks.1`, and so on. So `project-page.html` looks the array up
+*once* and iterates the pipe's own result, not the other way round:
+
+```html
+@for (point of (('projects.' + project.slug + '.howItWorks') | transloco); track $index) {
+  <p>{{ point }}</p>
+}
+```
+
+not `@for (point of project.howItWorks; ...) { ... | transloco: ... + i ... }`,
+which silently renders the untranslated key string for every item.
 
 ### Translating a static mini site (DEF-39)
 

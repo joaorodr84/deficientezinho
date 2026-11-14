@@ -5,11 +5,18 @@ import { App } from './app';
 import { routes } from './app.routes';
 
 // The language switcher (DEF-36) needs a TranslocoService, so every test
-// here provides one; the labels it tests are its own hardcoded autonyms,
-// not translated strings, so an empty dictionary per locale is enough.
+// here provides one. The nav's own section links reuse project-page.html's
+// projectPage.* chrome keys (DEF-37) -- mirrors public/i18n/en-GB.json,
+// same convention theme-toggle.spec.ts uses for its own hardcoded labels.
 function translocoTesting() {
+  const projectPage = {
+    whyItExists: 'Why it exists',
+    howItWorksHeading: 'How it works',
+    featuresHeading: 'Features',
+    detailsHeading: 'Details',
+  };
   return TranslocoTestingModule.forRoot({
-    langs: { 'en-GB': {}, 'pt-PT': {} },
+    langs: { 'en-GB': { projectPage }, 'pt-PT': {} },
     translocoConfig: { availableLangs: ['en-GB', 'pt-PT'], defaultLang: 'en-GB' },
   });
 }

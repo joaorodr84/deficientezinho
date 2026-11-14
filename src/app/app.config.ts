@@ -19,6 +19,10 @@ export const appConfig: ApplicationConfig = {
         defaultLang: initialLocale(),
         fallbackLang: 'en-GB',
         reRenderOnLangChange: true,
+        // A project rendered through ProjectPage before its own content is
+        // translated (DEF-37, DEF-38) still needs a real sentence, not a
+        // missing-key placeholder: show the English copy in the meantime.
+        missingHandler: { useFallbackTranslation: true },
       },
       loader: TranslocoHttpLoader,
     }),

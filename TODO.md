@@ -45,8 +45,9 @@ different mechanisms:
   **Transloco** (`DEF-36`): runtime JSON dictionaries per locale, plus a
   language switcher in the nav alongside the theme toggle (same
   persisted-choice, browser-default pattern as `deficientezinho-theme`).
-  Only the home page's own copy is translated so far; Watchr's and
-  Freecell Plus's are `DEF-37`/`DEF-38` below.
+  The home page and the shared project-page template's own chrome are
+  translated (`DEF-37`); Watchr's own overview/how-it-works/features
+  content now is too. Freecell Plus's is `DEF-38` below.
 - The static microsites (`public/projects/<slug>/`, one per project:
   digispin, sphinx, cangupa, crivo, def-platform, arrumador, damas) are
   plain HTML/CSS/JS mirrored in from each project's own repo — no Angular
@@ -64,7 +65,6 @@ first-person/tone-sensitive text (e.g. Watchr's "why it exists") gets
 extra care. No URL change for language — a toggle only, like the theme
 toggle, not `/en/`-style routes.
 
-- `DEF-37` [P2]: Translate Watchr's page content.
 - `DEF-38` [P2]: Translate Freecell Plus's page content.
 - `DEF-40` [P3]: Translate the DigiSpin microsite.
 - `DEF-41` [P3]: Translate the Sphinx microsite.

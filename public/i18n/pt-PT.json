@@ -8,5 +8,46 @@
     "toExplore": "{{count}} para explorar",
     "openMicrosite": "Abrir o mini site",
     "readMore": "Saber mais"
+  },
+  "projectPage": {
+    "backLink": "Todos os projetos",
+    "overviewEyebrow": "Visão geral",
+    "whyItExists": "Porque existe",
+    "stepByStepEyebrow": "Passo a passo",
+    "howItWorksHeading": "Como funciona",
+    "whatsInItEyebrow": "O que inclui",
+    "featuresHeading": "Funcionalidades",
+    "aboutThisBuildEyebrow": "Sobre esta versão",
+    "detailsHeading": "Detalhes",
+    "stackLabel": "Stack",
+    "statusLabel": "Estado",
+    "websiteLabel": "Site",
+    "repositoryLabel": "Repositório",
+    "visitSite": "Visitar o site",
+    "sourceOnGithub": "Código no GitHub",
+    "notFoundEyebrow": "Não encontrado",
+    "notFoundHeading": "Projeto não encontrado",
+    "backHome": "Voltar ao início"
+  },
+  "projects": {
+    "watchr": {
+      "overview": "Registei tudo o que vi no TV Time durante quase dez anos. Depois a aplicação fechou, e a minha cabeça já não conseguia organizar sozinha o que ainda tinha para ver — por isso criei o Watchr para o fazer por mim. Cada utilizador convidado tem a sua própria biblioteca, histórico e definições de privacidade, para que uma instância partilhada do Watchr continue a parecer pessoal. As séries e os filmes são seguidos com metadados obtidos em tempo real do TMDb, e o estado de uma série — Plan to Watch, Watching, On Hold, Up to Date, Completed — atualiza-se sozinho durante a noite e no momento em que marcas um episódio como visto, para que My Shows nunca desalinhe do que realmente foi emitido.",
+      "howItWorks": [
+        "Encontra algo para ver em Discover e carrega no botão \"+ Track\" para o adicionares à tua biblioteca.",
+        "Tudo o que segues aparece em My Shows, agrupado por estado, recalculado automaticamente à medida que os episódios são emitidos e vistos.",
+        "Já tens histórico noutro sítio? Importa-o do IMDb, Trakt.tv, Netflix ou TV Time — cada importação mostra uma pré-visualização das alterações antes de gravar o que quer que seja.",
+        "Calendar, Stats e Badges transformam esse histórico em vistas semanais/mensais, tempo visto e géneros, e marcos à medida que registas episódios."
+      ],
+      "features": [
+        "Metadados em tempo real do TMDb, com os textos das séries traduzidos automaticamente para mais de 40 idiomas.",
+        "Histórico com atribuição precisa de datas e edição em massa.",
+        "Vista de calendário com zoom semanal e mensal.",
+        "Estatísticas: tempo visto, episódios por mês e dia da semana, géneros mais vistos, séries mais vistas, sequência mais longa.",
+        "Distintivos para celebrar marcos e sequências.",
+        "Pré-visualização de importações do IMDb, Trakt.tv, Netflix e TV Time — nada é gravado até confirmares.",
+        "Suporte para vários utilizadores, só por convite: bibliotecas, históricos e definições de privacidade separados por utilizador.",
+        "Autenticação de dois fatores, além de exportação completa de dados e eliminação de conta em Profile → Account."
+      ]
+    }
   }
 }

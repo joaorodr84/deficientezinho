@@ -15,7 +15,6 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 
 | ID | Task | Status | Commit |
 | --- | --- | --- | --- |
-| DEF-37 | Translate Watchr's page content | open | — |
 | DEF-38 | Translate Freecell Plus's page content | open | — |
 | DEF-40 | Translate the DigiSpin microsite | open | — |
 | DEF-41 | Translate the Sphinx microsite | open | — |
@@ -66,3 +65,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-35 | Same fix for Freecell Plus | done | 2026-11-14 | — |
 | DEF-39 | Design and build the shared lightweight translation mechanism for static microsites, and document it in CLAUDE.md | done | 2026-11-14 | — |
 | DEF-36 | Add Transloco to the Angular app (en-GB, pt-PT), a nav language switcher, and translate the home page | done | 2026-11-14 | — |
+| DEF-37 | Translate Watchr's page content | done | 2026-11-14 | — |
