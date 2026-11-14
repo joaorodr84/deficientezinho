@@ -136,6 +136,125 @@ content. Three things must stay as they are for it to fit in:
 - **The nav's clearance for the toggle** (`.site-nav-inner`'s
   `padding-right` under 1180px), or the toggle covers the last link.
 - **The footer link back** to `/`.
+- **The language mechanism** (once a mini site is translated — see
+  "Translating a static mini site" below): the `deficientezinho-lang`
+  key, the `data-i18n`/`data-i18n-attr-*` markup convention, and the
+  switcher sitting next to the theme toggle.
+
+### Translating a static mini site (DEF-39)
+
+The Angular pages get Transloco; a static mini site under
+`public/projects/<slug>/` has no runtime to hand that to, so it carries
+its own translation the same way it already carries its own theme
+toggle: duplicated inline, per page, no build step, no shared file. This
+is the mechanism every mini-site translation task (DEF-40 onward) wires
+in; DEF-39 itself only establishes and documents it; no mini site is
+translated yet.
+
+Locales are the same two the Angular side starts with: `en-GB` and
+`pt-PT`. Each page carries both, keyed exactly like that (not `en`/`pt`)
+so a future shared "last language picked" could read the same value on
+either side without translating codes — not built yet, just left
+possible.
+
+1. **A dictionary per page**, inline, right after the theme-toggle
+   scripts — one `<script type="application/json">` holding every
+   string that page uses, both locales at once:
+
+   ```html
+   <script type="application/json" id="i18n-strings">
+     {
+       "en-GB": { "tagline": "A hundred words in. <b>One picture for each, out.</b>" },
+       "pt-PT": { "tagline": "Cem palavras à entrada. <b>Uma imagem por cada, à saída.</b>" }
+     }
+   </script>
+   ```
+
+   A `type="application/json"` script never executes and never renders,
+   so it sits safely among the visible markup. Values may contain the
+   same inline tags (`<b>`, `<code>`) the English copy already uses —
+   they're applied with `innerHTML`, not `textContent`, because several
+   existing strings (e.g. Crivo's tagline) depend on that.
+
+2. **Mark translatable markup in place**, no separate copy of the
+   template per locale:
+   - Text content: `data-i18n="tagline"` on the element whose
+     `innerHTML` that key replaces.
+   - An attribute (`aria-label`, `title`, `alt`, `placeholder`, …):
+     `data-i18n-attr-aria-label="theme-label"` — `data-i18n-attr-<name>`
+     sets attribute `<name>` from that key. An element can carry more
+     than one `data-i18n-attr-*`.
+   - CLI snippets (`<pre><code>`) and other non-prose stay untranslated
+     unless the task says otherwise.
+
+3. **One switcher, next to the theme toggle** — same fixed-position
+   cluster, same button-group shape, two choices instead of three:
+
+   ```html
+   <div class="lang-toggle" role="group" aria-label="Language">
+     <button type="button" data-lang-choice="en-GB">EN</button>
+     <button type="button" data-lang-choice="pt-PT">PT</button>
+   </div>
+   ```
+
+4. **One inline script**, appended alongside the theme-toggle's own two
+   scripts, applying the same shape (an IIFE, a `KEY` constant, a
+   `try`/`catch` around every `localStorage` call, an `apply()` that
+   both runs on load and on click):
+
+   ```html
+   <script>
+     (function () {
+       var KEY = 'deficientezinho-lang';
+       var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+       var buttons = document.querySelectorAll('[data-lang-choice]');
+
+       function defaultLocale() {
+         return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+       }
+       function currentLocale() {
+         try {
+           var saved = localStorage.getItem(KEY);
+           if (saved && dict[saved]) return saved;
+         } catch (e) {}
+         return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+       }
+       function apply(locale) {
+         var strings = dict[locale] || dict['en-GB'];
+         document.documentElement.lang = locale.slice(0, 2);
+         document.querySelectorAll('[data-i18n]').forEach(function (el) {
+           var key = el.getAttribute('data-i18n');
+           if (strings[key] != null) el.innerHTML = strings[key];
+         });
+         document.querySelectorAll('[data-i18n-attr-aria-label], [data-i18n-attr-title]').forEach(function (el) {
+           // One branch per data-i18n-attr-<name> the page actually uses.
+           ['aria-label', 'title', 'alt', 'placeholder'].forEach(function (attr) {
+             var key = el.getAttribute('data-i18n-attr-' + attr);
+             if (key && strings[key] != null) el.setAttribute(attr, strings[key]);
+           });
+         });
+         buttons.forEach(function (btn) {
+           btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+         });
+       }
+
+       buttons.forEach(function (btn) {
+         btn.addEventListener('click', function () {
+           var locale = btn.getAttribute('data-lang-choice');
+           apply(locale);
+           try { localStorage.setItem(KEY, locale); } catch (e) {}
+         });
+       });
+       apply(currentLocale());
+     })();
+   </script>
+   ```
+
+A mini-site translation task (DEF-40 onward) adds the dictionary,
+tags the existing markup with `data-i18n`/`data-i18n-attr-*`, pastes in
+the switcher and script once per page, and writes the `pt-PT` copy —
+the English strings move into the dictionary's `en-GB` entry unchanged,
+so the page's visible English output doesn't change.
 
 ## Versions
 

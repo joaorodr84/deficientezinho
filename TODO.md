@@ -48,12 +48,13 @@ different mechanisms:
 - The static microsites (`public/projects/<slug>/`, one per project:
   digispin, sphinx, cangupa, crivo, def-platform, arrumador, damas) are
   plain HTML/CSS/JS mirrored in from each project's own repo — no Angular
-  runtime reaches them. They need their own lightweight mechanism: JSON
-  dictionaries plus a small inline script, mirroring how the theme
-  toggle is already duplicated inline across every static page per
-  `CLAUDE.md`'s "site-wide template" section. Once designed, that
-  mechanism becomes a fourth thing (alongside the theme key, nav
-  clearance and footer link) every mini site must carry to fit in.
+  runtime reaches them. They carry their own lightweight mechanism
+  instead: JSON dictionaries plus a small inline script, mirroring how
+  the theme toggle is already duplicated inline across every static
+  page. `CLAUDE.md`'s "site-wide template" section documents it
+  (`DEF-39`) as the fourth thing, alongside the theme key, nav clearance
+  and footer link, every mini site must carry to fit in — no mini site
+  has been wired up to it yet.
 
 Locales to start with: English (UK) and Portuguese (Portugal), chosen so
 more locales are just another JSON file. Joao reviews all drafted copy;
@@ -66,17 +67,10 @@ toggle, not `/en/`-style routes.
 - `DEF-37` [P2]: Translate Watchr's page content (depends on `DEF-36`).
 - `DEF-38` [P2]: Translate Freecell Plus's page content (depends on
   `DEF-36`).
-- `DEF-39` [P2]: Design and build the shared lightweight translation
-  mechanism for static microsites (JSON dictionaries + inline script +
-  switcher), and document it in `CLAUDE.md` as a fourth must-keep piece
-  of the site-wide template.
-- `DEF-40` [P3]: Translate the DigiSpin microsite (depends on `DEF-39`).
-- `DEF-41` [P3]: Translate the Sphinx microsite (depends on `DEF-39`).
-- `DEF-42` [P3]: Translate the Cangupa microsite (depends on `DEF-39`).
-- `DEF-43` [P3]: Translate the Crivo microsite (depends on `DEF-39`).
-- `DEF-44` [P3]: Translate the def-platform microsite/game UI text
-  (depends on `DEF-39`).
-- `DEF-45` [P3]: Translate the Arrumador microsite/game UI text (depends
-  on `DEF-39`).
-- `DEF-46` [P3]: Translate the Damas microsite/game UI text (depends on
-  `DEF-39`).
+- `DEF-40` [P3]: Translate the DigiSpin microsite.
+- `DEF-41` [P3]: Translate the Sphinx microsite.
+- `DEF-42` [P3]: Translate the Cangupa microsite.
+- `DEF-43` [P3]: Translate the Crivo microsite.
+- `DEF-44` [P3]: Translate the def-platform microsite/game UI text.
+- `DEF-45` [P3]: Translate the Arrumador microsite/game UI text.
+- `DEF-46` [P3]: Translate the Damas microsite/game UI text.
