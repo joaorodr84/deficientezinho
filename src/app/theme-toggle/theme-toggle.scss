@@ -1,0 +1,43 @@
+// Fixed, as on the mini sites, so the switch is reachable at any scroll
+// position: its effect is page-wide. The nav bar leaves room for it (see
+// app.scss) rather than the toggle sitting in the nav's flow, which would
+// scroll it away.
+.theme-toggle {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 10;
+  display: flex;
+  gap: 2px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  padding: 3px;
+}
+
+button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--fg);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  &.active {
+    background: var(--surface-2);
+    color: var(--fg);
+  }
+}

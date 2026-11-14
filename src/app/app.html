@@ -1,11 +1,36 @@
-<header class="site-header">
-  <a class="brand" routerLink="/">Deficientezinho</a>
-</header>
+<app-theme-toggle />
+
+<nav class="site-nav" aria-label="Projects">
+  <div class="wrap site-nav-inner">
+    <a class="site-nav-brand" routerLink="/">
+      <span class="logo-tile"><img src="logo.png" alt="" /></span>
+      Deficientezinho
+    </a>
+    <div class="site-nav-links">
+      @for (project of projects; track project.slug) {
+        @if (project.microsite) {
+          <a [href]="project.microsite">{{ project.name }}</a>
+        } @else {
+          <a [routerLink]="['/projects', project.slug]" routerLinkActive="current">{{
+            project.name
+          }}</a>
+        }
+      }
+    </div>
+  </div>
+</nav>
 
 <main>
   <router-outlet />
 </main>
 
 <footer class="site-footer">
-  <p>&copy; {{ year }} Deficientezinho</p>
+  <div class="wrap">
+    <span class="logo-tile footer-icon"><img src="logo.png" alt="" /></span>
+    <div class="footer-links">
+      <a class="brand" routerLink="/">Deficientezinho</a>
+      <a href="https://github.com/joaorodr84">by joaorodr84</a>
+      <span>&copy; {{ year }}</span>
+    </div>
+  </div>
 </footer>

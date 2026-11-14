@@ -2,7 +2,7 @@
 <script>
 (function () {
   try {
-    var saved = localStorage.getItem('sphinx-site-theme');
+    var saved = localStorage.getItem('deficientezinho-theme');
     if (saved === 'light' || saved === 'dark') {
       document.documentElement.setAttribute('data-theme', saved);
     }
@@ -98,6 +98,10 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
+  /* The theme toggle is fixed in the top-right corner. Below this width
+     the centred .wrap reaches under it, so the nav keeps clear of it;
+     without this the toggle covers the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
   .theme-toggle{position:fixed;top:14px;right:14px;z-index:10;display:flex;gap:2px;background:var(--surface);border:1px solid var(--rule);border-radius:999px;padding:3px}
   .theme-toggle button{width:32px;height:32px;border:none;border-radius:999px;background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;cursor:pointer}
   .theme-toggle button.active{background:var(--surface-2);color:var(--fg)}
@@ -217,6 +221,7 @@
       <a href="privacy-policy.html">Privacy policy</a>
       <a href="support.html">Support</a>
       <a href="mailto:joaorodr84@gmail.com">joaorodr84@gmail.com</a>
+      <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
     </div>
   </div>
@@ -336,7 +341,7 @@
 
 <script>
 (function () {
-  var KEY = 'sphinx-site-theme';
+  var KEY = 'deficientezinho-theme';
   var buttons = document.querySelectorAll('[data-theme-choice]');
   function currentChoice() {
     var attr = document.documentElement.getAttribute('data-theme');

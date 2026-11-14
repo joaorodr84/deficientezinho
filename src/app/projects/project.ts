@@ -19,4 +19,9 @@ export interface Project {
   // as-is rather than through the shared project-page template. When set,
   // the home card links straight here instead of the internal route.
   microsite?: string;
+  // Optional (DEF-22): the project's own brand colour, one value per theme
+  // because a colour dark enough to read on white is too dark on the dark
+  // surface. Tints whatever renders the project (its page, its home card);
+  // without it the site's own accent is used.
+  accent?: { light: string; dark: string };
 }

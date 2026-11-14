@@ -1,19 +1,50 @@
+// The site-wide template. Token names, type and layout classes are the ones
+// the DigiSpin mini site (public/projects/digispin/) established, so the
+// Angular pages and the static mini sites read as one family; only the
+// palette differs per site. Deficientezinho's own accent pair comes from
+// its logo: the blue of the figure's clothes and the red of its smile.
+
+// Dark values live in a mixin because they are needed twice: once when the
+// device is dark and the visitor has not forced light, once when the
+// visitor has forced dark. A single [data-theme] attribute set from
+// matchMedia in JS was rejected: "follow the device" would then need a
+// listener to stay live, where the media query does it for free.
+@mixin dark-tokens {
+  --bg: #0c0d10;
+  --surface: #15171c;
+  --surface-2: #1c1f26;
+  --fg: #e6e8ec;
+  --muted: #9199a8;
+  --rule: #2a2e38;
+  --accent: #6aa5e8;
+  --accent-ink: #0c0d10;
+  --mono-accent: #ef6f85;
+  color-scheme: dark;
+}
+
 :root {
-  --color-bg: #ffffff;
-  --color-text: #1a1a1a;
-  --color-text-muted: #666666;
-  --color-border: #e2e2e2;
-  --color-accent: #6750ff;
+  --bg: #eef0f4;
+  --surface: #ffffff;
+  --surface-2: #e3e7ee;
+  --fg: #15171c;
+  --muted: #4a515e;
+  --rule: #d6dae2;
+  --accent: #1d5fa8;
+  --accent-ink: #ffffff;
+  --mono-accent: #b3213d;
+  // Also what light-dark() keys off wherever a project brings its own
+  // accent pair (see .project-accent below).
+  color-scheme: light;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #121212;
-    --color-text: #f0f0f0;
-    --color-text-muted: #a0a0a0;
-    --color-border: #2c2c2c;
-    --color-accent: #9b8cff;
+  :root:not([data-theme='light']) {
+    @include dark-tokens;
   }
+}
+
+:root[data-theme='dark'] {
+  @include dark-tokens;
 }
 
 * {
@@ -27,13 +58,102 @@ body {
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial,
-    sans-serif;
-  line-height: 1.5;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Sora', system-ui, sans-serif;
+  text-wrap: balance;
+  margin: 0;
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--accent);
+}
+
+.mono {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-inline: 20px;
+}
+
+section {
+  padding-block: 56px;
+}
+
+section + section {
+  border-top: 1px solid var(--rule);
+}
+
+.hero {
+  background: var(--surface);
+  border-bottom: 1px solid var(--rule);
+  padding-block: 72px 56px;
+  text-align: center;
+
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+  }
+}
+
+.tagline {
+  font-family: 'Sora', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.3rem, 4.6vw, 1.9rem);
+  max-width: 22ch;
+  margin: 0;
+}
+
+.pitch {
+  color: var(--muted);
+  max-width: 46ch;
+  font-size: 0.98rem;
+  margin: 0;
+}
+
+.eyebrow {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mono-accent);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.section-head {
+  margin-bottom: 28px;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
+
+p.lede {
+  color: var(--muted);
+  max-width: 62ch;
+  margin: 10px 0 0;
+}
+
+// A project's own colour pair, set as --accent-light / --accent-dark on the
+// element by whoever renders it. light-dark() picks by the used
+// color-scheme, which the theme blocks above already switch, so a project
+// accent follows the toggle without each component repeating the
+// device/forced-theme selectors.
+.project-accent {
+  --accent: light-dark(var(--accent-light), var(--accent-dark));
 }

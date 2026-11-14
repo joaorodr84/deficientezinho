@@ -14,6 +14,22 @@ See [TODO.md](TODO.md) for what's planned next.
   a playable puzzle, features, levels, accessibility, what's new, privacy
   policy and support) with a light/dark/system theme switch, replacing
   the single page it had before. It is hosted here from now on.
+- The whole site now shares DigiSpin's look: the same type, layout, nav
+  bar and footer on the home page and on the Freecell Plus and Watchr
+  pages, which also got a proper hero, numbered steps and feature cards
+  in each project's own colour.
+
+### Added
+
+- A light / dark / follow-the-device switch on every page. The choice is
+  remembered and carries across the home page and every project's mini
+  site.
+- Each mini site's footer links back to Deficientezinho.
+
+### Fixed
+
+- The theme switch no longer covers the last link in the DigiSpin and
+  Sphinx nav bars on mid-width screens.
 
 ## 2026-10-22
 

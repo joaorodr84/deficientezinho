@@ -1,0 +1,28 @@
+<div class="theme-toggle" role="group" aria-label="Theme">
+  @for (option of options; track option.choice) {
+    <button
+      type="button"
+      [class.active]="choice() === option.choice"
+      [attr.aria-pressed]="choice() === option.choice"
+      [attr.aria-label]="option.label"
+      [title]="option.label"
+      (click)="choose(option.choice)"
+    >
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        @switch (option.choice) {
+          @case ('light') {
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+          }
+          @case ('dark') {
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+          }
+          @case ('system') {
+            <rect x="3" y="4" width="18" height="12" rx="2" />
+            <path d="M8 20h8M12 16v4" />
+          }
+        }
+      </svg>
+    </button>
+  }
+</div>

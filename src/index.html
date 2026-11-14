@@ -4,12 +4,31 @@
   <meta charset="utf-8">
   <title>Deficientezinho</title>
   <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <script>
+    // Restore the saved theme before Angular boots, so a returning visitor
+    // never sees a flash of the wrong theme while the bundle loads. Doing
+    // this inside the ThemeToggle component instead was rejected for that
+    // reason: it only runs after bootstrap. The key is the one every mini
+    // site under /projects/ reads too (and THEME_STORAGE_KEY in
+    // theme-toggle.ts), so one choice follows the visitor across all of them.
+    (function () {
+      try {
+        var saved = localStorage.getItem('deficientezinho-theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <app-root></app-root>

@@ -113,6 +113,30 @@ and its page template are shared by every project — adding a project is
 adding a data entry, not a new component, unless a project needs a page
 layout the shared template can't express.
 
+An entry's optional `accent` (`{ light, dark }`) is the project's own
+colour; its page and home card are tinted with it.
+
+## The site-wide template
+
+The DigiSpin mini site set the design every page follows: the token names
+(`--bg`, `--surface`, `--surface-2`, `--fg`, `--muted`, `--rule`,
+`--accent`, `--accent-ink`, `--mono-accent`), Sora / IBM Plex Sans / IBM
+Plex Mono, the `.wrap` / `.hero` / `.eyebrow` / `.section-head` / `.lede`
+layout classes, the nav bar and footer, and the fixed light / dark /
+follow-the-device toggle. [src/styles.scss](src/styles.scss) holds it for
+the Angular pages; each static mini site under `public/projects/<slug>/`
+carries its own copy inline, with its own palette.
+
+A new mini site starts from DigiSpin's pages and changes the palette and
+content. Three things must stay as they are for it to fit in:
+
+- **The theme key.** Every page reads and writes `localStorage`'s
+  `deficientezinho-theme` (`light`, `dark` or `system`), so one choice
+  holds across the home page and all mini sites.
+- **The nav's clearance for the toggle** (`.site-nav-inner`'s
+  `padding-right` under 1180px), or the toggle covers the last link.
+- **The footer link back** to `/`.
+
 ## Versions
 
 `package.json`'s `version` is the real version. Deficientezinho starts at

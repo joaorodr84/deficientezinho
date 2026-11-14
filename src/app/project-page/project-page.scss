@@ -1,61 +1,121 @@
+// Layout only: the hero, .wrap, .eyebrow, .section-head and .lede come from
+// the site-wide template in styles.scss.
+
 .back {
-  display: inline-block;
-  margin-bottom: 1rem;
-  color: var(--color-text-muted);
+  align-self: flex-start;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+
+  &:hover {
+    color: var(--fg);
+  }
+}
+
+.status {
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: clamp(2.2rem, 8vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--accent);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.button {
+  padding: 10px 18px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--fg);
+  font-weight: 600;
+  font-size: 0.92rem;
   text-decoration: none;
 
   &:hover {
-    color: var(--color-accent);
+    border-color: var(--accent);
+  }
+
+  &.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink);
   }
 }
 
-.tagline {
-  color: var(--color-text-muted);
-  font-size: 1.1rem;
+.steps,
+.feature-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
 }
 
-.description {
-  max-width: 40rem;
+.steps li,
+.feature-grid li {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-radius: 16px;
+  padding: 18px 20px;
 }
 
-.overview {
-  max-width: 40rem;
-  margin-top: 1rem;
-}
-
-.rich-section {
-  max-width: 40rem;
-  margin-top: 1.75rem;
-
-  h2 {
-    font-size: 1.2rem;
-    margin: 0 0 0.6rem;
-  }
-
-  ul {
-    margin: 0;
-    padding-left: 1.1rem;
+.steps {
+  li {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    gap: 14px;
+    align-items: flex-start;
   }
 
-  li::marker {
-    color: var(--color-accent);
+  p {
+    margin: 0;
+  }
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-grid {
+  @media (min-width: 560px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  li {
+    font-size: 0.95rem;
+    border-top: 3px solid var(--accent);
   }
 }
 
 dl {
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 0.4rem 1rem;
-  margin-top: 1.5rem;
+  gap: 8px 20px;
+  margin: 0;
 }
 
 dt {
-  color: var(--color-text-muted);
+  color: var(--muted);
 }
 
 dd {
   margin: 0;
+  overflow-wrap: anywhere;
 }

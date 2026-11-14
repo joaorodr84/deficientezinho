@@ -1,47 +1,103 @@
 @if (project) {
-  <article>
-    <a class="back" routerLink="/">&larr; All projects</a>
-    <h1>{{ project.name }}</h1>
-    <p class="tagline">{{ project.tagline }}</p>
-    <p class="description">{{ project.description }}</p>
+  <article
+    [class.project-accent]="project.accent"
+    [style.--accent-light]="project.accent?.light"
+    [style.--accent-dark]="project.accent?.dark"
+  >
+    <div class="hero">
+      <div class="wrap">
+        <a class="back" routerLink="/">&larr; All projects</a>
+        <span class="eyebrow status">{{ project.status }}</span>
+        <h1>{{ project.name }}</h1>
+        <p class="tagline">{{ project.tagline }}</p>
+        <p class="pitch">{{ project.description }}</p>
+        @if (project.website || project.repo) {
+          <div class="actions">
+            @if (project.website) {
+              <a class="button primary" [href]="project.website" target="_blank" rel="noopener">Visit the site &rarr;</a>
+            }
+            @if (project.repo) {
+              <a class="button" [href]="project.repo" target="_blank" rel="noopener">Source on GitHub &rarr;</a>
+            }
+          </div>
+        }
+      </div>
+    </div>
+
     @if (project.overview) {
-      <p class="overview">{{ project.overview }}</p>
+      <section>
+        <div class="wrap section-head">
+          <span class="eyebrow">Overview</span>
+          <h2>Why it exists</h2>
+          <p class="lede overview">{{ project.overview }}</p>
+        </div>
+      </section>
     }
+
     @if (project.howItWorks) {
-      <section class="rich-section">
-        <h2>How it works</h2>
-        <ul>
-          @for (point of project.howItWorks; track point) {
-            <li>{{ point }}</li>
-          }
-        </ul>
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">Step by step</span>
+            <h2>How it works</h2>
+          </div>
+          <ol class="steps">
+            @for (point of project.howItWorks; track point; let i = $index) {
+              <li>
+                <span class="step-number mono" aria-hidden="true">{{ i + 1 }}</span>
+                <p>{{ point }}</p>
+              </li>
+            }
+          </ol>
+        </div>
       </section>
     }
+
     @if (project.features) {
-      <section class="rich-section">
-        <h2>Features</h2>
-        <ul>
-          @for (point of project.features; track point) {
-            <li>{{ point }}</li>
-          }
-        </ul>
+      <section>
+        <div class="wrap">
+          <div class="section-head">
+            <span class="eyebrow">What's in it</span>
+            <h2>Features</h2>
+          </div>
+          <ul class="feature-grid">
+            @for (point of project.features; track point) {
+              <li>{{ point }}</li>
+            }
+          </ul>
+        </div>
       </section>
     }
-    <dl>
-      <dt>Stack</dt>
-      <dd>{{ project.stack }}</dd>
-      <dt>Status</dt>
-      <dd>{{ project.status }}</dd>
-      @if (project.website) {
-        <dt>Website</dt>
-        <dd><a [href]="project.website" target="_blank" rel="noopener">{{ project.website }}</a></dd>
-      }
-      @if (project.repo) {
-        <dt>Repository</dt>
-        <dd><a [href]="project.repo" target="_blank" rel="noopener">{{ project.repo }}</a></dd>
-      }
-    </dl>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">About this build</span>
+          <h2>Details</h2>
+        </div>
+        <dl>
+          <dt>Stack</dt>
+          <dd>{{ project.stack }}</dd>
+          <dt>Status</dt>
+          <dd>{{ project.status }}</dd>
+          @if (project.website) {
+            <dt>Website</dt>
+            <dd><a [href]="project.website" target="_blank" rel="noopener">{{ project.website }}</a></dd>
+          }
+          @if (project.repo) {
+            <dt>Repository</dt>
+            <dd><a [href]="project.repo" target="_blank" rel="noopener">{{ project.repo }}</a></dd>
+          }
+        </dl>
+      </div>
+    </section>
   </article>
 } @else {
-  <p>Project not found. <a routerLink="/">Back home</a>.</p>
+  <section>
+    <div class="wrap section-head">
+      <span class="eyebrow">Not found</span>
+      <h2>Project not found</h2>
+      <p class="lede"><a routerLink="/">Back home</a>.</p>
+    </div>
+  </section>
 }

@@ -7,7 +7,7 @@
 // same as the CSS below already does via prefers-color-scheme.
 (function () {
   try {
-    var saved = localStorage.getItem('digispin-theme');
+    var saved = localStorage.getItem('deficientezinho-theme');
     if (saved === 'light' || saved === 'dark') {
       document.documentElement.setAttribute('data-theme', saved);
     }
@@ -158,6 +158,10 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
+  /* The theme toggle is fixed in the top-right corner. Below this width
+     the centred .wrap reaches under it, so the nav keeps clear of it;
+     without this the toggle covers the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
 
   .explore-grid{display:grid;gap:14px;margin-top:28px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -272,6 +276,7 @@
       <a href="privacy-policy.html">Privacy policy</a>
       <a href="support.html">Support</a>
       <a href="mailto:info@digispin.me">info@digispin.me</a>
+      <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
     </div>
   </div>
@@ -280,7 +285,7 @@
 
 <script>
 (function () {
-  var KEY = 'digispin-theme';
+  var KEY = 'deficientezinho-theme';
   var buttons = document.querySelectorAll('[data-theme-choice]');
 
   function currentChoice() {

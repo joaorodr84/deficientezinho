@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-22`**
+**Next ID to assign: `DEF-23`**
 
 If this file and history ever disagree, history wins:
 
@@ -41,3 +41,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-13 | Build the Watchr page into a DigiSpin-style mini site from the watchr repo | done | 2026-10-23 | — |
 | DEF-12 | Build the Freecell Plus page into a DigiSpin-style mini site from the freecell-plus repo | done | 2026-10-24 | — |
 | DEF-21 | Replace the one-page DigiSpin microsite with the multi-page site from the `digispin-site` repo (home, how to play, features, levels, accessibility, changelog, privacy policy, support), now hosted here | done | 2026-11-14 | — |
+| DEF-22 | Make the DigiSpin mini site's design the site-wide template: its tokens, type, nav/footer and light/dark/system toggle in the Angular shell and shared project page, one theme choice shared with every mini site, and a per-project accent colour | done | 2026-11-14 | — |

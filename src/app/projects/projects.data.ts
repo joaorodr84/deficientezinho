@@ -11,6 +11,8 @@ export const PROJECTS: Project[] = [
     status: 'in development',
     repo: 'https://github.com/joaorodr84/digispin',
     microsite: '/projects/digispin/index.html',
+    // The mini site's own --accent pair.
+    accent: { light: '#b82c36', dark: '#d6505a' },
   },
   {
     slug: 'sphinx',
@@ -22,6 +24,8 @@ export const PROJECTS: Project[] = [
     status: 'in development',
     repo: 'https://github.com/joaorodr84/sphinx',
     microsite: '/projects/sphinx/index.html',
+    // The mini site's own --accent pair.
+    accent: { light: '#1f9d55', dark: '#34d399' },
   },
   {
     slug: 'freecell-plus',
@@ -32,6 +36,8 @@ export const PROJECTS: Project[] = [
     stack: 'Tampermonkey userscript',
     status: 'in development',
     repo: 'https://github.com/joaorodr84/freecell-plus',
+    // No brand of its own yet; amber keeps it apart from the other three.
+    accent: { light: '#a35f00', dark: '#f0a93b' },
     overview:
       'Solitaire Bliss’s FreeCell numbers each game (`?number=`), but leaves finding the next one you haven’t played up to you. Freecell Plus adds a NEXT button built into the site’s own topbar — styled and sized to match the native controls — that jumps straight to the first unplayed number in the sequence instead of just the next one.',
     howItWorks: [
@@ -59,6 +65,8 @@ export const PROJECTS: Project[] = [
     stack: 'Angular + NestJS + PostgreSQL',
     status: 'in development',
     website: 'https://watchr.pt',
+    // Watchr's own --accent, light and dark themes.
+    accent: { light: '#0369a1', dark: '#38bdf8' },
     overview:
       'Each invited user gets their own library, watch history and privacy settings, so one shared Watchr instance still feels personal. Shows and films are tracked with metadata pulled live from TMDb, and a show’s status — Plan to Watch, Watching, On Hold, Up to Date, Completed — updates itself overnight and the moment you mark an episode watched, so My Shows never falls out of sync with what actually aired.',
     howItWorks: [
