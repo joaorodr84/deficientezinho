@@ -55,6 +55,64 @@ describe('Home', () => {
     expect(card.getAttribute('href')).toContain('/projects/freecell-plus');
   });
 
+  // DEF-23: `stack` is one string in the data; the card shows one chip per
+  // technology.
+  it('shows each technology in a project stack as its own chip', () => {
+    const chips: HTMLElement[] = Array.from(cardFor('Watchr').querySelectorAll('.stack li'));
+
+    expect(chips.map((el) => el.textContent?.trim())).toEqual([
+      'Angular',
+      'NestJS',
+      'PostgreSQL',
+    ]);
+  });
+
+  // DEF-23: a card is tinted by its own project's colour pair, which the
+  // global .project-accent rule turns into --accent for the active theme.
+  it('tints a card with its project accent', () => {
+    const card = cardFor('DigiSpin');
+
+    expect(card.classList.contains('project-accent')).toBe(true);
+    expect(card.style.getPropertyValue('--accent-light')).toBe('#b82c36');
+    expect(card.style.getPropertyValue('--accent-dark')).toBe('#d6505a');
+  });
+
+  it('tells a mini site card apart from a project page card in its call to action', () => {
+    expect(cardFor('Sphinx').querySelector('.cta')?.textContent).toContain('Open the mini site');
+    expect(cardFor('Freecell Plus').querySelector('.cta')?.textContent).toContain('Read more');
+  });
+
+  // DEF-23: only projects with a logo mark of their own get one drawn; any
+  // other project (including one added later with no accent) must still
+  // render a complete card, with its initial standing in for the mark and
+  // the site's own accent left in place.
+  it('renders a card with a monogram and no tint for a project without a mark or accent', async () => {
+    const plainProject: Project = {
+      slug: 'plain-test-project',
+      name: 'Plain Test Project',
+      tagline: 'A tagline.',
+      description: 'A description.',
+      stack: 'A stack',
+      status: 'in development',
+    };
+    PROJECTS.push(plainProject);
+
+    try {
+      const plainFixture = TestBed.createComponent(Home);
+      await plainFixture.whenStable();
+      const cards: HTMLAnchorElement[] = Array.from(
+        plainFixture.nativeElement.querySelectorAll('a.card'),
+      );
+      const card = cards.find((el) => el.textContent?.includes('Plain Test Project'));
+
+      expect(card?.querySelector('.monogram')?.textContent).toBe('P');
+      expect(card?.classList.contains('project-accent')).toBe(false);
+      expect(card?.querySelectorAll('.stack li').length).toBe(1);
+    } finally {
+      PROJECTS.pop();
+    }
+  });
+
   it('falls back to the internal project route once a microsite field is removed', async () => {
     const plainProject: Project = {
       slug: 'plain-test-project',

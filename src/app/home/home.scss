@@ -1,36 +1,295 @@
+// The hero, .wrap, .eyebrow and .section-head come from styles.scss; this
+// file is the cards. Each card is tinted by its project's own --accent
+// (.project-accent, set in the template), so the colour rules below never
+// name a project.
+
+// The logo is black line art on transparency: it sits on a paper tile so
+// it stays visible on the dark theme (same reasoning as the nav's tile).
+.hero-logo {
+  width: 112px;
+  height: 112px;
+  border-radius: 28px;
+  background: #f6f3ec;
+  border: 1px solid var(--rule);
+  overflow: hidden;
+  animation: bob 5s ease-in-out infinite;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+h1 {
+  font-size: clamp(2.2rem, 8vw, 3.4rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+// The slogan is three short sentences, one per line. The shared .tagline's
+// 22ch cap suits a single phrase but would break these mid-sentence, so the
+// cap is lifted here and each sentence is its own block instead.
+.tagline {
+  max-width: none;
+
+  b,
+  span {
+    display: block;
+  }
+
+  b {
+    color: var(--accent);
+  }
+}
+
 .projects {
   display: grid;
-  gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 .card {
-  display: block;
-  padding: 1.25rem;
-  border: 1px solid var(--rule);
-  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
   background: var(--surface);
-  text-decoration: none;
+  border: 1px solid var(--rule);
+  border-radius: 20px;
+  overflow: hidden;
   color: inherit;
-  transition: border-color 0.15s ease, transform 0.15s ease;
+  text-decoration: none;
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+  // Cards arrive one after another; --i is the card's index.
+  animation: rise 0.5s ease backwards;
+  animation-delay: calc(var(--i, 0) * 90ms);
 
-  &:hover {
+  &:hover,
+  &:focus-visible {
+    transform: translateY(-6px);
     border-color: var(--accent);
-    transform: translateY(-2px);
+    box-shadow: 0 18px 40px -18px color-mix(in srgb, var(--accent) 70%, transparent);
   }
 
-  h2 {
-    margin: 0 0 0.4rem;
+  &:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+}
+
+.card-art {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 20px 22px;
+  min-height: 132px;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    color-mix(in srgb, var(--accent) 24%, var(--surface)),
+    color-mix(in srgb, var(--accent) 6%, var(--surface))
+  );
+
+  // A soft blob of the project's colour that drifts across on hover.
+  &::after {
+    content: '';
+    position: absolute;
+    right: -40px;
+    bottom: -70px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--accent) 30%, transparent);
+    transition: transform 0.6s ease;
+  }
+}
+
+.card:hover .card-art::after,
+.card:focus-visible .card-art::after {
+  transform: translate(-36px, -26px) scale(1.25);
+}
+
+.mark {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 92px;
+  height: 92px;
+  border-radius: 24px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  // Sphinx's second colour (its "pass" red); unused by the other marks.
+  --pass: light-dark(#d64530, #f87171);
+  transition: transform 0.5s cubic-bezier(0.3, 1.6, 0.5, 1);
+
+  svg {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+  }
+}
+
+.card:hover .mark,
+.card:focus-visible .mark {
+  transform: rotate(-8deg) scale(1.08);
+}
+
+// DigiSpin's mark is a wheel of digits, so on its card it spins.
+.card:hover [data-mark='digispin'] svg,
+.card:focus-visible [data-mark='digispin'] svg {
+  animation: spin 2.4s linear infinite;
+}
+
+.monogram {
+  margin: auto;
+  font-family: 'Sora', system-ui, sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.status {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+
+  i {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s ease-in-out infinite;
+  }
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 10px;
+  padding: 20px 22px 22px;
+
+  h3 {
+    font-size: 1.45rem;
+    font-weight: 800;
   }
 
-  .tagline {
-    margin: 0 0 0.75rem;
-    color: var(--fg);
-  }
-
-  .meta {
+  p {
     margin: 0;
-    font-size: 0.85rem;
-    color: var(--muted);
+  }
+}
+
+.card-tagline {
+  font-weight: 600;
+}
+
+.card-description {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    padding: 3px 9px;
+    border-radius: 6px;
+    background: var(--surface-2);
+    font-size: 0.72rem;
+  }
+}
+
+.cta {
+  margin-top: auto;
+  padding-top: 10px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--accent);
+}
+
+.arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.card:hover .arrow,
+.card:focus-visible .arrow {
+  transform: translateX(6px);
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bob {
+  50% {
+    transform: translateY(-6px) rotate(-2deg);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+// Movement here is decoration. Anyone who asked their device for less of
+// it gets the same cards, still.
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo,
+  .card,
+  .status i,
+  .card:hover [data-mark='digispin'] svg,
+  .card:focus-visible [data-mark='digispin'] svg {
+    animation: none;
+  }
+
+  .card,
+  .mark,
+  .arrow,
+  .card-art::after {
+    transition: none;
+  }
+
+  .card:hover,
+  .card:focus-visible,
+  .card:hover .mark,
+  .card:focus-visible .mark,
+  .card:hover .card-art::after,
+  .card:focus-visible .card-art::after,
+  .card:hover .arrow,
+  .card:focus-visible .arrow {
+    transform: none;
   }
 }

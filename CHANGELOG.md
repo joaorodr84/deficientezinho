@@ -18,6 +18,12 @@ See [TODO.md](TODO.md) for what's planned next.
   bar and footer on the home page and on the Freecell Plus and Watchr
   pages, which also got a proper hero, numbered steps and feature cards
   in each project's own colour.
+- Rewrote the home page. Each project card now wears its project's own
+  colour and logo mark, shows its status and the technologies it is
+  built with, and comes alive on hover (DigiSpin's wheel spins). Cards
+  stay still for visitors who ask their device for reduced motion.
+- The home page has a new slogan: "Just a crip. Writing code with his
+  mouth. Or telling AI to do it."
 
 ### Added
 

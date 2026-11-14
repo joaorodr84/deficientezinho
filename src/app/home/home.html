@@ -1,26 +1,104 @@
 <div class="hero">
   <div class="wrap">
+    <span class="hero-logo"><img src="logo.png" alt="" /></span>
     <h1>Deficientezinho</h1>
-    <p class="pitch">One brand, several small projects. Pick one to look around.</p>
+    <p class="tagline">
+      <b>Just a crip.</b>
+      <span>Writing code with his mouth.</span>
+      <span>Or telling AI to do it.</span>
+    </p>
+    <p class="pitch">
+      A puzzle game, a party game, a tracker and a userscript, all made by one person. Pick one to
+      look around.
+    </p>
   </div>
 </div>
 
 <section>
-  <div class="wrap projects">
-  @for (project of projects; track project.slug) {
-    @if (project.microsite) {
-      <a class="card" [href]="project.microsite">
-        <h2>{{ project.name }}</h2>
-        <p class="tagline">{{ project.tagline }}</p>
-        <p class="meta">{{ project.stack }} &middot; {{ project.status }}</p>
-      </a>
-    } @else {
-      <a class="card" [routerLink]="['/projects', project.slug]">
-        <h2>{{ project.name }}</h2>
-        <p class="tagline">{{ project.tagline }}</p>
-        <p class="meta">{{ project.stack }} &middot; {{ project.status }}</p>
-      </a>
-    }
-  }
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Projects</span>
+      <h2>{{ projects.length }} to explore</h2>
+    </div>
+
+    <div class="projects">
+      @for (project of projects; track project.slug; let i = $index) {
+        <!-- A mini site is a separate static page, so it needs a real page
+             load (href); the shared project page is a route inside the app. -->
+        @if (project.microsite) {
+          <a
+            class="card"
+            [class.project-accent]="project.accent"
+            [style.--accent-light]="project.accent?.light"
+            [style.--accent-dark]="project.accent?.dark"
+            [style.--i]="i"
+            [href]="project.microsite"
+          >
+            <ng-container *ngTemplateOutlet="body; context: { $implicit: project }" />
+          </a>
+        } @else {
+          <a
+            class="card"
+            [class.project-accent]="project.accent"
+            [style.--accent-light]="project.accent?.light"
+            [style.--accent-dark]="project.accent?.dark"
+            [style.--i]="i"
+            [routerLink]="['/projects', project.slug]"
+          >
+            <ng-container *ngTemplateOutlet="body; context: { $implicit: project }" />
+          </a>
+        }
+      }
+    </div>
   </div>
 </section>
+
+<ng-template #body let-project>
+  <div class="card-art">
+    <span class="mark" [attr.data-mark]="project.slug" aria-hidden="true">
+      @switch (project.slug) {
+        @case ('digispin') {
+          <svg viewBox="0 0 100 100">
+            <polygon points="54.95,38.30 58.55,34.70 58.55,16.70 54.95,13.10 51.35,16.70 51.35,34.70" fill="#b82c36" />
+            <polygon points="60.88,43.44 65.91,42.65 76.49,28.09 75.69,23.06 70.67,23.85 60.09,38.42" fill="#cc8a31" />
+            <polygon points="62.66,51.09 67.19,53.40 84.31,47.84 86.62,43.31 82.09,40.99 64.97,46.56" fill="#e1cb26" />
+            <polygon points="59.60,58.32 61.91,62.86 79.03,68.42 83.56,66.11 81.25,61.57 64.13,56.01" fill="#93b440" />
+            <polygon points="52.87,62.38 52.08,67.40 62.66,81.97 67.68,82.76 68.48,77.73 57.90,63.17" fill="#288c60" />
+            <polygon points="45.05,61.70 41.45,65.30 41.45,83.30 45.05,86.90 48.65,83.30 48.65,65.30" fill="#a0d0ed" />
+            <polygon points="39.12,56.56 34.09,57.35 23.51,71.91 24.31,76.94 29.33,76.15 39.91,61.58" fill="#2c92c8" />
+            <polygon points="37.34,48.91 32.81,46.60 15.69,52.16 13.38,56.69 17.91,59.01 35.03,53.44" fill="#225b99" />
+            <polygon points="40.40,41.68 38.09,37.14 20.97,31.58 16.44,33.89 18.75,38.43 35.87,43.99" fill="#7b277a" />
+            <polygon points="47.13,37.62 47.92,32.60 37.34,18.03 32.32,17.24 31.52,22.27 42.10,36.83" fill="#cc6fa1" />
+          </svg>
+        }
+        @case ('sphinx') {
+          <svg viewBox="0 0 100 100" fill="none" stroke-width="8.5" stroke-linecap="round">
+            <path d="M37.9 29 A14 14 0 1 1 50 50" stroke="var(--accent)" />
+            <path d="M50 50 A14 14 0 1 0 62.1 71" stroke="var(--pass)" />
+            <circle cx="50" cy="36" r="5" fill="var(--pass)" stroke="none" />
+            <circle cx="50" cy="64" r="5" fill="var(--accent)" stroke="none" />
+          </svg>
+        }
+        @default {
+          <span class="monogram">{{ project.name.charAt(0) }}</span>
+        }
+      }
+    </span>
+    <span class="status mono"><i></i>{{ project.status }}</span>
+  </div>
+
+  <div class="card-body">
+    <h3>{{ project.name }}</h3>
+    <p class="card-tagline">{{ project.tagline }}</p>
+    <p class="card-description">{{ project.description }}</p>
+    <ul class="stack">
+      @for (part of stackParts(project); track part) {
+        <li class="mono">{{ part }}</li>
+      }
+    </ul>
+    <span class="cta">
+      {{ project.microsite ? 'Open the mini site' : 'Read more' }}
+      <span class="arrow" aria-hidden="true">&rarr;</span>
+    </span>
+  </div>
+</ng-template>
