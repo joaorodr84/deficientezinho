@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. "light"/"dark"
@@ -14,27 +14,79 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howToPlay": "How to play",
+    "nav.oneKey": "One key at a time",
+    "links.play": "Play",
+    "links.source": "Source on GitHub",
+    "meta.title": "Um passeio do cara*** — One key at a time",
+    "a.eyebrow": "Accessibility",
+    "a.heading": "One key at a time",
+    "a.lede": "Platformers usually expect you to hold a direction and press jump together, often with a run button under a third finger. This one does not: <b>nothing in it needs two keys at once.</b>",
+    "a.air.title": "Steering works in mid-air",
+    "a.air.body": "Hop first, then tap a direction while you are in the air. You never hold a direction and press hop together.",
+    "a.boost.title": "Boost is a toggle",
+    "a.boost.body": "Press it once to turn it on and again to turn it off. Nothing to hold down. Hold mode is there in Settings for anyone who prefers it.",
+    "a.height.title": "Hop height from one key",
+    "a.height.body": "A quick tap is a short hop and a longer press is a taller one, so one key does both.",
+    "a.numpad.title": "A whole control set on the numpad",
+    "a.numpad.body": "Roll, hop, boost and brake all sit on the numeric keypad, close together.",
+    "a.touch.title": "Touch buttons",
+    "a.touch.body": "On a phone or tablet the same controls appear on screen."
+  },
+  "pt-PT": {
+    "nav.howToPlay": "Como jogar",
+    "nav.oneKey": "Uma tecla de cada vez",
+    "links.play": "Jogar",
+    "links.source": "Código-fonte no GitHub",
+    "meta.title": "Um passeio do cara*** — Uma tecla de cada vez",
+    "a.eyebrow": "Acessibilidade",
+    "a.heading": "Uma tecla de cada vez",
+    "a.lede": "Os jogos de plataformas costumam pedir que mantenhas uma direção premida e carregues no salto ao mesmo tempo, muitas vezes com um botão de correr debaixo de um terceiro dedo. Este não: <b>nada nele exige duas teclas ao mesmo tempo.</b>",
+    "a.air.title": "Podes virar no ar",
+    "a.air.body": "Salta primeiro e, já no ar, toca numa direção. Nunca manténs uma direção premida e carregas no salto ao mesmo tempo.",
+    "a.boost.title": "O turbo é um interruptor",
+    "a.boost.body": "Carrega uma vez para o ligar e outra para o desligar. Nada para manter premido. O modo de manter está nas Definições para quem o preferir.",
+    "a.height.title": "Altura do salto com uma tecla",
+    "a.height.body": "Um toque rápido é um salto curto e um toque mais longo é um salto mais alto, por isso uma só tecla faz as duas coisas.",
+    "a.numpad.title": "Todos os comandos no teclado numérico",
+    "a.numpad.body": "Rolar, saltar, turbo e travar estão todos no teclado numérico, juntos.",
+    "a.touch.title": "Botões táteis",
+    "a.touch.body": "Num telemóvel ou tablet, os mesmos comandos aparecem no ecrã."
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
-<title>Um passeio do cara*** — One key at a time</title>
+<title data-i18n="meta.title">Um passeio do cara*** — One key at a time</title>
 <link rel="icon" href="/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -161,10 +213,10 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the top-right
+     corner. Below this width the centred .wrap reaches under it, so the nav
+     keeps clear of it; without this the toolbar covers the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
 
   .explore-grid{display:grid;gap:14px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -245,14 +297,18 @@
   .option-table td{color:var(--muted);line-height:2}
   .option-table td:last-child{color:var(--fg);line-height:1.55}
 
-  /* A working light/dark/system toggle, driving the html[data-theme]
-     attribute the tokens above key off. Fixed so it's reachable at any
-     scroll position, since its effect is page-wide. */
-  .theme-toggle{
+  /* The toolbar holds the language switcher and the theme toggle side by side.
+     Both change the page as a whole, so it stays reachable at any scroll
+     position rather than scrolling away with the content. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -271,7 +327,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -281,24 +352,24 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><span class="logo-tile site-nav-icon"><img src="/logo.png" alt=""></span>Um passeio do cara***</a>
     <div class="site-nav-links">
-      <a href="how-to-play.html">How to play</a>
-      <a href="accessibility.html" class="current">One key at a time</a>
+      <a href="how-to-play.html" data-i18n="nav.howToPlay">How to play</a>
+      <a href="accessibility.html" class="current" data-i18n="nav.oneKey">One key at a time</a>
     </div>
   </div>
 </nav>
 <section id="one-key">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Accessibility</span>
-      <h2>One key at a time</h2>
-      <p class="lede">Platformers usually expect you to hold a direction and press jump together, often with a run button under a third finger. This one does not: <b>nothing in it needs two keys at once.</b></p>
+      <span class="eyebrow" data-i18n="a.eyebrow">Accessibility</span>
+      <h2 data-i18n="a.heading">One key at a time</h2>
+      <p class="lede" data-i18n="a.lede">Platformers usually expect you to hold a direction and press jump together, often with a run button under a third finger. This one does not: <b>nothing in it needs two keys at once.</b></p>
     </div>
     <ul class="feature-list">
-      <li><b>Steering works in mid-air</b><span>Hop first, then tap a direction while you are in the air. You never hold a direction and press hop together.</span></li>
-      <li><b>Boost is a toggle</b><span>Press it once to turn it on and again to turn it off. Nothing to hold down. Hold mode is there in Settings for anyone who prefers it.</span></li>
-      <li><b>Hop height from one key</b><span>A quick tap is a short hop and a longer press is a taller one, so one key does both.</span></li>
-      <li><b>A whole control set on the numpad</b><span>Roll, hop, boost and brake all sit on the numeric keypad, close together.</span></li>
-      <li><b>Touch buttons</b><span>On a phone or tablet the same controls appear on screen.</span></li>
+      <li><b data-i18n="a.air.title">Steering works in mid-air</b><span data-i18n="a.air.body">Hop first, then tap a direction while you are in the air. You never hold a direction and press hop together.</span></li>
+      <li><b data-i18n="a.boost.title">Boost is a toggle</b><span data-i18n="a.boost.body">Press it once to turn it on and again to turn it off. Nothing to hold down. Hold mode is there in Settings for anyone who prefers it.</span></li>
+      <li><b data-i18n="a.height.title">Hop height from one key</b><span data-i18n="a.height.body">A quick tap is a short hop and a longer press is a taller one, so one key does both.</span></li>
+      <li><b data-i18n="a.numpad.title">A whole control set on the numpad</b><span data-i18n="a.numpad.body">Roll, hop, boost and brake all sit on the numeric keypad, close together.</span></li>
+      <li><b data-i18n="a.touch.title">Touch buttons</b><span data-i18n="a.touch.body">On a phone or tablet the same controls appear on screen.</span></li>
     </ul>
   </div>
 </section>
@@ -308,10 +379,10 @@
     <span class="logo-tile footer-icon"><img src="/logo.png" alt=""></span>
     <div class="footer-links">
       <a class="brand" href="index.html">Um passeio do cara***</a>
-      <a href="how-to-play.html">How to play</a>
-      <a href="accessibility.html">One key at a time</a>
-      <a href="https://joaorodr84.github.io/def-platform/">Play</a>
-      <a href="https://github.com/joaorodr84/def-platform">Source on GitHub</a>
+      <a href="how-to-play.html" data-i18n="nav.howToPlay">How to play</a>
+      <a href="accessibility.html" data-i18n="nav.oneKey">One key at a time</a>
+      <a href="https://joaorodr84.github.io/def-platform/" data-i18n="links.play">Play</a>
+      <a href="https://github.com/joaorodr84/def-platform" data-i18n="links.source">Source on GitHub</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
     </div>
@@ -351,6 +422,45 @@
     });
   });
   reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
 })();
 </script>
 
