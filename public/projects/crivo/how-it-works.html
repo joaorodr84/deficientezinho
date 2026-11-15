@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. "light"/"dark"
@@ -14,27 +14,121 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howItWorks": "How it works",
+    "nav.options": "Options",
+    "nav.pixabay": "Pixabay and licences",
+    "links.source": "Source on GitHub",
+    "meta.title": "Crivo — How it works",
+    "steps.eyebrow": "How it works",
+    "steps.heading": "From a list of words to a zip of pictures",
+    "steps.1.title": "Give it keywords",
+    "steps.1.body": "A text file with one keyword per line, a CSV column, standard input, <code>-k</code> on the command line, or a box on the page to paste your list into.",
+    "steps.2.title": "It searches Pixabay",
+    "steps.2.body": "Every keyword is searched with your own API key. Results are cached for 24 hours, so running the same list again costs no requests.",
+    "steps.3.title": "You pick in the browser",
+    "steps.3.body": "Crivo prints an address and opens it. Click the image you want for each keyword. Your picks are saved as you make them.",
+    "steps.4.title": "You get a zip",
+    "steps.4.body": "Press Finish and Crivo downloads your picks, resizes them to one size, names each after its keyword and adds a <code>CREDITS.txt</code> naming every contributor.",
+    "selection.eyebrow": "The selection page",
+    "selection.heading": "Four things you can do for each keyword",
+    "selection.pick.title": "Pick",
+    "selection.pick.body": "Click an image. Click another to change your mind.",
+    "selection.skip.title": "Skip",
+    "selection.skip.body": "Leave the keyword out of the zip.",
+    "selection.again.title": "Search again",
+    "selection.again.body": "Try a different term if nothing shown is right.",
+    "selection.more.title": "Load more results",
+    "selection.more.body": "Without losing what you have already picked.",
+    "selection.alt": "The selection page after picking one image for each of three keywords: each pick is checked, and the header shows the count.",
+    "selection.credit": "Every image shows its contributor's name and a link to its Pixabay page.",
+    "keywords.eyebrow": "Keywords",
+    "keywords.heading": "Name the file after one thing, search for another",
+    "keywords.lede": "Write <code>label | search term</code>. This line gives you <code>hot-dog.png</code>, found by searching for \"hot dog\":",
+    "keywords.lede2": "Blank lines and lines starting with <code>#</code> are ignored.",
+    "wrong.eyebrow": "When something goes wrong",
+    "wrong.heading": "No run ends in a traceback",
+    "wrong.1.title": "No results, or a failed search",
+    "wrong.1.body": "The keyword is flagged on the page. Search again with another term, or skip it.",
+    "wrong.2.title": "Pixabay refuses the key, or the rate limit is used up",
+    "wrong.2.body": "Crivo stops searching and says so. What it found is kept, the page still opens, and the remaining keywords show as not searched so you can retry them.",
+    "wrong.3.title": "A picked image cannot be downloaded",
+    "wrong.3.body": "It is left out of the zip and listed after the run."
+  },
+  "pt-PT": {
+    "nav.howItWorks": "Como funciona",
+    "nav.options": "Opções",
+    "nav.pixabay": "Pixabay e licenças",
+    "links.source": "Código-fonte no GitHub",
+    "meta.title": "Crivo — Como funciona",
+    "steps.eyebrow": "Como funciona",
+    "steps.heading": "De uma lista de palavras a um zip de imagens",
+    "steps.1.title": "Dá-lhe palavras-chave",
+    "steps.1.body": "Um ficheiro de texto com uma palavra-chave por linha, uma coluna de CSV, a entrada padrão, <code>-k</code> na linha de comandos, ou uma caixa na página onde colar a tua lista.",
+    "steps.2.title": "Pesquisa na Pixabay",
+    "steps.2.body": "Cada palavra-chave é pesquisada com a tua própria chave de API. Os resultados ficam em cache durante 24 horas, por isso voltar a correr a mesma lista não gasta pedidos.",
+    "steps.3.title": "Escolhes no navegador",
+    "steps.3.body": "O Crivo imprime um endereço e abre-o. Clica na imagem que queres para cada palavra-chave. As tuas escolhas são guardadas à medida que as fazes.",
+    "steps.4.title": "Recebes um zip",
+    "steps.4.body": "Carrega em Terminar e o Crivo descarrega as tuas escolhas, redimensiona-as para um tamanho único, dá a cada uma o nome da sua palavra-chave e acrescenta um <code>CREDITS.txt</code> com todos os contribuidores.",
+    "selection.eyebrow": "A página de seleção",
+    "selection.heading": "Quatro coisas que podes fazer em cada palavra-chave",
+    "selection.pick.title": "Escolher",
+    "selection.pick.body": "Clica numa imagem. Clica noutra para mudares de ideias.",
+    "selection.skip.title": "Saltar",
+    "selection.skip.body": "Deixa a palavra-chave de fora do zip.",
+    "selection.again.title": "Pesquisar de novo",
+    "selection.again.body": "Experimenta outro termo se nada do que aparece estiver certo.",
+    "selection.more.title": "Carregar mais resultados",
+    "selection.more.body": "Sem perder o que já escolheste.",
+    "selection.alt": "A página de seleção depois de escolher uma imagem para cada uma de três palavras-chave: cada escolha está marcada, e o cabeçalho mostra a contagem.",
+    "selection.credit": "Cada imagem mostra o nome do seu contribuidor e uma ligação para a sua página na Pixabay.",
+    "keywords.eyebrow": "Palavras-chave",
+    "keywords.heading": "Dá ao ficheiro o nome de uma coisa, pesquisa outra",
+    "keywords.lede": "Escreve <code>etiqueta | termo de pesquisa</code>. Esta linha dá-te <code>hot-dog.png</code>, encontrado ao pesquisar por \"hot dog\":",
+    "keywords.lede2": "As linhas em branco e as linhas que começam por <code>#</code> são ignoradas.",
+    "wrong.eyebrow": "Quando algo corre mal",
+    "wrong.heading": "Nenhuma execução acaba num traceback",
+    "wrong.1.title": "Sem resultados, ou uma pesquisa falhada",
+    "wrong.1.body": "A palavra-chave fica assinalada na página. Pesquisa de novo com outro termo, ou salta-a.",
+    "wrong.2.title": "A Pixabay recusa a chave, ou o limite de pedidos foi esgotado",
+    "wrong.2.body": "O Crivo para de pesquisar e diz isso. O que encontrou fica guardado, a página continua a abrir, e as palavras-chave em falta aparecem como não pesquisadas para poderes tentá-las de novo.",
+    "wrong.3.title": "Uma imagem escolhida não pode ser descarregada",
+    "wrong.3.body": "Fica de fora do zip e aparece listada no fim da execução."
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
-<title>Crivo — How it works</title>
+<title data-i18n="meta.title">Crivo — How it works</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -160,10 +254,10 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the top-right
+     corner. Below this width the centred .wrap reaches under it, so the nav
+     keeps clear of it; without this the toolbar covers the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
 
   .explore-grid{display:grid;gap:14px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -237,14 +331,18 @@
   .option-table td{color:var(--muted)}
   @media (max-width:560px){.option-table td:first-child{white-space:normal}}
 
-  /* A working light/dark/system toggle, driving the html[data-theme]
-     attribute the tokens above key off. Fixed so it's reachable at any
-     scroll position, since its effect is page-wide. */
-  .theme-toggle{
+  /* The toolbar holds the language switcher and the theme toggle side by side.
+     Both change the page as a whole, so it stays reachable at any scroll
+     position rather than scrolling away with the content. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -263,7 +361,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -273,23 +386,23 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crivo"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="69" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">C</text></svg>Crivo</a>
     <div class="site-nav-links">
-      <a href="how-it-works.html" class="current">How it works</a>
-      <a href="options.html">Options</a>
-      <a href="pixabay.html">Pixabay and licences</a>
+      <a href="how-it-works.html" class="current" data-i18n="nav.howItWorks">How it works</a>
+      <a href="options.html" data-i18n="nav.options">Options</a>
+      <a href="pixabay.html" data-i18n="nav.pixabay">Pixabay and licences</a>
     </div>
   </div>
 </nav>
 <section id="steps">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">How it works</span>
-      <h2>From a list of words to a zip of pictures</h2>
+      <span class="eyebrow" data-i18n="steps.eyebrow">How it works</span>
+      <h2 data-i18n="steps.heading">From a list of words to a zip of pictures</h2>
     </div>
     <ul class="feature-list">
-      <li class="with-art"><span class="num">1</span><b>Give it keywords</b><span>A text file with one keyword per line, a CSV column, standard input, <code>-k</code> on the command line, or a box on the page to paste your list into.</span></li>
-      <li class="with-art"><span class="num">2</span><b>It searches Pixabay</b><span>Every keyword is searched with your own API key. Results are cached for 24 hours, so running the same list again costs no requests.</span></li>
-      <li class="with-art"><span class="num">3</span><b>You pick in the browser</b><span>Crivo prints an address and opens it. Click the image you want for each keyword. Your picks are saved as you make them.</span></li>
-      <li class="with-art"><span class="num">4</span><b>You get a zip</b><span>Press Finish and Crivo downloads your picks, resizes them to one size, names each after its keyword and adds a <code>CREDITS.txt</code> naming every contributor.</span></li>
+      <li class="with-art"><span class="num">1</span><b data-i18n="steps.1.title">Give it keywords</b><span data-i18n="steps.1.body">A text file with one keyword per line, a CSV column, standard input, <code>-k</code> on the command line, or a box on the page to paste your list into.</span></li>
+      <li class="with-art"><span class="num">2</span><b data-i18n="steps.2.title">It searches Pixabay</b><span data-i18n="steps.2.body">Every keyword is searched with your own API key. Results are cached for 24 hours, so running the same list again costs no requests.</span></li>
+      <li class="with-art"><span class="num">3</span><b data-i18n="steps.3.title">You pick in the browser</b><span data-i18n="steps.3.body">Crivo prints an address and opens it. Click the image you want for each keyword. Your picks are saved as you make them.</span></li>
+      <li class="with-art"><span class="num">4</span><b data-i18n="steps.4.title">You get a zip</b><span data-i18n="steps.4.body">Press Finish and Crivo downloads your picks, resizes them to one size, names each after its keyword and adds a <code>CREDITS.txt</code> naming every contributor.</span></li>
     </ul>
     <pre class="code"><code>$ crivo run examples/keywords_sample.txt --size 256
 Searching 12 keywords on Pixabay...
@@ -305,42 +418,42 @@ Wrote keywords_sample_2026-10-19_14-30.zip with 11 images for 11 keywords, plus 
 <section id="selection">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">The selection page</span>
-      <h2>Four things you can do for each keyword</h2>
+      <span class="eyebrow" data-i18n="selection.eyebrow">The selection page</span>
+      <h2 data-i18n="selection.heading">Four things you can do for each keyword</h2>
     </div>
     <ul class="feature-list">
-      <li><b>Pick</b><span>Click an image. Click another to change your mind.</span></li>
-      <li><b>Skip</b><span>Leave the keyword out of the zip.</span></li>
-      <li><b>Search again</b><span>Try a different term if nothing shown is right.</span></li>
-      <li><b>Load more results</b><span>Without losing what you have already picked.</span></li>
+      <li><b data-i18n="selection.pick.title">Pick</b><span data-i18n="selection.pick.body">Click an image. Click another to change your mind.</span></li>
+      <li><b data-i18n="selection.skip.title">Skip</b><span data-i18n="selection.skip.body">Leave the keyword out of the zip.</span></li>
+      <li><b data-i18n="selection.again.title">Search again</b><span data-i18n="selection.again.body">Try a different term if nothing shown is right.</span></li>
+      <li><b data-i18n="selection.more.title">Load more results</b><span data-i18n="selection.more.body">Without losing what you have already picked.</span></li>
     </ul>
-    <img class="shot" src="selection-after.png" width="1280" height="900" alt="The selection page after picking one image for each of three keywords: each pick is checked, and the header shows the count.">
-    <p class="lede">Every image shows its contributor's name and a link to its Pixabay page.</p>
+    <img class="shot" src="selection-after.png" width="1280" height="900" alt="The selection page after picking one image for each of three keywords: each pick is checked, and the header shows the count." data-i18n-attr-alt="selection.alt">
+    <p class="lede" data-i18n="selection.credit">Every image shows its contributor's name and a link to its Pixabay page.</p>
   </div>
 </section>
 
 <section id="keywords">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Keywords</span>
-      <h2>Name the file after one thing, search for another</h2>
-      <p class="lede">Write <code>label | search term</code>. This line gives you <code>hot-dog.png</code>, found by searching for "hot dog":</p>
+      <span class="eyebrow" data-i18n="keywords.eyebrow">Keywords</span>
+      <h2 data-i18n="keywords.heading">Name the file after one thing, search for another</h2>
+      <p class="lede" data-i18n="keywords.lede">Write <code>label | search term</code>. This line gives you <code>hot-dog.png</code>, found by searching for "hot dog":</p>
     </div>
     <pre class="code"><code>hot-dog | hot dog</code></pre>
-    <p class="lede">Blank lines and lines starting with <code>#</code> are ignored.</p>
+    <p class="lede" data-i18n="keywords.lede2">Blank lines and lines starting with <code>#</code> are ignored.</p>
   </div>
 </section>
 
 <section id="wrong">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">When something goes wrong</span>
-      <h2>No run ends in a traceback</h2>
+      <span class="eyebrow" data-i18n="wrong.eyebrow">When something goes wrong</span>
+      <h2 data-i18n="wrong.heading">No run ends in a traceback</h2>
     </div>
     <ul class="feature-list">
-      <li><b>No results, or a failed search</b><span>The keyword is flagged on the page. Search again with another term, or skip it.</span></li>
-      <li><b>Pixabay refuses the key, or the rate limit is used up</b><span>Crivo stops searching and says so. What it found is kept, the page still opens, and the remaining keywords show as not searched so you can retry them.</span></li>
-      <li><b>A picked image cannot be downloaded</b><span>It is left out of the zip and listed after the run.</span></li>
+      <li><b data-i18n="wrong.1.title">No results, or a failed search</b><span data-i18n="wrong.1.body">The keyword is flagged on the page. Search again with another term, or skip it.</span></li>
+      <li><b data-i18n="wrong.2.title">Pixabay refuses the key, or the rate limit is used up</b><span data-i18n="wrong.2.body">Crivo stops searching and says so. What it found is kept, the page still opens, and the remaining keywords show as not searched so you can retry them.</span></li>
+      <li><b data-i18n="wrong.3.title">A picked image cannot be downloaded</b><span data-i18n="wrong.3.body">It is left out of the zip and listed after the run.</span></li>
     </ul>
   </div>
 </section>
@@ -350,10 +463,10 @@ Wrote keywords_sample_2026-10-19_14-30.zip with 11 images for 11 keywords, plus 
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crivo"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="69" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">C</text></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Crivo</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="options.html">Options</a>
-      <a href="pixabay.html">Pixabay and licences</a>
-      <a href="https://github.com/joaorodr84/crivo">Source on GitHub</a>
+      <a href="how-it-works.html" data-i18n="nav.howItWorks">How it works</a>
+      <a href="options.html" data-i18n="nav.options">Options</a>
+      <a href="pixabay.html" data-i18n="nav.pixabay">Pixabay and licences</a>
+      <a href="https://github.com/joaorodr84/crivo" data-i18n="links.source">Source on GitHub</a>
       <a href="https://pypi.org/project/crivo/">PyPI</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
@@ -394,6 +507,49 @@ Wrote keywords_sample_2026-10-19_14-30.zip with 11 images for 11 keywords, plus 
     });
   });
   reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    document.querySelectorAll('[data-i18n-attr-alt]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n-attr-alt');
+      if (strings[key] != null) el.setAttribute('alt', strings[key]);
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
 })();
 </script>
 

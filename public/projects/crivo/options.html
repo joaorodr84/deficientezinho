@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. "light"/"dark"
@@ -14,27 +14,91 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howItWorks": "How it works",
+    "nav.options": "Options",
+    "nav.pixabay": "Pixabay and licences",
+    "links.source": "Source on GitHub",
+    "meta.title": "Crivo — Options",
+    "options.eyebrow": "Options",
+    "options.heading": "The ones you are most likely to want",
+    "options.lede": "<code>crivo run --help</code> lists everything.",
+    "options.col.option": "Option",
+    "options.col.what": "What it does",
+    "options.row.candidates": "Images shown per keyword, 3 to 200. The default is 5.",
+    "options.row.size": "Output size. The default is <code>512x512</code>.",
+    "options.row.mode": "<code>crop</code> fills the size and cuts the overflow; <code>pad</code> fits inside and fills the rest; <code>fit</code> fits inside and stops, so sizes are not uniform.",
+    "options.row.format": "Output format. The default is <code>png</code>, which keeps transparency.",
+    "options.row.background": "The fill for <code>pad</code>, and what a JPEG is flattened onto.",
+    "options.row.termTemplate": "Wrap every search term, for example <code>'{term} icon'</code> to find icons.",
+    "options.row.multiple": "Allow more than one image per keyword (<code>apple.png</code>, <code>apple-2.png</code>).",
+    "options.row.output": "Where to write the zip. It is not replaced unless you pass <code>--overwrite</code>.",
+    "options.row.noBrowser": "Print the address instead of opening it.",
+    "options.filters": "Pixabay's own search filters are options too: image type, orientation, category, colours, minimum width and height, safe search, editor's choice, order and language.",
+    "resume.eyebrow": "Pausing and resuming",
+    "resume.heading": "Close the laptop, carry on later",
+    "resume.lede": "Your picks are saved as you make them. Close the terminal or press Ctrl-C, then come back with:",
+    "resume.lede2": "Resuming does not search again for anything already searched: the page comes back as you left it. Starting a new run while an unfinished session is saved is refused, so an afternoon of picking is not thrown away by accident. Pass <code>--restart</code> when you mean to start over."
+  },
+  "pt-PT": {
+    "nav.howItWorks": "Como funciona",
+    "nav.options": "Opções",
+    "nav.pixabay": "Pixabay e licenças",
+    "links.source": "Código-fonte no GitHub",
+    "meta.title": "Crivo — Opções",
+    "options.eyebrow": "Opções",
+    "options.heading": "As que mais provavelmente vais querer",
+    "options.lede": "<code>crivo run --help</code> lista tudo.",
+    "options.col.option": "Opção",
+    "options.col.what": "O que faz",
+    "options.row.candidates": "Imagens mostradas por palavra-chave, de 3 a 200. O valor por omissão é 5.",
+    "options.row.size": "Tamanho de saída. O valor por omissão é <code>512x512</code>.",
+    "options.row.mode": "<code>crop</code> preenche o tamanho e corta o excedente; <code>pad</code> encaixa dentro e preenche o resto; <code>fit</code> encaixa dentro e para, por isso os tamanhos não são uniformes.",
+    "options.row.format": "Formato de saída. O valor por omissão é <code>png</code>, que mantém a transparência.",
+    "options.row.background": "O preenchimento para <code>pad</code>, e onde é achatado um JPEG.",
+    "options.row.termTemplate": "Envolve cada termo de pesquisa, por exemplo <code>'{term} icon'</code> para encontrar ícones.",
+    "options.row.multiple": "Permite mais do que uma imagem por palavra-chave (<code>apple.png</code>, <code>apple-2.png</code>).",
+    "options.row.output": "Onde escrever o zip. Não é substituído a menos que passes <code>--overwrite</code>.",
+    "options.row.noBrowser": "Imprime o endereço em vez de o abrir.",
+    "options.filters": "Os filtros de pesquisa da própria Pixabay também são opções: tipo de imagem, orientação, categoria, cores, largura e altura mínimas, pesquisa segura, escolha do editor, ordem e idioma.",
+    "resume.eyebrow": "Pausar e retomar",
+    "resume.heading": "Fecha o portátil, continua mais tarde",
+    "resume.lede": "As tuas escolhas são guardadas à medida que as fazes. Fecha o terminal ou carrega em Ctrl-C, e depois volta com:",
+    "resume.lede2": "Retomar não volta a pesquisar nada que já tenha sido pesquisado: a página volta tal como a deixaste. Iniciar uma nova execução enquanto houver uma sessão guardada por terminar é recusado, para que uma tarde de escolhas não se perca por acidente. Passa <code>--restart</code> quando quiseres recomeçar."
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
-<title>Crivo — Options</title>
+<title data-i18n="meta.title">Crivo — Options</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -160,10 +224,10 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the top-right
+     corner. Below this width the centred .wrap reaches under it, so the nav
+     keeps clear of it; without this the toolbar covers the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
 
   .explore-grid{display:grid;gap:14px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -237,14 +301,18 @@
   .option-table td{color:var(--muted)}
   @media (max-width:560px){.option-table td:first-child{white-space:normal}}
 
-  /* A working light/dark/system toggle, driving the html[data-theme]
-     attribute the tokens above key off. Fixed so it's reachable at any
-     scroll position, since its effect is page-wide. */
-  .theme-toggle{
+  /* The toolbar holds the language switcher and the theme toggle side by side.
+     Both change the page as a whole, so it stays reachable at any scroll
+     position rather than scrolling away with the content. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -263,7 +331,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -273,46 +356,46 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crivo"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="69" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">C</text></svg>Crivo</a>
     <div class="site-nav-links">
-      <a href="how-it-works.html">How it works</a>
-      <a href="options.html" class="current">Options</a>
-      <a href="pixabay.html">Pixabay and licences</a>
+      <a href="how-it-works.html" data-i18n="nav.howItWorks">How it works</a>
+      <a href="options.html" class="current" data-i18n="nav.options">Options</a>
+      <a href="pixabay.html" data-i18n="nav.pixabay">Pixabay and licences</a>
     </div>
   </div>
 </nav>
 <section id="options">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Options</span>
-      <h2>The ones you are most likely to want</h2>
-      <p class="lede"><code>crivo run --help</code> lists everything.</p>
+      <span class="eyebrow" data-i18n="options.eyebrow">Options</span>
+      <h2 data-i18n="options.heading">The ones you are most likely to want</h2>
+      <p class="lede" data-i18n="options.lede"><code>crivo run --help</code> lists everything.</p>
     </div>
     <table class="option-table">
-      <thead><tr><th>Option</th><th>What it does</th></tr></thead>
+      <thead><tr><th data-i18n="options.col.option">Option</th><th data-i18n="options.col.what">What it does</th></tr></thead>
       <tbody>
-        <tr><td><code>-n</code>, <code>--candidates N</code></td><td>Images shown per keyword, 3 to 200. The default is 5.</td></tr>
-        <tr><td><code>--size WxH</code></td><td>Output size. The default is <code>512x512</code>.</td></tr>
-        <tr><td><code>--mode crop|pad|fit</code></td><td><code>crop</code> fills the size and cuts the overflow; <code>pad</code> fits inside and fills the rest; <code>fit</code> fits inside and stops, so sizes are not uniform.</td></tr>
-        <tr><td><code>--format png|jpeg|webp</code></td><td>Output format. The default is <code>png</code>, which keeps transparency.</td></tr>
-        <tr><td><code>--background #RRGGBB</code></td><td>The fill for <code>pad</code>, and what a JPEG is flattened onto.</td></tr>
-        <tr><td><code>--term-template</code></td><td>Wrap every search term, for example <code>'{term} icon'</code> to find icons.</td></tr>
-        <tr><td><code>--multiple</code></td><td>Allow more than one image per keyword (<code>apple.png</code>, <code>apple-2.png</code>).</td></tr>
-        <tr><td><code>-o</code>, <code>--output ZIP</code></td><td>Where to write the zip. It is not replaced unless you pass <code>--overwrite</code>.</td></tr>
-        <tr><td><code>--no-browser</code></td><td>Print the address instead of opening it.</td></tr>
+        <tr><td><code>-n</code>, <code>--candidates N</code></td><td data-i18n="options.row.candidates">Images shown per keyword, 3 to 200. The default is 5.</td></tr>
+        <tr><td><code>--size WxH</code></td><td data-i18n="options.row.size">Output size. The default is <code>512x512</code>.</td></tr>
+        <tr><td><code>--mode crop|pad|fit</code></td><td data-i18n="options.row.mode"><code>crop</code> fills the size and cuts the overflow; <code>pad</code> fits inside and fills the rest; <code>fit</code> fits inside and stops, so sizes are not uniform.</td></tr>
+        <tr><td><code>--format png|jpeg|webp</code></td><td data-i18n="options.row.format">Output format. The default is <code>png</code>, which keeps transparency.</td></tr>
+        <tr><td><code>--background #RRGGBB</code></td><td data-i18n="options.row.background">The fill for <code>pad</code>, and what a JPEG is flattened onto.</td></tr>
+        <tr><td><code>--term-template</code></td><td data-i18n="options.row.termTemplate">Wrap every search term, for example <code>'{term} icon'</code> to find icons.</td></tr>
+        <tr><td><code>--multiple</code></td><td data-i18n="options.row.multiple">Allow more than one image per keyword (<code>apple.png</code>, <code>apple-2.png</code>).</td></tr>
+        <tr><td><code>-o</code>, <code>--output ZIP</code></td><td data-i18n="options.row.output">Where to write the zip. It is not replaced unless you pass <code>--overwrite</code>.</td></tr>
+        <tr><td><code>--no-browser</code></td><td data-i18n="options.row.noBrowser">Print the address instead of opening it.</td></tr>
       </tbody>
     </table>
-    <p class="lede">Pixabay's own search filters are options too: image type, orientation, category, colours, minimum width and height, safe search, editor's choice, order and language.</p>
+    <p class="lede" data-i18n="options.filters">Pixabay's own search filters are options too: image type, orientation, category, colours, minimum width and height, safe search, editor's choice, order and language.</p>
   </div>
 </section>
 
 <section id="resume">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Pausing and resuming</span>
-      <h2>Close the laptop, carry on later</h2>
-      <p class="lede">Your picks are saved as you make them. Close the terminal or press Ctrl-C, then come back with:</p>
+      <span class="eyebrow" data-i18n="resume.eyebrow">Pausing and resuming</span>
+      <h2 data-i18n="resume.heading">Close the laptop, carry on later</h2>
+      <p class="lede" data-i18n="resume.lede">Your picks are saved as you make them. Close the terminal or press Ctrl-C, then come back with:</p>
     </div>
     <pre class="code"><code>crivo run --resume</code></pre>
-    <p class="lede">Resuming does not search again for anything already searched: the page comes back as you left it. Starting a new run while an unfinished session is saved is refused, so an afternoon of picking is not thrown away by accident. Pass <code>--restart</code> when you mean to start over.</p>
+    <p class="lede" data-i18n="resume.lede2">Resuming does not search again for anything already searched: the page comes back as you left it. Starting a new run while an unfinished session is saved is refused, so an afternoon of picking is not thrown away by accident. Pass <code>--restart</code> when you mean to start over.</p>
   </div>
 </section>
 
@@ -321,10 +404,10 @@
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crivo"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="69" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">C</text></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Crivo</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="options.html">Options</a>
-      <a href="pixabay.html">Pixabay and licences</a>
-      <a href="https://github.com/joaorodr84/crivo">Source on GitHub</a>
+      <a href="how-it-works.html" data-i18n="nav.howItWorks">How it works</a>
+      <a href="options.html" data-i18n="nav.options">Options</a>
+      <a href="pixabay.html" data-i18n="nav.pixabay">Pixabay and licences</a>
+      <a href="https://github.com/joaorodr84/crivo" data-i18n="links.source">Source on GitHub</a>
       <a href="https://pypi.org/project/crivo/">PyPI</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
@@ -365,6 +448,45 @@
     });
   });
   reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
 })();
 </script>
 

@@ -58,8 +58,8 @@ different mechanisms:
   page. `CLAUDE.md`'s "site-wide template" section documents it
   (`DEF-39`) as the fourth thing, alongside the theme key, nav clearance
   and footer link, every mini site must carry to fit in. DigiSpin
-  (`DEF-40`), Sphinx (`DEF-41`) and Cangupa (`DEF-42`) are wired up to
-  it; the rest still aren't.
+  (`DEF-40`), Sphinx (`DEF-41`), Cangupa (`DEF-42`) and Crivo (`DEF-43`)
+  are wired up to it; the rest still aren't.
 
 Locales to start with: English (UK) and Portuguese (Portugal), chosen so
 more locales are just another JSON file. Joao reviews all drafted copy;
@@ -67,7 +67,6 @@ first-person/tone-sensitive text (e.g. Watchr's "why it exists") gets
 extra care. No URL change for language — a toggle only, like the theme
 toggle, not `/en/`-style routes.
 
-- `DEF-43` [P3]: Translate the Crivo microsite.
 - `DEF-44` [P3]: Translate the def-platform microsite/game UI text.
 - `DEF-45` [P3]: Translate the Arrumador microsite/game UI text.
 - `DEF-46` [P3]: Translate the Damas microsite/game UI text.

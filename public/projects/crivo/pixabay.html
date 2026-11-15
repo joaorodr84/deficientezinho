@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. "light"/"dark"
@@ -14,27 +14,89 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howItWorks": "How it works",
+    "nav.options": "Options",
+    "nav.pixabay": "Pixabay and licences",
+    "links.source": "Source on GitHub",
+    "meta.title": "Crivo — Pixabay and licences",
+    "key.eyebrow": "Your API key",
+    "key.heading": "You need your own Pixabay key",
+    "key.lede": "Crivo does not ship, share or proxy a key. Everyone who runs it uses their own, which is free: log in at <a href=\"https://pixabay.com/api/docs/\">pixabay.com/api/docs</a> and the key is shown in the parameters table. Put it in the environment, or in a <code>.env</code> file in the folder you run Crivo from:",
+    "key.lede2": "The key is deliberately not a command-line option, because a flag ends up in your shell history and in the process list. Crivo never writes the key into its cache, its output or an error message.",
+    "terms.eyebrow": "Pixabay's terms",
+    "terms.heading": "Built to respect them",
+    "terms.1.title": "No permanent hotlinking",
+    "terms.1.body": "Pixabay's image addresses are only used to show you the search results while you choose. Once you pick, the image is downloaded, and everything after that uses your local copy.",
+    "terms.2.title": "Attribution where results are shown",
+    "terms.2.body": "Each candidate carries its contributor's name and a link to its Pixabay page, and the zip includes a <code>CREDITS.txt</code>.",
+    "terms.3.title": "Caching and rate limits",
+    "terms.3.body": "Search results are cached for 24 hours, requests are held to Pixabay's limit of 100 per minute per key, and a rate-limit response is waited out.",
+    "terms.4.title": "Human-paced",
+    "terms.4.body": "A person chooses every image. Crivo is not a way to bulk-download Pixabay, and it will not run searches in an unattended loop.",
+    "licences.eyebrow": "Licences",
+    "licences.heading": "The code and the images are covered separately",
+    "licences.lede": "Crivo's code is under the MIT licence. The images you download are under the <a href=\"https://pixabay.com/service/license/\">Pixabay Content License</a>, which allows you to use and modify them, commercially or not, without attribution.",
+    "licences.lede2": "That licence does not cover everything that can appear in an image: some contain trademarks, logos or recognisable people. <b>Looking at what you pick is your responsibility,</b> above all for a commercial project."
+  },
+  "pt-PT": {
+    "nav.howItWorks": "Como funciona",
+    "nav.options": "Opções",
+    "nav.pixabay": "Pixabay e licenças",
+    "links.source": "Código-fonte no GitHub",
+    "meta.title": "Crivo — Pixabay e licenças",
+    "key.eyebrow": "A tua chave de API",
+    "key.heading": "Precisas da tua própria chave da Pixabay",
+    "key.lede": "O Crivo não distribui, partilha nem faz de intermediário de uma chave. Quem o executa usa a sua própria, que é gratuita: inicia sessão em <a href=\"https://pixabay.com/api/docs/\">pixabay.com/api/docs</a> e a chave aparece na tabela de parâmetros. Coloca-a no ambiente, ou num ficheiro <code>.env</code> na pasta onde executas o Crivo:",
+    "key.lede2": "A chave não é, de propósito, uma opção de linha de comandos, porque uma flag acaba no histórico do shell e na lista de processos. O Crivo nunca escreve a chave na sua cache, na saída ou numa mensagem de erro.",
+    "terms.eyebrow": "Os termos da Pixabay",
+    "terms.heading": "Feito para os respeitar",
+    "terms.1.title": "Sem hotlinking permanente",
+    "terms.1.body": "Os endereços das imagens da Pixabay só são usados para te mostrar os resultados da pesquisa enquanto escolhes. Depois de escolheres, a imagem é descarregada, e tudo o que se segue usa a tua cópia local.",
+    "terms.2.title": "Atribuição onde os resultados são mostrados",
+    "terms.2.body": "Cada candidato traz o nome do seu contribuidor e uma ligação para a sua página na Pixabay, e o zip inclui um <code>CREDITS.txt</code>.",
+    "terms.3.title": "Cache e limites de pedidos",
+    "terms.3.body": "Os resultados da pesquisa ficam em cache durante 24 horas, os pedidos são limitados ao máximo de 100 por minuto por chave imposto pela Pixabay, e uma resposta de limite excedido é aguardada.",
+    "terms.4.title": "Ritmo humano",
+    "terms.4.body": "Uma pessoa escolhe cada imagem. O Crivo não é uma forma de descarregar a Pixabay em massa, e não executa pesquisas num ciclo sem supervisão.",
+    "licences.eyebrow": "Licenças",
+    "licences.heading": "O código e as imagens são cobertos separadamente",
+    "licences.lede": "O código do Crivo está sob a licença MIT. As imagens que descarregas estão sob a <a href=\"https://pixabay.com/service/license/\">Pixabay Content License</a>, que te permite usá-las e modificá-las, com fins comerciais ou não, sem atribuição.",
+    "licences.lede2": "Essa licença não cobre tudo o que pode aparecer numa imagem: algumas contêm marcas registadas, logótipos ou pessoas reconhecíveis. <b>Verificar o que escolhes é da tua responsabilidade,</b> sobretudo num projeto comercial."
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
-<title>Crivo — Pixabay and licences</title>
+<title data-i18n="meta.title">Crivo — Pixabay and licences</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -160,10 +222,10 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the top-right
+     corner. Below this width the centred .wrap reaches under it, so the nav
+     keeps clear of it; without this the toolbar covers the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
 
   .explore-grid{display:grid;gap:14px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -237,14 +299,18 @@
   .option-table td{color:var(--muted)}
   @media (max-width:560px){.option-table td:first-child{white-space:normal}}
 
-  /* A working light/dark/system toggle, driving the html[data-theme]
-     attribute the tokens above key off. Fixed so it's reachable at any
-     scroll position, since its effect is page-wide. */
-  .theme-toggle{
+  /* The toolbar holds the language switcher and the theme toggle side by side.
+     Both change the page as a whole, so it stays reachable at any scroll
+     position rather than scrolling away with the content. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -263,7 +329,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -273,35 +354,35 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crivo"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="69" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">C</text></svg>Crivo</a>
     <div class="site-nav-links">
-      <a href="how-it-works.html">How it works</a>
-      <a href="options.html">Options</a>
-      <a href="pixabay.html" class="current">Pixabay and licences</a>
+      <a href="how-it-works.html" data-i18n="nav.howItWorks">How it works</a>
+      <a href="options.html" data-i18n="nav.options">Options</a>
+      <a href="pixabay.html" class="current" data-i18n="nav.pixabay">Pixabay and licences</a>
     </div>
   </div>
 </nav>
 <section id="key">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Your API key</span>
-      <h2>You need your own Pixabay key</h2>
-      <p class="lede">Crivo does not ship, share or proxy a key. Everyone who runs it uses their own, which is free: log in at <a href="https://pixabay.com/api/docs/">pixabay.com/api/docs</a> and the key is shown in the parameters table. Put it in the environment, or in a <code>.env</code> file in the folder you run Crivo from:</p>
+      <span class="eyebrow" data-i18n="key.eyebrow">Your API key</span>
+      <h2 data-i18n="key.heading">You need your own Pixabay key</h2>
+      <p class="lede" data-i18n="key.lede">Crivo does not ship, share or proxy a key. Everyone who runs it uses their own, which is free: log in at <a href="https://pixabay.com/api/docs/">pixabay.com/api/docs</a> and the key is shown in the parameters table. Put it in the environment, or in a <code>.env</code> file in the folder you run Crivo from:</p>
     </div>
     <pre class="code"><code>PIXABAY_API_KEY=your_key_here</code></pre>
-    <p class="lede">The key is deliberately not a command-line option, because a flag ends up in your shell history and in the process list. Crivo never writes the key into its cache, its output or an error message.</p>
+    <p class="lede" data-i18n="key.lede2">The key is deliberately not a command-line option, because a flag ends up in your shell history and in the process list. Crivo never writes the key into its cache, its output or an error message.</p>
   </div>
 </section>
 
 <section id="terms">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Pixabay's terms</span>
-      <h2>Built to respect them</h2>
+      <span class="eyebrow" data-i18n="terms.eyebrow">Pixabay's terms</span>
+      <h2 data-i18n="terms.heading">Built to respect them</h2>
     </div>
     <ul class="feature-list">
-      <li><b>No permanent hotlinking</b><span>Pixabay's image addresses are only used to show you the search results while you choose. Once you pick, the image is downloaded, and everything after that uses your local copy.</span></li>
-      <li><b>Attribution where results are shown</b><span>Each candidate carries its contributor's name and a link to its Pixabay page, and the zip includes a <code>CREDITS.txt</code>.</span></li>
-      <li><b>Caching and rate limits</b><span>Search results are cached for 24 hours, requests are held to Pixabay's limit of 100 per minute per key, and a rate-limit response is waited out.</span></li>
-      <li><b>Human-paced</b><span>A person chooses every image. Crivo is not a way to bulk-download Pixabay, and it will not run searches in an unattended loop.</span></li>
+      <li><b data-i18n="terms.1.title">No permanent hotlinking</b><span data-i18n="terms.1.body">Pixabay's image addresses are only used to show you the search results while you choose. Once you pick, the image is downloaded, and everything after that uses your local copy.</span></li>
+      <li><b data-i18n="terms.2.title">Attribution where results are shown</b><span data-i18n="terms.2.body">Each candidate carries its contributor's name and a link to its Pixabay page, and the zip includes a <code>CREDITS.txt</code>.</span></li>
+      <li><b data-i18n="terms.3.title">Caching and rate limits</b><span data-i18n="terms.3.body">Search results are cached for 24 hours, requests are held to Pixabay's limit of 100 per minute per key, and a rate-limit response is waited out.</span></li>
+      <li><b data-i18n="terms.4.title">Human-paced</b><span data-i18n="terms.4.body">A person chooses every image. Crivo is not a way to bulk-download Pixabay, and it will not run searches in an unattended loop.</span></li>
     </ul>
   </div>
 </section>
@@ -309,10 +390,10 @@
 <section id="licences">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Licences</span>
-      <h2>The code and the images are covered separately</h2>
-      <p class="lede">Crivo's code is under the MIT licence. The images you download are under the <a href="https://pixabay.com/service/license/">Pixabay Content License</a>, which allows you to use and modify them, commercially or not, without attribution.</p>
-      <p class="lede">That licence does not cover everything that can appear in an image: some contain trademarks, logos or recognisable people. <b>Looking at what you pick is your responsibility,</b> above all for a commercial project.</p>
+      <span class="eyebrow" data-i18n="licences.eyebrow">Licences</span>
+      <h2 data-i18n="licences.heading">The code and the images are covered separately</h2>
+      <p class="lede" data-i18n="licences.lede">Crivo's code is under the MIT licence. The images you download are under the <a href="https://pixabay.com/service/license/">Pixabay Content License</a>, which allows you to use and modify them, commercially or not, without attribution.</p>
+      <p class="lede" data-i18n="licences.lede2">That licence does not cover everything that can appear in an image: some contain trademarks, logos or recognisable people. <b>Looking at what you pick is your responsibility,</b> above all for a commercial project.</p>
     </div>
   </div>
 </section>
@@ -322,10 +403,10 @@
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crivo"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="69" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">C</text></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Crivo</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="options.html">Options</a>
-      <a href="pixabay.html">Pixabay and licences</a>
-      <a href="https://github.com/joaorodr84/crivo">Source on GitHub</a>
+      <a href="how-it-works.html" data-i18n="nav.howItWorks">How it works</a>
+      <a href="options.html" data-i18n="nav.options">Options</a>
+      <a href="pixabay.html" data-i18n="nav.pixabay">Pixabay and licences</a>
+      <a href="https://github.com/joaorodr84/crivo" data-i18n="links.source">Source on GitHub</a>
       <a href="https://pypi.org/project/crivo/">PyPI</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
@@ -366,6 +447,45 @@
     });
   });
   reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
 })();
 </script>
 

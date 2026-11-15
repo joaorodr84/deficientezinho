@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. "light"/"dark"
@@ -14,24 +14,78 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howItWorks": "How it works",
+    "nav.options": "Options",
+    "nav.pixabay": "Pixabay and licences",
+    "links.source": "Source on GitHub",
+    "hero.tagline": "A hundred words in. <b>One picture for each, out.</b>",
+    "hero.pitch": "Give Crivo a list of keywords. It searches Pixabay for each one, shows you the candidates in your browser, and hands your picks back resized to one size in a zip.",
+    "why.eyebrow": "Why it exists",
+    "why.heading": "The choosing is the only part that needs you",
+    "why.lede": "Finding one picture for each of a hundred words, all the same size, is mostly searching, downloading, resizing and packaging. Crivo does those. <b>You only pick.</b> The name is Portuguese for sieve.",
+    "explore.howItWorks.title": "How it works",
+    "explore.howItWorks.body": "From a keyword list to a zip in four steps, with the selection page in between.",
+    "explore.options.title": "Options",
+    "explore.options.body": "Output size, crop or pad, format, search filters, and pausing and resuming a run.",
+    "explore.pixabay.title": "Pixabay and licences",
+    "explore.pixabay.body": "Your own free API key, how Crivo respects Pixabay's terms, and what covers the images.",
+    "explore.source.body": "MIT licensed. The README, the changelog and how to contribute.",
+    "about.eyebrow": "About this build",
+    "about.heading": "Version 0.2.0, on PyPI",
+    "about.lede": "A command-line tool for Python 3.10 or newer, on Windows, macOS and Linux. It has been run against the live Pixabay API on Windows; the same run has not yet been made on macOS or Linux, so expect a rough edge or two there."
+  },
+  "pt-PT": {
+    "nav.howItWorks": "Como funciona",
+    "nav.options": "Opções",
+    "nav.pixabay": "Pixabay e licenças",
+    "links.source": "Código-fonte no GitHub",
+    "hero.tagline": "Cem palavras à entrada. <b>Uma imagem por cada, à saída.</b>",
+    "hero.pitch": "Dá ao Crivo uma lista de palavras-chave. Ele pesquisa a Pixabay por cada uma, mostra-te os candidatos no navegador e devolve as tuas escolhas, todas do mesmo tamanho, num zip.",
+    "why.eyebrow": "Porque existe",
+    "why.heading": "A escolha é a única parte que precisa de ti",
+    "why.lede": "Encontrar uma imagem para cada uma de cem palavras, todas do mesmo tamanho, é sobretudo pesquisar, descarregar, redimensionar e empacotar. O Crivo faz isso. <b>Tu só escolhes.</b> Crivo é a palavra portuguesa para peneira.",
+    "explore.howItWorks.title": "Como funciona",
+    "explore.howItWorks.body": "De uma lista de palavras-chave a um zip em quatro passos, com a página de seleção pelo meio.",
+    "explore.options.title": "Opções",
+    "explore.options.body": "Tamanho de saída, recorte ou preenchimento, formato, filtros de pesquisa, e pausar e retomar uma execução.",
+    "explore.pixabay.title": "Pixabay e licenças",
+    "explore.pixabay.body": "A tua própria chave de API gratuita, como o Crivo respeita os termos da Pixabay e o que cobre as imagens.",
+    "explore.source.body": "Licença MIT. O README, o changelog e como contribuir.",
+    "about.eyebrow": "Sobre esta versão",
+    "about.heading": "Versão 0.2.0, no PyPI",
+    "about.lede": "Uma ferramenta de linha de comandos para Python 3.10 ou mais recente, em Windows, macOS e Linux. Já foi executada contra a API ao vivo da Pixabay no Windows; a mesma execução ainda não foi feita em macOS ou Linux, por isso espera uma ou outra aresta por limar aí."
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
 <title>Crivo</title>
@@ -160,10 +214,10 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the top-right
+     corner. Below this width the centred .wrap reaches under it, so the nav
+     keeps clear of it; without this the toolbar covers the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
 
   .explore-grid{display:grid;gap:14px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -237,14 +291,18 @@
   .option-table td{color:var(--muted)}
   @media (max-width:560px){.option-table td:first-child{white-space:normal}}
 
-  /* A working light/dark/system toggle, driving the html[data-theme]
-     attribute the tokens above key off. Fixed so it's reachable at any
-     scroll position, since its effect is page-wide. */
-  .theme-toggle{
+  /* The toolbar holds the language switcher and the theme toggle side by side.
+     Both change the page as a whole, so it stays reachable at any scroll
+     position rather than scrolling away with the content. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -263,7 +321,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -273,9 +346,9 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crivo"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="69" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">C</text></svg>Crivo</a>
     <div class="site-nav-links">
-      <a href="how-it-works.html">How it works</a>
-      <a href="options.html">Options</a>
-      <a href="pixabay.html">Pixabay and licences</a>
+      <a href="how-it-works.html" data-i18n="nav.howItWorks">How it works</a>
+      <a href="options.html" data-i18n="nav.options">Options</a>
+      <a href="pixabay.html" data-i18n="nav.pixabay">Pixabay and licences</a>
     </div>
   </div>
 </nav>
@@ -283,8 +356,8 @@
   <div class="wrap">
     <svg class="hero-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crivo"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="69" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">C</text></svg>
     <h1>Crivo</h1>
-    <p class="tagline">A hundred words in. <b>One picture for each, out.</b></p>
-    <p class="pitch">Give Crivo a list of keywords. It searches Pixabay for each one, shows you the candidates in your browser, and hands your picks back resized to one size in a zip.</p>
+    <p class="tagline" data-i18n="hero.tagline">A hundred words in. <b>One picture for each, out.</b></p>
+    <p class="pitch" data-i18n="hero.pitch">Give Crivo a list of keywords. It searches Pixabay for each one, shows you the candidates in your browser, and hands your picks back resized to one size in a zip.</p>
     <pre class="code"><code>pipx install crivo
 crivo run keywords.txt</code></pre>
   </div>
@@ -293,9 +366,9 @@ crivo run keywords.txt</code></pre>
 <section id="why">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Why it exists</span>
-      <h2>The choosing is the only part that needs you</h2>
-      <p class="lede">Finding one picture for each of a hundred words, all the same size, is mostly searching, downloading, resizing and packaging. Crivo does those. <b>You only pick.</b> The name is Portuguese for sieve.</p>
+      <span class="eyebrow" data-i18n="why.eyebrow">Why it exists</span>
+      <h2 data-i18n="why.heading">The choosing is the only part that needs you</h2>
+      <p class="lede" data-i18n="why.lede">Finding one picture for each of a hundred words, all the same size, is mostly searching, downloading, resizing and packaging. Crivo does those. <b>You only pick.</b> The name is Portuguese for sieve.</p>
     </div>
   </div>
 </section>
@@ -304,20 +377,20 @@ crivo run keywords.txt</code></pre>
   <div class="wrap">
     <div class="explore-grid">
       <a class="explore-card" href="how-it-works.html">
-        <h3>How it works &rarr;</h3>
-        <p>From a keyword list to a zip in four steps, with the selection page in between.</p>
+        <h3><span data-i18n="explore.howItWorks.title">How it works</span> &rarr;</h3>
+        <p data-i18n="explore.howItWorks.body">From a keyword list to a zip in four steps, with the selection page in between.</p>
       </a>
       <a class="explore-card" href="options.html">
-        <h3>Options &rarr;</h3>
-        <p>Output size, crop or pad, format, search filters, and pausing and resuming a run.</p>
+        <h3><span data-i18n="nav.options">Options</span> &rarr;</h3>
+        <p data-i18n="explore.options.body">Output size, crop or pad, format, search filters, and pausing and resuming a run.</p>
       </a>
       <a class="explore-card" href="pixabay.html">
-        <h3>Pixabay and licences &rarr;</h3>
-        <p>Your own free API key, how Crivo respects Pixabay's terms, and what covers the images.</p>
+        <h3><span data-i18n="explore.pixabay.title">Pixabay and licences</span> &rarr;</h3>
+        <p data-i18n="explore.pixabay.body">Your own free API key, how Crivo respects Pixabay's terms, and what covers the images.</p>
       </a>
       <a class="explore-card" href="https://github.com/joaorodr84/crivo">
-        <h3>Source on GitHub &rarr;</h3>
-        <p>MIT licensed. The README, the changelog and how to contribute.</p>
+        <h3><span data-i18n="links.source">Source on GitHub</span> &rarr;</h3>
+        <p data-i18n="explore.source.body">MIT licensed. The README, the changelog and how to contribute.</p>
       </a>
     </div>
   </div>
@@ -326,9 +399,9 @@ crivo run keywords.txt</code></pre>
 <section id="about">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">About this build</span>
-      <h2>Version 0.2.0, on PyPI</h2>
-      <p class="lede">A command-line tool for Python 3.10 or newer, on Windows, macOS and Linux. It has been run against the live Pixabay API on Windows; the same run has not yet been made on macOS or Linux, so expect a rough edge or two there.</p>
+      <span class="eyebrow" data-i18n="about.eyebrow">About this build</span>
+      <h2 data-i18n="about.heading">Version 0.2.0, on PyPI</h2>
+      <p class="lede" data-i18n="about.lede">A command-line tool for Python 3.10 or newer, on Windows, macOS and Linux. It has been run against the live Pixabay API on Windows; the same run has not yet been made on macOS or Linux, so expect a rough edge or two there.</p>
     </div>
   </div>
 </section>
@@ -338,10 +411,10 @@ crivo run keywords.txt</code></pre>
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Crivo"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="69" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">C</text></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Crivo</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="options.html">Options</a>
-      <a href="pixabay.html">Pixabay and licences</a>
-      <a href="https://github.com/joaorodr84/crivo">Source on GitHub</a>
+      <a href="how-it-works.html" data-i18n="nav.howItWorks">How it works</a>
+      <a href="options.html" data-i18n="nav.options">Options</a>
+      <a href="pixabay.html" data-i18n="nav.pixabay">Pixabay and licences</a>
+      <a href="https://github.com/joaorodr84/crivo" data-i18n="links.source">Source on GitHub</a>
       <a href="https://pypi.org/project/crivo/">PyPI</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
@@ -382,6 +455,45 @@ crivo run keywords.txt</code></pre>
     });
   });
   reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
 })();
 </script>
 
