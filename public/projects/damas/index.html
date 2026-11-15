@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. "light"/"dark"
@@ -14,24 +14,76 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.rules": "Rules",
+    "nav.online": "Online play",
+    "nav.settings": "Settings",
+    "links.play": "Play",
+    "links.source": "Source on GitHub",
+    "hero.tagline": "Checkers, <b>the Portuguese way.</b>",
+    "hero.pitch": "A checkers game that plays by Portuguese rules: flying kings, mandatory captures and the law of majority. Play on one screen, or against a friend over the internet with a six-character code.",
+    "hero.cta": "Play in your browser",
+    "howItWorks.eyebrow": "How it works",
+    "howItWorks.heading": "The rules are enforced for you",
+    "howItWorks.lede": "The board only offers legal moves. When a capture is available you have to take it, and when several are, you take <b>the one that captures the most pieces.</b> Each rule can be switched off, and a free-play mode drops them all.",
+    "explore.rules.body": "How men and kings move and capture under Portuguese rules, and what is still to come.",
+    "explore.online.body": "Two browsers, one code, no account. How it connects and what happens if it drops.",
+    "explore.settings.body": "Four board themes, 8×8 or 10×10, and switches for each rule.",
+    "explore.source.body": "Plain HTML, CSS and JavaScript, with no build step.",
+    "about.eyebrow": "About this build",
+    "about.heading": "Playable today",
+    "about.lede": "The game's interface is in Portuguese. There is no computer opponent: you play both sides on one screen, or a friend online. Draw rules are still to do."
+  },
+  "pt-PT": {
+    "nav.rules": "Regras",
+    "nav.online": "Jogo online",
+    "nav.settings": "Definições",
+    "links.play": "Jogar",
+    "links.source": "Código-fonte no GitHub",
+    "hero.tagline": "Damas, <b>à maneira portuguesa.</b>",
+    "hero.pitch": "Um jogo de damas que segue as regras portuguesas: damas que voam, capturas obrigatórias e a lei da maioria. Joga num só ecrã, ou contra um amigo pela internet com um código de seis caracteres.",
+    "hero.cta": "Joga no navegador",
+    "howItWorks.eyebrow": "Como funciona",
+    "howItWorks.heading": "As regras são aplicadas por ti",
+    "howItWorks.lede": "O tabuleiro só oferece jogadas legais. Quando há uma captura disponível tens de a fazer, e quando há várias, fazes <b>a que captura mais peças.</b> Cada regra pode ser desligada, e um modo de jogo livre dispensa todas.",
+    "explore.rules.body": "Como se movem e capturam as peças e as damas segundo as regras portuguesas, e o que ainda falta.",
+    "explore.online.body": "Dois navegadores, um código, sem conta. Como se ligam e o que acontece se a ligação cair.",
+    "explore.settings.body": "Quatro temas de tabuleiro, 8×8 ou 10×10, e interruptores para cada regra.",
+    "explore.source.body": "HTML, CSS e JavaScript simples, sem passo de compilação.",
+    "about.eyebrow": "Sobre esta versão",
+    "about.heading": "Jogável hoje",
+    "about.lede": "A interface do jogo está em português. Não há adversário no computador: jogas os dois lados num só ecrã, ou um amigo online. As regras de empate ainda estão por fazer."
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
 <title>Damas</title>
@@ -160,10 +212,10 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the top-right
+     corner. Below this width the centred .wrap reaches under it, so the nav
+     keeps clear of it; without this the toolbar covers the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
 
   .explore-grid{display:grid;gap:14px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -226,14 +278,18 @@
     border-radius:999px;
   }
 
-  /* A working light/dark/system toggle, driving the html[data-theme]
-     attribute the tokens above key off. Fixed so it's reachable at any
-     scroll position, since its effect is page-wide. */
-  .theme-toggle{
+  /* The toolbar holds the language switcher and the theme toggle side by side.
+     Both change the page as a whole, so it stays reachable at any scroll
+     position rather than scrolling away with the content. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -252,7 +308,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -262,9 +333,9 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Damas"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="70" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">D</text></svg>Damas</a>
     <div class="site-nav-links">
-      <a href="rules.html">Rules</a>
-      <a href="online.html">Online play</a>
-      <a href="settings.html">Settings</a>
+      <a href="rules.html" data-i18n="nav.rules">Rules</a>
+      <a href="online.html" data-i18n="nav.online">Online play</a>
+      <a href="settings.html" data-i18n="nav.settings">Settings</a>
     </div>
   </div>
 </nav>
@@ -272,18 +343,18 @@
   <div class="wrap">
     <svg class="hero-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Damas"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="70" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">D</text></svg>
     <h1>Damas</h1>
-    <p class="tagline">Checkers, <b>the Portuguese way.</b></p>
-    <p class="pitch">A checkers game that plays by Portuguese rules: flying kings, mandatory captures and the law of majority. Play on one screen, or against a friend over the internet with a six-character code.</p>
-    <a class="btn" href="https://joaorodr84.github.io/damas/">Play in your browser &rarr;</a>
+    <p class="tagline" data-i18n="hero.tagline">Checkers, <b>the Portuguese way.</b></p>
+    <p class="pitch" data-i18n="hero.pitch">A checkers game that plays by Portuguese rules: flying kings, mandatory captures and the law of majority. Play on one screen, or against a friend over the internet with a six-character code.</p>
+    <a class="btn" href="https://joaorodr84.github.io/damas/"><span data-i18n="hero.cta">Play in your browser</span> &rarr;</a>
   </div>
 </div>
 
 <section id="how-it-works">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">How it works</span>
-      <h2>The rules are enforced for you</h2>
-      <p class="lede">The board only offers legal moves. When a capture is available you have to take it, and when several are, you take <b>the one that captures the most pieces.</b> Each rule can be switched off, and a free-play mode drops them all.</p>
+      <span class="eyebrow" data-i18n="howItWorks.eyebrow">How it works</span>
+      <h2 data-i18n="howItWorks.heading">The rules are enforced for you</h2>
+      <p class="lede" data-i18n="howItWorks.lede">The board only offers legal moves. When a capture is available you have to take it, and when several are, you take <b>the one that captures the most pieces.</b> Each rule can be switched off, and a free-play mode drops them all.</p>
     </div>
   </div>
 </section>
@@ -292,20 +363,20 @@
   <div class="wrap">
     <div class="explore-grid">
       <a class="explore-card" href="rules.html">
-        <h3>Rules &rarr;</h3>
-        <p>How men and kings move and capture under Portuguese rules, and what is still to come.</p>
+        <h3><span data-i18n="nav.rules">Rules</span> &rarr;</h3>
+        <p data-i18n="explore.rules.body">How men and kings move and capture under Portuguese rules, and what is still to come.</p>
       </a>
       <a class="explore-card" href="online.html">
-        <h3>Online play &rarr;</h3>
-        <p>Two browsers, one code, no account. How it connects and what happens if it drops.</p>
+        <h3><span data-i18n="nav.online">Online play</span> &rarr;</h3>
+        <p data-i18n="explore.online.body">Two browsers, one code, no account. How it connects and what happens if it drops.</p>
       </a>
       <a class="explore-card" href="settings.html">
-        <h3>Settings &rarr;</h3>
-        <p>Four board themes, 8×8 or 10×10, and switches for each rule.</p>
+        <h3><span data-i18n="nav.settings">Settings</span> &rarr;</h3>
+        <p data-i18n="explore.settings.body">Four board themes, 8×8 or 10×10, and switches for each rule.</p>
       </a>
       <a class="explore-card" href="https://github.com/joaorodr84/damas">
-        <h3>Source on GitHub &rarr;</h3>
-        <p>Plain HTML, CSS and JavaScript, with no build step.</p>
+        <h3><span data-i18n="links.source">Source on GitHub</span> &rarr;</h3>
+        <p data-i18n="explore.source.body">Plain HTML, CSS and JavaScript, with no build step.</p>
       </a>
     </div>
   </div>
@@ -314,9 +385,9 @@
 <section id="about">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">About this build</span>
-      <h2>Playable today</h2>
-      <p class="lede">The game's interface is in Portuguese. There is no computer opponent: you play both sides on one screen, or a friend online. Draw rules are still to do.</p>
+      <span class="eyebrow" data-i18n="about.eyebrow">About this build</span>
+      <h2 data-i18n="about.heading">Playable today</h2>
+      <p class="lede" data-i18n="about.lede">The game's interface is in Portuguese. There is no computer opponent: you play both sides on one screen, or a friend online. Draw rules are still to do.</p>
     </div>
   </div>
 </section>
@@ -326,11 +397,11 @@
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Damas"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="70" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">D</text></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Damas</a>
-      <a href="rules.html">Rules</a>
-      <a href="online.html">Online play</a>
-      <a href="settings.html">Settings</a>
-      <a href="https://joaorodr84.github.io/damas/">Play</a>
-      <a href="https://github.com/joaorodr84/damas">Source on GitHub</a>
+      <a href="rules.html" data-i18n="nav.rules">Rules</a>
+      <a href="online.html" data-i18n="nav.online">Online play</a>
+      <a href="settings.html" data-i18n="nav.settings">Settings</a>
+      <a href="https://joaorodr84.github.io/damas/" data-i18n="links.play">Play</a>
+      <a href="https://github.com/joaorodr84/damas" data-i18n="links.source">Source on GitHub</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
     </div>
@@ -370,6 +441,45 @@
     });
   });
   reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
 })();
 </script>
 

@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. "light"/"dark"
@@ -14,27 +14,109 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.rules": "Rules",
+    "nav.online": "Online play",
+    "nav.settings": "Settings",
+    "links.play": "Play",
+    "links.source": "Source on GitHub",
+    "meta.title": "Damas — Settings",
+    "settings.eyebrow": "Settings",
+    "board.heading": "The board",
+    "board.lede": "Settings are saved in the browser.",
+    "board.theme.title": "Theme",
+    "board.theme.body": "Nogueira (walnut, the default), Mármore (marble), Meia-noite (midnight) or Clássico.",
+    "board.size.title": "Board size",
+    "board.size.body": "8×8, the Portuguese board, or 10×10.",
+    "board.coords.title": "Coordinates",
+    "board.coords.body": "Show or hide them along the edges.",
+    "board.rotate.title": "Rotate the board each move",
+    "board.rotate.body": "Turns the board, with an animation, so the player to move is always at the bottom.",
+    "board.highlight.title": "Highlight free squares",
+    "board.highlight.body": "Marks the pieces that can move and the squares the selected piece can go to.",
+    "board.anim.title": "Animations",
+    "board.anim.body": "On by default; can be switched off.",
+    "switches.eyebrow": "Settings",
+    "switches.heading": "The rules",
+    "switch.mode.title": "Mode",
+    "switch.mode.body": "Portuguese rules or free play.",
+    "switch.mandatory.title": "Mandatory capture",
+    "switch.mandatory.body": "On by default.",
+    "switch.majority.title": "Law of majority",
+    "switch.majority.body": "On by default.",
+    "switch.backward.title": "Men capture backward",
+    "switch.backward.body": "Off by default.",
+    "switch.start.title": "Who starts",
+    "switch.start.body": "White or black."
+  },
+  "pt-PT": {
+    "nav.rules": "Regras",
+    "nav.online": "Jogo online",
+    "nav.settings": "Definições",
+    "links.play": "Jogar",
+    "links.source": "Código-fonte no GitHub",
+    "meta.title": "Damas — Definições",
+    "settings.eyebrow": "Definições",
+    "board.heading": "O tabuleiro",
+    "board.lede": "As definições são guardadas no navegador.",
+    "board.theme.title": "Tema",
+    "board.theme.body": "Nogueira (por omissão), Mármore, Meia-noite ou Clássico.",
+    "board.size.title": "Tamanho do tabuleiro",
+    "board.size.body": "8×8, o tabuleiro português, ou 10×10.",
+    "board.coords.title": "Coordenadas",
+    "board.coords.body": "Mostrá-las ou escondê-las nas margens.",
+    "board.rotate.title": "Rodar o tabuleiro em cada jogada",
+    "board.rotate.body": "Roda o tabuleiro, com animação, para que quem joga esteja sempre em baixo.",
+    "board.highlight.title": "Destacar casas livres",
+    "board.highlight.body": "Assinala as peças que se podem mover e as casas para onde a peça selecionada pode ir.",
+    "board.anim.title": "Animações",
+    "board.anim.body": "Ativadas por omissão; podem ser desligadas.",
+    "switches.eyebrow": "Definições",
+    "switches.heading": "As regras",
+    "switch.mode.title": "Modo",
+    "switch.mode.body": "Regras portuguesas ou jogo livre.",
+    "switch.mandatory.title": "Captura obrigatória",
+    "switch.mandatory.body": "Ativada por omissão.",
+    "switch.majority.title": "Lei da maioria",
+    "switch.majority.body": "Ativada por omissão.",
+    "switch.backward.title": "As peças capturam para trás",
+    "switch.backward.body": "Desativado por omissão.",
+    "switch.start.title": "Quem começa",
+    "switch.start.body": "Brancas ou pretas."
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
-<title>Damas — Settings</title>
+<title data-i18n="meta.title">Damas — Settings</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -160,10 +242,10 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the top-right
+     corner. Below this width the centred .wrap reaches under it, so the nav
+     keeps clear of it; without this the toolbar covers the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
 
   .explore-grid{display:grid;gap:14px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -226,14 +308,18 @@
     border-radius:999px;
   }
 
-  /* A working light/dark/system toggle, driving the html[data-theme]
-     attribute the tokens above key off. Fixed so it's reachable at any
-     scroll position, since its effect is page-wide. */
-  .theme-toggle{
+  /* The toolbar holds the language switcher and the theme toggle side by side.
+     Both change the page as a whole, so it stays reachable at any scroll
+     position rather than scrolling away with the content. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -252,7 +338,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -262,26 +363,26 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Damas"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="70" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">D</text></svg>Damas</a>
     <div class="site-nav-links">
-      <a href="rules.html">Rules</a>
-      <a href="online.html">Online play</a>
-      <a href="settings.html" class="current">Settings</a>
+      <a href="rules.html" data-i18n="nav.rules">Rules</a>
+      <a href="online.html" data-i18n="nav.online">Online play</a>
+      <a href="settings.html" class="current" data-i18n="nav.settings">Settings</a>
     </div>
   </div>
 </nav>
 <section id="board">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Settings</span>
-      <h2>The board</h2>
-      <p class="lede">Settings are saved in the browser.</p>
+      <span class="eyebrow" data-i18n="settings.eyebrow">Settings</span>
+      <h2 data-i18n="board.heading">The board</h2>
+      <p class="lede" data-i18n="board.lede">Settings are saved in the browser.</p>
     </div>
     <ul class="feature-list">
-      <li><b>Theme</b><span>Nogueira (walnut, the default), Mármore (marble), Meia-noite (midnight) or Clássico.</span></li>
-      <li><b>Board size</b><span>8×8, the Portuguese board, or 10×10.</span></li>
-      <li><b>Coordinates</b><span>Show or hide them along the edges.</span></li>
-      <li><b>Rotate the board each move</b><span>Turns the board, with an animation, so the player to move is always at the bottom.</span></li>
-      <li><b>Highlight free squares</b><span>Marks the pieces that can move and the squares the selected piece can go to.</span></li>
-      <li><b>Animations</b><span>On by default; can be switched off.</span></li>
+      <li><b data-i18n="board.theme.title">Theme</b><span data-i18n="board.theme.body">Nogueira (walnut, the default), Mármore (marble), Meia-noite (midnight) or Clássico.</span></li>
+      <li><b data-i18n="board.size.title">Board size</b><span data-i18n="board.size.body">8×8, the Portuguese board, or 10×10.</span></li>
+      <li><b data-i18n="board.coords.title">Coordinates</b><span data-i18n="board.coords.body">Show or hide them along the edges.</span></li>
+      <li><b data-i18n="board.rotate.title">Rotate the board each move</b><span data-i18n="board.rotate.body">Turns the board, with an animation, so the player to move is always at the bottom.</span></li>
+      <li><b data-i18n="board.highlight.title">Highlight free squares</b><span data-i18n="board.highlight.body">Marks the pieces that can move and the squares the selected piece can go to.</span></li>
+      <li><b data-i18n="board.anim.title">Animations</b><span data-i18n="board.anim.body">On by default; can be switched off.</span></li>
     </ul>
   </div>
 </section>
@@ -289,15 +390,15 @@
 <section id="rule-switches">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Settings</span>
-      <h2>The rules</h2>
+      <span class="eyebrow" data-i18n="switches.eyebrow">Settings</span>
+      <h2 data-i18n="switches.heading">The rules</h2>
     </div>
     <ul class="feature-list">
-      <li><b>Mode</b><span>Portuguese rules or free play.</span></li>
-      <li><b>Mandatory capture</b><span>On by default.</span></li>
-      <li><b>Law of majority</b><span>On by default.</span></li>
-      <li><b>Men capture backward</b><span>Off by default.</span></li>
-      <li><b>Who starts</b><span>White or black.</span></li>
+      <li><b data-i18n="switch.mode.title">Mode</b><span data-i18n="switch.mode.body">Portuguese rules or free play.</span></li>
+      <li><b data-i18n="switch.mandatory.title">Mandatory capture</b><span data-i18n="switch.mandatory.body">On by default.</span></li>
+      <li><b data-i18n="switch.majority.title">Law of majority</b><span data-i18n="switch.majority.body">On by default.</span></li>
+      <li><b data-i18n="switch.backward.title">Men capture backward</b><span data-i18n="switch.backward.body">Off by default.</span></li>
+      <li><b data-i18n="switch.start.title">Who starts</b><span data-i18n="switch.start.body">White or black.</span></li>
     </ul>
   </div>
 </section>
@@ -307,11 +408,11 @@
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Damas"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="70" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">D</text></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Damas</a>
-      <a href="rules.html">Rules</a>
-      <a href="online.html">Online play</a>
-      <a href="settings.html">Settings</a>
-      <a href="https://joaorodr84.github.io/damas/">Play</a>
-      <a href="https://github.com/joaorodr84/damas">Source on GitHub</a>
+      <a href="rules.html" data-i18n="nav.rules">Rules</a>
+      <a href="online.html" data-i18n="nav.online">Online play</a>
+      <a href="settings.html" data-i18n="nav.settings">Settings</a>
+      <a href="https://joaorodr84.github.io/damas/" data-i18n="links.play">Play</a>
+      <a href="https://github.com/joaorodr84/damas" data-i18n="links.source">Source on GitHub</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
     </div>
@@ -351,6 +452,45 @@
     });
   });
   reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
 })();
 </script>
 

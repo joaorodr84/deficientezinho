@@ -59,8 +59,8 @@ different mechanisms:
   (`DEF-39`) as the fourth thing, alongside the theme key, nav clearance
   and footer link, every mini site must carry to fit in. DigiSpin
   (`DEF-40`), Sphinx (`DEF-41`), Cangupa (`DEF-42`), Crivo (`DEF-43`),
-  def-platform (`DEF-44`) and Arrumador (`DEF-45`) are wired up to it; the
-  rest still aren't.
+  def-platform (`DEF-44`), Arrumador (`DEF-45`) and Damas (`DEF-46`) are
+  all wired up to it.
 
 Locales to start with: English (UK) and Portuguese (Portugal), chosen so
 more locales are just another JSON file. Joao reviews all drafted copy;
@@ -68,4 +68,3 @@ first-person/tone-sensitive text (e.g. Watchr's "why it exists") gets
 extra care. No URL change for language — a toggle only, like the theme
 toggle, not `/en/`-style routes.
 
-- `DEF-46` [P3]: Translate the Damas microsite/game UI text.

@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. "light"/"dark"
@@ -14,27 +14,93 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.rules": "Rules",
+    "nav.online": "Online play",
+    "nav.settings": "Settings",
+    "links.play": "Play",
+    "links.source": "Source on GitHub",
+    "meta.title": "Damas — Rules",
+    "rules.eyebrow": "Rules",
+    "rules.heading": "Portuguese checkers",
+    "rules.lede": "The default mode follows the Portuguese rule set on an 8×8 board.",
+    "rule1.title": "Men move and capture forward only",
+    "rule1.body": "Backward capture by men is available as an option.",
+    "rule2.title": "Kings fly",
+    "rule2.body": "A king moves any number of squares along a diagonal.",
+    "rule3.title": "Captures are mandatory",
+    "rule3.body": "If you can capture, you must.",
+    "rule4.title": "The law of majority",
+    "rule4.body": "When more than one capture is possible, you must take the one that captures the most pieces.",
+    "rule5.title": "Multi-captures are played square by square",
+    "rule5.body": "The captured pieces only leave the board when the whole move is complete.",
+    "free.eyebrow": "Free play",
+    "free.heading": "Or play without a referee",
+    "free.lede": "Free-play mode lets you move pieces without the rule set, for house rules or for setting up a position.",
+    "todo.eyebrow": "Still to do",
+    "todo.heading": "Draw rules",
+    "todo.lede": "The game does not yet declare a draw. For now, agree one between you and press Novo jogo."
+  },
+  "pt-PT": {
+    "nav.rules": "Regras",
+    "nav.online": "Jogo online",
+    "nav.settings": "Definições",
+    "links.play": "Jogar",
+    "links.source": "Código-fonte no GitHub",
+    "meta.title": "Damas — Regras",
+    "rules.eyebrow": "Regras",
+    "rules.heading": "Damas portuguesas",
+    "rules.lede": "O modo por omissão segue o conjunto de regras portuguesas num tabuleiro 8×8.",
+    "rule1.title": "As peças só avançam e capturam para a frente",
+    "rule1.body": "A captura para trás pelas peças é uma opção.",
+    "rule2.title": "As damas voam",
+    "rule2.body": "Uma dama move-se qualquer número de casas numa diagonal.",
+    "rule3.title": "As capturas são obrigatórias",
+    "rule3.body": "Se podes capturar, tens de capturar.",
+    "rule4.title": "A lei da maioria",
+    "rule4.body": "Quando é possível mais de uma captura, tens de fazer a que captura mais peças.",
+    "rule5.title": "As capturas múltiplas jogam-se casa a casa",
+    "rule5.body": "As peças capturadas só saem do tabuleiro quando a jogada inteira estiver completa.",
+    "free.eyebrow": "Jogo livre",
+    "free.heading": "Ou joga sem árbitro",
+    "free.lede": "O modo de jogo livre deixa-te mover as peças sem o conjunto de regras, para regras da casa ou para montar uma posição.",
+    "todo.eyebrow": "Por fazer",
+    "todo.heading": "Regras de empate",
+    "todo.lede": "O jogo ainda não declara empate. Por agora, combinem um entre vocês e carreguem em Novo jogo."
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
-<title>Damas — Rules</title>
+<title data-i18n="meta.title">Damas — Rules</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -160,10 +226,10 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the top-right
+     corner. Below this width the centred .wrap reaches under it, so the nav
+     keeps clear of it; without this the toolbar covers the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
 
   .explore-grid{display:grid;gap:14px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -226,14 +292,18 @@
     border-radius:999px;
   }
 
-  /* A working light/dark/system toggle, driving the html[data-theme]
-     attribute the tokens above key off. Fixed so it's reachable at any
-     scroll position, since its effect is page-wide. */
-  .theme-toggle{
+  /* The toolbar holds the language switcher and the theme toggle side by side.
+     Both change the page as a whole, so it stays reachable at any scroll
+     position rather than scrolling away with the content. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -252,7 +322,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -262,25 +347,25 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Damas"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="70" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">D</text></svg>Damas</a>
     <div class="site-nav-links">
-      <a href="rules.html" class="current">Rules</a>
-      <a href="online.html">Online play</a>
-      <a href="settings.html">Settings</a>
+      <a href="rules.html" class="current" data-i18n="nav.rules">Rules</a>
+      <a href="online.html" data-i18n="nav.online">Online play</a>
+      <a href="settings.html" data-i18n="nav.settings">Settings</a>
     </div>
   </div>
 </nav>
 <section id="rules">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Rules</span>
-      <h2>Portuguese checkers</h2>
-      <p class="lede">The default mode follows the Portuguese rule set on an 8×8 board.</p>
+      <span class="eyebrow" data-i18n="rules.eyebrow">Rules</span>
+      <h2 data-i18n="rules.heading">Portuguese checkers</h2>
+      <p class="lede" data-i18n="rules.lede">The default mode follows the Portuguese rule set on an 8×8 board.</p>
     </div>
     <ul class="feature-list">
-      <li><b>Men move and capture forward only</b><span>Backward capture by men is available as an option.</span></li>
-      <li><b>Kings fly</b><span>A king moves any number of squares along a diagonal.</span></li>
-      <li><b>Captures are mandatory</b><span>If you can capture, you must.</span></li>
-      <li><b>The law of majority</b><span>When more than one capture is possible, you must take the one that captures the most pieces.</span></li>
-      <li><b>Multi-captures are played square by square</b><span>The captured pieces only leave the board when the whole move is complete.</span></li>
+      <li><b data-i18n="rule1.title">Men move and capture forward only</b><span data-i18n="rule1.body">Backward capture by men is available as an option.</span></li>
+      <li><b data-i18n="rule2.title">Kings fly</b><span data-i18n="rule2.body">A king moves any number of squares along a diagonal.</span></li>
+      <li><b data-i18n="rule3.title">Captures are mandatory</b><span data-i18n="rule3.body">If you can capture, you must.</span></li>
+      <li><b data-i18n="rule4.title">The law of majority</b><span data-i18n="rule4.body">When more than one capture is possible, you must take the one that captures the most pieces.</span></li>
+      <li><b data-i18n="rule5.title">Multi-captures are played square by square</b><span data-i18n="rule5.body">The captured pieces only leave the board when the whole move is complete.</span></li>
     </ul>
   </div>
 </section>
@@ -288,9 +373,9 @@
 <section id="free">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Free play</span>
-      <h2>Or play without a referee</h2>
-      <p class="lede">Free-play mode lets you move pieces without the rule set, for house rules or for setting up a position.</p>
+      <span class="eyebrow" data-i18n="free.eyebrow">Free play</span>
+      <h2 data-i18n="free.heading">Or play without a referee</h2>
+      <p class="lede" data-i18n="free.lede">Free-play mode lets you move pieces without the rule set, for house rules or for setting up a position.</p>
     </div>
   </div>
 </section>
@@ -298,9 +383,9 @@
 <section id="todo">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Still to do</span>
-      <h2>Draw rules</h2>
-      <p class="lede">The game does not yet declare a draw. For now, agree one between you and press Novo jogo.</p>
+      <span class="eyebrow" data-i18n="todo.eyebrow">Still to do</span>
+      <h2 data-i18n="todo.heading">Draw rules</h2>
+      <p class="lede" data-i18n="todo.lede">The game does not yet declare a draw. For now, agree one between you and press Novo jogo.</p>
     </div>
   </div>
 </section>
@@ -310,11 +395,11 @@
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Damas"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="70" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">D</text></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Damas</a>
-      <a href="rules.html">Rules</a>
-      <a href="online.html">Online play</a>
-      <a href="settings.html">Settings</a>
-      <a href="https://joaorodr84.github.io/damas/">Play</a>
-      <a href="https://github.com/joaorodr84/damas">Source on GitHub</a>
+      <a href="rules.html" data-i18n="nav.rules">Rules</a>
+      <a href="online.html" data-i18n="nav.online">Online play</a>
+      <a href="settings.html" data-i18n="nav.settings">Settings</a>
+      <a href="https://joaorodr84.github.io/damas/" data-i18n="links.play">Play</a>
+      <a href="https://github.com/joaorodr84/damas" data-i18n="links.source">Source on GitHub</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
     </div>
@@ -354,6 +439,45 @@
     });
   });
   reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
 })();
 </script>
 
