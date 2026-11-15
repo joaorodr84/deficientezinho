@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. "light"/"dark"
@@ -14,27 +14,105 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howToPlay": "How to play",
+    "nav.levels": "Levels",
+    "links.play": "Play",
+    "links.source": "Source on GitHub",
+    "meta.title": "Arrumador — How to play",
+    "h.eyebrow": "How to play",
+    "rules.heading": "Move every crate onto a target",
+    "rules.lede": "Targets are marked on the floor. A crate turns green when it is on one.",
+    "rule1.title": "Walk into a crate to push it",
+    "rule1.body": "It moves one square in the direction you are walking.",
+    "rule2.title": "One crate at a time",
+    "rule2.body": "Two crates in a row will not move.",
+    "rule3.title": "No pulling",
+    "rule3.body": "Crates cannot be pulled, and they cannot pass through walls or other crates.",
+    "rule4.title": "Watch the corners",
+    "rule4.body": "A crate pushed into a corner is stuck for good. Undo or restart.",
+    "rule5.title": "Fewer moves is better",
+    "rule5.body": "The game counts your moves and keeps your best for each level.",
+    "controls.eyebrow": "Controls",
+    "controls.heading": "Keyboard or touch",
+    "move.title": "Move",
+    "move.body": "Arrow keys or <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>. On a phone, swipe on the board.",
+    "undo.title": "Undo",
+    "undo.body": "<kbd>Z</kbd>, or the Desfazer button.",
+    "restart.title": "Restart",
+    "restart.body": "<kbd>R</kbd>, or the Reiniciar button.",
+    "pick.title": "Pick a level",
+    "pick.body": "The arrows step to the previous or next level, and Níveis opens the full list.",
+    "saved.eyebrow": "Saved in the browser",
+    "saved.heading": "What it remembers",
+    "saved.lede": "The level you were on and your best move count for each level. Nothing leaves your device."
+  },
+  "pt-PT": {
+    "nav.howToPlay": "Como jogar",
+    "nav.levels": "Níveis",
+    "links.play": "Jogar",
+    "links.source": "Código-fonte no GitHub",
+    "meta.title": "Arrumador — Como jogar",
+    "h.eyebrow": "Como jogar",
+    "rules.heading": "Move cada caixa para um alvo",
+    "rules.lede": "Os alvos estão marcados no chão. Uma caixa fica verde quando está em cima de um.",
+    "rule1.title": "Caminha contra uma caixa para a empurrar",
+    "rule1.body": "Move-se uma casa na direção em que caminhas.",
+    "rule2.title": "Uma caixa de cada vez",
+    "rule2.body": "Duas caixas seguidas não se movem.",
+    "rule3.title": "Não se puxa",
+    "rule3.body": "As caixas não se puxam, e não passam por paredes nem por outras caixas.",
+    "rule4.title": "Cuidado com os cantos",
+    "rule4.body": "Uma caixa empurrada para um canto fica presa para sempre. Desfaz ou recomeça.",
+    "rule5.title": "Menos movimentos é melhor",
+    "rule5.body": "O jogo conta os teus movimentos e guarda o teu melhor resultado em cada nível.",
+    "controls.eyebrow": "Comandos",
+    "controls.heading": "Teclado ou toque",
+    "move.title": "Mover",
+    "move.body": "Setas ou <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>. Num telemóvel, desliza no tabuleiro.",
+    "undo.title": "Desfazer",
+    "undo.body": "<kbd>Z</kbd>, ou o botão Desfazer.",
+    "restart.title": "Reiniciar",
+    "restart.body": "<kbd>R</kbd>, ou o botão Reiniciar.",
+    "pick.title": "Escolher um nível",
+    "pick.body": "As setas avançam para o nível anterior ou seguinte, e Níveis abre a lista completa.",
+    "saved.eyebrow": "Guardado no navegador",
+    "saved.heading": "O que guarda",
+    "saved.lede": "O nível em que estavas e o teu melhor número de movimentos em cada nível. Nada sai do teu dispositivo."
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
-<title>Arrumador — How to play</title>
+<title data-i18n="meta.title">Arrumador — How to play</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -160,10 +238,10 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the top-right
+     corner. Below this width the centred .wrap reaches under it, so the nav
+     keeps clear of it; without this the toolbar covers the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
 
   .explore-grid{display:grid;gap:14px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -240,14 +318,18 @@
   .level-list li{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:10px 14px;font-size:0.92rem;display:flex;gap:10px;align-items:baseline}
   .level-list .meta{min-width:1.6em}
 
-  /* A working light/dark/system toggle, driving the html[data-theme]
-     attribute the tokens above key off. Fixed so it's reachable at any
-     scroll position, since its effect is page-wide. */
-  .theme-toggle{
+  /* The toolbar holds the language switcher and the theme toggle side by side.
+     Both change the page as a whole, so it stays reachable at any scroll
+     position rather than scrolling away with the content. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -266,7 +348,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -276,24 +373,24 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arrumador"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="70" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">A</text></svg>Arrumador</a>
     <div class="site-nav-links">
-      <a href="how-to-play.html" class="current">How to play</a>
-      <a href="levels.html">Levels</a>
+      <a href="how-to-play.html" class="current" data-i18n="nav.howToPlay">How to play</a>
+      <a href="levels.html" data-i18n="nav.levels">Levels</a>
     </div>
   </div>
 </nav>
 <section id="rules">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">How to play</span>
-      <h2>Move every crate onto a target</h2>
-      <p class="lede">Targets are marked on the floor. A crate turns green when it is on one.</p>
+      <span class="eyebrow" data-i18n="h.eyebrow">How to play</span>
+      <h2 data-i18n="rules.heading">Move every crate onto a target</h2>
+      <p class="lede" data-i18n="rules.lede">Targets are marked on the floor. A crate turns green when it is on one.</p>
     </div>
     <ul class="feature-list">
-      <li class="with-art"><span class="num">1</span><b>Walk into a crate to push it</b><span>It moves one square in the direction you are walking.</span></li>
-      <li class="with-art"><span class="num">2</span><b>One crate at a time</b><span>Two crates in a row will not move.</span></li>
-      <li class="with-art"><span class="num">3</span><b>No pulling</b><span>Crates cannot be pulled, and they cannot pass through walls or other crates.</span></li>
-      <li class="with-art"><span class="num">4</span><b>Watch the corners</b><span>A crate pushed into a corner is stuck for good. Undo or restart.</span></li>
-      <li class="with-art"><span class="num">5</span><b>Fewer moves is better</b><span>The game counts your moves and keeps your best for each level.</span></li>
+      <li class="with-art"><span class="num">1</span><b data-i18n="rule1.title">Walk into a crate to push it</b><span data-i18n="rule1.body">It moves one square in the direction you are walking.</span></li>
+      <li class="with-art"><span class="num">2</span><b data-i18n="rule2.title">One crate at a time</b><span data-i18n="rule2.body">Two crates in a row will not move.</span></li>
+      <li class="with-art"><span class="num">3</span><b data-i18n="rule3.title">No pulling</b><span data-i18n="rule3.body">Crates cannot be pulled, and they cannot pass through walls or other crates.</span></li>
+      <li class="with-art"><span class="num">4</span><b data-i18n="rule4.title">Watch the corners</b><span data-i18n="rule4.body">A crate pushed into a corner is stuck for good. Undo or restart.</span></li>
+      <li class="with-art"><span class="num">5</span><b data-i18n="rule5.title">Fewer moves is better</b><span data-i18n="rule5.body">The game counts your moves and keeps your best for each level.</span></li>
     </ul>
   </div>
 </section>
@@ -301,14 +398,14 @@
 <section id="controls">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Controls</span>
-      <h2>Keyboard or touch</h2>
+      <span class="eyebrow" data-i18n="controls.eyebrow">Controls</span>
+      <h2 data-i18n="controls.heading">Keyboard or touch</h2>
     </div>
     <ul class="feature-list">
-      <li><b>Move</b><span>Arrow keys or <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>. On a phone, swipe on the board.</span></li>
-      <li><b>Undo</b><span><kbd>Z</kbd>, or the Desfazer button.</span></li>
-      <li><b>Restart</b><span><kbd>R</kbd>, or the Reiniciar button.</span></li>
-      <li><b>Pick a level</b><span>The arrows step to the previous or next level, and Níveis opens the full list.</span></li>
+      <li><b data-i18n="move.title">Move</b><span data-i18n="move.body">Arrow keys or <kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd>. On a phone, swipe on the board.</span></li>
+      <li><b data-i18n="undo.title">Undo</b><span data-i18n="undo.body"><kbd>Z</kbd>, or the Desfazer button.</span></li>
+      <li><b data-i18n="restart.title">Restart</b><span data-i18n="restart.body"><kbd>R</kbd>, or the Reiniciar button.</span></li>
+      <li><b data-i18n="pick.title">Pick a level</b><span data-i18n="pick.body">The arrows step to the previous or next level, and Níveis opens the full list.</span></li>
     </ul>
   </div>
 </section>
@@ -316,9 +413,9 @@
 <section id="saved">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Saved in the browser</span>
-      <h2>What it remembers</h2>
-      <p class="lede">The level you were on and your best move count for each level. Nothing leaves your device.</p>
+      <span class="eyebrow" data-i18n="saved.eyebrow">Saved in the browser</span>
+      <h2 data-i18n="saved.heading">What it remembers</h2>
+      <p class="lede" data-i18n="saved.lede">The level you were on and your best move count for each level. Nothing leaves your device.</p>
     </div>
   </div>
 </section>
@@ -328,10 +425,10 @@
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arrumador"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="70" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">A</text></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Arrumador</a>
-      <a href="how-to-play.html">How to play</a>
-      <a href="levels.html">Levels</a>
-      <a href="https://joaorodr84.github.io/arrumador/">Play</a>
-      <a href="https://github.com/joaorodr84/arrumador">Source on GitHub</a>
+      <a href="how-to-play.html" data-i18n="nav.howToPlay">How to play</a>
+      <a href="levels.html" data-i18n="nav.levels">Levels</a>
+      <a href="https://joaorodr84.github.io/arrumador/" data-i18n="links.play">Play</a>
+      <a href="https://github.com/joaorodr84/arrumador" data-i18n="links.source">Source on GitHub</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
     </div>
@@ -371,6 +468,45 @@
     });
   });
   reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
 })();
 </script>
 

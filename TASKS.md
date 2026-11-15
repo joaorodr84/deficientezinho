@@ -15,7 +15,6 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 
 | ID | Task | Status | Commit |
 | --- | --- | --- | --- |
-| DEF-45 | Translate the Arrumador microsite/game UI text | open | — |
 | DEF-46 | Translate the Damas microsite/game UI text | open | — |
 
 ## Done
@@ -66,3 +65,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-42 | Translate the Cangupa microsite | done | 2026-11-14 | — |
 | DEF-43 | Translate the Crivo microsite | done | 2026-11-15 | — |
 | DEF-44 | Translate the def-platform microsite/game UI text | done | 2026-11-15 | — |
+| DEF-45 | Translate the Arrumador microsite/game UI text | done | 2026-11-15 | — |

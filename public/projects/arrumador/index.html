@@ -1,4 +1,4 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <script>
 // Restore the saved theme choice before the rest of the page renders, so a
 // returning visitor doesn't see a flash of the wrong theme. "light"/"dark"
@@ -14,24 +14,74 @@
 })();
 </script>
 
-<div class="theme-toggle" role="group" aria-label="Theme">
-  <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="4" />
-      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
-    </svg>
-  </button>
-  <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
-    <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3" y="4" width="18" height="12" rx="2" />
-      <path d="M8 20h8M12 16v4" />
-    </svg>
-  </button>
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howToPlay": "How to play",
+    "nav.levels": "Levels",
+    "links.play": "Play",
+    "links.source": "Source on GitHub",
+    "hero.tagline": "Every crate has a place. <b>Push it there.</b>",
+    "hero.pitch": "You are the warehouse keeper. Push every crate onto a target in as few moves as you can, across 50 levels. Crates can be pushed but never pulled, so think before you shove.",
+    "hero.cta": "Play in your browser",
+    "howItWorks.eyebrow": "How it works",
+    "howItWorks.heading": "One push at a time",
+    "howItWorks.lede": "Walk into a crate to push it one square. You can only push one crate at a time, and a crate shoved into a corner is <b>stuck for good.</b> The level is complete when every crate sits on a target.",
+    "explore.howToPlay.body": "The rules, the controls on a keyboard and on a phone, and what the game remembers.",
+    "explore.levels.body": "All 50, by name, and how the generated ones are checked to be solvable.",
+    "explore.play.body": "It runs in the browser. No install, no account.",
+    "explore.source.body": "Four files of plain HTML, CSS and JavaScript on a canvas.",
+    "about.eyebrow": "About this build",
+    "about.heading": "Playable today",
+    "about.lede": "The game's interface is in Portuguese. The rules can be read in Portuguese or English from the Regras button."
+  },
+  "pt-PT": {
+    "nav.howToPlay": "Como jogar",
+    "nav.levels": "Níveis",
+    "links.play": "Jogar",
+    "links.source": "Código-fonte no GitHub",
+    "hero.tagline": "Cada caixa tem o seu lugar. <b>Empurra-a até lá.</b>",
+    "hero.pitch": "Tu és o arrumador do armazém. Empurra cada caixa até um alvo no menor número de movimentos possível, em 50 níveis. As caixas empurram-se mas nunca se puxam, por isso pensa antes de empurrar.",
+    "hero.cta": "Joga no navegador",
+    "howItWorks.eyebrow": "Como funciona",
+    "howItWorks.heading": "Um empurrão de cada vez",
+    "howItWorks.lede": "Caminha contra uma caixa para a empurrar uma casa. Só podes empurrar uma caixa de cada vez, e uma caixa empurrada para um canto fica <b>presa para sempre.</b> O nível fica completo quando cada caixa estiver num alvo.",
+    "explore.howToPlay.body": "As regras, os comandos no teclado e no telemóvel, e o que o jogo guarda.",
+    "explore.levels.body": "Todos os 50, pelo nome, e como os gerados são verificados para se poderem resolver.",
+    "explore.play.body": "Corre no navegador. Sem instalação, sem conta.",
+    "explore.source.body": "Quatro ficheiros de HTML, CSS e JavaScript simples sobre um canvas.",
+    "about.eyebrow": "Sobre esta versão",
+    "about.heading": "Jogável hoje",
+    "about.lede": "A interface do jogo está em português. As regras podem ser lidas em português ou inglês a partir do botão Regras."
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
 </div>
 
 <title>Arrumador</title>
@@ -160,10 +210,10 @@
   .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
   .site-nav-links a:hover{color:var(--fg)}
   .site-nav-links a.current{color:var(--accent);font-weight:600}
-  /* The theme toggle is fixed in the top-right corner. Below this width
-     the centred .wrap reaches under it, so the nav keeps clear of it;
-     without this the toggle covers the last nav link. */
-  @media (max-width:1180px){.site-nav-inner{padding-right:132px}}
+  /* The toolbar (language switcher + theme toggle) is fixed in the top-right
+     corner. Below this width the centred .wrap reaches under it, so the nav
+     keeps clear of it; without this the toolbar covers the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
 
   .explore-grid{display:grid;gap:14px}
   @media (min-width:560px){.explore-grid{grid-template-columns:1fr 1fr}}
@@ -240,14 +290,18 @@
   .level-list li{background:var(--surface);border:1px solid var(--rule);border-radius:12px;padding:10px 14px;font-size:0.92rem;display:flex;gap:10px;align-items:baseline}
   .level-list .meta{min-width:1.6em}
 
-  /* A working light/dark/system toggle, driving the html[data-theme]
-     attribute the tokens above key off. Fixed so it's reachable at any
-     scroll position, since its effect is page-wide. */
-  .theme-toggle{
+  /* The toolbar holds the language switcher and the theme toggle side by side.
+     Both change the page as a whole, so it stays reachable at any scroll
+     position rather than scrolling away with the content. */
+  .site-toolbar{
     position:fixed;
     top:14px;
     right:14px;
     z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
     display:flex;
     gap:2px;
     background:var(--surface);
@@ -266,7 +320,22 @@
     justify-content:center;
     cursor:pointer;
   }
-  .theme-toggle button.active{
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
     background:var(--surface-2);
     color:var(--fg);
   }
@@ -276,8 +345,8 @@
   <div class="wrap site-nav-inner">
     <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arrumador"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="70" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">A</text></svg>Arrumador</a>
     <div class="site-nav-links">
-      <a href="how-to-play.html">How to play</a>
-      <a href="levels.html">Levels</a>
+      <a href="how-to-play.html" data-i18n="nav.howToPlay">How to play</a>
+      <a href="levels.html" data-i18n="nav.levels">Levels</a>
     </div>
   </div>
 </nav>
@@ -285,18 +354,18 @@
   <div class="wrap">
     <svg class="hero-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arrumador"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="70" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">A</text></svg>
     <h1>Arrumador</h1>
-    <p class="tagline">Every crate has a place. <b>Push it there.</b></p>
-    <p class="pitch">You are the warehouse keeper. Push every crate onto a target in as few moves as you can, across 50 levels. Crates can be pushed but never pulled, so think before you shove.</p>
-    <a class="btn" href="https://joaorodr84.github.io/arrumador/">Play in your browser &rarr;</a>
+    <p class="tagline" data-i18n="hero.tagline">Every crate has a place. <b>Push it there.</b></p>
+    <p class="pitch" data-i18n="hero.pitch">You are the warehouse keeper. Push every crate onto a target in as few moves as you can, across 50 levels. Crates can be pushed but never pulled, so think before you shove.</p>
+    <a class="btn" href="https://joaorodr84.github.io/arrumador/"><span data-i18n="hero.cta">Play in your browser</span> &rarr;</a>
   </div>
 </div>
 
 <section id="how-it-works">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">How it works</span>
-      <h2>One push at a time</h2>
-      <p class="lede">Walk into a crate to push it one square. You can only push one crate at a time, and a crate shoved into a corner is <b>stuck for good.</b> The level is complete when every crate sits on a target.</p>
+      <span class="eyebrow" data-i18n="howItWorks.eyebrow">How it works</span>
+      <h2 data-i18n="howItWorks.heading">One push at a time</h2>
+      <p class="lede" data-i18n="howItWorks.lede">Walk into a crate to push it one square. You can only push one crate at a time, and a crate shoved into a corner is <b>stuck for good.</b> The level is complete when every crate sits on a target.</p>
     </div>
   </div>
 </section>
@@ -305,20 +374,20 @@
   <div class="wrap">
     <div class="explore-grid">
       <a class="explore-card" href="how-to-play.html">
-        <h3>How to play &rarr;</h3>
-        <p>The rules, the controls on a keyboard and on a phone, and what the game remembers.</p>
+        <h3><span data-i18n="nav.howToPlay">How to play</span> &rarr;</h3>
+        <p data-i18n="explore.howToPlay.body">The rules, the controls on a keyboard and on a phone, and what the game remembers.</p>
       </a>
       <a class="explore-card" href="levels.html">
-        <h3>Levels &rarr;</h3>
-        <p>All 50, by name, and how the generated ones are checked to be solvable.</p>
+        <h3><span data-i18n="nav.levels">Levels</span> &rarr;</h3>
+        <p data-i18n="explore.levels.body">All 50, by name, and how the generated ones are checked to be solvable.</p>
       </a>
       <a class="explore-card" href="https://joaorodr84.github.io/arrumador/">
-        <h3>Play &rarr;</h3>
-        <p>It runs in the browser. No install, no account.</p>
+        <h3><span data-i18n="links.play">Play</span> &rarr;</h3>
+        <p data-i18n="explore.play.body">It runs in the browser. No install, no account.</p>
       </a>
       <a class="explore-card" href="https://github.com/joaorodr84/arrumador">
-        <h3>Source on GitHub &rarr;</h3>
-        <p>Four files of plain HTML, CSS and JavaScript on a canvas.</p>
+        <h3><span data-i18n="links.source">Source on GitHub</span> &rarr;</h3>
+        <p data-i18n="explore.source.body">Four files of plain HTML, CSS and JavaScript on a canvas.</p>
       </a>
     </div>
   </div>
@@ -327,9 +396,9 @@
 <section id="about">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">About this build</span>
-      <h2>Playable today</h2>
-      <p class="lede">The game's interface is in Portuguese. The rules can be read in Portuguese or English from the Regras button.</p>
+      <span class="eyebrow" data-i18n="about.eyebrow">About this build</span>
+      <h2 data-i18n="about.heading">Playable today</h2>
+      <p class="lede" data-i18n="about.lede">The game's interface is in Portuguese. The rules can be read in Portuguese or English from the Regras button.</p>
     </div>
   </div>
 </section>
@@ -339,10 +408,10 @@
     <svg class="footer-icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Arrumador"><rect x="4" y="4" width="92" height="92" rx="24" fill="var(--accent)"/><text x="50" y="70" text-anchor="middle" font-family="Sora,system-ui,sans-serif" font-weight="800" font-size="56" fill="var(--accent-ink)">A</text></svg>
     <div class="footer-links">
       <a class="brand" href="index.html">Arrumador</a>
-      <a href="how-to-play.html">How to play</a>
-      <a href="levels.html">Levels</a>
-      <a href="https://joaorodr84.github.io/arrumador/">Play</a>
-      <a href="https://github.com/joaorodr84/arrumador">Source on GitHub</a>
+      <a href="how-to-play.html" data-i18n="nav.howToPlay">How to play</a>
+      <a href="levels.html" data-i18n="nav.levels">Levels</a>
+      <a href="https://joaorodr84.github.io/arrumador/" data-i18n="links.play">Play</a>
+      <a href="https://github.com/joaorodr84/arrumador" data-i18n="links.source">Source on GitHub</a>
       <a href="/">Deficientezinho</a>
       <a href="https://github.com/joaorodr84">by joaorodr84</a>
     </div>
@@ -382,6 +451,45 @@
     });
   });
   reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
 })();
 </script>
 
