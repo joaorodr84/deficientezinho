@@ -2,7 +2,7 @@ import { NgTemplateOutlet } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
-import { Project } from '../projects/project';
+import { Project, projectStatusKey } from '../projects/project';
 import { PROJECTS } from '../projects/projects.data';
 
 @Component({
@@ -13,6 +13,7 @@ import { PROJECTS } from '../projects/projects.data';
 })
 export class Home {
   protected readonly projects = PROJECTS;
+  protected readonly statusKey = projectStatusKey;
 
   // `stack` is one human-written string ("Angular + NestJS + PostgreSQL"),
   // which is how the project page prints it. The card shows each

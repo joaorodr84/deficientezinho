@@ -116,12 +116,13 @@ layout the shared template can't express.
 An entry's optional `accent` (`{ light, dark }`) is the project's own
 colour; its page and home card are tinted with it.
 
+Every project needs a `projects.<slug>.{tagline,description}` entry in
+both `public/i18n/en-GB.json` and `public/i18n/pt-PT.json` (see
+"Translating an Angular page" below) — without it, the home card and
+the project page's hero show the raw translation key instead of text.
 A project with `overview`/`howItWorks`/`features` set also needs a
-matching `projects.<slug>.{overview,howItWorks,features}` entry in
-`public/i18n/en-GB.json` (see "Translating an Angular page" below) —
-without it, that section shows the raw translation key instead of
-text. `tagline`/`description` need no dictionary entry; the hero shows
-those two fields as-is, untranslated, same as the home card.
+matching `projects.<slug>.{overview,howItWorks,features}` entry in the
+same two files.
 
 ## The site-wide template
 
@@ -182,15 +183,21 @@ Angular pages (home, Watchr, Freecell Plus). The pieces:
   `theme-toggle.spec.ts` already uses for its own hardcoded labels; keep
   it in sync with the real JSON by hand.
 
-`tagline`/`description`/`stack`/`status` in `PROJECTS`
+`tagline`/`description`/`status` in `PROJECTS`
 ([src/app/projects/projects.data.ts](src/app/projects/projects.data.ts))
-stay untranslated everywhere they're shown (the home card, the project
-page's hero) — translating them only on the project page would leave
-the same project disagreeing with itself depending on which page a
-visitor is on. `overview`/`howItWorks`/`features` (DEF-9's optional
-richer sections, which only exist on the project page) are translated,
-under `projects.<slug>.*` in the dictionary (DEF-37, DEF-38) — e.g.
-`projects.watchr.overview`, `projects.watchr.howItWorks`.
+are translated the same way everywhere they're shown (the home card,
+the project page's hero and details) — both the home card and the
+project page look the string up under `projects.<slug>.*` (or, for
+`status`, the shared `projectStatus.*` via `projectStatusKey()` in
+[src/app/projects/project.ts](src/app/projects/project.ts)), so the two
+never disagree on the same project's own copy (DEF-49). `name` and
+`stack` stay untranslated everywhere — a project's name is a proper
+noun, and `stack` lists actual technology names (`Angular`, `NestJS`),
+neither of which has a Portuguese form. `overview`/`howItWorks`/
+`features` (DEF-9's optional richer sections, which only exist on the
+project page) are translated the same way, under `projects.<slug>.*`
+in the dictionary (DEF-37, DEF-38) — e.g. `projects.watchr.overview`,
+`projects.watchr.howItWorks`.
 
 Transloco flattens a nested dictionary into dotted keys at load time,
 but **arrays are a leaf, not expanded per index** — `howItWorks` becomes

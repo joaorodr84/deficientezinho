@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-49`**
+**Next ID to assign: `DEF-50`**
 
 If this file and history ever disagree, history wins:
 
@@ -68,3 +68,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-46 | Translate the Damas microsite/game UI text | done | 2026-11-15 | — |
 | DEF-47 | Fix the pt-PT home page tagline wording ("Apenas um deficientezinho.", "Ou a mandar a IA fazê-lo.") for more natural Portuguese | done | 2026-11-17 | — |
 | DEF-48 | Disable Angular CLI usage analytics/telemetry collection in `angular.json` | done | 2026-11-17 | — |
+| DEF-49 | Translate the home card's and project page hero's tagline, description and status pill, for every project | done | 2026-11-17 | — |

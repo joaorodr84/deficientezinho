@@ -7,7 +7,7 @@
     <div class="hero">
       <div class="wrap">
         <a class="back" routerLink="/">&larr; {{ 'projectPage.backLink' | transloco }}</a>
-        <span class="eyebrow status">{{ project.status }}</span>
+        <span class="eyebrow status">{{ statusKey(project.status) | transloco }}</span>
         @if (project.slug === 'watchr') {
           <!-- Watchr's own mark, same icon as its home card
                (c:\Code\watchr\frontend\src\assets\watchr-logo-square.svg). -->
@@ -20,11 +20,10 @@
           </span>
         }
         <h1>{{ project.name }}</h1>
-        <!-- Shown as-is: the same untranslated field the home card shows
-             (DEF-36 left per-project data out of this mechanism), so the
-             two don't disagree on the same project's own copy. -->
-        <p class="tagline">{{ project.tagline }}</p>
-        <p class="pitch">{{ project.description }}</p>
+        <!-- Same keys the home card reads (DEF-49), so the two never
+             disagree on the same project's own copy. -->
+        <p class="tagline">{{ ('projects.' + project.slug + '.tagline') | transloco }}</p>
+        <p class="pitch">{{ ('projects.' + project.slug + '.description') | transloco }}</p>
         @if (project.website || project.repo) {
           <div class="actions">
             @if (project.website) {
@@ -97,7 +96,7 @@
           <dt>{{ 'projectPage.stackLabel' | transloco }}</dt>
           <dd>{{ project.stack }}</dd>
           <dt>{{ 'projectPage.statusLabel' | transloco }}</dt>
-          <dd>{{ project.status }}</dd>
+          <dd>{{ statusKey(project.status) | transloco }}</dd>
           @if (project.website) {
             <dt>{{ 'projectPage.websiteLabel' | transloco }}</dt>
             <dd><a [href]="project.website" target="_blank" rel="noopener">{{ project.website }}</a></dd>

@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterLink, ActivatedRoute } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
+import { projectStatusKey } from '../projects/project';
 import { PROJECTS } from '../projects/projects.data';
 
 @Component({
@@ -15,4 +16,5 @@ export class ProjectPage {
   protected readonly project = PROJECTS.find(
     (project) => project.slug === this.route.snapshot.paramMap.get('slug'),
   );
+  protected readonly statusKey = projectStatusKey;
 }

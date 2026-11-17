@@ -5,8 +5,9 @@ import { Home } from './home';
 import { Project } from '../projects/project';
 import { PROJECTS } from '../projects/projects.data';
 
-// Mirrors public/i18n/en-GB.json's home.* keys (same convention
-// theme-toggle.spec.ts uses for its own hardcoded labels) -- keep in sync.
+// Mirrors public/i18n/en-GB.json's home.*/projectStatus.* keys and the
+// real projects it exercises below (same convention theme-toggle.spec.ts
+// uses for its own hardcoded labels) -- keep in sync.
 const EN_GB = {
   home: {
     tagline1: 'Just a crip.',
@@ -17,6 +18,32 @@ const EN_GB = {
     toExplore: '{{count}} to explore',
     openMicrosite: 'Open the mini site',
     readMore: 'Read more',
+  },
+  projectStatus: {
+    live: 'Live',
+    inDevelopment: 'In development',
+  },
+  projects: {
+    sphinx: {
+      tagline: 'A Mystery appears. Correct or Pass, against the clock.',
+      description:
+        'A party game app: a Mystery appears, you swipe or tap Correct or Pass against a timer, and a results screen shows at the end.',
+    },
+    digispin: {
+      tagline: 'Spin the digits, find the fits.',
+      description:
+        'Drag, rotate and reason your way through 250 boards — some solved in a minute, some worth sitting with.',
+    },
+    'freecell-plus': {
+      tagline: 'A small userscript upgrade for FreeCell on Solitaire Bliss.',
+      description:
+        'Adds a one-click way to jump to the next unplayed numbered game, tracks every win\'s time, score and moves, and surfaces completion stats and personal bests — all saved locally and exportable as a backup.',
+    },
+    watchr: {
+      tagline: 'Track every show and film you watch, with the people you watch them with.',
+      description:
+        'A personal TV and film tracking app with multi-user support, advanced watch history management, calendar views, statistics, badges, and import from IMDb, Trakt.tv, Netflix and TV Time.',
+    },
   },
 };
 
@@ -102,6 +129,19 @@ describe('Home', () => {
   it('tells a mini site card apart from a project page card in its call to action', () => {
     expect(cardFor('Sphinx').querySelector('.cta')?.textContent).toContain('Open the mini site');
     expect(cardFor('Freecell Plus').querySelector('.cta')?.textContent).toContain('Read more');
+  });
+
+  // DEF-49: tagline, description and the status pill are looked up in the
+  // dictionary (same keys the project page's hero reads), not read as-is
+  // off the PROJECTS entry.
+  it("translates a card's tagline, description and status pill", () => {
+    const card = cardFor('Sphinx');
+
+    expect(card.querySelector('.card-tagline')?.textContent).toBe(EN_GB.projects.sphinx.tagline);
+    expect(card.querySelector('.card-description')?.textContent).toBe(
+      EN_GB.projects.sphinx.description,
+    );
+    expect(card.querySelector('.status')?.textContent).toContain('In development');
   });
 
   // DEF-23: only projects with a logo mark of their own get one drawn; any

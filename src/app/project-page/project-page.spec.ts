@@ -5,8 +5,9 @@ import { ProjectPage } from './project-page';
 import { Project } from '../projects/project';
 import { PROJECTS } from '../projects/projects.data';
 
-// Mirrors public/i18n/en-GB.json's projectPage.* keys (same convention
-// theme-toggle.spec.ts uses for its own hardcoded labels) -- keep in sync.
+// Mirrors public/i18n/en-GB.json's projectPage.*/projectStatus.* keys
+// (same convention theme-toggle.spec.ts uses for its own hardcoded
+// labels) -- keep in sync.
 const PROJECT_PAGE_CHROME = {
   backLink: 'All projects',
   overviewEyebrow: 'Overview',
@@ -28,6 +29,11 @@ const PROJECT_PAGE_CHROME = {
   backHome: 'Back home',
 };
 
+const PROJECT_STATUS = {
+  live: 'Live',
+  inDevelopment: 'In development',
+};
+
 // Optional per-test overrides for `projects.<slug>.*` -- only a project
 // with an overview/howItWorks/features section touches those keys at all.
 async function createFixture(
@@ -41,7 +47,11 @@ async function createFixture(
       ProjectPage,
       TranslocoTestingModule.forRoot({
         langs: {
-          'en-GB': { projectPage: PROJECT_PAGE_CHROME, projects: enProjectsDict },
+          'en-GB': {
+            projectPage: PROJECT_PAGE_CHROME,
+            projectStatus: PROJECT_STATUS,
+            projects: enProjectsDict,
+          },
           'pt-PT': { projects: ptProjectsDict },
         },
         translocoConfig: {
@@ -97,16 +107,18 @@ describe('ProjectPage', () => {
     expect(text).toContain('Repository');
   });
 
-  // The hero shows the project's own tagline/description as-is, same as
-  // the home card -- DEF-36 left per-project data out of the translation
-  // mechanism, so the two must never disagree on the same project's copy.
-  it("shows a project's tagline and description untranslated", async () => {
-    const digispinFixture = await createFixture('digispin');
+  // The hero looks tagline/description up in the dictionary, the same
+  // projects.<slug>.* keys the home card reads (DEF-49), so the two never
+  // disagree on the same project's copy.
+  it("translates a project's tagline, description and status", async () => {
+    const digispinFixture = await createFixture('digispin', {
+      digispin: { tagline: 'Spin the digits, find the fits.', description: 'A digit puzzle.' },
+    });
     const text = digispinFixture.nativeElement.textContent;
 
-    const digispin = PROJECTS.find((project) => project.slug === 'digispin')!;
-    expect(text).toContain(digispin.tagline);
-    expect(text).toContain(digispin.description);
+    expect(text).toContain('Spin the digits, find the fits.');
+    expect(text).toContain('A digit puzzle.');
+    expect(text).toContain('Live');
   });
 
   // DEF-9: the richer sections are optional, so a project with none of them

@@ -29,8 +29,14 @@
     "notFoundHeading": "Projeto não encontrado",
     "backHome": "Voltar ao início"
   },
+  "projectStatus": {
+    "live": "Disponível",
+    "inDevelopment": "Em desenvolvimento"
+  },
   "projects": {
     "watchr": {
+      "tagline": "Regista cada série e filme que vês, com as pessoas com quem os vês.",
+      "description": "Uma aplicação pessoal de registo de séries e filmes, com suporte para vários utilizadores, gestão avançada do histórico, vistas de calendário, estatísticas, distintivos e importação do IMDb, Trakt.tv, Netflix e TV Time.",
       "overview": "Registei tudo o que vi no TV Time durante quase dez anos. Depois a aplicação fechou, e a minha cabeça já não conseguia organizar sozinha o que ainda tinha para ver — por isso criei o Watchr para o fazer por mim. Cada utilizador convidado tem a sua própria biblioteca, histórico e definições de privacidade, para que uma instância partilhada do Watchr continue a parecer pessoal. As séries e os filmes são seguidos com metadados obtidos em tempo real do TMDb, e o estado de uma série — Plan to Watch, Watching, On Hold, Up to Date, Completed — atualiza-se sozinho durante a noite e no momento em que marcas um episódio como visto, para que My Shows nunca desalinhe do que realmente foi emitido.",
       "howItWorks": [
         "Encontra algo para ver em Discover e carrega no botão \"+ Track\" para o adicionares à tua biblioteca.",
@@ -50,6 +56,8 @@
       ]
     },
     "freecell-plus": {
+      "tagline": "Um pequeno userscript que melhora o FreeCell no Solitaire Bliss.",
+      "description": "Adiciona uma forma de um clique para saltar para o próximo jogo numerado ainda não jogado, regista o tempo, a pontuação e os movimentos de cada vitória, e mostra estatísticas de conclusão e melhores marcas pessoais — tudo guardado localmente e exportável como cópia de segurança.",
       "overview": "O FreeCell do Solitaire Bliss numera cada jogo (`?number=`), mas deixa a cargo do jogador encontrar o próximo que ainda não jogou. O Freecell Plus adiciona um botão NEXT integrado na própria barra superior do site — com o estilo e o tamanho dos controlos nativos — que salta diretamente para o primeiro número ainda não jogado da sequência, em vez de ir apenas para o número seguinte.",
       "howItWorks": [
         "Um botão NEXT fica na barra superior do próprio jogo, inativo até ganhares, e depois salta para o primeiro jogo que ainda não ganhaste — não apenas o número seguinte, para que repetições não bloqueiem a sequência.",
@@ -66,6 +74,34 @@
         "Avisa na consola se o markup do próprio Solitaire Bliss mudar o suficiente para impedir a montagem de um botão ou indicador.",
         "Funciona inteiramente no navegador através do Tampermonkey — sem contas, sem servidor, sem análises."
       ]
+    },
+    "digispin": {
+      "tagline": "Gira os dígitos. Encontra os encaixes.",
+      "description": "Arrasta, gira e raciocina através de 250 tabuleiros — alguns resolvem-se num minuto, outros vale a pena demorar."
+    },
+    "sphinx": {
+      "tagline": "Aparece um Mistério. Certo ou Passar, contra o relógio.",
+      "description": "Uma aplicação de jogo de festa: aparece um Mistério, deslizas ou tocas em Certo ou Passar contra um temporizador, e no fim aparece um ecrã de resultados."
+    },
+    "cangupa": {
+      "tagline": "Salta em cada casa. Não deixes nenhuma por saltar.",
+      "description": "Um canguru, um tabuleiro de casas e uma regra: pisa todas as casas antes que os movimentos acabem. Avança uma casa ou salta duas, e cada casa cai atrás de ti."
+    },
+    "crivo": {
+      "tagline": "Cem palavras à entrada. Uma imagem por cada, à saída.",
+      "description": "Dá-lhe uma lista de palavras-chave. Procura cada uma no Pixabay, mostra-te os candidatos no navegador para escolheres, e depois devolve as tuas escolhas redimensionadas para um único tamanho num zip."
+    },
+    "def-platform": {
+      "tagline": "Rola por uma cidade construída por quem nunca a testou.",
+      "description": "Um platformer 2D em que rolas uma cadeira de rodas por lancis, rampas, uma \"entrada principal\" só com escadas, um elevador avariado e carrinhos de compras com opiniões fortes. Tudo funciona uma tecla de cada vez."
+    },
+    "arrumador": {
+      "tagline": "Cada caixote tem um lugar. Empurra-o até lá.",
+      "description": "Um puzzle de armazém: empurra cada caixote até um alvo no menor número de movimentos possível. Os caixotes podem ser empurrados mas nunca puxados, ao longo de 50 níveis, todos verificados para serem resolúveis."
+    },
+    "damas": {
+      "tagline": "Damas, à portuguesa.",
+      "description": "Um jogo de damas que segue as regras portuguesas: damas voadoras, capturas obrigatórias e a lei da maioria. Joga no mesmo ecrã, ou contra um amigo pela internet com um código de seis caracteres."
     }
   }
 }

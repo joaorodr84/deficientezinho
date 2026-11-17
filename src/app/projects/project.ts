@@ -27,3 +27,10 @@ export interface Project {
   // without it the site's own accent is used.
   accent?: { light: string; dark: string };
 }
+
+// Shared by the home card and the project-page hero/details, so 'live' and
+// 'in development' translate identically everywhere a project's status is
+// shown (DEF-49).
+export function projectStatusKey(status: Project['status']): string {
+  return status === 'live' ? 'projectStatus.live' : 'projectStatus.inDevelopment';
+}

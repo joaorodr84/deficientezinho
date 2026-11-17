@@ -29,8 +29,14 @@
     "notFoundHeading": "Project not found",
     "backHome": "Back home"
   },
+  "projectStatus": {
+    "live": "Live",
+    "inDevelopment": "In development"
+  },
   "projects": {
     "watchr": {
+      "tagline": "Track every show and film you watch, with the people you watch them with.",
+      "description": "A personal TV and film tracking app with multi-user support, advanced watch history management, calendar views, statistics, badges, and import from IMDb, Trakt.tv, Netflix and TV Time.",
       "overview": "I tracked everything I watched in TV Time for almost ten years. Then it shut down, and my brain couldn't keep what I still had to watch organised on its own — so I built Watchr to do it for me. Each invited user gets their own library, watch history and privacy settings, so one shared Watchr instance still feels personal. Shows and films are tracked with metadata pulled live from TMDb, and a show's status — Plan to Watch, Watching, On Hold, Up to Date, Completed — updates itself overnight and the moment you mark an episode watched, so My Shows never falls out of sync with what actually aired.",
       "howItWorks": [
         "Find something to watch on Discover, then press its \"+ Track\" button to add it to your library.",
@@ -50,6 +56,8 @@
       ]
     },
     "freecell-plus": {
+      "tagline": "A small userscript upgrade for FreeCell on Solitaire Bliss.",
+      "description": "Adds a one-click way to jump to the next unplayed numbered game, tracks every win's time, score and moves, and surfaces completion stats and personal bests — all saved locally and exportable as a backup.",
       "overview": "Solitaire Bliss's FreeCell numbers each game (`?number=`), but leaves finding the next one you haven't played up to you. Freecell Plus adds a NEXT button built into the site's own topbar — styled and sized to match the native controls — that jumps straight to the first unplayed number in the sequence instead of just the next one.",
       "howItWorks": [
         "A NEXT button sits in the game's own topbar, inert until you win, then jumps to the first game you haven't won yet — not just the next number, so replays don't jam up the sequence.",
@@ -66,6 +74,34 @@
         "Warns in the console if Solitaire Bliss's own markup changes enough to break how a button or tracker mounts.",
         "Runs entirely in the browser via Tampermonkey — no accounts, no server, no analytics."
       ]
+    },
+    "digispin": {
+      "tagline": "Spin the digits, find the fits.",
+      "description": "Drag, rotate and reason your way through 250 boards — some solved in a minute, some worth sitting with."
+    },
+    "sphinx": {
+      "tagline": "A Mystery appears. Correct or Pass, against the clock.",
+      "description": "A party game app: a Mystery appears, you swipe or tap Correct or Pass against a timer, and a results screen shows at the end."
+    },
+    "cangupa": {
+      "tagline": "Hop on every tile. Leave none behind.",
+      "description": "A kangaroo, a board of tiles and one rule: land on every tile before you run out of moves. Step one tile or jump two, and each tile drops away behind you."
+    },
+    "crivo": {
+      "tagline": "A hundred words in. One picture for each, out.",
+      "description": "Give it a list of keywords. It searches Pixabay for each one, shows you the candidates in your browser so you can pick, then hands your picks back resized to one size in a zip."
+    },
+    "def-platform": {
+      "tagline": "Roll through a city built by people who never tried it.",
+      "description": "A 2D platformer where you roll a wheelchair through curbs, ramps, a staircase-only \"main entrance\", a broken elevator and shopping carts with strong opinions. Everything works one key at a time."
+    },
+    "arrumador": {
+      "tagline": "Every crate has a place. Push it there.",
+      "description": "A warehouse puzzle: push every crate onto a target in as few moves as you can. Crates can be pushed but never pulled, across 50 levels that are each checked to be solvable."
+    },
+    "damas": {
+      "tagline": "Checkers, the Portuguese way.",
+      "description": "A checkers game that plays by Portuguese rules: flying kings, mandatory captures and the law of majority. Play on one screen, or against a friend over the internet with a six-character code."
     }
   }
 }

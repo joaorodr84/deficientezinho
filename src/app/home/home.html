@@ -121,13 +121,13 @@
         }
       }
     </span>
-    <span class="status mono"><i></i>{{ project.status }}</span>
+    <span class="status mono"><i></i>{{ statusKey(project.status) | transloco }}</span>
   </div>
 
   <div class="card-body">
     <h3>{{ project.name }}</h3>
-    <p class="card-tagline">{{ project.tagline }}</p>
-    <p class="card-description">{{ project.description }}</p>
+    <p class="card-tagline">{{ ('projects.' + project.slug + '.tagline') | transloco }}</p>
+    <p class="card-description">{{ ('projects.' + project.slug + '.description') | transloco }}</p>
     <ul class="stack">
       @for (part of stackParts(project); track part) {
         <li class="mono">{{ part }}</li>
