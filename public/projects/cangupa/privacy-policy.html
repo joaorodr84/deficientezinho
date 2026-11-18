@@ -1,0 +1,383 @@
+<!doctype html><html lang="en"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><title data-i18n="meta.title">Cangupa — Privacy policy</title>
+<link rel="icon" href="favicon.ico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f7f3ec;
+    --surface:#ffffff;
+    --surface-2:#ece5d8;
+    --fg:#20232b;
+    --muted:#555a66;
+    --rule:#ddd5c6;
+    --accent:#0e7c88;
+    --accent-ink:#ffffff;
+    --mono-accent:#8a5c00;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#121212;
+      --surface:#1b1c1f;
+      --surface-2:#25272c;
+      --fg:#ece8e0;
+      --muted:#9a9ca3;
+      --rule:#2e3036;
+      --accent:#29c5d6;
+      --accent-ink:#121212;
+      --mono-accent:#f2b544;
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#121212;
+    --surface:#1b1c1f;
+    --surface-2:#25272c;
+    --fg:#ece8e0;
+    --muted:#9a9ca3;
+    --rule:#2e3036;
+    --accent:#29c5d6;
+    --accent-ink:#121212;
+    --mono-accent:#f2b544;
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--fg);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16px;line-height:1.6}
+  .wrap{max-width:760px;margin:0 auto;padding:40px 20px 64px}
+  a{color:var(--accent)}
+  h1{font-family:"Sora",system-ui,sans-serif;font-size:1.9rem;margin:0 0 4px}
+  .updated{color:var(--muted);font-size:0.9rem;margin:0 0 32px}
+  h2{font-family:"Sora",system-ui,sans-serif;font-size:1.15rem;margin:32px 0 10px}
+  p,li{color:var(--fg)}
+  ul{padding-left:1.2rem}
+  li+li{margin-top:6px}
+
+  nav.site-nav{background:var(--surface);border-bottom:1px solid var(--rule)}
+  .site-nav-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px;flex-wrap:wrap}
+  .site-nav-brand{display:flex;align-items:center;gap:8px;font-family:"Sora",system-ui,sans-serif;font-weight:700;color:var(--fg);text-decoration:none;font-size:1rem}
+  .site-nav-icon{width:24px;height:24px;flex-shrink:0}
+  .site-nav-links{display:flex;gap:18px;flex-wrap:wrap}
+  .site-nav-links a{color:var(--muted);text-decoration:none;font-size:0.92rem}
+  .site-nav-links a:hover{color:var(--fg)}
+  .site-nav-links a.current{color:var(--accent);font-weight:600}
+  /* The toolbar (language switcher + theme toggle) is fixed in the
+     top-right corner. Below this width the centred .wrap reaches under
+     it, so the nav keeps clear of it; without this the toolbar covers
+     the last nav link. */
+  @media (max-width:1180px){.site-nav-inner{padding-right:210px}}
+  .site-toolbar{
+    position:fixed;
+    top:14px;
+    right:14px;
+    z-index:10;
+    display:flex;
+    gap:8px;
+  }
+  .theme-toggle,.lang-toggle{
+    display:flex;
+    gap:2px;
+    background:var(--surface);
+    border:1px solid var(--rule);
+    border-radius:999px;
+    padding:3px;
+  }
+  .theme-toggle button{
+    width:32px;height:32px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .lang-toggle button{
+    min-width:32px;height:32px;
+    padding-inline:8px;
+    border:none;
+    border-radius:999px;
+    background:transparent;
+    color:var(--muted);
+    font-family:"IBM Plex Mono",ui-monospace,monospace;
+    font-size:0.78rem;
+    font-weight:600;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .theme-toggle button.active,.lang-toggle button.active{
+    background:var(--surface-2);
+    color:var(--fg);
+  }
+
+  footer{padding-block:40px 48px;background:var(--surface);border-top:1px solid var(--rule)}
+  footer .wrap{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    color:var(--muted);
+    font-size:0.86rem;
+  }
+  .footer-icon{width:40px;height:40px;flex-shrink:0}
+  .footer-links{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline}
+  footer .brand{font-family:"Sora",system-ui,sans-serif;color:var(--fg);font-weight:600;margin-right:4px;text-decoration:none}
+  footer a{color:var(--muted);text-decoration:none}
+  footer a:hover{color:var(--fg)}
+</style>
+</head><body>
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem('deficientezinho-theme');
+    if (saved === 'light' || saved === 'dark') {
+      document.documentElement.setAttribute('data-theme', saved);
+    }
+  } catch (e) {}
+})();
+</script>
+
+<script type="application/json" id="i18n-strings">
+{
+  "en-GB": {
+    "nav.howToPlay": "How to play",
+    "nav.features": "Features",
+    "nav.levels": "Levels",
+    "meta.title": "Cangupa — Privacy policy",
+    "h1": "Cangupa Privacy Policy",
+    "updated": "Last updated: November 18, 2026",
+    "overview.heading": "Overview",
+    "overview.body": "Cangupa is a puzzle game for iOS and Android. This policy explains what information the app collects, what it doesn't, and how the services it relies on handle data.",
+    "collect.heading": "Information We Collect",
+    "collect.body": "Cangupa itself collects no personal information and has no account system or login. Your level progress and settings (sound, control scheme, directional pad, and similar preferences) are stored only on your device and are never sent anywhere. Uninstalling the app or clearing its data erases this information completely.",
+    "ads.heading": "Advertising",
+    "ads.body1": "Cangupa shows optional rewarded video ads, served by Google AdMob, that let you earn an extra hint by watching one to the end — never a condition to play the game itself. These ads are requested as <b>non-personalized</b> only: Cangupa does not use advertising identifiers to build a profile of you or track you across other apps or websites, and does not show its own App Tracking Transparency prompt.",
+    "ads.body2": "Serving and measuring even a non-personalized ad still requires Google to process some technical data (such as your device's advertising identifier, IP address and general ad-interaction data) for ad delivery and fraud prevention. That processing is governed by Google's own policies, not Cangupa's:",
+    "ads.li1": "<a href=\"https://policies.google.com/privacy\">Google AdMob's Privacy &amp; Terms</a>",
+    "ads.li2": "<a href=\"https://policies.google.com/technologies/partner-sites\">How Google uses information from sites or apps that use its services</a>",
+    "iap.heading": "In-App Purchases",
+    "iap.body": "If Cangupa offers in-app purchases (for example, to unlock additional level packs), they are handled entirely by the Apple App Store or Google Play. Cangupa never sees or stores your payment details — only whether a purchase was completed, which is kept on your device the same way your progress is.",
+    "children.heading": "Children's Privacy",
+    "children.body": "Cangupa is not directed at children and has no account creation or age-gating. It does not knowingly collect personal information from anyone, including children.",
+    "retention.heading": "Data Retention and Deletion",
+    "retention.body": "Because Cangupa doesn't send your progress or settings anywhere, there is nothing on our side to request the deletion of. Clearing the app's data or uninstalling it removes everything stored on your device.",
+    "rights.heading": "Your Rights",
+    "rights.body": "If you are in the European Union, the UK, or another jurisdiction with similar data protection law, you have rights over data that is processed about you — including access, correction, and erasure. Since Cangupa itself holds no personal data about you, these rights are best exercised directly with Google regarding the ad-serving data described above, using the links in the Advertising section.",
+    "changes.heading": "Changes to This Policy",
+    "changes.body": "This policy may be updated from time to time. Changes will be posted at this page, with the \"Last updated\" date revised accordingly.",
+    "contact.heading": "Contact",
+    "contact.body": "Questions about this policy can be sent to <a href=\"mailto:info@deficientezinho.pt\">info@deficientezinho.pt</a>.",
+    "footer.howToPlay": "How to play",
+    "footer.features": "Features",
+    "footer.levels": "Levels",
+    "footer.privacyPolicy": "Privacy policy"
+  },
+  "pt-PT": {
+    "nav.howToPlay": "Como jogar",
+    "nav.features": "Funcionalidades",
+    "nav.levels": "Níveis",
+    "meta.title": "Cangupa — Política de privacidade",
+    "h1": "Política de Privacidade do Cangupa",
+    "updated": "Última atualização: 18 de novembro de 2026",
+    "overview.heading": "Visão geral",
+    "overview.body": "O Cangupa é um jogo de puzzle para iOS e Android. Esta política explica que informação a aplicação recolhe, que informação não recolhe, e como os serviços de que depende tratam os dados.",
+    "collect.heading": "Informação que recolhemos",
+    "collect.body": "O Cangupa não recolhe qualquer informação pessoal e não tem sistema de conta ou login. O progresso dos níveis e as definições (som, esquema de controlo, teclado direcional e preferências semelhantes) são guardados apenas no seu dispositivo e nunca são enviados para qualquer lado. Desinstalar a aplicação ou limpar os seus dados apaga esta informação por completo.",
+    "ads.heading": "Publicidade",
+    "ads.body1": "O Cangupa mostra anúncios em vídeo opcionais, com recompensa, fornecidos pela Google AdMob, que permitem ganhar uma dica extra ao assistir a um até ao fim — nunca uma condição para jogar. Estes anúncios são pedidos apenas como <b>não personalizados</b>: o Cangupa não usa identificadores publicitários para criar um perfil seu nem para o seguir noutras aplicações ou sites, e não apresenta o seu próprio pedido de App Tracking Transparency.",
+    "ads.body2": "Mesmo um anúncio não personalizado exige que a Google processe alguns dados técnicos (como o identificador publicitário do dispositivo, o endereço IP e dados gerais de interação com o anúncio) para entrega de anúncios e prevenção de fraude. Esse tratamento é regido pelas políticas da própria Google, não pelas do Cangupa:",
+    "ads.li1": "<a href=\"https://policies.google.com/privacy\">Privacidade e Termos do Google AdMob</a>",
+    "ads.li2": "<a href=\"https://policies.google.com/technologies/partner-sites\">Como a Google usa informação de sites ou apps que usam os seus serviços</a>",
+    "iap.heading": "Compras na aplicação",
+    "iap.body": "Se o Cangupa oferecer compras na aplicação (por exemplo, para desbloquear pacotes de níveis adicionais), estas são geridas inteiramente pela App Store da Apple ou pela Google Play. O Cangupa nunca vê nem guarda os seus dados de pagamento — apenas se uma compra foi concluída, informação essa guardada no seu dispositivo da mesma forma que o seu progresso.",
+    "children.heading": "Privacidade de crianças",
+    "children.body": "O Cangupa não é dirigido a crianças e não tem criação de conta nem verificação de idade. Não recolhe intencionalmente informação pessoal de ninguém, incluindo crianças.",
+    "retention.heading": "Retenção e eliminação de dados",
+    "retention.body": "Como o Cangupa não envia o seu progresso ou definições para lado nenhum, não há nada do nosso lado para pedir a eliminação. Limpar os dados da aplicação ou desinstalá-la remove tudo o que estava guardado no seu dispositivo.",
+    "rights.heading": "Os seus direitos",
+    "rights.body": "Se estiver na União Europeia, no Reino Unido, ou noutra jurisdição com legislação de proteção de dados semelhante, tem direitos sobre os dados tratados sobre si — incluindo acesso, correção e eliminação. Como o Cangupa não guarda, por si só, dados pessoais seus, estes direitos devem ser exercidos diretamente junto da Google, relativamente aos dados de publicidade descritos acima, através das ligações na secção Publicidade.",
+    "changes.heading": "Alterações a esta política",
+    "changes.body": "Esta política pode ser atualizada de tempos a tempos. As alterações serão publicadas nesta página, com a data de \"última atualização\" correspondente revista.",
+    "contact.heading": "Contacto",
+    "contact.body": "Questões sobre esta política podem ser enviadas para <a href=\"mailto:info@deficientezinho.pt\">info@deficientezinho.pt</a>.",
+    "footer.howToPlay": "Como jogar",
+    "footer.features": "Funcionalidades",
+    "footer.levels": "Níveis",
+    "footer.privacyPolicy": "Política de privacidade"
+  }
+}
+</script>
+
+<div class="site-toolbar">
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang-choice="en-GB" aria-label="English" title="English">EN</button>
+    <button type="button" data-lang-choice="pt-PT" aria-label="Português" title="Português">PT</button>
+  </div>
+
+  <div class="theme-toggle" role="group" aria-label="Theme">
+    <button type="button" data-theme-choice="light" aria-label="Light" title="Light">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="4" />
+        <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="dark" aria-label="Dark" title="Dark">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z" />
+      </svg>
+    </button>
+    <button type="button" data-theme-choice="system" aria-label="Follow the device" title="Follow the device">
+      <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="4" width="18" height="12" rx="2" />
+        <path d="M8 20h8M12 16v4" />
+      </svg>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  <div class="wrap site-nav-inner">
+    <a class="site-nav-brand" href="index.html"><svg class="site-nav-icon" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cangupa"><defs><mask id="roo-nav" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240"><rect x="5" y="5" width="110" height="110" rx="20" fill="#fff"/><g transform="translate(10,10)" fill="#000"><path d="M34 78 C26 60 34 40 50 36 C62 34 68 46 66 60 C64 72 56 82 44 84 Z"/><path d="M50 38 C48 26 56 18 66 20 C75 21 84.5 29 84.5 36 C84.5 42 76 44 70 42 C62 46 54 46 50 38 Z"/><ellipse cx="59" cy="13" rx="5.5" ry="12" transform="rotate(-2 59 13)"/><path d="M32 66 C26 78 34 90 44 88 C56 86 60 78 54 72 C48 66 38 62 32 66 Z"/><path d="M40 88 L74 90 C80 90 80 96 74 96 L36 96 C32 96 32 90 40 88 Z"/></g></mask></defs><rect x="5" y="5" width="110" height="110" rx="20" fill="#29C5D6" mask="url(#roo-nav)"/><rect x="125" y="5" width="110" height="110" rx="20" fill="#F2B544"/><rect x="5" y="125" width="110" height="110" rx="20" fill="#29C5D6"/><rect x="125" y="125" width="110" height="110" rx="20" fill="#29C5D6"/></svg>Cangupa</a>
+    <div class="site-nav-links">
+      <a href="how-to-play.html" data-i18n="nav.howToPlay">How to play</a>
+      <a href="features.html" data-i18n="nav.features">Features</a>
+      <a href="levels.html" data-i18n="nav.levels">Levels</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+  <h1 data-i18n="h1">Cangupa Privacy Policy</h1>
+  <p class="updated" data-i18n="updated">Last updated: November 18, 2026</p>
+
+  <h2 data-i18n="overview.heading">Overview</h2>
+  <p data-i18n="overview.body">Cangupa is a puzzle game for iOS and Android. This policy explains what information the app collects, what it doesn't, and how the services it relies on handle data.</p>
+
+  <h2 data-i18n="collect.heading">Information We Collect</h2>
+  <p data-i18n="collect.body">Cangupa itself collects no personal information and has no account system or login. Your level progress and settings (sound, control scheme, directional pad, and similar preferences) are stored only on your device and are never sent anywhere. Uninstalling the app or clearing its data erases this information completely.</p>
+
+  <h2 data-i18n="ads.heading">Advertising</h2>
+  <p data-i18n="ads.body1">Cangupa shows optional rewarded video ads, served by Google AdMob, that let you earn an extra hint by watching one to the end — never a condition to play the game itself. These ads are requested as <b>non-personalized</b> only: Cangupa does not use advertising identifiers to build a profile of you or track you across other apps or websites, and does not show its own App Tracking Transparency prompt.</p>
+  <p data-i18n="ads.body2">Serving and measuring even a non-personalized ad still requires Google to process some technical data (such as your device's advertising identifier, IP address and general ad-interaction data) for ad delivery and fraud prevention. That processing is governed by Google's own policies, not Cangupa's:</p>
+  <ul>
+    <li data-i18n="ads.li1"><a href="https://policies.google.com/privacy">Google AdMob's Privacy &amp; Terms</a></li>
+    <li data-i18n="ads.li2"><a href="https://policies.google.com/technologies/partner-sites">How Google uses information from sites or apps that use its services</a></li>
+  </ul>
+
+  <h2 data-i18n="iap.heading">In-App Purchases</h2>
+  <p data-i18n="iap.body">If Cangupa offers in-app purchases (for example, to unlock additional level packs), they are handled entirely by the Apple App Store or Google Play. Cangupa never sees or stores your payment details — only whether a purchase was completed, which is kept on your device the same way your progress is.</p>
+
+  <h2 data-i18n="children.heading">Children's Privacy</h2>
+  <p data-i18n="children.body">Cangupa is not directed at children and has no account creation or age-gating. It does not knowingly collect personal information from anyone, including children.</p>
+
+  <h2 data-i18n="retention.heading">Data Retention and Deletion</h2>
+  <p data-i18n="retention.body">Because Cangupa doesn't send your progress or settings anywhere, there is nothing on our side to request the deletion of. Clearing the app's data or uninstalling it removes everything stored on your device.</p>
+
+  <h2 data-i18n="rights.heading">Your Rights</h2>
+  <p data-i18n="rights.body">If you are in the European Union, the UK, or another jurisdiction with similar data protection law, you have rights over data that is processed about you — including access, correction, and erasure. Since Cangupa itself holds no personal data about you, these rights are best exercised directly with Google regarding the ad-serving data described above, using the links in the Advertising section.</p>
+
+  <h2 data-i18n="changes.heading">Changes to This Policy</h2>
+  <p data-i18n="changes.body">This policy may be updated from time to time. Changes will be posted at this page, with the "Last updated" date revised accordingly.</p>
+
+  <h2 data-i18n="contact.heading">Contact</h2>
+  <p data-i18n="contact.body">Questions about this policy can be sent to <a href="mailto:info@deficientezinho.pt">info@deficientezinho.pt</a>.</p>
+</div>
+
+<footer>
+  <div class="wrap">
+    <svg class="footer-icon" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cangupa"><defs><mask id="roo-footer" maskUnits="userSpaceOnUse" x="0" y="0" width="240" height="240"><rect x="5" y="5" width="110" height="110" rx="20" fill="#fff"/><g transform="translate(10,10)" fill="#000"><path d="M34 78 C26 60 34 40 50 36 C62 34 68 46 66 60 C64 72 56 82 44 84 Z"/><path d="M50 38 C48 26 56 18 66 20 C75 21 84.5 29 84.5 36 C84.5 42 76 44 70 42 C62 46 54 46 50 38 Z"/><ellipse cx="59" cy="13" rx="5.5" ry="12" transform="rotate(-2 59 13)"/><path d="M32 66 C26 78 34 90 44 88 C56 86 60 78 54 72 C48 66 38 62 32 66 Z"/><path d="M40 88 L74 90 C80 90 80 96 74 96 L36 96 C32 96 32 90 40 88 Z"/></g></mask></defs><rect x="5" y="5" width="110" height="110" rx="20" fill="#29C5D6" mask="url(#roo-footer)"/><rect x="125" y="5" width="110" height="110" rx="20" fill="#F2B544"/><rect x="5" y="125" width="110" height="110" rx="20" fill="#29C5D6"/><rect x="125" y="125" width="110" height="110" rx="20" fill="#29C5D6"/></svg>
+    <div class="footer-links">
+      <a class="brand" href="index.html">Cangupa</a>
+      <a href="how-to-play.html" data-i18n="footer.howToPlay">How to play</a>
+      <a href="features.html" data-i18n="footer.features">Features</a>
+      <a href="levels.html" data-i18n="footer.levels">Levels</a>
+      <a href="privacy-policy.html" data-i18n="footer.privacyPolicy">Privacy policy</a>
+
+      <a href="/">Deficientezinho</a>
+      <a href="https://github.com/joaorodr84">by joaorodr84</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-theme';
+  var buttons = document.querySelectorAll('[data-theme-choice]');
+
+  function currentChoice() {
+    var attr = document.documentElement.getAttribute('data-theme');
+    return attr === 'light' || attr === 'dark' ? attr : 'system';
+  }
+  function reflectActive() {
+    var choice = currentChoice();
+    buttons.forEach(function (btn) {
+      var isActive = btn.getAttribute('data-theme-choice') === choice;
+      btn.classList.toggle('active', isActive);
+    });
+  }
+  function apply(choice) {
+    if (choice === 'light' || choice === 'dark') {
+      document.documentElement.setAttribute('data-theme', choice);
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+    reflectActive();
+    try { localStorage.setItem(KEY, choice); } catch (e) {}
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      apply(btn.getAttribute('data-theme-choice'));
+    });
+  });
+  reflectActive();
+})();
+</script>
+
+<script>
+(function () {
+  var KEY = 'deficientezinho-lang';
+  var dict = JSON.parse(document.getElementById('i18n-strings').textContent);
+  var buttons = document.querySelectorAll('[data-lang-choice]');
+
+  function defaultLocale() {
+    return (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt-PT' : 'en-GB';
+  }
+  function currentLocale() {
+    try {
+      var saved = localStorage.getItem(KEY);
+      if (saved && dict[saved]) return saved;
+    } catch (e) {}
+    return dict[defaultLocale()] ? defaultLocale() : 'en-GB';
+  }
+  function apply(locale) {
+    var strings = dict[locale] || dict['en-GB'];
+    document.documentElement.lang = locale.slice(0, 2);
+    document.querySelectorAll('[data-i18n]').forEach(function (el) {
+      var key = el.getAttribute('data-i18n');
+      if (strings[key] != null) el.innerHTML = strings[key];
+    });
+    document.querySelectorAll('[data-i18n-attr-aria-label], [data-i18n-attr-title]').forEach(function (el) {
+      ['aria-label', 'title', 'alt', 'placeholder'].forEach(function (attr) {
+        var key = el.getAttribute('data-i18n-attr-' + attr);
+        if (key && strings[key] != null) el.setAttribute(attr, strings[key]);
+      });
+    });
+    buttons.forEach(function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang-choice') === locale);
+    });
+  }
+
+  buttons.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var locale = btn.getAttribute('data-lang-choice');
+      apply(locale);
+      try { localStorage.setItem(KEY, locale); } catch (e) {}
+    });
+  });
+  apply(currentLocale());
+})();
+</script>
+
+</body></html>
