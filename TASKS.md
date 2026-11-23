@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-60`**
+**Next ID to assign: `DEF-62`**
 
 If this file and history ever disagree, history wins:
 
@@ -79,3 +79,5 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-57 | Change the Angular dev server's default port from 4200 to 4300 (`angular.json`'s `serve.options.port`), to stop clashing with other local servers on this machine | done | 2026-11-23 | — |
 | DEF-58 | Match Sphinx's `--bg`/`--surface`/`--surface-2` tokens to the main site's palette, same as DEF-56 did for the other 5 mini sites | done | 2026-11-23 | — |
 | DEF-59 | Add `<base href="/projects/<slug>/">` to every mini site page so relative links/assets resolve correctly on each site's cleanUrls-stripped bare home URL | done | 2026-11-23 | — |
+| DEF-60 | Match def-platform's `--fg` (main font colour) to the main site's neutral tokens, instead of the greenish tint it kept from DEF-56; introduce the shared `public/theme-tokens.css` as the single external source for it instead of a hardcoded copy | done | 2026-11-23 | — |
+| DEF-61 | Same fix for def-platform's `--muted` (secondary/body text), moved into the shared `theme-tokens.css` alongside `--fg` instead of staying tinted to the project's own accent | done | 2026-11-23 | — |

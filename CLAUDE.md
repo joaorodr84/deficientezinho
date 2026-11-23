@@ -131,9 +131,34 @@ The DigiSpin mini site set the design every page follows: the token names
 `--accent`, `--accent-ink`, `--mono-accent`), Sora / IBM Plex Sans / IBM
 Plex Mono, the `.wrap` / `.hero` / `.eyebrow` / `.section-head` / `.lede`
 layout classes, the nav bar and footer, and the fixed light / dark /
-follow-the-device toggle. [src/styles.scss](src/styles.scss) holds it for
-the Angular pages; each static mini site under `public/projects/<slug>/`
-carries its own copy inline, with its own palette.
+follow-the-device toggle.
+
+`--bg`/`--surface`/`--surface-2`/`--fg`/`--muted` and `color-scheme` are
+identical everywhere — the Angular app and every static mini site — so
+they live once in [public/theme-tokens.css](public/theme-tokens.css)
+(served at `/theme-tokens.css`) instead of being copied into each page.
+`--muted` belongs there and not with the identity tokens below because
+it's body text (secondary, not an accent), the same reasoning as `--fg`:
+tinting it to a project's own accent family (DEF-56's original choice)
+read as a colour cast on ordinary text, not a deliberate brand touch
+(DEF-61). The Angular shell links it from [src/index.html](src/index.html);
+a static mini site links it the same way, with a `<link rel="stylesheet"
+href="/theme-tokens.css">` placed right before its own `<style>` block
+(see def-platform's pages, DEF-60/DEF-61). It can't be pulled in from
+`src/styles.scss` with a Sass `@import` — the CLI's esbuild-based builder
+tries to resolve a root-relative `@import url(...)` as a build-time asset
+and fails, since the file only exists once copied to the output root, not
+under `src/`.
+
+`--rule`/`--accent`/`--accent-ink`/`--mono-accent` are each project's own
+identity and stay inline per page — [src/styles.scss](src/styles.scss)
+keeps Deficientezinho's own set, and each static mini site keeps its own.
+Only def-platform points at the shared file so far (DEF-60, DEF-61); the
+other static mini sites (DigiSpin, Sphinx, Cangupa, Crivo, Arrumador,
+Damas) still carry all of `--bg`/`--surface`/`--surface-2`/`--fg`/`--muted`
+inline, some (Cangupa, Crivo, Damas, Arrumador) tinted to their own accent
+the same way def-platform was — migrating them to `/theme-tokens.css` is a
+follow-up task, not yet done.
 
 A new mini site starts from DigiSpin's pages and changes the palette and
 content. Four things must stay as they are for it to fit in:

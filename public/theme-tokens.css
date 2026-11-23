@@ -1,0 +1,37 @@
+/* The neutral theme tokens shared by the Angular app and every static mini
+   site under public/projects/<slug>/: --bg/--surface/--surface-2/--fg/
+   --muted and color-scheme. They are identical everywhere (DEF-56, DEF-58,
+   DEF-60), so they live here once and every page links to this file,
+   instead of each one carrying its own copy. A project's own identity
+   tokens (--rule, --accent, --accent-ink, --mono-accent) stay local to
+   that page -- they differ per project on purpose. --muted is body text,
+   not an identity colour, so it belongs here too, not tinted per project. */
+
+:root {
+  --bg: #eef0f4;
+  --surface: #ffffff;
+  --surface-2: #e3e7ee;
+  --fg: #15171c;
+  --muted: #4a515e;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    --bg: #0c0d10;
+    --surface: #15171c;
+    --surface-2: #1c1f26;
+    --fg: #e6e8ec;
+    --muted: #9199a8;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme='dark'] {
+  --bg: #0c0d10;
+  --surface: #15171c;
+  --surface-2: #1c1f26;
+  --fg: #e6e8ec;
+  --muted: #9199a8;
+  color-scheme: dark;
+}
