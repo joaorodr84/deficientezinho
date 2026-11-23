@@ -9,9 +9,9 @@ You stop Deficientezinho's Angular dev server if it's running, and leave the mac
 
 ## Steps
 
-1. Find what's listening on the dev server's default port:
+1. Find what's listening on the dev server's default port (`:4300`, set in `angular.json`'s `serve.options.port`):
    ```
-   netstat -ano | grep ":4200 " | grep LISTENING
+   netstat -ano | grep ":4300 " | grep LISTENING
    ```
    If nothing is listening, say so and stop — there's nothing to do.
 2. Identify the process by the PID in that output before killing anything — don't kill blind. Confirm it looks like a `node`/`ng` process, not something unrelated that happens to be on that port.

@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-57`**
+**Next ID to assign: `DEF-58`**
 
 If this file and history ever disagree, history wins:
 
@@ -76,3 +76,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-54 | Merge DigiSpin's How to play, Features, Levels and Accessibility pages into one page with nav anchors, keeping Privacy policy/Support/Changelog as separate pages | done | 2026-11-23 | — |
 | DEF-55 | Fix production: `serve -s`'s blanket SPA rewrite was swallowing every static mini site (digispin, sphinx, cangupa, crivo, def-platform, arrumador, damas) into the Angular shell instead of serving their real `index.html` | done | 2026-11-23 | — |
 | DEF-56 | Match Cangupa, Crivo, Damas, def-platform and Arrumador's `--bg`/`--surface`/`--surface-2` tokens to the main site's palette (Sphinx held back, pending its in-progress page-merge task) | done | 2026-11-23 | — |
+| DEF-57 | Change the Angular dev server's default port from 4200 to 4300 (`angular.json`'s `serve.options.port`), to stop clashing with other local servers on this machine | done | 2026-11-23 | — |

@@ -9,9 +9,9 @@ You start Deficientezinho's Angular dev server and leave it running in the backg
 
 ## Steps
 
-1. **Check first — don't double-start.** The dev server defaults to `:4200`:
+1. **Check first — don't double-start.** The dev server defaults to `:4300` (set in `angular.json`'s `serve.options.port`):
    ```
-   netstat -ano | grep ":4200 " | grep LISTENING
+   netstat -ano | grep ":4300 " | grep LISTENING
    ```
    If something's already listening, report it as "already running" rather than launching a second instance.
 
@@ -21,7 +21,7 @@ You start Deficientezinho's Angular dev server and leave it running in the backg
 
 3. **Poll until it actually responds** — don't trust that the launch command returning means the server is ready:
    ```
-   curl -s -o /dev/null -w "%{http_code}" http://localhost:4200/
+   curl -s -o /dev/null -w "%{http_code}" http://localhost:4300/
    ```
    Poll every couple of seconds up to a reasonable timeout (~60s — an Angular dev server's first build compiles the whole app). If it doesn't come up in time, report the failure and include the last bit of its output/log rather than just "it didn't start."
 
@@ -30,7 +30,7 @@ You start Deficientezinho's Angular dev server and leave it running in the backg
 End with something like:
 
 ```
-Dev server:  http://localhost:4200  (started, ready in ~12s)
+Dev server:  http://localhost:4300  (started, ready in ~12s)
 ```
 
 Note whether you started it or found it already running — either is fine, and finding it already running is not a failure.
