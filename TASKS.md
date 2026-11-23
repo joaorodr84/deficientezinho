@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-59`**
+**Next ID to assign: `DEF-60`**
 
 If this file and history ever disagree, history wins:
 
@@ -78,3 +78,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-56 | Match Cangupa, Crivo, Damas, def-platform and Arrumador's `--bg`/`--surface`/`--surface-2` tokens to the main site's palette (Sphinx held back, pending its in-progress page-merge task) | done | 2026-11-23 | — |
 | DEF-57 | Change the Angular dev server's default port from 4200 to 4300 (`angular.json`'s `serve.options.port`), to stop clashing with other local servers on this machine | done | 2026-11-23 | — |
 | DEF-58 | Match Sphinx's `--bg`/`--surface`/`--surface-2` tokens to the main site's palette, same as DEF-56 did for the other 5 mini sites | done | 2026-11-23 | — |
+| DEF-59 | Add `<base href="/projects/<slug>/">` to every mini site page so relative links/assets resolve correctly on each site's cleanUrls-stripped bare home URL | done | 2026-11-23 | — |
