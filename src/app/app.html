@@ -27,17 +27,6 @@
         <span class="logo-tile"><img src="logo.png" alt="" /></span>
         Deficientezinho
       </a>
-      <div class="site-nav-links">
-        @for (project of projects; track project.slug) {
-          @if (project.microsite) {
-            <a [href]="project.microsite">{{ project.name }}</a>
-          } @else {
-            <a [routerLink]="['/projects', project.slug]" routerLinkActive="current">{{
-              project.name
-            }}</a>
-          }
-        }
-      </div>
     }
   </div>
 </nav>

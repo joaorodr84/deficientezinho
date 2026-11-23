@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { NavigationEnd, Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterLink, RouterOutlet } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { filter, map } from 'rxjs';
 import { LanguageSwitcher } from './language-switcher/language-switcher';
@@ -9,7 +9,7 @@ import { PROJECTS } from './projects/projects.data';
 import { ThemeToggle } from './theme-toggle/theme-toggle';
 
 @Component({
-  imports: [LanguageSwitcher, RouterLink, RouterLinkActive, RouterOutlet, ThemeToggle, TranslocoPipe],
+  imports: [LanguageSwitcher, RouterLink, RouterOutlet, ThemeToggle, TranslocoPipe],
   selector: 'app-root',
   styleUrl: './app.scss',
   templateUrl: './app.html',
@@ -17,7 +17,6 @@ import { ThemeToggle } from './theme-toggle/theme-toggle';
 export class App {
   private readonly router = inject(Router);
 
-  protected readonly projects = PROJECTS;
   protected readonly year = new Date().getFullYear();
 
   // Projects without a microsite (Watchr, Freecell Plus) render through
