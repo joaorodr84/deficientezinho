@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-54`**
+**Next ID to assign: `DEF-55`**
 
 If this file and history ever disagree, history wins:
 
@@ -73,3 +73,4 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | DEF-50 | Add the Cangupa mini site's privacy policy page | done | 2026-11-18 | — |
 | DEF-51 | Add Railway deploy config (Nixpacks + `serve`, SPA fallback) for deficientezinho.pt | done | 2026-11-18 | — |
 | DEF-52 | Add `railpack.json` to stop Railway's Railpack builder auto-deploying as a static Angular site (wrong, hardcoded `./browser` output path) and use our own `start:prod` command instead | done | 2026-11-21 | — |
+| DEF-54 | Merge DigiSpin's How to play, Features, Levels and Accessibility pages into one page with nav anchors, keeping Privacy policy/Support/Changelog as separate pages | done | 2026-11-23 | — |
