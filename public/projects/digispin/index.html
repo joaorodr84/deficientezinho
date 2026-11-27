@@ -25,8 +25,8 @@
     "hero.tagline": "Spin the digits, <b>find the fits.</b>",
     "hero.pitch": "Drag, rotate and reason your way through 250 boards — some solved in a minute, some worth sitting with.",
     "appStore.badgeAlt": "Download on the App Store",
-    "appStore.badgeSrcBlk": "app-store-badge-dark-en-gb.svg",
-    "appStore.badgeSrcWht": "app-store-badge-light-en-gb.svg",
+    "appStore.badgeSrcBlk": "app-store-badge-black-en-gb.svg",
+    "appStore.badgeSrcWht": "app-store-badge-white-en-gb.svg",
     "appStore.qrAlt": "QR code linking to DigiSpin's App Store page",
     "howItWorks.eyebrow": "How it works",
     "howItWorks.heading": "Every digit is a shape made of bars",
@@ -116,6 +116,9 @@
     "accessibility.contact.p2": "The same goes for ideas. If there's a puzzle game you wish existed, or a way DigiSpin itself could be better, email <a href=\"mailto:info@deficientezinho.pt\">info@deficientezinho.pt</a> and tell us about it.",
     "about.eyebrow": "About this build",
     "about.lede": "DigiSpin is built for iPhone and iPad, and live now on the App Store. <a href=\"changelog.html\">See what's new</a>.",
+    "download.eyebrow": "Download",
+    "download.heading": "Where to get it",
+    "download.lede": "DigiSpin is free to download right now on the App Store, for iPhone and iPad. Scan the QR code with another device's camera, or tap the badge, to open its App Store page directly. A Google Play version for Android is planned — once it exists, its own badge will sit alongside this one.",
     "footer.accessibility": "Accessibility",
     "footer.whatsNew": "What's new",
     "footer.privacyPolicy": "Privacy policy",
@@ -129,8 +132,8 @@
     "hero.tagline": "Gira os dígitos, <b>encontra os encaixes.</b>",
     "hero.pitch": "Arrasta, gira e raciocina por 250 tabuleiros — alguns resolvem-se num minuto, outros valem bem o tempo que levares.",
     "appStore.badgeAlt": "Disponível na App Store",
-    "appStore.badgeSrcBlk": "app-store-badge-dark-pt-pt.svg",
-    "appStore.badgeSrcWht": "app-store-badge-light-pt-pt.svg",
+    "appStore.badgeSrcBlk": "app-store-badge-black-pt-pt.svg",
+    "appStore.badgeSrcWht": "app-store-badge-white-pt-pt.svg",
     "appStore.qrAlt": "Código QR que liga à página do DigiSpin na App Store",
     "howItWorks.eyebrow": "Como funciona",
     "howItWorks.heading": "Cada dígito é uma forma feita de barras",
@@ -220,6 +223,9 @@
     "accessibility.contact.p2": "O mesmo vale para ideias. Se há um jogo de puzzle que gostavas que existisse, ou uma forma de o próprio DigiSpin poder ser melhor, envia um email para <a href=\"mailto:info@deficientezinho.pt\">info@deficientezinho.pt</a> e conta-nos.",
     "about.eyebrow": "Sobre esta versão",
     "about.lede": "O DigiSpin é feito para iPhone e iPad, e já está disponível na App Store. <a href=\"changelog.html\">Vê o que há de novo</a>.",
+    "download.eyebrow": "Transferir",
+    "download.heading": "Onde o obter",
+    "download.lede": "O DigiSpin pode já ser transferido gratuitamente na App Store, para iPhone e iPad. Lê o código QR com a câmara de outro dispositivo, ou toca no emblema, para abrir diretamente a sua página na App Store. Está prevista uma versão para Google Play no Android — assim que existir, o seu próprio emblema juntar-se-á a este.",
     "footer.accessibility": "Acessibilidade",
     "footer.whatsNew": "Novidades",
     "footer.privacyPolicy": "Política de privacidade",
@@ -344,9 +350,11 @@
     max-width:38ch;
     font-size:0.98rem;
   }
-  .app-store-cta{display:flex;align-items:center;gap:16px;margin-top:2px}
+  .app-store-cta{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-top:28px}
   .app-store-badge-link{display:inline-flex;line-height:0}
-  .app-store-badge-img{height:44px;width:auto;display:none}
+  /* Width-locked (not the usual height-locked badge sizing) so it lines up
+     exactly with the QR code's own fixed width below it. */
+  .app-store-badge-img{width:132px;height:auto;display:none}
   /* Apple's own badge artwork comes pre-coloured black or white — it can't
      be recoloured with CSS vars, so the light/dark swap below just picks
      the matching asset, mirroring the --bg/--fg split above exactly. */
@@ -357,7 +365,7 @@
   }
   :root[data-theme="dark"] .app-store-badge-img.theme-blk{display:none}
   :root[data-theme="dark"] .app-store-badge-img.theme-wht{display:inline-block}
-  .app-store-qr{width:72px;height:72px;border-radius:8px}
+  .app-store-qr{width:132px;height:132px;border-radius:12px}
   /* A QR code only helps someone on a desktop who'd scan it with a phone;
      below this width the visitor is presumably already on the phone that
      would open the App Store link directly. */
@@ -608,13 +616,6 @@
     <svg class="wordmark" viewBox="0 0 253 72" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DigiSpin"><polygon points="36.00,7.60 32.25,11.35 32.25,30.65 36.00,34.40 39.75,30.65 39.75,11.35" fill="currentColor"/><polygon points="36.00,37.60 32.25,41.35 32.25,60.65 36.00,64.40 39.75,60.65 39.75,41.35" fill="currentColor"/><polygon points="7.60,66.00 11.35,69.75 30.65,69.75 34.40,66.00 30.65,62.25 11.35,62.25" fill="currentColor"/><polygon points="6.00,37.60 2.25,41.35 2.25,60.65 6.00,64.40 9.75,60.65 9.75,41.35" fill="currentColor"/><polygon points="7.60,36.00 11.35,39.75 30.65,39.75 34.40,36.00 30.65,32.25 11.35,32.25" fill="currentColor"/><polygon points="49.00,7.60 45.25,11.35 45.25,30.65 49.00,34.40 52.75,30.65 52.75,11.35" fill="currentColor"/><polygon points="49.00,37.60 45.25,41.35 45.25,60.65 49.00,64.40 52.75,60.65 52.75,41.35" fill="currentColor"/><polygon points="63.60,6.00 67.35,9.75 86.65,9.75 90.40,6.00 86.65,2.25 67.35,2.25" fill="currentColor"/><polygon points="62.00,7.60 58.25,11.35 58.25,30.65 62.00,34.40 65.75,30.65 65.75,11.35" fill="currentColor"/><polygon points="62.00,37.60 58.25,41.35 58.25,60.65 62.00,64.40 65.75,60.65 65.75,41.35" fill="currentColor"/><polygon points="63.60,66.00 67.35,69.75 86.65,69.75 90.40,66.00 86.65,62.25 67.35,62.25" fill="currentColor"/><polygon points="92.00,37.60 88.25,41.35 88.25,60.65 92.00,64.40 95.75,60.65 95.75,41.35" fill="currentColor"/><polygon points="105.00,7.60 101.25,11.35 101.25,30.65 105.00,34.40 108.75,30.65 108.75,11.35" fill="currentColor"/><polygon points="105.00,37.60 101.25,41.35 101.25,60.65 105.00,64.40 108.75,60.65 108.75,41.35" fill="currentColor"/><polygon points="119.60,6.00 123.35,9.75 142.65,9.75 146.40,6.00 142.65,2.25 123.35,2.25" fill="#b82c36"/><polygon points="118.00,7.60 114.25,11.35 114.25,30.65 118.00,34.40 121.75,30.65 121.75,11.35" fill="#b82c36"/><polygon points="119.60,36.00 123.35,39.75 142.65,39.75 146.40,36.00 142.65,32.25 123.35,32.25" fill="#b82c36"/><polygon points="148.00,37.60 144.25,41.35 144.25,60.65 148.00,64.40 151.75,60.65 151.75,41.35" fill="#b82c36"/><polygon points="119.60,66.00 123.35,69.75 142.65,69.75 146.40,66.00 142.65,62.25 123.35,62.25" fill="#b82c36"/><polygon points="162.60,6.00 166.35,9.75 185.65,9.75 189.40,6.00 185.65,2.25 166.35,2.25" fill="#b82c36"/><polygon points="191.00,7.60 187.25,11.35 187.25,30.65 191.00,34.40 194.75,30.65 194.75,11.35" fill="#b82c36"/><polygon points="161.00,7.60 157.25,11.35 157.25,30.65 161.00,34.40 164.75,30.65 164.75,11.35" fill="#b82c36"/><polygon points="162.60,36.00 166.35,39.75 185.65,39.75 189.40,36.00 185.65,32.25 166.35,32.25" fill="#b82c36"/><polygon points="161.00,37.60 157.25,41.35 157.25,60.65 161.00,64.40 164.75,60.65 164.75,41.35" fill="#b82c36"/><polygon points="204.00,7.60 200.25,11.35 200.25,30.65 204.00,34.40 207.75,30.65 207.75,11.35" fill="#b82c36"/><polygon points="204.00,37.60 200.25,41.35 200.25,60.65 204.00,64.40 207.75,60.65 207.75,41.35" fill="#b82c36"/><polygon points="247.00,37.60 243.25,41.35 243.25,60.65 247.00,64.40 250.75,60.65 250.75,41.35" fill="#b82c36"/><polygon points="217.00,37.60 213.25,41.35 213.25,60.65 217.00,64.40 220.75,60.65 220.75,41.35" fill="#b82c36"/><polygon points="218.60,36.00 222.35,39.75 241.65,39.75 245.40,36.00 241.65,32.25 222.35,32.25" fill="#b82c36"/></svg>
     <p class="tagline" data-i18n="hero.tagline">Spin the digits, <b>find the fits.</b></p>
     <p class="pitch" data-i18n="hero.pitch">Drag, rotate and reason your way through 250 boards — some solved in a minute, some worth sitting with.</p>
-    <div class="app-store-cta">
-      <a class="app-store-badge-link" href="https://apps.apple.com/us/app/digispin/id6822804323" aria-label="DigiSpin on the App Store">
-        <img class="app-store-badge-img theme-blk" src="app-store-badge-dark-en-gb.svg" data-i18n-attr-src="appStore.badgeSrcBlk" data-i18n-attr-alt="appStore.badgeAlt" alt="Download on the App Store">
-        <img class="app-store-badge-img theme-wht" src="app-store-badge-light-en-gb.svg" data-i18n-attr-src="appStore.badgeSrcWht" data-i18n-attr-alt="appStore.badgeAlt" alt="Download on the App Store">
-      </a>
-      <img class="app-store-qr" src="app-store-qr-code.png" width="72" height="72" data-i18n-attr-alt="appStore.qrAlt" alt="QR code linking to DigiSpin's App Store page">
-    </div>
   </div>
 </div>
 
@@ -896,6 +897,23 @@
       <span class="eyebrow" data-i18n="about.eyebrow">About this build</span>
       <h2>Version 1.0.0</h2>
       <p class="lede" data-i18n="about.lede">DigiSpin is built for iPhone and iPad, and live now on the App Store. <a href="changelog.html">See what's new</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="download">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow" data-i18n="download.eyebrow">Download</span>
+      <h2 data-i18n="download.heading">Where to get it</h2>
+      <p class="lede" data-i18n="download.lede">DigiSpin is free to download right now on the App Store, for iPhone and iPad. Scan the QR code with another device's camera, or tap the badge, to open its App Store page directly. A Google Play version for Android is planned — once it exists, its own badge will sit alongside this one.</p>
+    </div>
+    <div class="app-store-cta">
+      <img class="app-store-qr" src="app-store-qr-code.png" width="132" height="132" data-i18n-attr-alt="appStore.qrAlt" alt="QR code linking to DigiSpin's App Store page">
+      <a class="app-store-badge-link" href="https://apps.apple.com/us/app/digispin/id6822804323" aria-label="DigiSpin on the App Store">
+        <img class="app-store-badge-img theme-blk" src="app-store-badge-black-en-gb.svg" data-i18n-attr-src="appStore.badgeSrcBlk" data-i18n-attr-alt="appStore.badgeAlt" alt="Download on the App Store">
+        <img class="app-store-badge-img theme-wht" src="app-store-badge-white-en-gb.svg" data-i18n-attr-src="appStore.badgeSrcWht" data-i18n-attr-alt="appStore.badgeAlt" alt="Download on the App Store">
+      </a>
     </div>
   </div>
 </section>

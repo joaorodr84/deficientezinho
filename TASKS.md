@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-66`**
+**Next ID to assign: `DEF-67`**
 
 If this file and history ever disagree, history wins:
 
@@ -21,6 +21,7 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 | ID | Task | Status | Date | Commit |
 | --- | --- | --- | --- | --- |
 | DEF-65 | Remove the colour-pack legend from the DigiSpin mini site's Levels section | done | 2026-11-27 | — |
+| DEF-66 | Rename the DigiSpin App Store badge SVGs from light/dark to black/white, and move the badge + QR code into their own "Download" section before the footer instead of the hero | done | 2026-11-27 | — |
 | DEF-64 | Add an App Store download badge + QR code to the DigiSpin mini site, and fix its stale "not live yet" copy | done | 2026-11-27 | — |
 | DEF-63 | Replace the Sphinx and DigiSpin mini sites' old contact emails with info@deficientezinho.pt | done | 2026-11-26 | — |
 | DEF-62 | Add a breadcrumb link back to Deficientezinho beside each mini site's own logo in the top-left nav | done | 2026-11-23 | — |
