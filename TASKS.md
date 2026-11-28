@@ -3,7 +3,7 @@
 Every task carries an ID of the form `DEF-<n>`. IDs are assigned once,
 never reused, and never renumbered.
 
-**Next ID to assign: `DEF-68`**
+**Next ID to assign: `DEF-69`**
 
 If this file and history ever disagree, history wins:
 
@@ -20,6 +20,7 @@ git log --oneline | grep -oE 'DEF-[0-9]+' | sort -t- -k2 -n | tail -1
 
 | ID | Task | Status | Date | Commit |
 | --- | --- | --- | --- | --- |
+| DEF-68 | Rewrote the Sphinx mini site's "Game Modes" page: shrank Guess It to a short pointer at How to Play plus its one comparison-worthy detail (no Reviewer role), added the Clear the List hide-timer toggle and the Banned Words curation caveat (not every word has a curated list yet, verified against the optional `bannedWords` field in src/game/words.ts), and fixed the remaining "24 categories" references. Clear the List's Open Pool/Complete the Set/difficulty-tier content was already accurate and left as-is | done | 2026-11-28 | — |
 | DEF-67 | Rewrote the Sphinx mini site's "How to Play" page from 5 steps to 6, grounded in the real app instead of the stale copy it had: added Start-dialog category/age-band picking (Surprise me, Shuffle, All Categories), the Settings pace controls (timer length, timer off, Pass cap), swipe/tap/Tilt/Forehead as alternative inputs, the three ways a round can end, and the Round Menu + optional room-photo prompt at Results. Kept the "Try it yourself" demo untouched. Both locales (en-GB, pt-PT) updated together; dictionary key sets verified to match | done | 2026-11-28 | — |
 | DEF-65 | Remove the colour-pack legend from the DigiSpin mini site's Levels section | done | 2026-11-27 | — |
 | DEF-66 | Rename the DigiSpin App Store badge SVGs from light/dark to black/white, and move the badge + QR code into their own "Download" section before the footer instead of the hero | done | 2026-11-27 | — |
